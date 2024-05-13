@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contentDiv = document.getElementById('content');
-    const postFilename = 'welcome.md'; // For now, we'll just load the welcome.md file
+    const postFilename = 'first_post.md'; // For now, we'll just load the welcome.md file
 
     fetch(`/posts/${postFilename}`)
         .then(response => response.text())
