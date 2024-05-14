@@ -4,7 +4,7 @@ Date: 2024-05-14
 ## Introduction
 The first issue I came accross upon after trying to set up my blog was that the markdown files were not being rendered properly. The images were not being displayed and the markdown was not being rendered. I had to find a way to render the markdown files properly.
 
-![alt text](<../images/first_post/Screenshot 2024-05-14 at 12.31.08 PM.png>) 
+![alt text](/images/first_post/2024-05-14-12.31.08PM.png)
 
 ## Solution
 Eventually I was able to find a solution for the 'marked.js' library. I used the following code to render the markdown files properly.
@@ -21,7 +21,7 @@ Eventually I was able to find a solution for the 'marked.js' library. I used the
 > ❓ Why were the full image paths not working?
 >
 > The full image paths were not working because I was serving locally from a lower directory. The image paths weren't being recognized due to this.  
-![alt text](<../images/first_post/Screenshot 2024-05-14 at 12.41.30 PM.png>)  
+![alt text](/images/first_post/2024-05-14-12.41.30PM.png)  
 In the image above, the image path is being recognized.
-![alt text](<../images/first_post/Screenshot 2024-05-14 at 12.44.02 PM.png>)
+![alt text](/images/first_post/2024-05-14-12.44.02PM.png)
 However, in the image above, the image path is not being recognized despite having the same path in the link. This is due to the server being open in a higher directory.
