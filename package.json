@@ -8,7 +8,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "predeploy": "gatsby build",
-    "deploy": "gatsby gh-pages -d public"
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "^5.13.0",

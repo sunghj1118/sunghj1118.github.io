@@ -19,8 +19,8 @@ export default function Home({ data }) {
 }
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+  query pageUsershyunjoonProjectsPersonalsunghj1118GithubIosrcpagesindexJs313718947 {
+    allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           id
