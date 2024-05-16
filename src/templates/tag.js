@@ -21,24 +21,24 @@ const TagTemplate = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-  query($tag: String!) {
-    allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
+  query pageUsershyunjoonProjectsPersonalsunghj1118GithubIosrctemplatestagJs4252078096($tag: String!) {
+  allMarkdownRemark(
+    filter: {frontmatter: {tags: {in: [$tag]}}}
+    sort: {frontmatter: {date: DESC}}
+  ) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
         }
       }
     }
   }
+}
 `;
 
 export default TagTemplate;
