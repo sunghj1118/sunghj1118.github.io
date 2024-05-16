@@ -1,12 +1,8 @@
-// src/pages/index.js
-
-import React, { useState } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
-import Layout from '../components/layout';
-import PostLink from '../components/post-link';
-
-// src/pages/index.js
+import React, { useState } from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import styled from "styled-components"
+import { Helmet } from "react-helmet"
 
 const TagButton = styled.button`
   background-color: ${props => (props.selected ? '#007BFF' : '#E0E0E0')};
@@ -26,82 +22,116 @@ const TagButton = styled.button`
     color: #FFFFFF;
     transform: scale(1.05);
   }
-`;
+`
 
+const PostContainer = styled.div`
+  margin: 20px 0;
+  font-family: 'Roboto', sans-serif;
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              date(formatString: "MMMM DD, YYYY")
-              tags
-            }
-            fields {
-              slug
-            }
-            excerpt
-          }
-        }
+  h3 {
+    font-size: 14px;
+    margin: 0;
+    a {
+      color: #6200ea;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
       }
     }
-  `);
+  }
 
-  const [selectedTags, setSelectedTags] = useState([]);
+  p {
+    font-size: 12px;
+    color: #666;
+  }
 
-  const allPosts = data.allMarkdownRemark.edges;
+  hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+  }
+`
 
-  const tagCounts = allPosts.reduce((acc, post) => {
-    post.node.frontmatter.tags.forEach(tag => {
-      if (acc[tag]) {
-        acc[tag]++;
-      } else {
-        acc[tag] = 1;
-      }
-    });
-    return acc;
-  }, {});
-
-  const allTags = Object.keys(tagCounts);
+const IndexPage = ({ data }) => {
+  const [selectedTags, setSelectedTags] = useState([])
 
   const toggleTag = tag => {
-    setSelectedTags(prevSelectedTags =>
-      prevSelectedTags.includes(tag)
-        ? prevSelectedTags.filter(t => t !== tag)
-        : [...prevSelectedTags, tag]
-    );
-  };
+    setSelectedTags(prevTags =>
+      prevTags.includes(tag) ? prevTags.filter(t => t !== tag) : [...prevTags, tag]
+    )
+  }
 
-  const filteredPosts = allPosts.filter(post =>
-    selectedTags.every(tag => post.node.frontmatter.tags.includes(tag))
-  );
+  const posts = data.allMarkdownRemark.edges.filter(({ node }) =>
+    selectedTags.length === 0 || selectedTags.every(tag => node.frontmatter.tags.includes(tag))
+  )
 
   return (
     <Layout>
-      <h1>Tags</h1>
+      <Helmet>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+      </Helmet>
+      <h2>Tags</h2>
       <div>
-        {allTags.map(tag => (
+        {data.tags.group.map(tag => (
           <TagButton
-            key={tag}
-            onClick={() => toggleTag(tag)}
-            selected={selectedTags.includes(tag)}
+            key={tag.fieldValue}
+            onClick={() => toggleTag(tag.fieldValue)}
+            selected={selectedTags.includes(tag.fieldValue)}
           >
-            {tag} ({tagCounts[tag]})
+            {tag.fieldValue} ({tag.totalCount})
           </TagButton>
         ))}
       </div>
       <h2>Posts</h2>
-      <div>
-        {filteredPosts.map(({ node }) => (
-          <PostLink key={node.id} post={node} />
+      <PostContainer>
+        {posts.map(({ node }) => (
+          <div key={node.id}>
+            <h3>
+              <a href={node.fields.slug}>{node.frontmatter.title}</a>
+            </h3>
+            <p>{node.frontmatter.date}</p>
+            <p>{node.excerpt}</p>
+            <div>
+              {node.frontmatter.tags.map(tag => (
+                <TagButton key={tag} onClick={() => toggleTag(tag)}>
+                  {tag}
+                </TagButton>
+              ))}
+            </div>
+            <hr />
+          </div>
         ))}
-      </div>
+      </PostContainer>
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            tags
+          }
+          excerpt
+        }
+      }
+    }
+    tags: allMarkdownRemark {
+      group(field: { frontmatter: { tags: SELECT } }) {
+        fieldValue
+        totalCount
+      }
+    }
+  }
+`
+
+export default IndexPage
