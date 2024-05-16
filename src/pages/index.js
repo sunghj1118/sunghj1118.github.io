@@ -6,15 +6,17 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import PostLink from '../components/post-link';
 
+// src/pages/index.js
+
 const TagButton = styled.button`
   background-color: ${props => (props.selected ? '#007BFF' : '#E0E0E0')};
   border: none;
   border-radius: 20px;
   color: ${props => (props.selected ? '#FFFFFF' : '#333333')};
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  margin: 10px;
-  padding: 10px 20px;
+  font-size: 14px; /* Adjusted size */
+  margin: 4px;
+  padding: 6px 16px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -25,6 +27,7 @@ const TagButton = styled.button`
     transform: scale(1.05);
   }
 `;
+
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`

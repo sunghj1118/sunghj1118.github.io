@@ -5,37 +5,39 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const PostWrapper = styled.div`
-  border-bottom: 1px solid #ddd; // Separator line
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
 `;
 
 const PostTitle = styled.h2`
-  margin-bottom: 10px;
-  font-size: 24px;
+  margin-bottom: 8px;
+  font-size: 16px; /* Adjusted size */
   font-weight: 700;
 `;
 
 const PostDate = styled.p`
   color: #888;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  font-size: 12px; /* Adjusted size */
 `;
 
 const PostExcerpt = styled.p`
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  font-size: 12px; /* Adjusted size */
 `;
 
 const TagList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 `;
 
 const Tag = styled.span`
   background-color: #e0e0e0;
   border-radius: 20px;
   padding: 5px 10px;
-  font-size: 14px;
+  font-size: 12px; /* Adjusted size */
   color: #333;
 `;
 
