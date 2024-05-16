@@ -2,13 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 
-const CategoryTemplate = ({ data, pageContext }) => {
-  const { category } = pageContext;
+const TagTemplate = ({ data, pageContext }) => {
+  const { tag } = pageContext;
   const { edges } = data.allMarkdownRemark;
 
   return (
     <Layout>
-      <h1>{category}</h1>
+      <h1>Posts tagged with "{tag}"</h1>
       <ul>
         {edges.map(({ node }) => (
           <li key={node.id}>
@@ -21,9 +21,9 @@ const CategoryTemplate = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-  query($category: String!) {
+  query($tag: String!) {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -41,4 +41,4 @@ export const query = graphql`
   }
 `;
 
-export default CategoryTemplate;
+export default TagTemplate;

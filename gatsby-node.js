@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
             frontmatter {
-              category
+              tags
             }
           }
         }
@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMarkdownRemark.edges;
-  const categories = new Set();
+  const tags = new Set();
 
   // Create individual blog post pages
   posts.forEach(({ node }) => {
@@ -52,18 +52,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
 
-    if (node.frontmatter.category) {
-      categories.add(node.frontmatter.category);
+    if (node.frontmatter.tags) {
+      node.frontmatter.tags.forEach(tag => tags.add(tag));
     }
   });
 
-  // Create category pages
-  categories.forEach(category => {
+  // Create tag pages
+  tags.forEach(tag => {
     createPage({
-      path: `/category/${category.toLowerCase()}/`,
-      component: path.resolve('./src/templates/category.js'),
+      path: `/tag/${tag.toLowerCase()}/`,
+      component: path.resolve('./src/templates/tag.js'),
       context: {
-        category,
+        tag,
       },
     });
   });
