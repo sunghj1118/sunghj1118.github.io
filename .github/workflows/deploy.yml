@@ -3,11 +3,15 @@ name: Deploy Gatsby Site
 on:
   push:
     branches:
-      - blog
+      - blog  # Your default branch
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:  # Ensures only one deployment runs at a time
+      group: deploy-gatsby-site
+      cancel-in-progress: true
 
     steps:
       - name: Checkout code
@@ -29,4 +33,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages
+          publish_branch: gh-pages  # Ensure this is set to gh-pages
