@@ -1,0 +1,36 @@
+name: Deploy Gatsby Site
+
+on:
+  push:
+    branches:
+      - blog  # Your default branch
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency:  # Ensures only one deployment runs at a time
+      group: deploy-gatsby-site
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Update to Node.js 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Gatsby site
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages  # Ensure this is set to gh-pages
