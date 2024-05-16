@@ -3,8 +3,9 @@ const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+
   if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode, basePath: 'posts' });
+    const slug = createFilePath({ node, getNode, basePath: 'posts/blog' });
     createNodeField({
       node,
       name: 'slug',
@@ -13,10 +14,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve('./src/templates/blog-post.js');
-  return graphql(`
+
+  const result = await graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -24,19 +25,46 @@ exports.createPages = ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              category
+            }
           }
         }
       }
     }
-  `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: blogPostTemplate,
-        context: {
-          slug: node.fields.slug,
-        },
-      });
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild('Error while running GraphQL query.');
+    return;
+  }
+
+  const posts = result.data.allMarkdownRemark.edges;
+  const categories = new Set();
+
+  // Create individual blog post pages
+  posts.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve('./src/templates/blog-post.js'),
+      context: {
+        slug: node.fields.slug,
+      },
+    });
+
+    if (node.frontmatter.category) {
+      categories.add(node.frontmatter.category);
+    }
+  });
+
+  // Create category pages
+  categories.forEach(category => {
+    createPage({
+      path: `/category/${category.toLowerCase()}/`,
+      component: path.resolve('./src/templates/category.js'),
+      context: {
+        category,
+      },
     });
   });
 };
