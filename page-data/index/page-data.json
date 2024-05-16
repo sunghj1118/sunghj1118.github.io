@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-index-js","path":"/","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"id":"c95a9b94-cb77-5cf7-9476-cf764b82e6fb","frontmatter":{"title":"Hello World","description":"This is my first blog post"},"fields":{"slug":"/hello-world/"}}}]}},"pageContext":{}},"staticQueryHashes":[],"slicesMap":{}}
+{"componentChunkName":"component---src-pages-index-js","path":"/","result":{"pageContext":{}},"staticQueryHashes":["932410205"],"slicesMap":{}}
