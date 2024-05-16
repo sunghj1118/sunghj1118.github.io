@@ -14,6 +14,11 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    // Other plugins...
+    {
+      resolve: `gatsby-plugin-gh-pages`,
+      options: {
+        pathPrefix: '/sunghj1118.github.io', // Replace with your GitHub repo name
+      },
+    },
   ],
 };
