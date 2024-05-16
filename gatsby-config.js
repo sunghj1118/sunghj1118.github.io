@@ -13,12 +13,6 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-plugin-gh-pages`,
-      options: {
-        pathPrefix: '/sunghj1118.github.io', // Replace with your GitHub repo name
-      },
-    },
+    `gatsby-transformer-remark`
   ],
 };
