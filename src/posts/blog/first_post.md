@@ -1,6 +1,6 @@
 ---
 title: "Welcome to My Developer Blog"
-date: "2024-05-14"
+date: "2024-05-13"
 description: "Welcome to my blog! Here, I'll share my journey as a developer.  "
 tags: ["Blog"]
 ---
