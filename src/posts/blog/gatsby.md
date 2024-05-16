@@ -1,3 +1,10 @@
+---
+title: "Setting up Gatsby"
+date: "2024-05-15"
+description: "Setting up Gatsby to make my blog more dynamic and interactive."
+tags: ["Blog", "Gatsby"]
+---
+
 # Setting up Gatsby
 
 My previous setup was using [marked.js](https://marked.js.org/) to render markdown files. However, I wanted to switch to Gatsby to take advantage of its features. I wanted to make the site more dynamic and interactive.

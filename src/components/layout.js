@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Header from './header';
+import styled from 'styled-components';
 import './layout.css';
 
-const Layout = ({ children }) => {
-  return (
-    <div>
-      <header>
-        <Link to="/">Home</Link>
-      </header>
-      <main>{children}</main>
-    </div>
-  );
-};
+const Main = styled.main`
+  padding: 2rem;
+`;
+
+const Layout = ({ children }) => (
+  <>
+    <Header />
+    <Main>{children}</Main>
+  </>
+);
 
 export default Layout;
