@@ -1,16 +1,32 @@
-import React from 'react';
-import Header from './header';
-import styled from 'styled-components';
-import './layout.css';
+// src/components/layout.js
 
-const Main = styled.main`
-  padding: 2rem;
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+import Container from './Container';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Roboto', sans-serif; // Default font
+    background-color: #f5f5f5; // Light background for better contrast
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; // Headings font
+  }
+
+  button {
+    font-family: 'Poppins', sans-serif; // Button font
+  }
 `;
 
 const Layout = ({ children }) => (
   <>
-    <Header />
-    <Main>{children}</Main>
+    <GlobalStyle />
+    <Container>
+      {children}
+    </Container>
   </>
 );
 

@@ -4,7 +4,6 @@ date: "2024-05-14"
 description: "Setting up marked.js to render markdown files properly."
 tags: ["Blog"]
 ---
-Date: 2024-05-14
 
 ## Introduction
 The first issue I came accross upon after trying to set up my blog was that the markdown files were not being rendered properly. The images were not being displayed and the markdown was not being rendered. I had to find a way to render the markdown files properly.

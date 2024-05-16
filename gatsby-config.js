@@ -50,5 +50,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `roboto\:400,700`, // Roboto with regular and bold weights
+          `montserrat\:400,700`, // Montserrat with regular and bold weights
+          `poppins\:400,700`, // Poppins with regular and bold weights
+        ],
+        display: 'swap',
+      },
+    },
   ],
 };

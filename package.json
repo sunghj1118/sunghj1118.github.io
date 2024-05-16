@@ -13,6 +13,7 @@
   "dependencies": {
     "gatsby": "^5.13.0",
     "gatsby-plugin-gatsby-cloud": "^5.13.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
