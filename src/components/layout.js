@@ -3,6 +3,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Container from './Container';
+import Footer from './Footer'; // Import the Footer component
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,6 +28,7 @@ const Layout = ({ children }) => (
     <Container>
       {children}
     </Container>
+    <Footer /> {/* Add the Footer component here */}
   </>
 );
 
