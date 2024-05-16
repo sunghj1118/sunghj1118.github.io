@@ -24,6 +24,12 @@ const TagButton = styled.button`
   }
 `
 
+const SmallTagButton = styled(TagButton)`
+  font-size: 12px; /* Smaller size */
+  padding: 2px 12px; /* Smaller padding */
+`
+
+
 const PostContainer = styled.div`
   margin: 20px 0;
   font-family: 'Roboto', sans-serif;
@@ -48,7 +54,7 @@ const PostContainer = styled.div`
   hr {
     border: 0;
     border-top: 1px solid #ddd;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 `
 
@@ -94,9 +100,9 @@ const IndexPage = ({ data }) => {
             <p>{node.excerpt}</p>
             <div>
               {node.frontmatter.tags.map(tag => (
-                <TagButton key={tag} onClick={() => toggleTag(tag)}>
+                <SmallTagButton key={tag} onClick={() => toggleTag(tag)}>
                   {tag}
-                </TagButton>
+                </SmallTagButton>
               ))}
             </div>
             <hr />
