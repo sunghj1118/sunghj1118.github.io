@@ -27,7 +27,7 @@ Longest Bitonic Subsequence는 LIS를 활용한 DP문제로, 주어진 배열에
 
 일단은 앞뒤로 LIS를 하나씩 해봤다:
 ![2lists](../../images/LIS-bitonic/twolists.png)
-![2listimplementation](image.png)
+![2listimplementation](../../images/LIS-bitonic/image.png)
 
 그런데 지금 보니까 굳이 두개를 할 필요가 있나? 그냥 가장 큰 숫자를 기준으로 그 다음에 얼마나 많은 작은 숫자들이 있는지 파악해도 되지 않나? 그런데 그걸 구현할 방법이 생각이 안나서 일단은 두개로 나눠서 풀어보자.
 
