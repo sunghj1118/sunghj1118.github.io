@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tag-js","path":"/tag/infra/","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"id":"08facdb6-b8ba-5fa9-839f-14a63af2c2f2","fields":{"slug":"/docker/docker_vs_VM/"},"frontmatter":{"title":"도커와 가상환경의 차이는?"}}}]}},"pageContext":{"tag":"Infra"}},"staticQueryHashes":[],"slicesMap":{}}
