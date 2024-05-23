@@ -10,11 +10,11 @@ As a reminder, namespaces help grouping or isolating resources like pods, deploy
 
 However, what about resources like nodes (blue squares in the right)? Is it possible for them to be in a namespace?
 
-![alt text](../../images/k8s164/namespaces.png)
+![alt text](../../images/k8s/k8s164/namespaces.png)
 
 The answer is no, nodes are not able to be isolated within a namespace. Instead, they are clusted-wide or cluster-scoped resources. This means that they are accessible from any namespace within the cluster.
 
-![no](../../images/k8s164/notpossible.png)
+![no](../../images/k8s/k8s164/notpossible.png)
 
 In other words, resources can be categorized as either namespaced or cluster-scoped.  
 
@@ -22,7 +22,7 @@ Examples of namespaced resources include pods, replicasets, deployments, and ser
 
 Examples of cluster-scoped resources includes nodes, persistent volumes, and namespaces.
 
-![NSvsCluster](../../images/k8s164/nsvscluster.png)
+![NSvsCluster](../../images/k8s/k8s164/nsvscluster.png)
 
 ## Cluster-Scoped Resources
 The cluster-scoped resources are those where you don't specify a namespace when you create them such as nodes.
@@ -33,7 +33,7 @@ For example, you can create a Cluster Admin role as below that enables a user to
 
 To create them you can create a yaml file and define the kind as ClusterRole as below.
 
-![clusterroles](../../images/k8s164/clusterroles.png)
+![clusterroles](../../images/k8s/k8s164/clusterroles.png)
 
 
 Then, we can create another object called ClusterRoleBinding to link the ClusterRole to a user or a group.
@@ -42,7 +42,7 @@ Then, we can create another object called ClusterRoleBinding to link the Cluster
 kubectl create -f cluster-admin-role-rolebinding.yaml
 ```
 
-![clusterrolebinding](../../images/k8s164/clusterrolebinding.png)
+![clusterrolebinding](../../images/k8s/k8s164/clusterrolebinding.png)
 
 Lastly, although clusterroles and bindings are usually used for cluster scopes, this is not a hard rule, and you can use them for namespaced resources as well. Once you do that, the user will have access to the resources accross all namespaces.
 
@@ -61,7 +61,7 @@ What namespace is the cluster-admin clusterrole part of?
 ```bash
 kubectl api-resources --namespaced=false
 ```
-![q3](../../images/k8s164/q3.png)
+![q3](../../images/k8s/k8s164/q3.png)
 
 
 What user/groups are the cluster-admin role bound to?
@@ -69,7 +69,7 @@ The ClusterRoleBinding for the role is with the same name.
 ```
 kubectl describe clusterrolebinding cluster-admin
 ```
-![q4](../../images/k8s164/q4.png)
+![q4](../../images/k8s/k8s164/q4.png)
 
 What level of permission does the cluster-admin role grant?  
 Inspect the cluster-admin role's privileges.
@@ -78,7 +78,7 @@ Inspect the cluster-admin role's privileges.
 kubectl describe clusterrole cluster-admin
 ```
 
-![q5](../../images/k8s164/q5.png)
+![q5](../../images/k8s/k8s164/q5.png)
 
 A new user michelle joined the team. She will be focusing on the nodes in the cluster. Create the required ClusterRoles and ClusterRoleBindings so she gets access to the nodes.
 
@@ -115,7 +115,3 @@ To check if the user has access to the nodes, you can run the following command.
 ```bash
 kubectl auth can-i list nodes --as michelle
 ```
-
-
-
-164 172
