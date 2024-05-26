@@ -1,5 +1,5 @@
 ---
-title: "[DP] Longest Increasing Subsequence"
+title: "[DP][LIS] Longest Increasing Subsequence"
 date: "2024-05-17"
 description: "Longest Increasing Subsequence는 DP의 한 유형으로, 주어진 배열에서 가장 긴 증가하는 부분 수열을 찾는 문제 유형이다."
 tags: ["Algorithm"]
@@ -10,7 +10,7 @@ Longest Increasing Subsequence는 DP의 한 유형으로, 주어진 배열에서
 
 예를 들어, 백준 11503 문제를 살펴보자.
 
-![11503](../../images/LIS/11503.png)
+![11503](../../../images/LIS/11503.png)
 
 수열 A = {10, 20, 10, 30, 20, 50} 인 경우에 가장 긴 증가하는 부분 수열은 A = {**10**, **20**, 10, **30**, 20, **50**} 이고, 길이는 4다.
 
@@ -55,7 +55,7 @@ print(LIS(n, seq))
 
 ```
 
-![solution](<../../images/LIS/sol.png>)
+![solution](<../../../images/LIS/sol.png>)
 
 
 ## Topics

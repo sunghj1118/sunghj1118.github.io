@@ -8,7 +8,7 @@ Longest Bitonic Subsequence는 LIS를 활용한 DP문제로, 주어진 배열에
 ---
 
 이를 활용한 백준 11504 문제를 살펴보자.
-![11504](../../images/LIS-bitonic/11504.png)
+![11504](../../../images/LIS-bitonic/11504.png)
 
 수열 S가 어떤 수 Sk를 기준으로 S1 < S2 < ... Sk-1 < Sk > Sk+1 > ... SN-1 > SN을 만족한다면, 그 수열을 바이토닉 수열이라고 한다.
 
@@ -26,8 +26,8 @@ Longest Bitonic Subsequence는 LIS를 활용한 DP문제로, 주어진 배열에
 따라서, 이 문제는 **DP**로 풀어야 한다.
 
 일단은 앞뒤로 LIS를 하나씩 해봤다:
-![2lists](../../images/LIS-bitonic/twolists.png)
-![2listimplementation](../../images/LIS-bitonic/image.png)
+![2lists](../../../images/LIS-bitonic/twolists.png)
+![2listimplementation](../../../images/LIS-bitonic/image.png)
 
 그런데 지금 보니까 굳이 두개를 할 필요가 있나? 그냥 가장 큰 숫자를 기준으로 그 다음에 얼마나 많은 작은 숫자들이 있는지 파악해도 되지 않나? 그런데 그걸 구현할 방법이 생각이 안나서 일단은 두개로 나눠서 풀어보자.
 
@@ -84,8 +84,8 @@ print(LIS(n, seq))
 
 ```
 
-![solution](../../images/LIS-bitonic/solution.png)
-![bj](../../images/LIS-bitonic/baek.png)
+![solution](../../../images/LIS-bitonic/solution.png)
+![bj](../../../images/LIS-bitonic/baek.png)
 
 
 ## Topics
