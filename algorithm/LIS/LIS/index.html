@@ -13,7 +13,7 @@ data-styled.g4[id="sc-global-fbFGBJ1"]{content:"sc-global-fbFGBJ1,"}/*!sc*/
 data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"kQfybW,"}/*!sc*/
 .jyfjff{font-size:1rem;color:#666;margin-bottom:2rem;}/*!sc*/
 data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"jyfjff,"}/*!sc*/
-</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><h1 class="blog-post__PostTitle-sc-1iu9sol-0 kQfybW">[DP] Longest Increasing Subsequence</h1><p class="blog-post__PostDate-sc-1iu9sol-1 jyfjff">May 17, 2024</p><div><p>Longest Increasing Subsequence는 DP의 한 유형으로, 주어진 배열에서 <strong>가장 긴 증가하는 부분 수열</strong>을 찾는 문제 유형이다.</p>
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><h1 class="blog-post__PostTitle-sc-1iu9sol-0 kQfybW">[DP][LIS] Longest Increasing Subsequence</h1><p class="blog-post__PostDate-sc-1iu9sol-1 jyfjff">May 17, 2024</p><div><p>Longest Increasing Subsequence는 DP의 한 유형으로, 주어진 배열에서 <strong>가장 긴 증가하는 부분 수열</strong>을 찾는 문제 유형이다.</p>
 <hr>
 <p>예를 들어, 백준 11503 문제를 살펴보자.</p>
 <p><span
@@ -48,30 +48,7 @@ data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"jyfjff,"}/*!sc*/
 <p>한 눈에 봤을때는 마지막 숫자를 계속 유지하면서 다음 숫자보다 클 경우 바꾸는 형식으로 풀면 될 것 같다.</p>
 <p>특히 처음에 이해하는데 다음 자료가 도움이 되었다:
 <a href="https://velog.io/@doorbals_512/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-LIS-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B8%EB%8D%B0-DP%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C" title="LIS">[알고리즘] LIS 알고리즘인데 DP를 이용한</a>
-<span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 13.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApklEQVR42k3LORKCUBAEUC6rJeJFxOU2Ios5oLEJ8FFcoUAsUBA0aIfvGnTNq5keIUwyqJYLY+5BM13MaOq2C81yXrY+ZtxNDNv73n9mUE0HwmIZoC2rEAcKpLHOZ3ek/lmj6OjIk7c1ssJ3PeqJwyl1DUjkVl+BUFQPrOMSfnTB/nwHO2QI4oJcgx1zbJIbdmlFzrA9VTy8m9bww5yn+VtFV/or8QROjcUom4IIgQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="solution"
-        title=""
-        src="/static/fd5d9777832a9f63b2811d2affda98f1/5a190/image.png"
-        srcset="/static/fd5d9777832a9f63b2811d2affda98f1/772e8/image.png 200w,
-/static/fd5d9777832a9f63b2811d2affda98f1/e17e5/image.png 400w,
-/static/fd5d9777832a9f63b2811d2affda98f1/5a190/image.png 800w,
-/static/fd5d9777832a9f63b2811d2affda98f1/c1b63/image.png 1200w,
-/static/fd5d9777832a9f63b2811d2affda98f1/bb051/image.png 1212w"
-        sizes="(max-width: 800px) 100vw, 800px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
+<img src="../../images/LIS/image.png" alt="solution"></p>
 <hr>
 <h2>Solution</h2>
 <p>이 문제를 풀기 위해서 for loop을 두개 사용했다.</p>
@@ -126,7 +103,7 @@ print(LIS(n, seq))
 <ul>
 <li>DP</li>
 <li>LIS</li>
-</ul></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer> </div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LIS/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer> </div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LIS/LIS/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
