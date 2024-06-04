@@ -4,6 +4,18 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 import { Helmet } from "react-helmet"
 
+const TagContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+`;
+
+const MainTagContainer = styled.div`
+  position: relative;
+  margin: 4px;
+`;
+
 const TagButton = styled.button`
   background-color: ${props => (props.selected ? '#007BFF' : '#E0E0E0')};
   border: none;
@@ -11,7 +23,6 @@ const TagButton = styled.button`
   color: ${props => (props.selected ? '#FFFFFF' : '#333333')};
   font-family: 'Poppins', sans-serif;
   font-size: 14px; /* Adjusted size */
-  margin: 4px;
   padding: 6px 16px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
@@ -24,11 +35,25 @@ const TagButton = styled.button`
   }
 `
 
+const SubTagContainer = styled.div`
+  display: ${props => (props.visible ? 'flex' : 'none')};
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 100%; /* Position below the main tag */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+`;
+
 const SmallTagButton = styled(TagButton)`
   font-size: 12px; /* Smaller size */
   padding: 2px 12px; /* Smaller padding */
 `
-
 
 const PostContainer = styled.div`
   margin: 20px 0;
@@ -60,6 +85,7 @@ const PostContainer = styled.div`
 
 const IndexPage = ({ data }) => {
   const [selectedTags, setSelectedTags] = useState([])
+  const [visibleSubTags, setVisibleSubTags] = useState('')
 
   const toggleTag = tag => {
     setSelectedTags(prevTags =>
@@ -67,9 +93,23 @@ const IndexPage = ({ data }) => {
     )
   }
 
+  const handleMouseEnter = mainTag => {
+    setVisibleSubTags(mainTag)
+  }
+
+  const handleMouseLeave = () => {
+    setVisibleSubTags('')
+  }
+
   const posts = data.allMarkdownRemark.edges.filter(({ node }) =>
     selectedTags.length === 0 || selectedTags.every(tag => node.frontmatter.tags.includes(tag))
   )
+
+  const mainTags = {
+    Blog: ['Gatsby', 'NPM'],
+    Infra: ['Kubernetes', 'Docker', 'Container'],
+    AI: []
+  }
 
   return (
     <Layout>
@@ -78,17 +118,33 @@ const IndexPage = ({ data }) => {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
       </Helmet>
       <h2>Tags</h2>
-      <div>
-        {data.tags.group.map(tag => (
-          <TagButton
-            key={tag.fieldValue}
-            onClick={() => toggleTag(tag.fieldValue)}
-            selected={selectedTags.includes(tag.fieldValue)}
+      <TagContainer>
+        {Object.keys(mainTags).map(mainTag => (
+          <MainTagContainer
+            key={mainTag}
+            onMouseEnter={() => handleMouseEnter(mainTag)}
+            onMouseLeave={handleMouseLeave}
           >
-            {tag.fieldValue} ({tag.totalCount})
-          </TagButton>
+            <TagButton
+              onClick={() => toggleTag(mainTag)}
+              selected={selectedTags.includes(mainTag)}
+            >
+              {mainTag}
+            </TagButton>
+            <SubTagContainer visible={visibleSubTags === mainTag}>
+              {mainTags[mainTag].map(subTag => (
+                <SmallTagButton
+                  key={subTag}
+                  onClick={() => toggleTag(subTag)}
+                  selected={selectedTags.includes(subTag)}
+                >
+                  {subTag}
+                </SmallTagButton>
+              ))}
+            </SubTagContainer>
+          </MainTagContainer>
         ))}
-      </div>
+      </TagContainer>
       <h2>Posts</h2>
       <PostContainer>
         {posts.map(({ node }) => (
