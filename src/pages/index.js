@@ -29,6 +29,47 @@ const SmallTagButton = styled(TagButton)`
   padding: 2px 12px; /* Smaller padding */
 `
 
+const SubTagContainer = styled.div`
+  display: none;
+  justify-content: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 50px; /* Increased space between the main tag and sub tags */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Position the triangle */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #f5f5f5 transparent;
+  }
+`;
+
+const MainTagContainer = styled.div`
+  position: relative;
+  margin: 8px;
+
+  &:hover ${SubTagContainer}, ${SubTagContainer}:hover {
+    display: flex;
+  }
+`;
+
+const TagWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+`;
 
 const PostContainer = styled.div`
   margin: 20px 0;
@@ -71,24 +112,44 @@ const IndexPage = ({ data }) => {
     selectedTags.length === 0 || selectedTags.every(tag => node.frontmatter.tags.includes(tag))
   )
 
+  const tagsWithSubTags = {
+    Blog: ['Gatsby', 'NPM'],
+    Infra: ['Kubernetes', 'Docker', 'Container'],
+    AI: []
+  }
+
   return (
     <Layout>
       <Helmet>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
       </Helmet>
-      <h2>Tags</h2>
-      <div>
-        {data.tags.group.map(tag => (
-          <TagButton
-            key={tag.fieldValue}
-            onClick={() => toggleTag(tag.fieldValue)}
-            selected={selectedTags.includes(tag.fieldValue)}
-          >
-            {tag.fieldValue} ({tag.totalCount})
-          </TagButton>
+      <h2 style={{ textAlign: "center" }}>Tags</h2>
+      <TagWrapper>
+        {Object.keys(tagsWithSubTags).map(tag => (
+          <MainTagContainer key={tag}>
+            <TagButton
+              onClick={() => toggleTag(tag)}
+              selected={selectedTags.includes(tag)}
+            >
+              {tag} ({data.tags.group.find(t => t.fieldValue === tag)?.totalCount || 0})
+            </TagButton>
+            {tagsWithSubTags[tag].length > 0 && (
+              <SubTagContainer>
+                {tagsWithSubTags[tag].map(subTag => (
+                  <TagButton
+                    key={subTag}
+                    onClick={() => toggleTag(subTag)}
+                    selected={selectedTags.includes(subTag)}
+                  >
+                    {subTag}
+                  </TagButton>
+                ))}
+              </SubTagContainer>
+            )}
+          </MainTagContainer>
         ))}
-      </div>
+      </TagWrapper>
       <h2>Posts</h2>
       <PostContainer>
         {posts.map(({ node }) => (
