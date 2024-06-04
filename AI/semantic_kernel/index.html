@@ -1,0 +1,224 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.4"/><meta name="theme-color" content="#663399"/><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+body{font-family:'Roboto',sans-serif;background-color:#f5f5f5;margin:0;padding:0;}/*!sc*/
+h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;}/*!sc*/
+button{font-family:'Poppins',sans-serif;}/*!sc*/
+data-styled.g4[id="sc-global-fbFGBJ1"]{content:"sc-global-fbFGBJ1,"}/*!sc*/
+.kQfybW{font-size:2.5rem;margin-bottom:0.5rem;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"kQfybW,"}/*!sc*/
+.jyfjff{font-size:1rem;color:#666;margin-bottom:2rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"jyfjff,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><h1 class="blog-post__PostTitle-sc-1iu9sol-0 kQfybW">Semantic Kernel, Prompt Flow, and LangChain</h1><p class="blog-post__PostDate-sc-1iu9sol-1 jyfjff">June 04, 2024</p><div><h1>What is the Semantic Kernel?</h1>
+<p>The Semantic Kernel is an open-source SDK that lets you easily build agents that can call your existing code. In layman's terms, it is an intermediary between your plugins/copilots and the AI models/Foundation Models. It allows the user to orchestrate plugins such as your existing code with other AI models. This enables the user to create more sophisticated AI pipelines in an easier manner.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 78.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAACo0lEQVR42o2Uy27TQBSGzaYPgBA8AIh3AfUJaAuqxAIqnqJi0SIWrNiw5CZBWigrpEqoXAvqoiUXNyFN2lS52s3YY7t2Ymdy+M/UgahKpY70aW5n/jkzc84Y3W73pu/7URAEQzAYIaUcOI4z8DxPt13X1X1m3A4kQLEGtG4YSZI8IhSl1GA4HHLNXYIB5XI5KhaLdHh4SKVSiUzTpGw2q+fSNZSuSbgfRdGyAQ+0YIzS7/fVCHQVDBQ8U7Ztq3a7zV6oXq+nx0/Z9lkDJ1kyjo+PH3IHOw1oQsGGVK3uU6VSJRyNUtvTZtpDaC0aUL0uhHiNu3mPevU08HDV8/y1MAh0e4LNCu6O175iLQPCF4wzy8nc05W9y8/e5C+Oj529JJ+fSnpyOgqc+TCQc+B2kCKlYGabdvde40g84LYMMBbKceZkJOeDRE7DuSkDx1jYaif0wZRqvejRp11Jn01J3wsubZc8ygGz6A53C2K4h/ly1qHS1hGVf9lU2bSo+gNstJUoBOQKcd8QENxuxfQxL9UGhL4WJP3Mu7SVdSm/61EJIn9MlyrYoIb5gx2H9jZtqn6zaP9Lhw422nSw3lTd35KELRb4DqeSQEyHOF7oixnUs75/Ah/RdcWterOzYFndu9zWx/b/44ZiRgTijuylRz7PozxZq1x5/LJ46VyPgju8hud+Ad6BzAgEcQZBq4n6/ZUwila5jSDOIB4zY7ZvAYfUcwT8VQNGEwObgxgZQs1mk+r1OiHOdL9Wq3GKTQxsaC0avi+X09TrYSABnIIxBGOkW9xqtWKIxhCLO52ObsP7OE1VDUrIGvBy6d/nMCn1Go2G/hjK5bKu2TtsMClDRx4uc+rx93UEjwLUjAcc5LCDlNLAO41lWbrP82MIrqFj81f4Fz+KB+EJ4k5OAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="mid"
+        title=""
+        src="/static/884f8d8bda0c62ee0532424ca7249bcd/5a190/middle.png"
+        srcset="/static/884f8d8bda0c62ee0532424ca7249bcd/772e8/middle.png 200w,
+/static/884f8d8bda0c62ee0532424ca7249bcd/e17e5/middle.png 400w,
+/static/884f8d8bda0c62ee0532424ca7249bcd/5a190/middle.png 800w,
+/static/884f8d8bda0c62ee0532424ca7249bcd/f3a19/middle.png 1086w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h1>Lightbulb Example</h1>
+<p>Say you have a lightbulb plugin that can turn on and off a lightbulb. You can use the Semantic Kernel to create an agent that can call this plugin. This agent can then be used to control the lightbulb using an AI model.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAApUlEQVR42p2QSwqEMBBEcx0x/vAvRpMQEF15/8vUUA0twsxqFo8mnU5VdUzXddj3HX3fC+M4/kWMUaoZhkEO3ns450ADpW1bqWrG2ff9m2ma0DQNDFWP40BK6RFWmDyEIMPrumJZFhRFgbIsf5LnOQyH7/sW0eu6cJ4ntm0TKMpKU01Y1zWqqvqCfWstDJXpTmGuOM/z85e6KpNpT5Pw8Rsmz7IMHwDgo4TohbZxAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="light"
+        title=""
+        src="/static/2db04afcc59be81a3ceba51750e05d7c/5a190/light.png"
+        srcset="/static/2db04afcc59be81a3ceba51750e05d7c/772e8/light.png 200w,
+/static/2db04afcc59be81a3ceba51750e05d7c/e17e5/light.png 400w,
+/static/2db04afcc59be81a3ceba51750e05d7c/5a190/light.png 800w,
+/static/2db04afcc59be81a3ceba51750e05d7c/c1b63/light.png 1200w,
+/static/2db04afcc59be81a3ceba51750e05d7c/cf8e5/light.png 1402w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>The relevant C# code for this example would look like this:</p>
+<pre><code class="language-csharp">// Create chat history
+var history = new ChatHistory();
+
+// Get chat completion service
+var chatCompletionService = kernel.GetRequiredService&#x3C;IChatCompletionService>();
+
+// Start the conversation
+Console.Write("User > ");
+string? userInput;
+while ((userInput = Console.ReadLine()) != null)
+{
+    // Add user input
+    history.AddUserMessage(userInput);
+
+    // Enable auto function calling
+    OpenAIPromptExecutionSettings openAIPromptExecutionSettings = new()
+    {
+        ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
+    };
+
+    // Get the response from the AI
+    var result = await chatCompletionService.GetChatMessageContentAsync(
+        history,
+        executionSettings: openAIPromptExecutionSettings,
+        kernel: kernel);
+
+    // Print the results
+    Console.WriteLine("Assistant > " + result);
+
+    // Add the message from the agent to the chat history
+    history.AddMessage(result.Role, result.Content ?? string.Empty);
+
+    // Get user input again
+    Console.Write("User > ");
+}
+</code></pre>
+<h1>Benefits of the Semantic Kernel</h1>
+<p>The Semantic Kernel has several benefits:</p>
+<ul>
+<li><strong>Ease of Use</strong>: The Semantic Kernel makes it easy to build agents that can call your existing code.</li>
+<li><strong>Interoperability</strong>: The Semantic Kernel allows you to orchestrate plugins with other AI models, enabling you to create more sophisticated AI pipelines. For example, if you built a plugin based on ChatGPT, you could use the Semantic Kernel to call this plugin from other providers like Azure or Huggingface.</li>
+<li><strong>Flexibility</strong>: The Semantic Kernel is open-source, so you can customize it to suit your needs. You can add new plugins, modify existing ones, or create entirely new agents.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 524px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 127.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFEklEQVR42o1Ve2yTVRT/eKlEjWggGmmZYR0DosR/hiAKidFIQoyATnwEDRIH2brB0BFfZDEGUSIq8hJDGMYYzILCNIhb2Yru4Vi7ra9tXdfSx7qtZX19fa792u/nuV9bYMjUk/xyvnsev3vOvfe0HEcCB79ONHu9MI4AZp+IQT9gCwFDwZwOZGENZsFsTFsCImw8KL4xrB2Zy0lkXu9dGUuwHwe0yOz5NYO2IQh9XvhURkQ77QioBxC7bEdC65LWwT/MCF4yI9JhQ6zLjrjGKcAL2pD/OEvown1pc8CJL2zANnMSp21CXD8sDJ68KFw53SqY61SC+2yX4DrTKdh/bBNGzmmEoe+aJZ+zvkOw/fBnAo4E4Ip/yeUFVt+OjCWQgSYCGMMiXFFgWArKwk52Z+z62pXIwhkX4YixYxoSjb4l1wmBadCPF8PtfVy0e1ak9ITeseWpntGSuGZkVajL/TTY+hpcy1N9Y49JcQbPSvSMzsvz5AmnczdJ3llXZ3rglxOG9V1HjPJJSTfFovYmDqjVM2HCbexbSCb3pwXBSuimYD2hP4deQncmLVjj0WiNlEc5typoUlWkfyfA5XKlhyxDMJsHRKvNioGBAbjdboH5EonEqam6uyb19fUzmE4lkj+zJP+4LzE2Opryjo0lPaPumHt4OOUb98WZL8LzR3OEM6bim5avMAzMo3t9hNaL6A5L2qN4szOJ19masJR8DzuBe1lsbW3tdFDuLRnVBW/c0Vy8o1h1z5aFP3EbZL9xa2Vn5rxacGLzoZXfVNav/Z5bIzvLPS9nvmZ5ZWHTkqqig4rK2yefG5etSr1o19xLimpVi6I60rKgKtgsU/LNciXfIlOG1POVPrWs4mrLwp18s6yCb5FXkVYGL7FYRXXDueKau7NcVClKs+fWVlxT06t4Hx0le9J9ZSegf+0IdJsOwbD5GPq2nYT2mc9g3PotDFuOo+eFr2DafhKtS3endcUfQF1U/ZZU1JramVw9VyoR0k5bNUXvon3Zexndiweh23gQ+k2HoS89BNMrR6F9ah961n0Ow8tH0PPcAbJ/LbYurhE7F+1GQ2H5S9Kl5riklrVc2SxV0c5PmwurDE2yCn2TvNzYJK8wNs4vNzTdX6ZVFVTqVAVKY9P8cqNqAdkf3K6/qNhhuFCo/IjSp346JDO4G26trOz4rGP71A81vt14Jzf5NqfnYqcW0BPIva25IrCEdCHh0X5DQOkZDG9gT4agICwmzJlqFG+cFIkwnU5LD5t0KhQK0QQKiZQgZEhnSJLMF4/HD//npOR3oyRp9FKpVNpisaDrchfa29tht9uZ+f+PXn6MksnkJ0Q2QLqTqtQGgrzRHwj1EomG2ZjP7/e/k8/5R9u3NOaklOZ7/1+eZXtbhzdWd3TM/pdiZk5qk85kAe38ZCAQeIK+V/E8vzKP0UB4tWFkfL0/HF4Vi8VWMFuYvlksYTWds2ISOwWtJ2PMS398RCZGIhF2RqD2JExMTIjxWDSdnJjABK2Zb4J9k535KT5NG5TdWG6rx+NBQ8M5wTXsEskpmkwmsa+vTxwcHBTNZrNIv40iXZDY398vOhwOSTM72dKsAOrORjGz84QXrtgc+HDX3vTpurOgauF0OtHW1obz589Do9GAiNHd3Q29Xg/aDFqtFjqdjtkyrFp6Ujqyzcq3XHLVO240G6xw2tzgwzxi0ZjUWh4UI2k6EumbaXY8jIwqvBLy+59lZH8DIbujshcmKncAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="mem"
+        title=""
+        src="/static/6fb0419103fe3aa4b2c98aa08932f6f5/664c8/memory.png"
+        srcset="/static/6fb0419103fe3aa4b2c98aa08932f6f5/772e8/memory.png 200w,
+/static/6fb0419103fe3aa4b2c98aa08932f6f5/e17e5/memory.png 400w,
+/static/6fb0419103fe3aa4b2c98aa08932f6f5/664c8/memory.png 524w"
+        sizes="(max-width: 524px) 100vw, 524px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h1>Differences between LangChain, PromptFlow, and Semantic Kernel?</h1>
+<p>The tools, libraries and/or frameworks that ease the process of creating LLM application by streamlining any repetitive process through automation. Some of the AI orchestrators include:</p>
+<ul>
+<li><strong>Semantic Kernel</strong>: an open-source SDK that allows you to orchestrate your existing code and more with AI.</li>
+<li><strong>LangChain</strong>: a framework to build LLM-applications easily and gives you insights on how the application works</li>
+<li><strong>PromptFlow</strong>: this is a set of developer tools that helps you build an end-to-end LLM Applications. Using PromptFlow, you can take your application from an idea to production. However, its static nature might require additional use of LangChain or Semantic Kernel to have it implement dynamic orchestration.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC9UlEQVR42kWT2VPTUBTG80fqgzPqOI4iCi7j7ov/gD44KjLjhoCATJWyiKCyiLSFLnZPcpO0aZouIWlaUhBQXz7PveD48JvvzrknN98951zp9XcbfWMM997ruDKuoZ/WnMvErUkNNyf/xzh9b1XB9QmGG+8Y7TNcHWc4P6zg4aIJ6dEXC8cHi+gZVnHiuYyeEYbeUYaLoypuhwz6QMeFEVXELo1quDSmo2+8hFuhMu58MHHnfRlX35VwfkTHgwUL0rPlKs4OKbgyxg/REE42MB1hmI4ZmFwtIrSmYjqqYS5exkrRw6ekhXCE8qIGPpBOkc5Q7nSshE3dgzRIB558IZNlVbibTztYzdfxrejgc6qC5WyN1ltYyTewYWwjqrWxkjvcX6XYt8KRyi7ydhfSkyULvXSluyENF98yxEsdMMvFRk5HLKshlmFIyib0RgDL20Ot8xum+xNyxQWz21CrLRjNAHb7N5qdfUgDdOCZVwquTWg4Ry7XWBsF+lNMbSJSrAkSuousFZCDHeRru8iRZqtdobl/au9Cd3YhPaYDT72URefODqmYiNqYTdqYSzUQWjcQ3rTwMd3E1EYFizkXnwstzCRrmE3VEY5XMZOwMcM11cRmOThsCq8h7/K5NyoieoAi/TFjdclVF5lKIJQ7KNb3kDa3ybFHtJAwWkga/tHah9YkhwNHXe6n+vHxyNKHphNAsTxo9Q7B6+ShvNVFI/gDc2uH6kl1tn2qbRmFsgOjsS3q6GwfQHq6dOiwd5Q7ZFjIe4gwD2sqobj4fqRriie6HGEtEVtnPtESRDRf7KfNNndITXmtiJfRM8wwlXSwkK5jIdMULGYcfPpRxzyxLPtizZmNV2hGFYRp/hYpby5VQ5SMSI+/WjhGL4Vf+zR1O2HuoNL6BblG1653BYxqY7gHKLn7MLwDEZNrhB0IFMplzh6qPl15iN4yf8P3wwZu0DMr0FjU/T0wmi/N5vhUow7sFs1gex9V0n9xDs/jlJ0unM4+/gITWmb/UxxJPAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="langvsem"
+        title=""
+        src="/static/312e7ff4f598af92479e37f662e553c2/5a190/langvsem.png"
+        srcset="/static/312e7ff4f598af92479e37f662e553c2/772e8/langvsem.png 200w,
+/static/312e7ff4f598af92479e37f662e553c2/e17e5/langvsem.png 400w,
+/static/312e7ff4f598af92479e37f662e553c2/5a190/langvsem.png 800w,
+/static/312e7ff4f598af92479e37f662e553c2/c1b63/langvsem.png 1200w,
+/static/312e7ff4f598af92479e37f662e553c2/2cefc/langvsem.png 1400w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>Example of Dynamic Orchestration</h3>
+<p><strong>Without Dynamic Orchestration:</strong></p>
+<pre><code>Customer: "I'm having issues with my product warranty claim."  
+
+Response: "Here's our warranty policy [link]. Please follow the steps mentioned for claims."
+</code></pre>
+<p><strong>With Dynamic Orchestration (LangChain/Semantic Kernel):</strong></p>
+<pre><code>Customer: "I'm having issues with my product warranty claim."
+
+AI System: Analyses the query, identifies the product and customer account from the database, checks the status of the warranty claim.
+
+Response: "We see that your claim for [Product Name] is currently under review. It was submitted on [Date], and the average processing time is [X] days. You'll receive an update by [Estimated Date]."
+</code></pre>
+<h1>Possible Uses of the 3 Tools</h1>
+<h2>Automated Customer Support</h2>
+<p><strong>Scenario</strong>: A company wants to automate its customer support system to handle common inquiries and issues.</p>
+<ul>
+<li>
+<p><strong>Prompt Flow</strong>: The company designs a series of prompts to guide the AI in handling common customer issues, such as password resets or troubleshooting service outages. However, the static nature of prompt flow might limit the AI's ability to handle unexpected or complex queries without manual intervention or reprogramming.</p>
+</li>
+<li>
+<p><strong>LangChain</strong>: By utilising LangChain, the company chains together different tasks like understanding the customer's issue, searching the knowledge base for solutions, and generating human-like responses. LangChain's modularity allows the AI to adapt to a wide range of inquiries by dynamically selecting the appropriate chain of tasks for each situation. This flexibility makes the customer support system more robust and capable of handling complex issues without human intervention.</p>
+</li>
+<li>
+<p><strong>Semantic Kernel</strong>: The company uses SK to build an AI agent that can interact with both the customer and the company's systems. SK's event handling and automatic decision-making capabilities allow the AI to understand the context of customer inquiries, decide the best course of action, and even perform tasks like resetting passwords or initiating service diagnostics. The integration with .NET and support for various LLMs make SK an ideal choice for companies already invested in Microsoft technologies.</p>
+</li>
+</ul>
+<h2>Digital Marketing</h2>
+<p><strong>Scenario</strong>: A digital marketing agency wants to automate the creation of content for various platforms, requiring nuanced tone and style adjustments.</p>
+<ul>
+<li>
+<p><strong>Prompt Flow</strong>: The agency uses a detailed prompt flow to guide the AI in generating content that aligns with different brand voices and marketing goals. However, the need for extensive and detailed prompt flows for each brand voice and style can become labour-intensive.</p>
+</li>
+<li>
+<p><strong>LangChain</strong>: The agency leverages LangChain to chain together tasks for analysing the target audience, generating content ideas, and writing drafts in specified tones and styles. LangChain's ability to integrate different LLM capabilities and plugins allows for more <strong>dynamic content generation</strong>, making it easier to adapt to various brands and marketing strategies without extensive manual input.</p>
+</li>
+<li>
+<p><strong>Semantic Kernel</strong>: By utilising SK, the agency creates an AI agent capable of understanding the nuances of different brand voices and marketing objectives. The Kernel's event handling and Planner's decision-making processes enable the AI to automatically adjust its writing style and content focus based on the brand's guidelines and the campaign's goals. SK's clean prompt implementation and plugin system allow for seamless integration into the agency's existing workflows.</p>
+</li>
+</ul>
+<h1>Summary</h1>
+<p>Each of the three tools, Prompt Flow, LangChain, and Semantic Kernel, offers unique strengths and capabilities for AI development.</p>
+<ul>
+<li>Prompt Flow is good for simple and predictable scenarios due to its static nature.</li>
+<li>LangChain is ideal for dynamic and complex scenarios that require flexibility and integration of multiple tasks or data sources.</li>
+<li>Semantic Kernel excels in applications requiring robust event handling and decision-making capabilities, making it suitable for scenarios that demand integration with existing systems and nuanced control over AI behavior.</li>
+</ul>
+<p>Choosing between Prompt Flow, LangChain, and Semantic Kernel depends on the specific needs and challenges of your project. Whether it's the flexibility and orchestration capabilities of LangChain, the integration and streamlined management offered by Semantic Kernel, or the coherent and controlled environment facilitated by Prompt Flow, each tool has its place in the AI development toolkit.</p>
+<h3>Sources:</h3>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/semantic-kernel/">https://learn.microsoft.com/en-us/semantic-kernel/</a></li>
+<li><a href="https://learn.microsoft.com/en-us/semantic-kernel/overview/?tabs=Csharp">https://learn.microsoft.com/en-us/semantic-kernel/overview/?tabs=Csharp</a></li>
+<li><a href="https://techcommunity.microsoft.com/t5/educator-developer-blog/llm-based-development-tools-promptflow-vs-langchain-vs-semantic/ba-p/4149252#:~:text=Semantic%20Kernel%3A%20an%20open%2Dsource,on%20how%20the%20application%20works">https://techcommunity.microsoft.com/t5/educator-developer-blog/llm-based-development-tools-promptflow-vs-langchain-vs-semantic/ba-p/4149252#:~:text=Semantic%20Kernel%3A%20an%20open%2Dsource,on%20how%20the%20application%20works</a></li>
+<li><a href="https://www.advancinganalytics.co.uk/blog/2024/3/25/comparison-of-prompt-flow-semantic-kernel-and-langchain-for-ai-development">https://www.advancinganalytics.co.uk/blog/2024/3/25/comparison-of-prompt-flow-semantic-kernel-and-langchain-for-ai-development</a></li>
+</ul></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer> </div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/AI/semantic_kernel/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-80e600752cfb72812bbd.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-b60bd6755c9d1eab21a7.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-2e55993143a1bd82a550.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-584072327fef6a59a7d5.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-145eb4aa0da0f636a38b.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-f912a39908a0ccf2e24c.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-189a4b72a09c2bcaca07.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-ce7d63b8df2cda8dde9d.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="0aba7c075f4eb9aadbd1";</script><script src="/webpack-runtime-809e676e8f8306163342.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-80e600752cfb72812bbd.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
