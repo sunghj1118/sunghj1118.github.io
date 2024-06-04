@@ -1,14 +1,41 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import { Helmet } from "react-helmet"
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: #f8f9fa; // Very light grey background
+    color: #212529; // Dark grey text
+    font-family: 'Roboto', sans-serif; // Default font
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; // Headings font
+    color: #212529; // Dark grey color for headings
+  }
+
+  button {
+    font-family: 'Poppins', sans-serif; // Button font
+  }
+
+  a {
+    color: #495057; // Link color
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`
+
 const TagButton = styled.button`
-  background-color: ${props => (props.selected ? '#007BFF' : '#E0E0E0')};
+  background-color: ${props => (props.selected ? '#595f39' : '#e9ecef')}; // Main Tag Button colors
   border: none;
   border-radius: 20px;
-  color: ${props => (props.selected ? '#FFFFFF' : '#333333')};
+  color: ${props => (props.selected ? '#ffffff' : '#212529')}; // Text color
   font-family: 'Poppins', sans-serif;
   font-size: 14px; /* Adjusted size */
   margin: 4px;
@@ -18,13 +45,14 @@ const TagButton = styled.button`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background-color: #007BFF;
-    color: #FFFFFF;
+    background-color: #595f39; // Main Tag Button hover color
+    color: #ffffff;
     transform: scale(1.05);
   }
 `
 
 const SmallTagButton = styled(TagButton)`
+  background-color: ${props => (props.selected ? '#495057' : '#dee2e6')}; // Sub Tag Button colors
   font-size: 12px; /* Smaller size */
   padding: 2px 12px; /* Smaller padding */
 `
@@ -37,7 +65,7 @@ const SubTagContainer = styled.div`
   top: 50px; /* Increased space between the main tag and sub tags */
   left: 50%;
   transform: translateX(-50%);
-  background-color: #f5f5f5;
+  background-color: #e9ecef; // Sub Tag Container color
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -51,7 +79,7 @@ const SubTagContainer = styled.div`
     transform: translateX(-50%);
     border-width: 0 10px 10px 10px;
     border-style: solid;
-    border-color: transparent transparent #f5f5f5 transparent;
+    border-color: transparent transparent #e9ecef transparent; // Triangle color
   }
 `;
 
@@ -74,12 +102,15 @@ const TagWrapper = styled.div`
 const PostContainer = styled.div`
   margin: 20px 0;
   font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa; // Background color for the posts container
+  padding: 20px; // Optional padding for better spacing
+  border-radius: 10px; // Optional border radius for a softer look
 
   h3 {
     font-size: 14px;
     margin: 0;
     a {
-      color: #6200ea;
+      color: #495057; // Link color
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -89,12 +120,12 @@ const PostContainer = styled.div`
 
   p {
     font-size: 12px;
-    color: #666;
+    color: #212529; // Text color
   }
 
   hr {
     border: 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #dee2e6;
     margin: 10px 0;
   }
 `
@@ -123,7 +154,9 @@ const IndexPage = ({ data }) => {
       <Helmet>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
       </Helmet>
+      <GlobalStyle />
       <h2 style={{ textAlign: "center" }}>Tags</h2>
       <TagWrapper>
         {Object.keys(tagsWithSubTags).map(tag => (
