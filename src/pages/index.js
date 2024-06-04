@@ -4,6 +4,11 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 import { Helmet } from "react-helmet"
 
+const Title = styled.h2`
+  text-align: center;
+  font-family: 'Roboto', sans-serif; // Ensure the font is consistent
+`;
+
 const TagContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -13,7 +18,7 @@ const TagContainer = styled.div`
 
 const MainTagContainer = styled.div`
   position: relative;
-  margin: 4px;
+  margin: 8px;
 `;
 
 const TagButton = styled.button`
@@ -53,6 +58,7 @@ const SubTagContainer = styled.div`
 const SmallTagButton = styled(TagButton)`
   font-size: 12px; /* Smaller size */
   padding: 2px 12px; /* Smaller padding */
+  margin: 4px; /* Added margin for spacing */
 `
 
 const PostContainer = styled.div`
@@ -117,7 +123,7 @@ const IndexPage = ({ data }) => {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
       </Helmet>
-      <h2>Tags</h2>
+      <Title>Tags</Title>
       <TagContainer>
         {Object.keys(mainTags).map(mainTag => (
           <MainTagContainer
