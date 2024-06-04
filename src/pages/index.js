@@ -4,23 +4,6 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 import { Helmet } from "react-helmet"
 
-const Title = styled.h2`
-  text-align: center;
-  font-family: 'Roboto', sans-serif; // Ensure the font is consistent
-`;
-
-const TagContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-`;
-
-const MainTagContainer = styled.div`
-  position: relative;
-  margin: 8px;
-`;
-
 const TagButton = styled.button`
   background-color: ${props => (props.selected ? '#007BFF' : '#E0E0E0')};
   border: none;
@@ -28,6 +11,7 @@ const TagButton = styled.button`
   color: ${props => (props.selected ? '#FFFFFF' : '#333333')};
   font-family: 'Poppins', sans-serif;
   font-size: 14px; /* Adjusted size */
+  margin: 4px;
   padding: 6px 16px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
@@ -40,12 +24,17 @@ const TagButton = styled.button`
   }
 `
 
+const SmallTagButton = styled(TagButton)`
+  font-size: 12px; /* Smaller size */
+  padding: 2px 12px; /* Smaller padding */
+`
+
 const SubTagContainer = styled.div`
-  display: ${props => (props.visible ? 'flex' : 'none')};
+  display: none;
   justify-content: center;
   flex-wrap: nowrap;
   position: absolute;
-  top: 100%; /* Position below the main tag */
+  top: 50px; /* Increased space between the main tag and sub tags */
   left: 50%;
   transform: translateX(-50%);
   background-color: #f5f5f5;
@@ -53,13 +42,34 @@ const SubTagContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Position the triangle */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #f5f5f5 transparent;
+  }
 `;
 
-const SmallTagButton = styled(TagButton)`
-  font-size: 12px; /* Smaller size */
-  padding: 2px 12px; /* Smaller padding */
-  margin: 4px; /* Added margin for spacing */
-`
+const MainTagContainer = styled.div`
+  position: relative;
+  margin: 8px;
+
+  &:hover ${SubTagContainer}, ${SubTagContainer}:hover {
+    display: flex;
+  }
+`;
+
+const TagWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+`;
 
 const PostContainer = styled.div`
   margin: 20px 0;
@@ -91,7 +101,6 @@ const PostContainer = styled.div`
 
 const IndexPage = ({ data }) => {
   const [selectedTags, setSelectedTags] = useState([])
-  const [visibleSubTags, setVisibleSubTags] = useState('')
 
   const toggleTag = tag => {
     setSelectedTags(prevTags =>
@@ -99,19 +108,11 @@ const IndexPage = ({ data }) => {
     )
   }
 
-  const handleMouseEnter = mainTag => {
-    setVisibleSubTags(mainTag)
-  }
-
-  const handleMouseLeave = () => {
-    setVisibleSubTags('')
-  }
-
   const posts = data.allMarkdownRemark.edges.filter(({ node }) =>
     selectedTags.length === 0 || selectedTags.every(tag => node.frontmatter.tags.includes(tag))
   )
 
-  const mainTags = {
+  const tagsWithSubTags = {
     Blog: ['Gatsby', 'NPM'],
     Infra: ['Kubernetes', 'Docker', 'Container'],
     AI: []
@@ -123,34 +124,32 @@ const IndexPage = ({ data }) => {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
       </Helmet>
-      <Title>Tags</Title>
-      <TagContainer>
-        {Object.keys(mainTags).map(mainTag => (
-          <MainTagContainer
-            key={mainTag}
-            onMouseEnter={() => handleMouseEnter(mainTag)}
-            onMouseLeave={handleMouseLeave}
-          >
+      <h2 style={{ textAlign: "center" }}>Tags</h2>
+      <TagWrapper>
+        {Object.keys(tagsWithSubTags).map(tag => (
+          <MainTagContainer key={tag}>
             <TagButton
-              onClick={() => toggleTag(mainTag)}
-              selected={selectedTags.includes(mainTag)}
+              onClick={() => toggleTag(tag)}
+              selected={selectedTags.includes(tag)}
             >
-              {mainTag}
+              {tag} ({data.tags.group.find(t => t.fieldValue === tag)?.totalCount || 0})
             </TagButton>
-            <SubTagContainer visible={visibleSubTags === mainTag}>
-              {mainTags[mainTag].map(subTag => (
-                <SmallTagButton
-                  key={subTag}
-                  onClick={() => toggleTag(subTag)}
-                  selected={selectedTags.includes(subTag)}
-                >
-                  {subTag}
-                </SmallTagButton>
-              ))}
-            </SubTagContainer>
+            {tagsWithSubTags[tag].length > 0 && (
+              <SubTagContainer>
+                {tagsWithSubTags[tag].map(subTag => (
+                  <TagButton
+                    key={subTag}
+                    onClick={() => toggleTag(subTag)}
+                    selected={selectedTags.includes(subTag)}
+                  >
+                    {subTag}
+                  </TagButton>
+                ))}
+              </SubTagContainer>
+            )}
           </MainTagContainer>
         ))}
-      </TagContainer>
+      </TagWrapper>
       <h2>Posts</h2>
       <PostContainer>
         {posts.map(({ node }) => (
