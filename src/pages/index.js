@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const TagButton = styled.button`
-  background-color: ${props => (props.selected ? '#6c757d' : '#e9ecef')}; // Main Tag Button colors
+  background-color: ${props => (props.selected ? '#595f39' : '#e9ecef')}; // Main Tag Button colors
   border: none;
   border-radius: 20px;
   color: ${props => (props.selected ? '#ffffff' : '#212529')}; // Text color
@@ -45,7 +45,7 @@ const TagButton = styled.button`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background-color: #6c757d; // Main Tag Button hover color
+    background-color: #595f39; // Main Tag Button hover color
     color: #ffffff;
     transform: scale(1.05);
   }
