@@ -43,7 +43,7 @@ const TagButton = styled.button`
 const SubTagContainer = styled.div`
   display: ${props => (props.visible ? 'flex' : 'none')};
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   position: absolute;
   top: 100%; /* Position below the main tag */
   left: 50%;
