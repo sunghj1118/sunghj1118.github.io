@@ -2,7 +2,7 @@
 title: "[DP][LIS] Largest Sum of Longest Increasing Subsequence"
 date: "2024-05-18"
 description: "Largest Sum of Longest Increasing Subsequence는 DP LIS의 한 유형으로, 주어진 배열에서 증가하는 부분 수열의 합 중 가장 큰 합을 찾는 문제 유형이다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "DP"]
 ---
 Largest Sum of Longest Increasing Subsequence는 DP LIS의 한 유형으로, 주어진 배열에서 증가하는 부분 수열의 합 중 **가장 큰 합**을 찾는 문제 유형이다.
 
@@ -10,7 +10,7 @@ Largest Sum of Longest Increasing Subsequence는 DP LIS의 한 유형으로, 주
 
 예를 들어, 백준 11055 문제를 살펴보자.
 
-![11503](../../images/LIS/11503.png)
+![11503](../../../images/LIS/11503.png)
 
 긴 부분 수열들 중 합이 가장 큰 경우를 찾는 문제다. 이 문제를 풀기 위해서는 LIS를 활용해야 한다.
 
@@ -25,7 +25,7 @@ Largest Sum of Longest Increasing Subsequence는 DP LIS의 한 유형으로, 주
 
 일단 기본적인 LIS를 구현하고 아이디어를 생각해봤다.
 
-![basic](../../images/LIS-sum/idea.png)
+![basic](../../../images/LIS-sum/idea.png)
 
 ---
 
@@ -68,8 +68,8 @@ print(sumLIS(n, seq))
 
 ```
 
-![sol](../../images/LIS-sum/sol.png)
-![solved](../../images/LIS-sum/solved.png)
+![sol](../../../images/LIS-sum/sol.png)
+![solved](../../../images/LIS-sum/solved.png)
 
 ## Topics
 - DP
