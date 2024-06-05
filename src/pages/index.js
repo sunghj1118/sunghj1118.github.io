@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import styled, { createGlobalStyle } from "styled-components";
@@ -99,6 +99,23 @@ const TagWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
+const SelectedTagsWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+`;
+
+const SelectedTagsTitle = styled.h3`
+  font-size: 16px;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif; // Headings font
+  color: #212529; // Dark grey color for headings
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+`;
+
 const PostContainer = styled.div`
   margin: 20px 0;
   font-family: 'Roboto', sans-serif;
@@ -130,22 +147,103 @@ const PostContainer = styled.div`
   }
 `;
 
+const PaginationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+`;
+
+const PaginationButton = styled.button`
+  background-color: ${props => (props.active ? '#495057' : '#e9ecef')};
+  border: none;
+  border-radius: 5px;
+  color: ${props => (props.active ? '#ffffff' : '#212529')};
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  margin: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #495057;
+    color: #ffffff;
+  }
+`;
+
+const FixedTagWrapper = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: ${props => (props.visible ? 'none' : 'flex')};
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  button {
+    font-size: 12px; /* Smaller size */
+    padding: 4px 8px; /* Smaller padding */
+    margin: 2px 0;
+    width: 100%; /* Make all buttons the same width */
+  }
+`;
+
+const FixedTagTitle = styled.h3`
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: #212529;
+  margin-bottom: 10px;
+`;
+
 const IndexPage = ({ data }) => {
   const [selectedTags, setSelectedTags] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [showFixedTags, setShowFixedTags] = useState(false);
+
+  const POSTS_PER_PAGE = 15;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowFixedTags(window.scrollY > 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleTag = tag => {
     setSelectedTags(prevTags =>
       prevTags.includes(tag) ? prevTags.filter(t => t !== tag) : [...prevTags, tag]
     );
+    setCurrentPage(1); // Reset to first page on tag change
   };
 
-  const posts = data.allMarkdownRemark.edges.filter(({ node }) =>
+  const filteredPosts = data.allMarkdownRemark.edges.filter(({ node }) =>
     selectedTags.length === 0 || selectedTags.every(tag => node.frontmatter.tags.includes(tag))
   );
+
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+  const paginatedPosts = filteredPosts.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
+
+  const handlePageChange = pageNumber => {
+    setCurrentPage(pageNumber);
+  };
 
   const tagsWithSubTags = {
     Blog: ['Gatsby', 'NPM'],
     Infra: ['Kubernetes', 'Docker', 'Container'],
+    Algorithm: ['DP'],
     AI: []
   };
 
@@ -183,9 +281,25 @@ const IndexPage = ({ data }) => {
           </MainTagContainer>
         ))}
       </TagWrapper>
+      {selectedTags.length > 0 && (
+        <>
+          <SelectedTagsTitle>Selected Tags</SelectedTagsTitle>
+          <SelectedTagsWrapper>
+            {selectedTags.map(tag => (
+              <SmallTagButton
+                key={tag}
+                onClick={() => toggleTag(tag)}
+                selected={true}
+              >
+                {tag}
+              </SmallTagButton>
+            ))}
+          </SelectedTagsWrapper>
+        </>
+      )}
       <h2>Posts</h2>
       <PostContainer>
-        {posts.map(({ node }) => (
+        {paginatedPosts.map(({ node }) => (
           <div key={node.id}>
             <h3>
               <a href={node.fields.slug}>{node.frontmatter.title}</a>
@@ -207,6 +321,29 @@ const IndexPage = ({ data }) => {
           </div>
         ))}
       </PostContainer>
+      <PaginationWrapper>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <PaginationButton
+            key={index + 1}
+            active={index + 1 === currentPage}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </PaginationButton>
+        ))}
+      </PaginationWrapper>
+      <FixedTagWrapper visible={!showFixedTags}>
+        <FixedTagTitle>Tags</FixedTagTitle>
+        {Object.keys(tagsWithSubTags).map(tag => (
+          <TagButton
+            key={tag}
+            onClick={() => toggleTag(tag)}
+            selected={selectedTags.includes(tag)}
+          >
+            {tag}
+          </TagButton>
+        ))}
+      </FixedTagWrapper>
     </Layout>
   );
 };

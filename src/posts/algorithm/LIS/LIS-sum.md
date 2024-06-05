@@ -2,7 +2,7 @@
 title: "[DP][LIS] Largest Sum of Longest Increasing Subsequence"
 date: "2024-05-18"
 description: "Largest Sum of Longest Increasing Subsequence는 DP LIS의 한 유형으로, 주어진 배열에서 증가하는 부분 수열의 합 중 가장 큰 합을 찾는 문제 유형이다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "DP"]
 ---
 Largest Sum of Longest Increasing Subsequence는 DP LIS의 한 유형으로, 주어진 배열에서 증가하는 부분 수열의 합 중 **가장 큰 합**을 찾는 문제 유형이다.
 

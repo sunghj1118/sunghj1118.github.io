@@ -2,7 +2,7 @@
 title: "[DP][LIS] Longest Bitonic Subsequence"
 date: "2024-05-17"
 description: "Longest Bitonic Subsequence는 LIS를 활용한 DP문제로, 주어진 배열에서 가장 긴 바이토닉 수열을 찾는 문제다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "DP"]
 ---
 Longest Bitonic Subsequence는 LIS를 활용한 DP문제로, 주어진 배열에서 가장 긴 바이토닉 수열을 찾는 문제다.
 ---

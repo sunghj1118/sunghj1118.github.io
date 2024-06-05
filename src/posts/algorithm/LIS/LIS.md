@@ -2,7 +2,7 @@
 title: "[DP][LIS] Longest Increasing Subsequence"
 date: "2024-05-17"
 description: "Longest Increasing Subsequence는 DP의 한 유형으로, 주어진 배열에서 가장 긴 증가하는 부분 수열을 찾는 문제 유형이다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "DP"]
 ---
 Longest Increasing Subsequence는 DP의 한 유형으로, 주어진 배열에서 **가장 긴 증가하는 부분 수열**을 찾는 문제 유형이다.
 
