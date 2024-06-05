@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import styled, { createGlobalStyle } from "styled-components";
@@ -171,11 +171,53 @@ const PaginationButton = styled.button`
   }
 `;
 
+const FixedTagWrapper = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: ${props => (props.visible ? 'none' : 'flex')};
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  button {
+    font-size: 12px; /* Smaller size */
+    padding: 4px 8px; /* Smaller padding */
+    margin: 2px 0;
+    width: 100%; /* Make all buttons the same width */
+  }
+`;
+
+const FixedTagTitle = styled.h3`
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: #212529;
+  margin-bottom: 10px;
+`;
+
 const IndexPage = ({ data }) => {
   const [selectedTags, setSelectedTags] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showFixedTags, setShowFixedTags] = useState(false);
 
   const POSTS_PER_PAGE = 15;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowFixedTags(window.scrollY > 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleTag = tag => {
     setSelectedTags(prevTags =>
@@ -201,6 +243,7 @@ const IndexPage = ({ data }) => {
   const tagsWithSubTags = {
     Blog: ['Gatsby', 'NPM'],
     Infra: ['Kubernetes', 'Docker', 'Container'],
+    Algorithm: ['DP'],
     AI: []
   };
 
@@ -289,6 +332,18 @@ const IndexPage = ({ data }) => {
           </PaginationButton>
         ))}
       </PaginationWrapper>
+      <FixedTagWrapper visible={!showFixedTags}>
+        <FixedTagTitle>Tags</FixedTagTitle>
+        {Object.keys(tagsWithSubTags).map(tag => (
+          <TagButton
+            key={tag}
+            onClick={() => toggleTag(tag)}
+            selected={selectedTags.includes(tag)}
+          >
+            {tag}
+          </TagButton>
+        ))}
+      </FixedTagWrapper>
     </Layout>
   );
 };
