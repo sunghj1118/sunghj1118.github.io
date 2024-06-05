@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import styled, { createGlobalStyle } from "styled-components"
-import { Helmet } from "react-helmet"
+import React, { useState } from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import styled, { createGlobalStyle } from "styled-components";
+import { Helmet } from "react-helmet";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: underline;
     }
   }
-`
+`;
 
 const TagButton = styled.button`
   background-color: ${props => (props.selected ? '#595f39' : '#e9ecef')}; // Main Tag Button colors
@@ -49,13 +49,13 @@ const TagButton = styled.button`
     color: #ffffff;
     transform: scale(1.05);
   }
-`
+`;
 
 const SmallTagButton = styled(TagButton)`
   background-color: ${props => (props.selected ? '#495057' : '#dee2e6')}; // Sub Tag Button colors
   font-size: 12px; /* Smaller size */
   padding: 2px 12px; /* Smaller padding */
-`
+`;
 
 const SubTagContainer = styled.div`
   display: none;
@@ -128,26 +128,26 @@ const PostContainer = styled.div`
     border-top: 1px solid #dee2e6;
     margin: 10px 0;
   }
-`
+`;
 
 const IndexPage = ({ data }) => {
-  const [selectedTags, setSelectedTags] = useState([])
+  const [selectedTags, setSelectedTags] = useState([]);
 
   const toggleTag = tag => {
     setSelectedTags(prevTags =>
       prevTags.includes(tag) ? prevTags.filter(t => t !== tag) : [...prevTags, tag]
-    )
-  }
+    );
+  };
 
   const posts = data.allMarkdownRemark.edges.filter(({ node }) =>
     selectedTags.length === 0 || selectedTags.every(tag => node.frontmatter.tags.includes(tag))
-  )
+  );
 
   const tagsWithSubTags = {
     Blog: ['Gatsby', 'NPM'],
     Infra: ['Kubernetes', 'Docker', 'Container'],
     AI: []
-  }
+  };
 
   return (
     <Layout>
@@ -194,7 +194,11 @@ const IndexPage = ({ data }) => {
             <p>{node.excerpt}</p>
             <div>
               {node.frontmatter.tags.map(tag => (
-                <SmallTagButton key={tag} onClick={() => toggleTag(tag)}>
+                <SmallTagButton
+                  key={tag}
+                  onClick={() => toggleTag(tag)}
+                  selected={selectedTags.includes(tag)}
+                >
                   {tag}
                 </SmallTagButton>
               ))}
@@ -204,8 +208,8 @@ const IndexPage = ({ data }) => {
         ))}
       </PostContainer>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -232,6 +236,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;
