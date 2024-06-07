@@ -244,6 +244,7 @@ const IndexPage = ({ data }) => {
     Blog: ['Gatsby', 'NPM', 'Github'],
     Infra: ['Kubernetes', 'Docker', 'Container'],
     Algorithm: ['DP', 'Sort', 'Log'],
+    CS: ['Architecture'],
     AI: []
   };
 
