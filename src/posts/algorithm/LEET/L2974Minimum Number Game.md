@@ -2,7 +2,7 @@
 title: "2974. Minimum Number Game"
 date: "2024-06-07"
 description: "Divide Array in Sets of K Consecutive Numbers는 Greedy 문제로, 주어진 배열을 K개의 연속된 숫자로 나눌 수 있는지 판별하는 문제다."
-tags: ["Algorithm", "Sort"]
+tags: ["Algorithm", "Heap"]
 ---
 
 ## 문제 설명
