@@ -14,11 +14,58 @@ data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
 data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
 </style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">523. Continuous Subarray Sum</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">June 08, 2024</p><div><h2>문제 설명</h2>
 <p>주어진 배열에서 연속된 부분배열의 합이 k의 배수인지 확인하는 문제다.</p>
-<p><img src="../../../images/LEET/523/523.png" alt="523"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 85%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAABh0lEQVR42p2U646CMBCFef8HJEaM/DCiclFQCsht1m/MJJXsJrhNJlNKezrnnIHgcDjIfr+XKIpku91KHMcShqHsdjvZbDZyvV6FMc+zrBlB31XS1rlkWaGHkyR5zXPp+16GYZBpmj5iHEeNeeZ51LUPwKoqJb1c5PIKALMs07jdbvJ4PMS5Rura6bwoCknTVHPTNHK/33V9AVjJ8ZjI+XzWjXme66blzVD+Kz4Au66TsiwVjCoBbNtWns+nBnMorh0B1KDIQWiQnXMvmrVmqkXP1YAcxGmq5LBl9KH6b0cALcwAgAxldEUCqid4xxoGte1bIuQhE77eAXQA9cX1BWfz0gRroV9NoQJ6D2A2Wf9hxNLpVZTRiy+F/jIjMIdAQ6rnErvI3Le1pWEB+qAHAPZlUJ1tXgPo09bGBpAXANE2Nv83ZX4Ep9NJneQZ6n5f+mEykC2sYhhoH9LY77Zw+tI0tCa3Rrdvl+o5bCC+ieoyjc1NppG/6WvKVIHD3Ayo/Z6s174F/AGwSi+8GcxNAQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="523"
+        title=""
+        src="/static/ec228f9541ccc63a91f5af43b490b7f3/5a190/523.png"
+        srcset="/static/ec228f9541ccc63a91f5af43b490b7f3/772e8/523.png 200w,
+/static/ec228f9541ccc63a91f5af43b490b7f3/e17e5/523.png 400w,
+/static/ec228f9541ccc63a91f5af43b490b7f3/5a190/523.png 800w,
+/static/ec228f9541ccc63a91f5af43b490b7f3/c1b63/523.png 1200w,
+/static/ec228f9541ccc63a91f5af43b490b7f3/a8a6f/523.png 1516w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h2>1차 시도</h2>
 <p>처음 보자마자 뭔가 DP 문제 같다. 두가지 가능성을 고려해야되는데, 처음부터 끝까지 다 더했을때 k의 배수인지, 중간에 있는 부분배열의 합이 k의 배수인지 확인해야한다. 그런데, 배수는 오히려 숫자가 올라가면서 생길 수 있는것이기 때문에 어떻게 접근해야 할지 조금 고민이다.</p>
 <p>뭔가 두개의 포인터를 사용해서 풀어야 할 것 같은데, 어느 지점에서 앞에 있는 포인터를 줄여야 할지 모르겠다. 일단 안 줄이고 끝까지 가보고, 끝까지 다 사이클을 했는데도 불구하고 없다면 하나를 줄이고 다시 시작해보는 방법을 사용해보자. 시간복잡도가 박살날것 같긴 하지만 일단 해보자.</p>
-<p><img src="../../../images/LEET/523/tc.png" alt="tc"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 33.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAzklEQVR42o2QjY7EIAiE+/6Penvb+ldFUOdAs9lNtpfU5AtKcIDZXHLI54mcC4gqSrFIyBq992jS0NrCh4AYE0RzY4xJ7/1N69iK0CywRGVGrRVXxz6z1oUk+D1+4OKuRISslIRIGbWxChYCsyg8JzTWe+Ved1GqiDYeCDr50z9whB1JxTJnnAqboK2wViVQWfGKWVN5bsIa9/0J5w8UKpChDZug9YZtdpd7ZBUaOiFTR3LmtXxZs5lndwVtOjs6jHp6abUJ8m3B8anyj+Af/pUlppt1DBsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/314cc1f04cf8b719017bf2ff2e49c21a/5a190/tc.png"
+        srcset="/static/314cc1f04cf8b719017bf2ff2e49c21a/772e8/tc.png 200w,
+/static/314cc1f04cf8b719017bf2ff2e49c21a/e17e5/tc.png 400w,
+/static/314cc1f04cf8b719017bf2ff2e49c21a/5a190/tc.png 800w,
+/static/314cc1f04cf8b719017bf2ff2e49c21a/c1b63/tc.png 1200w,
+/static/314cc1f04cf8b719017bf2ff2e49c21a/29007/tc.png 1600w,
+/static/314cc1f04cf8b719017bf2ff2e49c21a/66900/tc.png 2630w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <p>일단 이렇게 하면 테케는 다 통과하긴 하는데 시간이 좀 느릴 것 같다. 계산해보자.</p>
 <h3>시간복잡도</h3>
 <ul>
@@ -35,61 +82,118 @@ data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*
 <p>배열의 길이 N이 10^5까지 가능하므로, O(N^2)은 너무 느릴 것 같다. 최대 N^2이 10^10이므로, 10억이 넘어가는 숫자이다. 이렇게 큰 숫자를 계산하는 것은 불가능하다.</p>
 <p>더 최적화된 방법을 찾아보자.</p>
 <h3>제출시도:</h3>
-<p><img src="../../../images/LEET/523/x1.png" alt="x1"></p>
-<p>역시 시간제한에 걸린다.</p>
-<h2>2차 시도</h2>
-<h2>Hashmap</h2>
-<p>보니까 힌트에 hashmap을 사용하라고 나와있다. hashmap을 사용하면 O(1)에 접근이 가능하므로, 시간복잡도를 줄일 수 있을 것 같다. hashmap을 사용해서 누적합을 저장하고, k의 배수인지 확인하면 될 것 같다.</p>
-<h2>풀이 및 해설</h2>
-<p>위 방안에서 정렬을 해주니 해결되었다. 정렬을 해주면 가장 짧은 단어부터 비교하게 되므로, 가장 먼저 발견되는 단어가 가장 짧은 단어가 된다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 41%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABAUlEQVR42o2S23LDIAxE/f+/mXbs+BpjcxEIthKpG7fjzBTPeRGw2hVuFrti9w7MjHeryBd8hHlYJI4oRWq51Du56O5rNRQISowJKV3DnBCIsRqPcerQ9p/olxE+eGnA0uAl2WzbBiMQqWi8REVDTNXRPM+431vovXKRplmWBftuq0OieInuecV5dEOHxT7AmStnd1UwSNxnNH6LOnOSIMvc9nXHMPYwzoBYaiX/FvQ+VAcHZ1cH2tBKY3VjrMGHzHBeZ1AMVTRwQEihijd66CDn/C0Wca4XOWi9JJHHGecBt/aGyUywZEGJfuJXQfxjqaiTRpwynDxGjFR/HxX4O8MvQLFz8Y1sk/MAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    style="padding-bottom: 27.500000000000004%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA/klEQVR42l1R267DIAzr/39d1z73spcjdVq7UijhEvACOp20IUXGoDjGNLS/kJRCVjvAjN8VI8P7gJSS7AOs9djUCevOyn2McMELhlpNDAHBWiTvkaUp5/xVRcg5J7NYeJKmBGMIj+cfnq8F677DiLgmAy3YbNuGYRgw3+8Vp2nCPM8Yx7FivRMMMrgMKI4SJ2grAvaAIQ2KBM++YrMsC9q2Rdd1uN1u6Pv+s7+qcCKqgvQvTKfFuj6gDgVyhCTuOTOa8hytNY5DphkDJXkW19fZhUmezOLMOl8dBmKcykmmLFnGT0RNmVyaSlZXlbx++ZUnixMxIoKFQ86/P/ENdNrOkeZKNecAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
-        alt="ans"
+        alt="x1"
         title=""
-        src="/static/cd0a26bf26338e86b0305e37e2b0b6f4/5a190/2500.png"
-        srcset="/static/cd0a26bf26338e86b0305e37e2b0b6f4/772e8/2500.png 200w,
-/static/cd0a26bf26338e86b0305e37e2b0b6f4/e17e5/2500.png 400w,
-/static/cd0a26bf26338e86b0305e37e2b0b6f4/5a190/2500.png 800w,
-/static/cd0a26bf26338e86b0305e37e2b0b6f4/c1b63/2500.png 1200w,
-/static/cd0a26bf26338e86b0305e37e2b0b6f4/29007/2500.png 1600w,
-/static/cd0a26bf26338e86b0305e37e2b0b6f4/fb371/2500.png 2512w"
+        src="/static/8ffd4284a5bbbd42c57492b8cbebde7b/5a190/x1.png"
+        srcset="/static/8ffd4284a5bbbd42c57492b8cbebde7b/772e8/x1.png 200w,
+/static/8ffd4284a5bbbd42c57492b8cbebde7b/e17e5/x1.png 400w,
+/static/8ffd4284a5bbbd42c57492b8cbebde7b/5a190/x1.png 800w,
+/static/8ffd4284a5bbbd42c57492b8cbebde7b/c1b63/x1.png 1200w,
+/static/8ffd4284a5bbbd42c57492b8cbebde7b/29007/x1.png 1600w,
+/static/8ffd4284a5bbbd42c57492b8cbebde7b/196e0/x1.png 2626w"
         sizes="(max-width: 800px) 100vw, 800px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
       />
     </span></p>
+<p>역시 시간제한에 걸린다.</p>
+<h2>2차 시도</h2>
+<h2>Hashmap</h2>
+<p>보니까 힌트에 hashmap을 사용하라고 나와있다. hashmap을 사용하면 O(1)에 접근이 가능하므로, 시간복잡도를 줄일 수 있을 것 같다. hashmap을 사용해서 누적합을 저장하고, k의 배수인지 확인하면 될 것 같다.</p>
+<h2>풀이 및 해설</h2>
+<p>해시맵을 사용해서 풀어봤다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABHElEQVR42n2RjW6DMAyEef/37KCUEgj5sZ2Em52JTd2qIX0i4OR85wxLdIiUUEpBa63z7qm1IkSG2w+kpBAjM4GEwUX6OdszpJghIv3DRA1b/6bX6ollXTAuH3BxQ+KMJBm5EGqrvfFwHAFGzvQvxKyCTV0GjI8bZjfBJ492viYaSK1/Obgob2FNwVondbWsd6z+iaCCWdKroHMO27YjxoQQIqzBO7LCUhVWdw/c1KWLKzx5SJUfwWmaME1zF913r6KpR0zpFRMkKTgtto5ovM+4P2fsYUc9a49+nicGc+X90d1d8zK3f1yygOzClFUvZp5H+GPT6E6jB60RSisYTOCan6gDg/Xwtf7+Z2+dNZPg0IaJQp8fF+7OrsifeHJv4KHCeuQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="hm"
+        title=""
+        src="/static/7df370c82124995eba96541989a1e88c/5a190/hm.png"
+        srcset="/static/7df370c82124995eba96541989a1e88c/772e8/hm.png 200w,
+/static/7df370c82124995eba96541989a1e88c/e17e5/hm.png 400w,
+/static/7df370c82124995eba96541989a1e88c/5a190/hm.png 800w,
+/static/7df370c82124995eba96541989a1e88c/c1b63/hm.png 1200w,
+/static/7df370c82124995eba96541989a1e88c/29007/hm.png 1600w,
+/static/7df370c82124995eba96541989a1e88c/20f38/hm.png 2818w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<ul>
+<li>해당 풀이는 dictionary를 우선 선언한다.</li>
+<li>이후, 누적합을 저장할 변수를 선언하고, nums의 각 요소를 순회하면서 누적합을 계산한다.</li>
+<li>누적합을 k로 나눈 나머지를 구한다.</li>
+</ul>
+<p><strong>핵심</strong></p>
+<ul>
+<li>해당 누적합이 해시맵에 존재하지 않다면 추가한다.</li>
+<li>만약 존재할 시, 이건 k에 대한 배수가 된다는 뜻이다. 왜?
+<ul>
+<li>이미 한번 나눈 나머지가 존재한다는 뜻은 i번째 요소와 j번째 요소 사이의 누적합이 k의 배수라는 뜻이다.</li>
+<li>0부터 i까지의 누적합은 prefix_sum[i]이고, 0부터 j까지의 누적합은 prefix_sum[j]이다.</li>
+<li>k로 나눈 나머지가 같다는 것은 prefix_sum[i]와 prefix_sum[j]의 차이가 k의 배수라는 뜻이다.</li>
+</ul>
+</li>
+</ul>
+<h3>예시:</h3>
+<p>[23,2,4], k=6</p>
+<p><strong>Prefix Sums:</strong></p>
+<p>Index 0: 23 (prefix sum: 23)<br>
+Index 1: 23 + 2 = 25 (prefix sum: 25)<br>
+Index 2: 23 + 2 + 4 = 29 (prefix sum: 29)</p>
+<p><strong>Remainders:</strong></p>
+<p>Index 0: 23 % 6 = 5<br>
+Index 1: 25 % 6 = 1<br>
+Index 2: 29 % 6 = 5</p>
+<p>이때, i와 j의 나머지가 둘 다 5다. 이때, 그러면 j의 누적합으로부터 i의 누적합을 빼면 29-23=6이다. 이때, 6은 k의 배수이므로, 이는 k의 배수가 된다.</p>
 <h2>풀이</h2>
 <pre><code class="language-python">class Solution:
-    def replaceWords(self, dictionary: List[str], sentence: str) -> str:
-        words = sentence.split()
-        arr = []
-        dictionary = sorted(dictionary)
+    def checkSubarraySum(self, nums: List[int], k: int) -> bool:        
+        # initialize dictionary
+        remainder_map = {0:-1} # start with a remainder 0 at index -1
+        prefix_sum = 0
 
-        for word in words:
-            root_found = False
-            for root in dictionary:
-                if root == word[:len(root)]:
-                    print("comparing: ", root, word[:len(root)])
-                    root_found = True
-                    index = word.find(root)
-                    result = word[:index + len(root)]
-                    arr.append(result)
-                    break
-            if not root_found:
-                arr.append(word)
+        # iterate through the nums array
+        for i, num in enumerate(nums):
+            # update the sum with the current num
+            prefix_sum += num
+            print("sum is", prefix_sum, "\n")
+
+            # compute the remainder of the sum with k
+            rem = prefix_sum%k
+
+            # check if this remainder has been seen before
+            if rem in remainder_map:
+                # ensure the subarray length is at least 2
+                if (i - remainder_map[rem] > 1):
+                    print(i, num, rem, remainder_map)
+                    return True
+            else:
+                # store the remainder with the current index if not seen before
+                remainder_map[rem] = i
+                print("remainder map is:", remainder_map, rem)
         
-        string = " ".join(arr)
-        
-        return string
+        # return false if no good subarray is found
+        return False
 </code></pre>
 <h2>Complexity Analysis</h2>
 <p><span
@@ -98,64 +202,52 @@ data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 63.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABgUlEQVR42pVT2U7CQBTth2iM0r3THboYoCwVSXzA8Eii8BH+jfFbjzlDbtNCQvTh9J505p67jpGuS6hpCt/34XkeXNfVVrht2wM4joP5fI7X7Razaorsa4vVzwmr7xP89xLG+qVFlmeI4xhJkiCKoo4rpWBZ1pUgz/I8RxLGCN4KxJ8N4o8G7nMEg86z6QxVXemLaZoOQMcgCHQFtBQ0TfMMy4T1MIJ59wjz/gn2yILRti0OhwMWiwXKskRVVQPUdY0wDHWwyWSihQdZO0MYy+US+/0em80GTdPo/lCclgIMolQAFSskaQI7sOF6rhYW9FtiMDpLYb9o+xAHPRzn3D8B/wnknxbkhyVwqsIvcTnpWzAkAocjDe9n8h90gsyOgpzq8Xi8WpNbAlcZ8kPB8XisB7Db7brFlv79BYMM+wOhsLwaroo4cHh04plwGeagZJKiKPS+UYycVlbmkvOcnAtPTpATDKxL5kWCGfGyvBhelt5SlDzLso5ThH7kfLJM7hce6I6uLcZyJwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    style="padding-bottom: 57.50000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABP0lEQVR42pWSW26DMBBFs+oupcou2o1U+elX+0VUVUkExIABv/At18pELgFVHWk049fxnbF3WmtcW4XRG/zXQgwwk4OfI805hx2Ts65Q1N+w1qZJOvMQwgOk7wecThfUV4X95yueDs/Yf7wgxpjWE9BZB91pDOOQQOLee0zTlDaLc8wLuaZch8q2aKxGvF2YgMMwoCiOqKsK1hiM45ic833fJwBzXrJqMd7TBFS6wdv7AcfyC2c1l1PVKMsSSqk7kHnbtkkZW8EoZcYl0AcPY2dlzsDMzhZIP/OyGZctWAXmi7nJ4b/sAbh2M5WxXDP3NFey5ZsK2aumadKjdF0H/lPm7NuW2lWgHCCAQCoztxfnCzMu+5o/zC8gjQdYIl1ywqmSQPlCjJyXKOo3gbKZX4QwquWcONc4z/0cs4oc+AOi/Kv+Rt1M3QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
   <img
         class="gatsby-resp-image-image"
         alt="tc"
         title=""
-        src="/static/4a72b6015c5162e065183f6390d73426/5a190/tc.png"
-        srcset="/static/4a72b6015c5162e065183f6390d73426/772e8/tc.png 200w,
-/static/4a72b6015c5162e065183f6390d73426/e17e5/tc.png 400w,
-/static/4a72b6015c5162e065183f6390d73426/5a190/tc.png 800w,
-/static/4a72b6015c5162e065183f6390d73426/c1b63/tc.png 1200w,
-/static/4a72b6015c5162e065183f6390d73426/afa26/tc.png 1258w"
+        src="/static/97418b4d536c5f8099e32e0ec5fa0b3e/5a190/success.png"
+        srcset="/static/97418b4d536c5f8099e32e0ec5fa0b3e/772e8/success.png 200w,
+/static/97418b4d536c5f8099e32e0ec5fa0b3e/e17e5/success.png 400w,
+/static/97418b4d536c5f8099e32e0ec5fa0b3e/5a190/success.png 800w,
+/static/97418b4d536c5f8099e32e0ec5fa0b3e/c1b63/success.png 1200w,
+/static/97418b4d536c5f8099e32e0ec5fa0b3e/68638/success.png 1510w"
         sizes="(max-width: 800px) 100vw, 800px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
         decoding="async"
       />
     </span></p>
+<p>매우 빠른것을 확인할 수 있다.</p>
 <h3>Time Complexity</h3>
 <ul>
-<li>split: O(N) ; N은 문장의 길이</li>
-<li>sorted: O(klogk) ; k은 dictionary의 단어의 갯수</li>
-<li>for loop: O(WK) ; W는 문장의 단어의 갯수, K는 dictionary의 단어의 갯수</li>
-<li>compare: O(M) ; M은 접두사의 길이</li>
-<li>find: O(p) ; p는 단어의 길이</li>
-<li>append: O(1)</li>
-<li>join: O(N) ; 단어의 갯수</li>
+<li>for loop: O(N) ; N은 nums 배열의 길이</li>
+<li>dictionary lookup: O(1) ; dictionary의 길이는 k이다.</li>
 </ul>
-<p>최종적으로 O(N + klogk + WKM + N) = O(WKM)이다.</p>
+<p>최종적으로 O(N)이다.</p>
 <h3>Space Complexity</h3>
 <ul>
-<li>O(N+K) ; N은 문장의 길이, K는 dictionary의 단어의 갯수</li>
+<li>O(N) ; N은 nums 배열의 길이</li>
 </ul>
 <h2>Constraint Analysis</h2>
 <pre><code>Constraints:
 
-- 1 &#x3C;= dictionary.length &#x3C;= 1000
-- 1 &#x3C;= dictionary[i].length &#x3C;= 100
-- dictionary[i] consists of only lower-case letters.
-- 1 &#x3C;= sentence.length &#x3C;= 106
-sentence consists of only lower-case letters and spaces.
-- The number of words in sentence is in the range [1, 1000]
-- The length of each word in sentence is in the range [1, 1000]
-- Every two consecutive words in sentence will be separated by exactly one space.
-- sentence does not have leading or trailing spaces.
+1 &#x3C;= nums.length &#x3C;= 10^5
 </code></pre>
 <ul>
-<li>시간복잡도는 O(10^6)+O(1000log1000)+O(10^8)+O(10^6) = O(10^8)이다.</li>
-<li>공간복잡도는 O(w+k+n)=O(1000+1000+10^6)=O(10^6)</li>
+<li>시간복잡도는 O(10^5). 하나의 operation은 10^-6이 걸린다 생각하면 10^5 * 10^-6 = 0.1초이다. 충분히 빠르다.</li>
+<li>공간복잡도는 O(10^5).</li>
 </ul>
 <h1>References</h1>
 <ul>
 <li><a href="https://leetcode.com/problems/replace-words">LeetCode</a></li>
-<li><a href="https://docs.python.org/3/library/heapq.html">Heap Queue</a></li>
+<li><a href="https://www.datacamp.com/tutorial/guide-to-python-hashmaps">Python Hashmaps - Datacamp</a></li>
 </ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L523ContinuousSubarraySum/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-329f0fea9bfd3dffa624.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-752b0a4731891edfba9a.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-329f0fea9bfd3dffa624.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-980f8a7a70a1bc68b42b.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="3851dac76562ee0bea22";</script><script src="/webpack-runtime-e7e336c374dfe4e7c68a.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-329f0fea9bfd3dffa624.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="115b47f8636bc86c66c6";</script><script src="/webpack-runtime-320719d7288f34f93da2.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-329f0fea9bfd3dffa624.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
