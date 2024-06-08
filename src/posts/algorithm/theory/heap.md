@@ -2,7 +2,7 @@
 title: "Heap"
 date: "2024-06-07"
 description: "Heap은 트리 기반의 자료구조로, 최대값 또는 최소값을 빠르게 찾아내기 위해 고안되었다."
-tags: ["Algorithm", "Sort"]
+tags: ["Algorithm", "Heap", "Theory"]
 ---
 
 # Heap
