@@ -2,7 +2,7 @@
 title: "523. Continuous Subarray Sum"
 date: "2024-06-08"
 description: "523. Continuous Subarray Sum는 주어진 배열에서 연속된 부분배열의 합이 k의 배수인지 확인하는 문제다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "Hashmap"]
 ---
 
 ## 문제 설명
@@ -46,75 +46,98 @@ tags: ["Algorithm"]
 ## Hashmap
 보니까 힌트에 hashmap을 사용하라고 나와있다. hashmap을 사용하면 O(1)에 접근이 가능하므로, 시간복잡도를 줄일 수 있을 것 같다. hashmap을 사용해서 누적합을 저장하고, k의 배수인지 확인하면 될 것 같다.
 
-
-
 ## 풀이 및 해설
-위 방안에서 정렬을 해주니 해결되었다. 정렬을 해주면 가장 짧은 단어부터 비교하게 되므로, 가장 먼저 발견되는 단어가 가장 짧은 단어가 된다.
+해시맵을 사용해서 풀어봤다.  
 
-![ans](../../../images/LEET/2500/2500.png)
+![hm](../../../images/LEET/523/hm.png)
+
+- 해당 풀이는 dictionary를 우선 선언한다.
+- 이후, 누적합을 저장할 변수를 선언하고, nums의 각 요소를 순회하면서 누적합을 계산한다.
+- 누적합을 k로 나눈 나머지를 구한다.  
+
+
+**핵심**
+- 해당 누적합이 해시맵에 존재하지 않다면 추가한다.
+- 만약 존재할 시, 이건 k에 대한 배수가 된다는 뜻이다. 왜?
+    - 이미 한번 나눈 나머지가 존재한다는 뜻은 i번째 요소와 j번째 요소 사이의 누적합이 k의 배수라는 뜻이다.
+    - 0부터 i까지의 누적합은 prefix_sum[i]이고, 0부터 j까지의 누적합은 prefix_sum[j]이다.
+    - k로 나눈 나머지가 같다는 것은 prefix_sum[i]와 prefix_sum[j]의 차이가 k의 배수라는 뜻이다.
+
+
+### 예시:
+[23,2,4], k=6
+
+**Prefix Sums:**
+
+Index 0: 23 (prefix sum: 23)  
+Index 1: 23 + 2 = 25 (prefix sum: 25)  
+Index 2: 23 + 2 + 4 = 29 (prefix sum: 29)  
+
+**Remainders:**
+
+Index 0: 23 % 6 = 5  
+Index 1: 25 % 6 = 1  
+Index 2: 29 % 6 = 5  
+
+이때, i와 j의 나머지가 둘 다 5다. 이때, 그러면 j의 누적합으로부터 i의 누적합을 빼면 29-23=6이다. 이때, 6은 k의 배수이므로, 이는 k의 배수가 된다.
 
 
 ## 풀이
 ```python
 class Solution:
-    def replaceWords(self, dictionary: List[str], sentence: str) -> str:
-        words = sentence.split()
-        arr = []
-        dictionary = sorted(dictionary)
+    def checkSubarraySum(self, nums: List[int], k: int) -> bool:        
+        # initialize dictionary
+        remainder_map = {0:-1} # start with a remainder 0 at index -1
+        prefix_sum = 0
 
-        for word in words:
-            root_found = False
-            for root in dictionary:
-                if root == word[:len(root)]:
-                    print("comparing: ", root, word[:len(root)])
-                    root_found = True
-                    index = word.find(root)
-                    result = word[:index + len(root)]
-                    arr.append(result)
-                    break
-            if not root_found:
-                arr.append(word)
+        # iterate through the nums array
+        for i, num in enumerate(nums):
+            # update the sum with the current num
+            prefix_sum += num
+            print("sum is", prefix_sum, "\n")
+
+            # compute the remainder of the sum with k
+            rem = prefix_sum%k
+
+            # check if this remainder has been seen before
+            if rem in remainder_map:
+                # ensure the subarray length is at least 2
+                if (i - remainder_map[rem] > 1):
+                    print(i, num, rem, remainder_map)
+                    return True
+            else:
+                # store the remainder with the current index if not seen before
+                remainder_map[rem] = i
+                print("remainder map is:", remainder_map, rem)
         
-        string = " ".join(arr)
-        
-        return string
+        # return false if no good subarray is found
+        return False
 ```
 
 ## Complexity Analysis
-![tc](../../../images/LEET/648/tc.png)
+![tc](../../../images/LEET/523/success.png)
+
+매우 빠른것을 확인할 수 있다.
 
 ### Time Complexity
-- split: O(N) ; N은 문장의 길이
-- sorted: O(klogk) ; k은 dictionary의 단어의 갯수
-- for loop: O(WK) ; W는 문장의 단어의 갯수, K는 dictionary의 단어의 갯수
-- compare: O(M) ; M은 접두사의 길이
-- find: O(p) ; p는 단어의 길이
-- append: O(1)
-- join: O(N) ; 단어의 갯수
+- for loop: O(N) ; N은 nums 배열의 길이
+- dictionary lookup: O(1) ; dictionary의 길이는 k이다.
 
-최종적으로 O(N + klogk + WKM + N) = O(WKM)이다.
+최종적으로 O(N)이다.
 
 ### Space Complexity
-- O(N+K) ; N은 문장의 길이, K는 dictionary의 단어의 갯수
+- O(N) ; N은 nums 배열의 길이
 
 ## Constraint Analysis
 ```
 Constraints:
 
-- 1 <= dictionary.length <= 1000
-- 1 <= dictionary[i].length <= 100
-- dictionary[i] consists of only lower-case letters.
-- 1 <= sentence.length <= 106
-sentence consists of only lower-case letters and spaces.
-- The number of words in sentence is in the range [1, 1000]
-- The length of each word in sentence is in the range [1, 1000]
-- Every two consecutive words in sentence will be separated by exactly one space.
-- sentence does not have leading or trailing spaces.
+1 <= nums.length <= 10^5
 ```
 
-- 시간복잡도는 O(10^6)+O(1000log1000)+O(10^8)+O(10^6) = O(10^8)이다.
-- 공간복잡도는 O(w+k+n)=O(1000+1000+10^6)=O(10^6)
+- 시간복잡도는 O(10^5). 하나의 operation은 10^-6이 걸린다 생각하면 10^5 * 10^-6 = 0.1초이다. 충분히 빠르다.
+- 공간복잡도는 O(10^5).
 
 # References
 - [LeetCode](https://leetcode.com/problems/replace-words)
-- [Heap Queue](https://docs.python.org/3/library/heapq.html)
+- [Python Hashmaps - Datacamp](https://www.datacamp.com/tutorial/guide-to-python-hashmaps)
