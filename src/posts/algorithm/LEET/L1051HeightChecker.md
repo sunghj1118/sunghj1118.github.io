@@ -1,6 +1,6 @@
 ---
 title: "1051. Height Checker"
-date: "2024-06-08"
+date: "2024-06-10"
 description: "1051. Height Checker는 주어진 배열에서 순서가 안 맞는 수의 갯수를 확인하는 문제다."
 tags: ["Algorithm", "Sorting"]
 ---
