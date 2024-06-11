@@ -1,0 +1,303 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1122. Relative Sort Array</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">June 11, 2024</p><div><h2>문제 설명</h2>
+<p>두 배열이 주어진다. arr1 배열에서 arr2 배열의 순서대로 정렬하고, 나머지는 오름차순으로 정렬하는 문제다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 47.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABEklEQVR42q2RW4+CUAyE+f9/kASWmHARlIuAchGEke9sjnF92OVhmzSnU8J0OnWCIJDruvJ9X0HwpcPhIM/z1HWdiHVdTX7WFn+GU1wuytJMyfGoMAx1Pp+VpqnGcdTeeCd2mqZVXde63W5q29a84KZp1Pf9q3+9Xk2f7Lr+hYdh+EmImizLlOe5iqLQ6XQyCo+bYuokSRRF0aY812XbpixLVVUlhFTVN6bPYIgdq4omE3lJFOIjPzCQb4/HQ8uymLR+Utu+UYhXFvxHOBwCH6ZpMi8DSFvTv9/vJsHzPP9OiEesxgEw2iaYVew6EEEO/pOQ6fjBT+8k1h/6e21x4jg2R+EIXI+DWAsgYk3UgvcQPgEjlQrLpXFM3gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1122"
+        title=""
+        src="/static/d3d1ee0a1f3305a18f6040b7163341e4/5a190/1122.png"
+        srcset="/static/d3d1ee0a1f3305a18f6040b7163341e4/772e8/1122.png 200w,
+/static/d3d1ee0a1f3305a18f6040b7163341e4/e17e5/1122.png 400w,
+/static/d3d1ee0a1f3305a18f6040b7163341e4/5a190/1122.png 800w,
+/static/d3d1ee0a1f3305a18f6040b7163341e4/c1b63/1122.png 1200w,
+/static/d3d1ee0a1f3305a18f6040b7163341e4/aa440/1122.png 1500w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>1차 시도</h2>
+<p>분명 쉬운 난이도인데 뭔가 방법을 찾기가 어렵고 시간복잡도가 엉망이 된것 같다.
+일단은 되게 장황하게 한번 풀어봤는데 테스트케이스는 통과했다. 그런데 시간복잡도가 너무 높거나, 그냥 틀릴 것 같다.</p>
+<pre><code class="language-python">from collections import Counter
+
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        final, new_arr = [], []
+        c = Counter(arr1) # arr1에 있는 freq를 찾기
+
+        # arr2의 순서를 기준으로
+        for j in arr2:
+            for i, (k,v) in enumerate(c.items()): # counter를 dictionary로 다시 바꿔서
+                if k == j: # arr2의 순서에 부합한 item val k가 있다면
+                    for a in range(v): # 그 k의 갯수 v만큼 최종 배열에 추가
+                        final.append(k)
+
+        # 기타 나머지 값들은 다른 배열에 추가하고 정렬
+        for val in c:
+            if val not in arr2:
+                new_arr.append(val)
+        # 다시 최종 배열에 추가
+        for val in sorted(new_arr):
+            final.append(val)
+
+        return final
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 53.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAtklEQVR42qWSzRKDIBCDef+X7K0HK4KVBfnR1Ow4vQs78w23bDbBvMIbU3JIaUeMEaUUjIxJKeE4DjjvMc8Wo2Py7ai1hlorzvMcwtCVcx7erxCJenoPMSY1ZChGlsWp4L7nLihaa4OZpg+sdfemfG3auxBJV6GXwxCCtssMWQ7fXjRDnisi2LYNbJw59FHUkAqu6/cvWEpT60/J+RZku8yPwfJTD59srQVhyyGI2qfwU3LOKvoDa/xe7pZk6q4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="test"
+        title=""
+        src="/static/6b5c7f9a3251735513631e4c69e51f4c/5a190/testcase.png"
+        srcset="/static/6b5c7f9a3251735513631e4c69e51f4c/772e8/testcase.png 200w,
+/static/6b5c7f9a3251735513631e4c69e51f4c/e17e5/testcase.png 400w,
+/static/6b5c7f9a3251735513631e4c69e51f4c/5a190/testcase.png 800w,
+/static/6b5c7f9a3251735513631e4c69e51f4c/c1b63/testcase.png 1200w,
+/static/6b5c7f9a3251735513631e4c69e51f4c/0f586/testcase.png 1498w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<ul>
+<li>
+<p>arr1에 있는 freq를 찾기</p>
+</li>
+<li>
+<p>arr2의 순서를 기준으로</p>
+</li>
+<li>
+<p>counter를 dictionary로 다시 바꿔서</p>
+</li>
+<li>
+<p>arr2의 순서에 부합한 item val k가 있다면</p>
+</li>
+<li>
+<p>그 k의 갯수 v만큼 최종 배열에 추가</p>
+</li>
+<li>
+<p>기타 나머지 값들은 다른 배열에 추가하고 정렬</p>
+</li>
+<li>
+<p>다시 최종 배열에 추가</p>
+</li>
+</ul>
+<h3>시간복잡도</h3>
+<p><code>O(m×n^2)</code> ; m은 arr2의 길이, n은 arr1의 길이</p>
+<h3>틀린 이유</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABIklEQVR42n2SjZLCIAyEff/XVMfzt5RCWyiwlw1Se+doZ74JpLCEDTvkDByPKIcDyn6PYi0WycUYlZQSPn3WOpxOP+h7u+Z2pRQE7yG7gRAgCpAUmK+8CzEXQsQ0TSLWwzm3FQR6O8AIVn5YicNA3ApzDVbj/YhxnJ6MIjy/BGvpA263O+73xxofj07HjJxfrzedn88XPYQVNmJc/gpyQdeZtaJ5DkoIjFHhxpqrkVU1OP8nOIhgp35YaQobkVLWmHPWcY0Jy7K8sW2cCBY11TmvJhP64qVRjfq/0jq/hYe9XZke8drG9Gp8GzOyekb6ySvSs68eslvzPOtJK6WSyuu6+fk+v71NFaSYMUY9pJ+8mvXydEaH3lvNNX+5jus/Cf4CGe0MsI6ZU6QAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="wr"
+        title=""
+        src="/static/cc339f38f968eea9d269ca2bd694f3b8/5a190/wrong.png"
+        srcset="/static/cc339f38f968eea9d269ca2bd694f3b8/772e8/wrong.png 200w,
+/static/cc339f38f968eea9d269ca2bd694f3b8/e17e5/wrong.png 400w,
+/static/cc339f38f968eea9d269ca2bd694f3b8/5a190/wrong.png 800w,
+/static/cc339f38f968eea9d269ca2bd694f3b8/c1b63/wrong.png 1200w,
+/static/cc339f38f968eea9d269ca2bd694f3b8/e4ee8/wrong.png 1496w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<pre><code>arr1 = [2,21,43,38,0,42,33,7,24,13,12,27,12,24,5,23,29,48,30,31]  
+arr2 = [2,42,38,0,43,21]
+
+output = [2,42,38,0,43,21,5,7,12,13,23,24,27,29,30,31,33,48]  
+expected = [2,42,38,0,43,21,5,7,12,12,13,23,24,24,27,29,30,31,33,48]
+</code></pre>
+<p>보면 24와 12가 하나씩 누락됐다. 왜 그럴까?</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABOklEQVR42oWS3W6DMAyFef+n282uVqimqQVBYeQPkjjhLE4bVK3danRkESVfTmxXWmtobeA9ZTnnn8p7n/ZZaGVANu0lwrZtiDEiphxCAKW1ahwnsISQWQxflnWXMUvOvFkvAf1wwXgZMCsJuSpY525mfIZX53OLum5wOp0zjAFF90CXDvjkQgiBSU6gSKBACDEkhzGLHWdg0xzB2VqHdbUPskkMdBSwJYCRAn3foptaDGpApzoYb/IFVdt2OByaDHwGK3LeQSyEul/wfhIY5QxL6+6uRAbyk18CU63ESvi6SLx9fOJ7lhmwpe8+bsA615CfXJrx6DDVMD3Z6hXzNKS1Bc+iUkrv3S1AbsTvseGxuFnKxf8rqtLFArrKZAhR2BVCvDv2D1ApBXbJkOuQ6/zPNePZK9odvogfuJ8JoSYaZGwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="fix"
+        title=""
+        src="/static/719aeb43fecdeb40694cb7d727524237/5a190/fix.png"
+        srcset="/static/719aeb43fecdeb40694cb7d727524237/772e8/fix.png 200w,
+/static/719aeb43fecdeb40694cb7d727524237/e17e5/fix.png 400w,
+/static/719aeb43fecdeb40694cb7d727524237/5a190/fix.png 800w,
+/static/719aeb43fecdeb40694cb7d727524237/c1b63/fix.png 1200w,
+/static/719aeb43fecdeb40694cb7d727524237/29007/fix.png 1600w,
+/static/719aeb43fecdeb40694cb7d727524237/efe17/fix.png 2860w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>보니까 해당하지 않는 값들에 대하여 한번씩만 들어가고 있었다. 이를 수정하니, 테스트 케이스는 통과하긴 했는데, 아무래도 아직도 시간복잡도는 상당히 높다.</p>
+<h3>제출시도:</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 33%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABGElEQVR42nVQy27DMAzz/3/S/mCXnXcaUKAo2rRpktqy4ycrunNPGwHCikPRlMzsFqSUkHNGrRVEbRVRIr6u3/g4ffa7FCu2NcA9BMEFJNW31nrPYFOduU4TlmWBiMB7j33fEWN8idWYZB1LUU3A+XzEfZ3xEAcbnIbJ3ZyhquqMcw4kzXhZtHGkpRHBc9fGnIs+vmG1qz7q4byDRIEkTV0Ccs0wo2mAhkz4Hp+nakJMvc4x6+gbTtcjbu6G2c9Y/B2llf6woYgmw4hJOX4IoY/PWh3h99gnuC8zLvME621P9EZ7TWIo6ntT8qQhSUOS/wlRQ458uUz4ORzgxeMvGOsE1uoe/SvR2OEgv/G7w1oa7GYhurv/8ASaxCMQ6YVWpwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="t1"
+        title=""
+        src="/static/eb2bd5e01f8abdcb67154488efb28085/5a190/t1.png"
+        srcset="/static/eb2bd5e01f8abdcb67154488efb28085/772e8/t1.png 200w,
+/static/eb2bd5e01f8abdcb67154488efb28085/e17e5/t1.png 400w,
+/static/eb2bd5e01f8abdcb67154488efb28085/5a190/t1.png 800w,
+/static/eb2bd5e01f8abdcb67154488efb28085/c1b63/t1.png 1200w,
+/static/eb2bd5e01f8abdcb67154488efb28085/29007/t1.png 1600w,
+/static/eb2bd5e01f8abdcb67154488efb28085/7e23a/t1.png 2850w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>놀랍게도 통과했다. 시간복잡도가 너무 높아서 더 깎아보겠다.</p>
+<h2>2차 시도</h2>
+<p>일단 Nested for loop이 가장 문제다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA5ElEQVR42oWQ22rDQAwF/f9/WDcvCaS2Exzf1rvemyZau6WhBCoYBAKNxKnk8UDuN5hGZYJh+GVZwBhwGxI8zkXGweCMZbOelDI5572nlIgxUtE0SP2BnE7I5QJtQ5ntdN1BOboafBSGaaHvO4w1jHbGuFVFiaCyQ3i9wmeNFFTM5Yy07S5hHA+KUL/1+on3nvbeM+oBFx0pR16rys4h1h6sK1mJuiw65wVRkfUBBL5uE/X5RgiBv1VN88yqMrdtWKV0pwKrBM3lh6gkzSsnUbJ6hXdVrRp6ufQfJR+RQyLfvBM+AUGz026ccwlDAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="new"
+        title=""
+        src="/static/41db5e9a5bce10e132c97230784cb285/5a190/new.png"
+        srcset="/static/41db5e9a5bce10e132c97230784cb285/772e8/new.png 200w,
+/static/41db5e9a5bce10e132c97230784cb285/e17e5/new.png 400w,
+/static/41db5e9a5bce10e132c97230784cb285/5a190/new.png 800w,
+/static/41db5e9a5bce10e132c97230784cb285/c1b63/new.png 1200w,
+/static/41db5e9a5bce10e132c97230784cb285/29007/new.png 1600w,
+/static/41db5e9a5bce10e132c97230784cb285/38abd/new.png 2766w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+pop을 하니까 이게 결국에 freq를 반환한다. 그래서 [new]*freq를 하면, freq만큼 new가 반복된다. 이렇게 하면 번거롭게 for loop을 다시 안 돌려도 된다.</p>
+<p>이미 있는 값들은 다 pop 당했으니 remaining = sorted(c.elements())을 하면, 기존에 남았던 값들만 정렬해서 반환한다.</p>
+<p>여기서 마지막으로 final.extend(remaining)을 하면, 기존에 정렬된 값들과 남은 값들을 합쳐서 반환한다.</p>
+<p>이렇게 하면 다음과 같이 조금은 빨라진다.<br>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 53.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABL0lEQVR42o2TyU6EQBCG5/3jO3jzCfQFPHgz8YJBDh4MDEvS7HtD//LXpAmgk5kmlaqmuj9q44RlJU2Kc5lATxrzPO/kuOq6RRwnyIoCj9/PePh8wkvwJj6zPCcaZV1BZQpd14n0fS96GAYYY3bAUY+XM4vvXbl4jT/wVfysfgHyQHgOkWWZQAi00LZtobUWPY4jbi0BEuQ4DqIoEjtNUyilUFXVkmItIL7nnmWYpklkNkbS3GYhQF7g4aZpJBIrjJa+Y12v1XcF3rsIYfo3U7ZfZOjXhP4wDJEkyaWjh2bdFSEvbRviui48z1traKF/anisjQWx07aeBPi+jyAIBM4JoOa5HdButqPyn2a37RhZzabR3tZ1TdlGwotbXZal2HmeyyQUyx/CPW3CaG+Bv0hrW85ddyshAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="t2"
+        title=""
+        src="/static/269079954f684b13a5c26d80c2359fc2/5a190/t2.png"
+        srcset="/static/269079954f684b13a5c26d80c2359fc2/772e8/t2.png 200w,
+/static/269079954f684b13a5c26d80c2359fc2/e17e5/t2.png 400w,
+/static/269079954f684b13a5c26d80c2359fc2/5a190/t2.png 800w,
+/static/269079954f684b13a5c26d80c2359fc2/c1b63/t2.png 1200w,
+/static/269079954f684b13a5c26d80c2359fc2/b1ffc/t2.png 1492w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이</h2>
+<pre><code class="language-python">from collections import Counter
+
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        final = []
+        c = Counter(arr1) # arr1에 있는 freq를 찾기
+        print(c)
+
+        # add elements from arr2 in the order
+        for num in arr2:
+            if num in c:
+                t = c.pop(num)
+                final.extend([num] * t)
+
+        remaining = sorted(c.elements())
+        final.extend(remaining)
+
+        return final
+</code></pre>
+<h2>Complexity Analysis</h2>
+<h3>Time Complexity</h3>
+<p>기존 O(MN^2)에서 O(N)으로 줄었다.</p>
+<p>최종적으로 O(N)이다.</p>
+<h3>Space Complexity</h3>
+<ul>
+<li>O(N) ; N은 nums 배열의 길이</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+
+1 &#x3C;= arr1.length, arr2.length &#x3C;= 1000  
+0 &#x3C;= arr1[i], arr2[i] &#x3C;= 1000  
+All the elements of arr2 are distinct.  
+Each arr2[i] is in arr1.  
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/relative-sort-array">LeetCode</a></li>
+<li><a href="https://docs.python.org/3/library/collections.html#collections.Counter">Python - Counter</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1122RelativeSortArray/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-521f5e4788a7ce80aeee.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="8d90adc52728c9bab590";</script><script src="/webpack-runtime-c03f706fea6d313d5c40.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
