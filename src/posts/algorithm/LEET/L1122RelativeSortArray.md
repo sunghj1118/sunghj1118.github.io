@@ -116,12 +116,14 @@ class Solution:
 ## Complexity Analysis
 
 ### Time Complexity
-기존 O(MN^2)에서 O(N)으로 줄었다.
+- Counter: O(N) ; N은 arr1 배열의 길이
+- For loop: O(M) ; M은 arr2 배열의 길이
+- Sorting remaining elements: O(KlogK) ; K는 arr1에서 arr2에 없는 요소의 수 (최대 N)
 
-최종적으로 O(N)이다.
+최종적으로 O(NlogN+M)이다.
 
 ### Space Complexity
-- O(N) ; N은 nums 배열의 길이
+O(N) ; N은 nums 배열의 길이
 
 ## Constraint Analysis
 ```
@@ -132,6 +134,78 @@ Constraints:
 All the elements of arr2 are distinct.  
 Each arr2[i] is in arr1.  
 ```
+
+
+# Update 2024-06-13: HashMap
+이것보다 더 빠른 방법이 있을것 같아서 다시 한번 풀어보았다. HashMap을 사용하면 아마 빨라질것 같아서 한번 사용해보았다.
+
+```python
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        final = []
+        remaining = []
+        count_map = {}
+
+        # initialize count map with relative order elements
+        for value in arr2:
+            count_map[value] = 0
+
+        # count occurrences of elements in target array
+        for value in arr1:
+            if value in count_map:
+                count_map[value] += 1
+            else:
+                remaining.append(value)
+        
+        #sort remaining
+        remaining.sort()
+
+        # add elements following relative order
+        for value in arr2:
+            for _ in range(count_map[value]):
+                final.append(value)
+        
+        # add remaining elements
+        final.extend(remaining)
+        return final
+```
+
+![hash](../../../images/LEET/1122/hash.png)
+
+훨씬 빨라졌으며, 시간복잡도가 더 빠른지 분석을 해보자.
+
+### Time Complexity
+- Initializing count map with elements from arr2: O(M) ; M은 arr2 배열의 길이
+- Counting occurrences of elements in arr1: O(N) ; N은 arr1 배열의 길이
+- Sorting remaining elements: O(RlogR) ; R은 arr1에서 arr2에 없는 요소의 수 (최대 N)
+- Adding elements following relative order: O(N) ; N은 arr1 배열의 길이    
+
+최종적으로 O(NlogN+M)이다.
+
+### Space Complexity
+- Count map: O(M) ; M은 arr2 배열의 길이
+- Remaining list: O(R) ; R은 arr1에서 arr2에 없는 요소의 수
+- Final list: O(N) ; N은 arr1 배열의 길이  
+
+최종적으로 O(N)이다.
+
+## 분석
+두개의 풀이가 시간복잡도가 같은데, 어째서 두번째 풀이가 더 빠르게 나왔을까? 각 단계에서 실행시간이 더 빠르기 때문이다. 하나씩 비교해보자.
+
+### Counter: O(N) vs HashMap: O(M)
+- 첫 번째 구현에서 Counter는 arr1 전체를 한 번 훑어야 하며, 이는 O(N).
+- 두 번째 구현에서 count_map 초기화는 arr2에 대해 수행되며, 이는 O(M). 그 후, arr1을 한 번 훑어서 카운트를 증가시키는 것도 O(N). 따라서 이 단계에서는 큰 차이가 없다.
+
+### 요소 추가 및 정렬
+- 첫 번째 구현에서는 Counter에서 요소를 하나씩 꺼내면서 final에 추가하고, 남은 요소들을 정렬합니다.  
+- 두 번째 구현에서는 count_map에서 카운트를 참조하여 final에 요소를 추가합니다. 남은 요소들은 별도의 리스트에 추가하고 마지막에 한 번만 정렬합니다. 여기서, 두 번째 구현이 Counter의 요소를 한 번씩 꺼내는 것보다 더 효율적입니다.
+
+### 나머지 요소 처리
+- 첫 번째 구현에서는 남은 요소들을 sorted로 정렬합니다.
+- 두 번째 구현에서도 남은 요소들을 정렬하지만, 이미 arr1에서 arr2에 없는 요소들만 따로 모아서 정렬합니다.
+
+## 결론
+두 번째 구현이 더 빠른 이유는 Counter의 요소를 하나씩 꺼내고 확장하는 과정이 첫 번째 구현보다 덜 비효율적이기 때문이다. Counter의 요소를 한 번씩 꺼내는 것보다는 Hash Map에서 카운트를 참조하여 직접 리스트에 추가하는 것이 상수 시간 복잡도에서 더 효율적이다. 또한, 남은 요소들을 별도로 정렬하고 추가하는 과정이 더 단순화되어 있다.
 
 # References
 - [LeetCode](https://leetcode.com/problems/relative-sort-array)
