@@ -1,0 +1,184 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">945. Minimum Increment to Make Array Unique</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">June 11, 2024</p><div><h1>문제 설명</h1>
+<p>배열이 주어진다. 배열의 요소를 증가시켜서 중복되지 않게 만드는 문제다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 64%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABYUlEQVR42o2T646CQAyF52FAQUVBGS6CYJabiSa+/9Oc5dQty5o1+uNLy0CP09NqmrZD3w8YhgFd16FpGol93wvX61We27aV/HQ6wXEcLBaLCXckCAIEYQBT5hGKPMZX06KqKhGmqHwwstvtsNlsJN9ut1iv1yLoui7cMTo/UNjzPZgstairElmWI88fWGsRRRH2+70IHg6Hkd+c58TaBHFskSSJ1FDUUIA344e8AdGbhWE4RUIR3tD3faxWK8k1kkmQvpC6rkVc4/l8llgUheRlWT5afYEIep73xyP1jvBc4bvlcjkVvsKkaSoeODODn391nr/DZFkmLfIW9IHxVTsfCR6PR9zvdzByANq2tqkDovk8+0iQxuv0dIL0dg79Y3wryMndbjdZGx0M0WIKKVqkw/l3ylzIy+Uia8OcwnEcS64LOz/TpVY75rawO8P2dCWe21PkbzVGFuh7zRU+8/wbwJKPhc4P/IkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="q"
+        title=""
+        src="/static/075add09a6600e432ceab3ef51c4133b/5a190/q.png"
+        srcset="/static/075add09a6600e432ceab3ef51c4133b/772e8/q.png 200w,
+/static/075add09a6600e432ceab3ef51c4133b/e17e5/q.png 400w,
+/static/075add09a6600e432ceab3ef51c4133b/5a190/q.png 800w,
+/static/075add09a6600e432ceab3ef51c4133b/c1b63/q.png 1200w,
+/static/075add09a6600e432ceab3ef51c4133b/0f586/q.png 1498w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>1차 시도</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABM0lEQVR42n2SWY6DMBBEOUzAC2YxYLCiyQ8SIlKi3P82le7OOALEzEepcct+VC+Zai380KFyFS6XC/I8P1VRFHDOoes8rC2hlZZcklKK8haZbz1d6tA0Deq6/lNaa4HwvcbT2X6A6WfpOxvHEf0woG1beO8lHsV5Y4xAnSsxTSNinBDCIK62TrNlWXC73ejSJBoIflQIAWVZCrCqKozjJFWxcwZuXWav1wvzPMtDdpvAW8UYBch98l2LMAW4yqFQBbRRVL6SKMDn84n7/f4FnomhCcgOh9BT6ZbcGYEqEkcBPh4PrOsqZZ252zmkkg0pXiOuP1d608FST3c97Pte+pHEZ3Z7zKWhGG3Am5F6yq53QJ7if+uyWxtSTSW70snObkFfIDs4W5Xj2jDsM031q+IU+AZYijPbUOTcpAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/72d90097a386a666d0c86160109b18e3/5a190/tc.png"
+        srcset="/static/72d90097a386a666d0c86160109b18e3/772e8/tc.png 200w,
+/static/72d90097a386a666d0c86160109b18e3/e17e5/tc.png 400w,
+/static/72d90097a386a666d0c86160109b18e3/5a190/tc.png 800w,
+/static/72d90097a386a666d0c86160109b18e3/c1b63/tc.png 1200w,
+/static/72d90097a386a666d0c86160109b18e3/29007/tc.png 1600w,
+/static/72d90097a386a666d0c86160109b18e3/7e23a/tc.png 2850w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABmElEQVR42mVSW3arMBDLWpJgY7ABYxOgaZsT0tyuIq+7/z2oIyf0+aFjjzkjpNEsfFFgKAsErbBarbBerz+RZQrOVbDWpm/GlPBdh6qpUEqPKQiD3BgoraGUwqIfBkzHI/bThOlwwH6/T5hYCw7y5r1PhFqafAh42o7wrReiIpHlJhdCdSd8k4b/txvOpxNucl4uF5zkfj6fcb1e09t2u8VyuRSFBrYsEWOEram8TD8h0YxFJx+pYrfbJWW8U9lc8940zcOygVY61d1mg37oEUNEnudfhK5qRH6QR5NQyFx+g0RZlqWzlvmNYjl27NF/FdY+YHp/x/HfG15fXzCOY8LQ9+gkgI0occ6lkEhY0rLMkaeWud2hHxBCa12a0fPLM3pp5nyIEFq0bStn+CSkNaYbYgvrrCScQ4vK3Gi5389FXddJCZuZ5kzIeibk2iTLsiJGxhJiQC0p102N0haJVGUPy2xKFmV9iF6sEnPNbwyBCjlPNnmpQxcTYVW5n6Fwn7iLVDmr+w6+08VsmcFVsuxsvi9/9iOUD5HTOk449YJ5AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="err1"
+        title=""
+        src="/static/f6abc89a80bc195381ce15c62255fed8/5a190/err1.png"
+        srcset="/static/f6abc89a80bc195381ce15c62255fed8/772e8/err1.png 200w,
+/static/f6abc89a80bc195381ce15c62255fed8/e17e5/err1.png 400w,
+/static/f6abc89a80bc195381ce15c62255fed8/5a190/err1.png 800w,
+/static/f6abc89a80bc195381ce15c62255fed8/c1b63/err1.png 1200w,
+/static/f6abc89a80bc195381ce15c62255fed8/29007/err1.png 1600w,
+/static/f6abc89a80bc195381ce15c62255fed8/75c39/err1.png 2618w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>일단 한번 더럽게 풀어봤는데 몇몇 테스트 케이스에서 틀렸다. 시간복잡도가 너무 높아서 그렇다. heapify를 너무 많이 사용해서 오히려 시간복잡도가 엄청 높아졌다.</p>
+<h2>2차 시도</h2>
+<p>오히려 더 간단하게 풀 수 있다. 정렬했으면 그냥 이전 값과 비교해서 더해주면 된다. 차이만큼 계산해서 더해주면 답이 나온다.</p>
+<pre><code class="language-python">class Solution:
+    def minIncrementForUnique(self, nums: List[int]) -> int:
+        nums.sort()  # Sort the list first, O(n log n)
+        print(nums)
+        count = 0
+        
+        for i in range(1, len(nums)):
+            if nums[i] &#x3C;= nums[i - 1]:  # If the current number is not greater than the previous one
+                increment = nums[i - 1] - nums[i] + 1
+                print(increment, nums[i], nums[i-1])
+                nums[i] += increment
+                count += increment  # Increment the count by the number of steps taken to make it unique
+        
+        return count
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 98%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAABcElEQVR42s1S2Y7CMAzMz5SWQo8Vy60iLoGQyo0QR7n+/yNmO5ZcFS3sA8sDDyPH9mQySWzs7xLsjg/3y0MYhAjDEK7rolAovATjFIvwfF8SP42O4yDqRIiiCJZlCdjTqMjn+bUJUkelUurStlFMxSlIhwRrCtbz+bO6abfbGI/H6Ha76PV6Aq4fQXv9fv8XbzgcotVqwQwGA5xOJxyPRyRJIjifz4LD4SBgjX1da859Wrter6CWGY1GWYMkJZK03+8FzHe7XcZhZF3Ft9stLpeLODeTyQS32y1zSDIFVEhdck3XjHqg3oR7GcUh32K5XGKxWGA2m91hPp8L1us1NpuNcOI4xnQ6lagc5tTgWxqOSrlclp/OI18LgkDm8xEvz+VkmGq1ilqtJjP4DJ7nCf7i8FDC0Cav0mw2Rbher78E7meUN+QbNRoNqNtXUalU7gX/I0Z3mSCvzMJbBDmMq9XqfYI6h58tyE/5bIfv/JQftpmjmsx2hLkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="fail"
+        title=""
+        src="/static/580f210ee3d38bc7ecded83f98527335/5a190/failing.png"
+        srcset="/static/580f210ee3d38bc7ecded83f98527335/772e8/failing.png 200w,
+/static/580f210ee3d38bc7ecded83f98527335/e17e5/failing.png 400w,
+/static/580f210ee3d38bc7ecded83f98527335/5a190/failing.png 800w,
+/static/580f210ee3d38bc7ecded83f98527335/c1b63/failing.png 1200w,
+/static/580f210ee3d38bc7ecded83f98527335/c211c/failing.png 1502w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+앞서 실패했던 케이스에 대하여 살펴보면, increment가 계속 점차 오른다. 그런데 어차피 정렬이 되어 있는 상태에서 올리는거라 그 차이만 계산하면 이게 훨씬 효율적이다.</p>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB2UlEQVR42m1Ty47TQBDMT6yQ0GalJJ6HnczDju3EdkxgD3ntrlAI8Atc+AAOrABx4cSf8I1F9ySOgsih5FZPddV0T7snhEAySeBfF0hyg1jH0FoHxHEMpRSklAHM5dyibbFsXsHvGzS/PqD+eYCsDORQoBdFEZxzaN8s4bwLsTEmgGMW6MQYbBB4xiGpPMz7BuZdDeWIF5GgVBIsWs0rbDcbVNWcYkJdIS9ylGWJ6XSK8XgM7324ORsorYKAuBsGyOjYRa9zX682eHx4i3Z5j8enPbZPO8zaeTAqiuIomKbQdOPJZIIsyxDTqIQS4Et1Y+l1gTUe3uawboaxK2CoyFobwO0fZ9nhWKMo5vzlnM+CmloQIoJkSHEuFFxEiKTGUI2pWJ5FLnFFUF8Q2P1YqMUIctCHrdcwh2fcpSvKDf8TvioY2uB56CRA0U0jO0e/3GPw8TdGn/7gZvcdkVucuCfzazNMYhK0s0AelQ8YVAeMpmvcrr/g5e4bXux+4Gb1jNvtV/TvP2NUbMmsJjSIkjSY/yPI+5bSy/FLZoSU4NMMmbfIbIwinZxgkDrK0VnqmZfB0MNdbZl3jleEvyHOc8xpbcoZrU+zoN1sUDcNitN5TufM5x+gE/wL2F9TUOuj2hAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/925f485a7a443c586cd786ed65c572ce/5a190/success.png"
+        srcset="/static/925f485a7a443c586cd786ed65c572ce/772e8/success.png 200w,
+/static/925f485a7a443c586cd786ed65c572ce/e17e5/success.png 400w,
+/static/925f485a7a443c586cd786ed65c572ce/5a190/success.png 800w,
+/static/925f485a7a443c586cd786ed65c572ce/c1b63/success.png 1200w,
+/static/925f485a7a443c586cd786ed65c572ce/c211c/success.png 1502w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>Time Complexity</h3>
+<ul>
+<li>Sorting the list: O(NlogN) ; N is the length of the nums array</li>
+</ul>
+<p>최종적으로 O(NlogN)이다.</p>
+<h3>Space Complexity</h3>
+<ul>
+<li>O(1) ; no extra space is used</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+
+1 &#x3C;= nums.length &#x3C;= 10^5
+0 &#x3C;= nums[i] &#x3C;= 10^5
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/minimum-increment-to-make-array-unique">LeetCode</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L945MinimumIncrementtoMakeArrayUnique/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-521f5e4788a7ce80aeee.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="8d90adc52728c9bab590";</script><script src="/webpack-runtime-c03f706fea6d313d5c40.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
