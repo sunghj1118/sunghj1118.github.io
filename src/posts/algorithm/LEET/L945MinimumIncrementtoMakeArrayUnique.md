@@ -1,6 +1,6 @@
 ---
 title: "945. Minimum Increment to Make Array Unique"
-date: "2024-06-11"
+date: "2024-06-14"
 description: "945. Minimum Increment to Make Array Unique은 배열의 요소를 증가시켜서 중복되지 않게 만드는 문제다."
 tags: ["Algorithm", "Sorting"]
 ---
