@@ -62,5 +62,4 @@ Constraints:
 ```
 
 # References
-- [LeetCode](https://leetcode.com/problems/relative-sort-array)
-- [Python - Counter](https://docs.python.org/3/library/collections.html#collections.Counter)
+- [LeetCode](https://leetcode.com/problems/minimum-increment-to-make-array-unique)
