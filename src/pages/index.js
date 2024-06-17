@@ -243,7 +243,8 @@ const IndexPage = ({ data }) => {
   const tagsWithSubTags = {
     Blog: ['Gatsby', 'NPM', 'Github'],
     Infra: ['Kubernetes', 'Docker', 'Container'],
-    Algorithm: ['DP'],
+    Algorithm: ['Theory', 'Log', 'DP', 'Heap', 'Hashmap', 'Sorting'],
+    CS: ['Architecture'],
     AI: []
   };
 
