@@ -2,7 +2,7 @@
 title: "826. Most Profit Assigning Work"
 date: "2024-06-18"
 description: "826. Most Profit Assigning Work는 3개의 배열이 주어진다. 각 배열은 일의 난이도, 수익, 그리고 노동자의 가능한 난이도다. 이때, 최대 이윤을 구하는 문제다."
-tags: ["Algorithm", "Sorting", "Two Pointers"]
+tags: ["Algorithm", "Sorting", "Two Pointer"]
 ---
 
 # 문제 설명
