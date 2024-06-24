@@ -43,6 +43,8 @@ const TagButton = styled.button`
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: nowrap; // Prevent the text from wrapping inside the button
+  height: 40px; // Fixed height to prevent vertical stretching
 
   &:hover {
     background-color: #595f39; // Main Tag Button hover color
@@ -55,6 +57,7 @@ const SmallTagButton = styled(TagButton)`
   background-color: ${props => (props.selected ? '#495057' : '#dee2e6')}; // Sub Tag Button colors
   font-size: 12px; /* Smaller size */
   padding: 2px 12px; /* Smaller padding */
+  height: 30px; // Consistent height for small buttons
 `;
 
 const SubTagContainer = styled.div`
@@ -94,9 +97,10 @@ const MainTagContainer = styled.div`
 
 const TagWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: center; // Center the buttons
+  flex-wrap: wrap; // Allow the buttons to wrap to the next line
   margin-bottom: 20px;
+  padding: 10px; // Optional: Adds some padding around the tags for spacing
 `;
 
 const SelectedTagsWrapper = styled.div`
