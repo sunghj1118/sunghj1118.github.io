@@ -1,6 +1,6 @@
 ---
 title: "21. Merge Two Sorted Lists"
-date: ""
+date: "2024-06-25"
 description: "21. Merge Two Sorted Lists는 두개의 배열이 주어지면 두개를 합치면 된다."
 tags: ["Algorithm", "Linked List"]
 ---
