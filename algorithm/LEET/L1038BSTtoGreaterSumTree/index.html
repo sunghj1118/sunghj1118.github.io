@@ -1,0 +1,159 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1038. Binary Search Tree to Greater Sum Tree</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">June 25, 2024</p><div><h1>문제 설명</h1>
+<p>이 문제는 BST에서 각 노드의 값을 현재 노드의 값보다 큰 값들과의 합을 구하는 문제다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 106.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAABYlAAAWJQFJUiTwAAACHUlEQVR42q1UiY7aMBDN///aUgQSCCgsZ7iPkMOxc771c3CasFuJojoaecZ23tzjnE4nfHR+od/vo9frYTweo9vtYjKZYDQaYTAYmLNOp2PeDIdDI/M8yzJwFUWBsiwN76QqROzv4XkeDocDbrcb9vs9qOh+v+N4PJkfSXmet+in5SRKQEZXREIYAAKfz2dcr1cEQWAUJElSk1Kq5qWURiaRpxLHdbeY/J5qqw7Ybrf4/JzBdV2s12vM5/OaJ202G8xmMywWC0Or1cq8mU6n2O12xgvH931EUYQ0TVtEC553Eq3gbuPH2LViSHPpHt2ke6TL5WLO6D53yry3oWB8wzBsAdUxpHYLwB8YRwtCIqjlec8QMGnkCUzvWoC0kNm1xIfH49Hw3CnbrDNOjBvvrDKbtD9Z1gItomU2y9b1pmx57nS1uZpuO/bgORbvLodal8slhK7D/wJI81kKTQurUqDVbwD+dCgTXUpejFiWDwVvAJZlAZVkkCo3QS80SprlmjJd2PnLoDVglqXw/BgiblsldVl5vsSjMV4DZOmEUYpcW6ZS3eiqip+UCYSkxTlipVsvLV8DVDpmYVS5JfTUCEXFx5oXsW4v/UVCGkUvATYznGrXg0jpuJmbxwAFglCZu3/OMhMiEw7TZifAJCb7y1D9VodscDumKkrqEZWZLGtenzNxzXd2nH2bNhyWz71rZRJnJsnKzTOOsWYvfwH7bGBiclemWQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1038"
+        title=""
+        src="/static/fa228aff6c83770a005bfdfdc02d094e/5a190/1038.png"
+        srcset="/static/fa228aff6c83770a005bfdfdc02d094e/772e8/1038.png 200w,
+/static/fa228aff6c83770a005bfdfdc02d094e/e17e5/1038.png 400w,
+/static/fa228aff6c83770a005bfdfdc02d094e/5a190/1038.png 800w,
+/static/fa228aff6c83770a005bfdfdc02d094e/c1b63/1038.png 1200w,
+/static/fa228aff6c83770a005bfdfdc02d094e/0d0e4/1038.png 1230w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>오랜만에 트리 문제다. 일단 Binary Search Tree는 왼쪽에 있는 값들은 모두 지금의 노드보다 작은 숫자들이며, 오른쪽은 다 큰 숫자들이라, 자식들이 있다면 현재 노드의 값에다 오른쪽 노드의 값들의 합을 구하면 될 것 같다. 반면, 자신보다 큰 자식 노드가 없다면, 자신보다 큰 값들이 있는지 먼저 찾아봐야 할 것 같다.</p>
+<p>이 문제를 해결하기 위해서는 직관적으로 가장 큰 값부터 시작해서 왼쪽으로 가는게 유리할 것 같고, Sum of a Binary Search Tree를 구하는 문제와 비슷한 방식으로 풀 수 있을 것 같다.</p>
+<h2>풀이 및 해설</h2>
+<h3>핵심 개념 3개:</h3>
+<ol>
+<li>Reverse In-Order Traversal</li>
+</ol>
+<p>이게 아까 말했던 오른쪽에서 왼쪽 순서로 가야 큰 값을 먼저 살핀다.
+2. Cummulative Sum
+지금까지 탐색한 값들의 합을 저장하고, 현재 노드의 값을 대채한다.
+3. 현재 노드 값의 대체
+현재 노드의 값을 현재까지의 합으로 대체한다.</p>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def bstToGst(self, root: TreeNode) -> TreeNode:
+        cummulative_sum = [0] # initialize cummulative sum list
+
+        def reverseInOrder(node: TreeNode):
+            if not node:
+                return
+            
+            # Traverse right subtree first
+            reverseInOrder(node.right)
+
+            # Update cummulative sum
+            cummulative_sum[0] += node.val
+
+            # Update current node value
+            node.val = cummulative_sum[0]
+
+            # Traverse left subtree
+            reverseInOrder(node.left)
+        
+        # Start reverse in order traversal
+        reverseInOrder(root)
+        return root
+</code></pre>
+<ul>
+<li>먼저, cummulative sum을 저장할 리스트를 초기화한다.</li>
+<li>reverseInOrder 함수를 정의한다.</li>
+<li>reverseInOrder 함수는 node를 받아서, node가 None이 아닐 때까지 오른쪽 서브트리를 먼저 탐색한다.</li>
+<li>그리고, cummulative sum을 업데이트하고, 현재 노드의 값을 업데이트한다.</li>
+<li>마지막으로, 왼쪽 서브트리를 탐색한다.</li>
+<li>마지막으로, reverseInOrder 함수를 실행하고, root를 반환한다.</li>
+</ul>
+<p>테스트 케이스는 모두 통과한다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 86.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA/UlEQVR42q1T7QrDIAz0/R9yMBhlYOm3Wq3tzRMc+7GmW7dAwM/L5ZKoIRhcxgpXc8c0GzjrYJ1DCAHfWFwBk76oGCNuVQWt63S4YpomBO9x1pT3AS4xiinEtm3ZfzG1JlZ0MZ2UxdGbJ6DEqDBumgZd1x1mwDslRaOebdvmh2SotYa1Vma4d2GMeTIjSAGnSx2wC7gsS9aOYHVd5z1ZErDv+3MaloK8pulTS83zvK8ho/LTv0xRD/ahZN/0pvrkEYsj6faxhuM45iJQMzrX/mAsdxkSgNWlU5ZSbYJKmiupqcmQqRJoGIasNdc8P902helrIPqp0XtX5aN5fgDXxED9rsTN7gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="test"
+        title=""
+        src="/static/349b20eeff40441ab69e1dd660646cf5/5a190/tests.png"
+        srcset="/static/349b20eeff40441ab69e1dd660646cf5/772e8/tests.png 200w,
+/static/349b20eeff40441ab69e1dd660646cf5/e17e5/tests.png 400w,
+/static/349b20eeff40441ab69e1dd660646cf5/5a190/tests.png 800w,
+/static/349b20eeff40441ab69e1dd660646cf5/c1b63/tests.png 1200w,
+/static/349b20eeff40441ab69e1dd660646cf5/e9140/tests.png 1226w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACE0lEQVR42n1TS2/TQBD2r+XIAW4c+BEgBEJCQuLKgQMgIS5ITZEIUhQkqNuitKWpm9jBdvxYex/e/ZhZJyakwEijsXdmvnkHK5EhjGdIqxxGGyitoLUe2DmHfSqKEj8u58iTDO+jMe5OHuDe9DGez94gkEoiyzI0TeO5bds/uOs6D7oLbEwHpTQsyWWT4nMaYvzzCGdVhIAd8ixHEicQBKiNIQfKVCnPDMqS7aSUXvdPopiBogxPjo8RXUeI4yWu5pcIw5DKKiCEQFVVA2ie50PWLEsqXUgB4wyss54DTX1LFgWyRCBeCZxHa6Rp5sG4BSw5MyYGstb68llytp2llqBvB78HrNCKFIYMOmY3OOzypiJsW/mXWfWAW+f/kdvw9mcA3QC7fUAu5Wa0m2DnGbCqqXSK/2EGyM18OktJud5yJ0O3l9NvWlaA0MABgTwbA6ML4NZL4O1Jr5vOJVrVJxVsd4xaB2ojNL035BwVQEmzOCDnRx+BFxPgySfg9iv6PwTuvAYejoD774Cnhxqjsx1AS5MqhMG6dcQElhscxRYXOUW/tvi2MPiyAL6nDpMrgxnJr0vgNDGYRg6nK+vtPWC/+QairqFkSxNvIRtBsqFTlCQFVFuTDb/XkKIgO3prKvouYUivdeuZZzEA8iJL2V9HUdLCisZ/V1Xtb7clXUVBU7oqvqia9jNfr73enyntKs/iF86J6pKYwzARAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/9ba7b8885fd867abe620aa48420f1e44/5a190/tc.png"
+        srcset="/static/9ba7b8885fd867abe620aa48420f1e44/772e8/tc.png 200w,
+/static/9ba7b8885fd867abe620aa48420f1e44/e17e5/tc.png 400w,
+/static/9ba7b8885fd867abe620aa48420f1e44/5a190/tc.png 800w,
+/static/9ba7b8885fd867abe620aa48420f1e44/c1b63/tc.png 1200w,
+/static/9ba7b8885fd867abe620aa48420f1e44/c929c/tc.png 1218w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<p>노드 방문을 한 번씩만 하기 때문에 O(N)이다.
+각 노드를 정확히 한 번 방문하므로, 전체 시간 복잡도는 O(N)이다.</p>
+<h3>공간 복잡도</h3>
+<p>O(H); H는 트리의 높이로, 재귀 호출 스택의 최대 깊이이다.</p>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+
+The number of nodes in the tree is in the range [1, 100].
+0 &#x3C;= Node.val &#x3C;= 100
+All the values in the tree are unique.
+</code></pre>
+<p>노드의 수가 최대 100개로 매우 작기 때문에 O(N) 복잡도의 알고리즘은 충분히 빠르게 실행될 수 있다.</p>
+<p>현재 프로그램이 느린 이유는 재귀 호출로 인해 호출 스택이 깊어지면서, 특히 트리의 높이가 커질 때 스택 프레임 관리에 시간이 더 소요되기 때문이다. 또한, 불필요하게 cummulative_sum을 리스트로 사용하여 간접적인 접근을 하는 것도 성능을 저하시킬 수 있다. 이 때문에 작은 트리에서도 재귀 깊이와 리스트 접근이 누적되어 느리게 작동할 수 있다.</p>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree">LeetCode</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1038BSTtoGreaterSumTree/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-83be3dfe083a3f07b3c1.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="b7a2d18f8a7f9ae077cb";</script><script src="/webpack-runtime-de0cfa5adc37c3d74107.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
