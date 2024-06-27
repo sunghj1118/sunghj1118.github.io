@@ -1,0 +1,143 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1791. Find Center of Star Graph</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">June 27, 2024</p><div><h1>문제 설명</h1>
+<p>이 문제는 Star graph의 중심을 찾는 문제다. Star graph는 한 점을 중심으로 여러 점이 연결된 그래프를 의미한다. 이때, 주어진 그래프에서 중심을 찾아라.</p>
+<p>Star graph의 중심은 모든 점들이 연결이 되어 있는 곳을 의미하기 때문에, 모든 점들이 연결이 되어 있는 점을 찾으면 된다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 96.50000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAABYlAAAWJQFJUiTwAAABhElEQVR42q2U246CQAyG5/3fzgsPF8ZEQYVBOQkeQK18Nd2Qze5GXCdpOh3KP//05NbrtSwWC5nP5zIej2UymchsNpPpdKoyGo3UZt1uN7nf778Ky5WXi2RlKT72st+nEgShxHEsaZp29l4dAXp1OZ8kEnUAMA3DUJbLpWpsA/beq73dbiXp/IuiUL3ZbGS32+k5Pk3TiMvzXLIs0wMAcIyiSPdVVavmJ9jjh2Bzbt/QZfdKZQhAEAQK4n3S3fbUOHEGC/ZcSAgAgCFEADGpquoJeOlieDqd5Hg8qj6fzyrYfV3Xte7RloAfY3g4HPSG6/Uqn1jO6FsmYUxw3wbsG23bKjjyLmPXL0pYElzkrzi9zJAFM579kSfDyrL5EUCSQWf8O4bEDoGZ1Rq1N7SPFZBiBgCxaWLlQ3I4H8L2q7C/JwJwzmm3IXXpcOaZaHs6jBBrxSEl5JgeDFIGQb9feS7sAbULTGgACKBNLNaOH1erlU4Ua0MybUPBBoft+8PE9oiF5QEiR8vSc5E1FAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1791"
+        title=""
+        src="/static/e48cb91de2493b8bedc9d9e7105e72f7/5a190/1791.png"
+        srcset="/static/e48cb91de2493b8bedc9d9e7105e72f7/772e8/1791.png 200w,
+/static/e48cb91de2493b8bedc9d9e7105e72f7/e17e5/1791.png 400w,
+/static/e48cb91de2493b8bedc9d9e7105e72f7/5a190/1791.png 800w,
+/static/e48cb91de2493b8bedc9d9e7105e72f7/c1b63/1791.png 1200w,
+/static/e48cb91de2493b8bedc9d9e7105e72f7/252a4/1791.png 1314w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<ul>
+<li>모든 노드에 대해서 공유하는 노드가 있다면 그 노드가 중심이다.</li>
+</ul>
+<p>구현 아이디어:</p>
+<ul>
+<li>첫 번째 edge에 대해서 두 노드를 두고, 나머지 edge에 대해서 두 노드 중 하나가 공유되는 노드가 있는지 확인한다.</li>
+</ul>
+<h2>풀이</h2>
+<p>생각보다 바로 돼서 놀랐다.</p>
+<pre><code class="language-python">class Solution:
+    def findCenter(self, edges: List[List[int]]) -> int:
+        first = edges[0][0]
+        second = edges[0][1]
+
+        # When there is only one edge
+        if len(edges) &#x3C; 2:
+            return edges[0][0]
+        
+        # Search for shared node
+        # If neither are shared, there must be no center
+        if first in edges[1]:
+            shared = first
+        elif second in edges[1]:
+            shared = second
+        else:
+            shared = None
+
+        # Check if shared is present everywhere
+        for i in range(2, len(edges)):
+            if shared in edges[i]:
+                continue
+            else:
+                return None
+        
+        return shared
+</code></pre>
+<ul>
+<li>첫 번째 edge에 대해서 두 노드를 둔다.</li>
+<li>두 번째 edge랑 비교해서 공유되는 노드가 있는지 확인한다.</li>
+<li>공유되는 노드가 없다면, None을 반환한다.</li>
+<li>공유되는 노드가 있다면, 모든 edge에 대해서 공유되는 노드가 있는지 확인한다.</li>
+<li>공유되는 노드가 없다면, None을 반환한다.</li>
+<li>끝까지 공유되는 노드가 있다면, 공유되는 노드를 반환한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 61%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAAByUlEQVR42q2TTW8TMRCG928jTv0DSJw49cqhoqVFgAQSEhIXpAqB2oYGoookm5LQNtl47bW9ttcvM946VBEfF7yyZjy2n/nYcWF9i3F1iUV9De89fPAIISSdZYwR22NVVbicfcdyVeHhcA/3Pj7CzskuKidRdF2Huq6hpILWOk1r7Ubn/W2oI2dt28I5h7GaY7ieYFSX8DGg4ANCCJSzKYEFXMuwJkEzOF9mnaP+02DHCTgZTzH6coGr6xUm5Rynp2cYzS4gGwkpJYwxCc6ZMJjLwfaUQaQM8peBtWiwvlFUE40fNAWlrxqVQEabFGGOIM/flSIB0yZ5+R9jE2HvjSRN9qkdlaHqdbbnQPL6r8Bf4fdG64GjQYfHHyzK9d3DPfCfEW6At5EdngH3n0fsvAp48BY4oPX7KfD6K/BmBLz7BswlEOhC6PqstoCccoDQHoNFxP5JwOEgEtjjKcm9TwHPPke8OPd4OYx4QvvHJTBeBlzJiIUIqAz1ZtcXpejJHf1V7j1DfagQXANnagRv4B2tw62dpCfpnEVD57WxUKpBo21qJx5FDlXya1EqPSshatwsl9R3Mq2znS9X1Tr1Hz+GLI3R1Js98CdQUJ+GK7gksgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/e55f5997b274c5e37cb798cf7c1eecab/5a190/tc.png"
+        srcset="/static/e55f5997b274c5e37cb798cf7c1eecab/772e8/tc.png 200w,
+/static/e55f5997b274c5e37cb798cf7c1eecab/e17e5/tc.png 400w,
+/static/e55f5997b274c5e37cb798cf7c1eecab/5a190/tc.png 800w,
+/static/e55f5997b274c5e37cb798cf7c1eecab/c1b63/tc.png 1200w,
+/static/e55f5997b274c5e37cb798cf7c1eecab/252a4/tc.png 1314w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<p>O(N) ; N은 edge의 개수</p>
+<ul>
+<li>O(1) : 첫 번째 edge에 대해서 두 노드를 둔다.</li>
+<li>O(1) : 두 번째 edge랑 비교해서 공유되는 노드가 있는지 확인한다.</li>
+<li>O(N-3) : 모든 edge에 대해서 공유되는 노드가 있는지 확인한다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(1) : 상수만 사용한다. first, second, shared 변수.</li>
+</ul>
+<p>추가적인 공간을 사용하지 않는다.</p>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+3 &#x3C;= n &#x3C;= 10^5
+edges.length == n - 1
+edges[i].length == 2
+1 &#x3C;= ui, vi &#x3C;= n
+ui != vi
+The given edges represent a valid star graph.
+</code></pre>
+<p>주어진 제약 조건에 대해서는 문제가 없다. 10^5까지의 edge를 처리할 수 있다.</p>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/find-center-of-star-graph/">LeetCode</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1791FindCenterofStarGraph/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-e93754ac382684d804ba.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="ae622dc989569b073d89";</script><script src="/webpack-runtime-f0fe77872537c984074e.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
