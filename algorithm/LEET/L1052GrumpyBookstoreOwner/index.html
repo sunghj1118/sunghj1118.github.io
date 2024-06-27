@@ -1,0 +1,216 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1052. Grumpy Bookstore Owner</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">June 28, 2024</p><div><h1>문제 설명</h1>
+<p>n개의 시간대에 대한 고객의 만족도가 주어집니다. 그리고 n개의 시간대에 대한 고객의 만족도를 최대화하기 위해 k개의 연속된 시간대에 대한 고객의 만족도를 최대화하는 방법을 찾는 문제입니다.</p>
+<p>주어지는 입력으로는 다음과 같습니다.</p>
+<ul>
+<li>customers: 고객의 만족도 배열</li>
+<li>grumpy: 고객의 불만족 배열</li>
+<li>minutes: 연속된 참을 수 있는 시간대의 개수</li>
+</ul>
+<p>이때, grumpy 배열의 값이 1인 경우에는 주인이 까칠해서 고객의 불만족이 있고, 0인 경우에는 고객의 만족도가 있습니다.</p>
+<p>minutes는 연속된 시간대의 개수를 의미합니다. 이때, 연속된 시간대의 개수만큼의 시간대에 대한 까칠함을 참아서 고객의 불만족을 최소화하여 고객의 만족도를 최대화하는 방법을 찾는 문제입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 83%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAABzElEQVR42q2U6Y7CMAyE8/4vt7sIkDgELffZ0pOWy9vPlasIIe2fjTSycVxnxk5wX98/Mp/NZTQayWAwkOFwKP1+XyaTicZ6vZ5cLhdhvV4v+bTut5ukeSrVsxZXXBbNB5EsFgtZrdYShqEsl0vZ7Xay3++lLEu53+/y13o+n3qgS+KjxHEkx+NRmZxOJ4miSH0sBUGappJlmSLP8wZZE2v9JEnker1qYbdcrRpmLWAGYBsEgfrEt9tt9zsIwi53vV6rnc1m6mtBkxjHsbIwJr5fVVX3G8CIfCxK0jTRuErmdPqF1PP5LIfDQX2TDogbaA2FkqQtjuQsy6Uo2l5rQSRAebPZqAXEOAjYHrmogVXbRwoVam/NpJWhJdhpAJ9EfwjmMyDyDdYCCmoPkWZ9IplpYYlR1Bj4bLDkVVWtlphdLYcUkwOQR69I9AuaD8qy6Pbt8I4hTaaADQXLBA3IwrLnW4p8Wo4bDh6Ph8J8JFjMfKwf//QcHRKh/l/L8SpMAn2p69pretU13Xx7ioAYe3xjjN14PJbpdKoXmA/syrxPmLj/rs0nh4IdQ9jZn4DPjCLGyCz77DHRd3TXhmRrNngfyqfhMAgbJr6Bgr+3IBsyPYKiKwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1052"
+        title=""
+        src="/static/dc4d0c78e4f50351d570a3081395da37/5a190/1052.png"
+        srcset="/static/dc4d0c78e4f50351d570a3081395da37/772e8/1052.png 200w,
+/static/dc4d0c78e4f50351d570a3081395da37/e17e5/1052.png 400w,
+/static/dc4d0c78e4f50351d570a3081395da37/5a190/1052.png 800w,
+/static/dc4d0c78e4f50351d570a3081395da37/c1b63/1052.png 1200w,
+/static/dc4d0c78e4f50351d570a3081395da37/203d3/1052.png 1322w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<p>이 문제를 푸는데에 핵심은 '언제 가장 많은 잠재적인 피해를 보는가?'를 구하는거라고 생각합니다. 이때, 잠재적인 피해를 보는 시간대를 찾아서 그 시간대에 대한 고객의 불만족을 최소화하여 고객의 만족도를 최대화하는 방법을 찾는 것입니다.</p>
+<p>따라서 저는 다음과 같은 방법으로 문제를 풀었습니다.</p>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def maxSatisfied(self, customers: List[int], grumpy: List[int], minutes: int) -> int:
+        n = len(customers)
+        possible = [0]*n
+
+        # find potential loss satisfaction
+        for i in range(n):
+            possible[i] = customers[i] - customers[i] * grumpy[i]
+            grumpy[i] = customers[i] * grumpy[i]
+
+        # find best blocking window
+        best = 0
+        best_i = 0
+        if n &#x3C;= minutes:
+            best = sum(grumpy)
+        else:
+            for i in range(n-minutes+1):
+                best = max(best, sum(grumpy[i:i+minutes]))
+
+        return sum(possible) + best
+</code></pre>
+<ul>
+<li>먼저, 잠재적인 피해를 찾기 위해 <code>possible</code> 배열을 만들어서 고객의 만족도에서 고객의 불만족을 뺀 값을 저장합니다.</li>
+<li>그리고, 고객의 불만족을 찾기 위해 <code>grumpy</code> 배열에 고객이 불만족해서 못 얻는 값들을 저장합니다.</li>
+</ul>
+<p>(하나의 배열에 저장하는 이유는 공간을 절약하기 위함입니다. 이때, customers 배열은 재사용하지 않는 이유는 grumpy를 계산할 때 customers 배열을 사용하기 때문입니다.)</p>
+<ul>
+<li>그리고, 연속된 시간대의 개수만큼의 시간대에 대한 고객의 불만족을 최소화하여 고객의 만족도를 최대화하는 방법을 찾기 위해 다음과 같은 방법을 사용합니다.
+<ul>
+<li>만약, n이 minutes보다 작거나 같다면, 그냥 모든 시간대에 대한 고객의 불만족을 더하면 됩니다.</li>
+<li>그렇지 않다면, n-minutes+1만큼 반복하면서 연속된 시간대에 대한 고객의 불만족을 더하면서 최대값을 찾습니다.</li>
+</ul>
+</li>
+<li>마지막으로, 고객의 만족도를 계산하기 위해 <code>possible</code> 배열과 <code>best</code> 값을 더해서 반환합니다.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABLUlEQVR42o1Si3LCMAzL/38kg8E2Rluapnk7rbDDY3ArbL7q3Ms1qiRbdVbDBo9CBc9qmgqcz+iOGoPR8IGQUkZMhBhT7SkXZCKo4AJiSMiZXoLKhHE0+Dp8wjgDnxyIRRCTTNOM+fJzNQwD+l7DOY8Q4iIiqxFC7z3a9oCma9DrHtZaVhiZcLq5UeNoIagXRf4SxB6rbLsW38cDIjHJzCQXWfM836CEKOfMmaTaxcI9Ckk+VAkpFpiux3G/h2d1olBU35dar9dYrd6w3e6qdSEWGw+QM87LuxFt0yDxEL1zHJOr3z8Q7nYf2GzeId2YsVpcyjBzhsE6DFpXxWJvqdRVhVyUVQgh3N6vEOvnsPjhAZTyfMUq4Xn8Z9QVqfn9nL0i+EUo6/LnDtL/CU9KwQ7WOiXwbQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="test"
+        title=""
+        src="/static/251be5a9964688b929eb62b84a861310/5a190/test.png"
+        srcset="/static/251be5a9964688b929eb62b84a861310/772e8/test.png 200w,
+/static/251be5a9964688b929eb62b84a861310/e17e5/test.png 400w,
+/static/251be5a9964688b929eb62b84a861310/5a190/test.png 800w,
+/static/251be5a9964688b929eb62b84a861310/c1b63/test.png 1200w,
+/static/251be5a9964688b929eb62b84a861310/29007/test.png 1600w,
+/static/251be5a9964688b929eb62b84a861310/8aace/test.png 2732w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 61.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABc0lEQVR42qVT207DMAzdh/PAVyAh8Q18CtrEGw/Axraya9Pc21wOsbuWSTCJiyvr2Il1cpy4Ex9avByXWIstuq5jDyGM+J3VtcByuUJ9FLh5usfV9BbXsztsfY1JSglSSiilYK1ld84xeu8RYwTVnFsIkQ+jvbXd41mt8KorhBQxoYKmEZgv5miEQOhaGGOYlJxiIibFFBPJJcs594SrZYXpwyM2myMWqy2msxmqqmKVpJyIiVBrzUiktE55ygl5+HrCDCUtmqOBEA672kFpatexsoFsUDDg4F8U0loqvceU0V3u5kd2IqRTMnQLvMth4x+EHKQA5VMh7MlT+ryT3/pkuIdzhfzyJsC18Q8ts8Lyai7iTWQcdMTBZsz3bRn2iL0mT9jKUPYSdoQmc74fEejPHlouzDRjxjpIbaCth+bcQ6qSG4dGakbOqU7pEY3zaNvu7A5LQH+LLSRN0/D8iTLk5pQboyHqesz7OlFQc935aH0AJZGoZHY2QAAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/8adc901914e7a996dc5d8286440ab736/5a190/tc.png"
+        srcset="/static/8adc901914e7a996dc5d8286440ab736/772e8/tc.png 200w,
+/static/8adc901914e7a996dc5d8286440ab736/e17e5/tc.png 400w,
+/static/8adc901914e7a996dc5d8286440ab736/5a190/tc.png 800w,
+/static/8adc901914e7a996dc5d8286440ab736/c1b63/tc.png 1200w,
+/static/8adc901914e7a996dc5d8286440ab736/874d1/tc.png 1310w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<p>O(n)의 시간 복잡도를 가집니다. 다른 풀이들보다 확실히 느리긴 하지만 그래도 O(n)이긴 합니다.</p>
+<ul>
+<li>possible 배열을 만드는데 O(n)</li>
+<li>best를 찾는데 O(n*minutes)이 걸립니다.</li>
+<li>sum을 계산하는데 O(n)이 걸립니다.</li>
+</ul>
+<p>따라서, O(n*minutes)의 시간 복잡도를 가집니다.</p>
+<h3>공간 복잡도</h3>
+<p>O(n)의 공간 복잡도를 가집니다. possible 배열을 만드는데 O(n)의 공간이 필요합니다.</p>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+n == customers.length == grumpy.length
+1 &#x3C;= minutes &#x3C;= n &#x3C;= 2 * 10^4
+0 &#x3C;= customers[i] &#x3C;= 1000
+grumpy[i] is either 0 or 1.
+</code></pre>
+<p>일단 그래도 다른 풀이들보다는 느리니까, 최적화 하려면 매번 sum을 구하는 것보다 sliding window를 하는게 더 좋을 것 같습니다.</p>
+<p>Running sum을 이용해서 O(n)으로 풀 수 있을 것 같습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABLElEQVR42pWRiWrDMBBE9f+/GIhNwE4kO44v3cd0V7gpDWlpFwYdDKN9KzFsE7TVSDHhp0opYt08lnWHcw7eZ4QQ4XyAD6xEiggxQlhtyRAQKTCl94pk9DFj3h7oVIepNmEQfYS1FsbY6uMS87yAxZfO+bfiLgI9qKYB/dBD3RX5DZx1ddVa1+BSCsSyrFjXjS7c+7Aj0BGW1jv6scN9vsMGC+12WG8JP3x1yLg55xfE76rzSRm72dF0Ddpbi4u8VPzHMte5PgO7rsfpdML5TMa2RdO01PFKc/UVw5PZ0Z47dHRW6opplBhkj2mQMNtWA9nLqxjHEdfrDVJKMqsqngt/BKOweB+pwxILnDkeYQ/RAeVJxqSCvz/ncihXvSJ/4vylBP8uh/6m/wR+ACKivXTe0+GRAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="new"
+        title=""
+        src="/static/f066102939b8b66c7c46cbc3a0909f69/5a190/new.png"
+        srcset="/static/f066102939b8b66c7c46cbc3a0909f69/772e8/new.png 200w,
+/static/f066102939b8b66c7c46cbc3a0909f69/e17e5/new.png 400w,
+/static/f066102939b8b66c7c46cbc3a0909f69/5a190/new.png 800w,
+/static/f066102939b8b66c7c46cbc3a0909f69/c1b63/new.png 1200w,
+/static/f066102939b8b66c7c46cbc3a0909f69/29007/new.png 1600w,
+/static/f066102939b8b66c7c46cbc3a0909f69/38abd/new.png 2766w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 55.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABYUlEQVR42pVT2W7CMBDk/3+wDTxUQEqaALl8x46nuxsiikorYWmyp8dea7LJOUNrha7rYK1FSkkQp4gQgmCaJszzjBij2L8Wc234U2wLvBdvRNrieNhjt9vh0JTQRkMpBeecEPOh3nsh5ZwxBiGFR8I5zyiPDarjFfVZo/ioUZYn1F0DbQ3dXstmJllvyhvZ50PiHH/f0IcJKfJINGrKUsi0cR3/vzGfjkwuXMzo3FrgTMar64FQ+YxqvBM+Nq6H/PCf4kZo6a16ZVFdFYKjN6N4hXf2tRvOLBs14vDVYruvcWpanM694JP86jLATBBYRlh8E5Z4rYUklLeRCYONuNqMnuxA47c6YiTbmUSYcRlJNpbtRD2LXeNWJyEXQjYs2HHo4YyCEkv6G0joHI9LPFIseY7tUnf23s9Pw2oQQnb4L/E+LGIlGbH+POlMayN5FjhbTXXJK73E3EdiZ8nxG34Dk/VcBsJHdgoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc2"
+        title=""
+        src="/static/6d207f582c5e5f3ac0f34894c79e05ea/5a190/tc2.png"
+        srcset="/static/6d207f582c5e5f3ac0f34894c79e05ea/772e8/tc2.png 200w,
+/static/6d207f582c5e5f3ac0f34894c79e05ea/e17e5/tc2.png 400w,
+/static/6d207f582c5e5f3ac0f34894c79e05ea/5a190/tc2.png 800w,
+/static/6d207f582c5e5f3ac0f34894c79e05ea/c1b63/tc2.png 1200w,
+/static/6d207f582c5e5f3ac0f34894c79e05ea/bc3ae/tc2.png 1268w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>확실히 Sliding window를 사용하면 O(n)으로 풀 수 있습니다.</p>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/grumpy-bookstore-owner/">1052. Grumpy Bookstore Owner</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1052GrumpyBookstoreOwner/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-9d7652265cd804ac099a.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="f547ccd5b54f3abc62a6";</script><script src="/webpack-runtime-0a949af5c976eab6a3b3.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
