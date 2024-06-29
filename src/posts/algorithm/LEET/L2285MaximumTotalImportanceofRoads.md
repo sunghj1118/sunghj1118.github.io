@@ -2,7 +2,7 @@
 title: "2285. Maximum Total Importance of Roads"
 date: "2024-06-28"
 description: "2285. Maximum Total Importance of Roads는 도시의 중요도를 최대화하는 문제입니다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "Graph"]
 ---
 
 # 문제 설명
