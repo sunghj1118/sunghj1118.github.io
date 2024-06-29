@@ -4,8 +4,8 @@
   "app.js": "app-116f71e1070db11cb3e3.js",
   "component---src-pages-404-js-60d2a0d2c248384ad0d2.js.map": "component---src-pages-404-js-60d2a0d2c248384ad0d2.js.map",
   "component---src-pages-404-js.js": "component---src-pages-404-js-60d2a0d2c248384ad0d2.js",
-  "component---src-pages-index-js-9d7652265cd804ac099a.js.map": "component---src-pages-index-js-9d7652265cd804ac099a.js.map",
-  "component---src-pages-index-js.js": "component---src-pages-index-js-9d7652265cd804ac099a.js",
+  "component---src-pages-index-js-b6057f1084ae601c519d.js.map": "component---src-pages-index-js-b6057f1084ae601c519d.js.map",
+  "component---src-pages-index-js.js": "component---src-pages-index-js-b6057f1084ae601c519d.js",
   "component---src-pages-page-2-js-50e83426ef775361f1a0.js.map": "component---src-pages-page-2-js-50e83426ef775361f1a0.js.map",
   "component---src-pages-page-2-js.js": "component---src-pages-page-2-js-50e83426ef775361f1a0.js",
   "component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js.map": "component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js.map",
@@ -20,6 +20,6 @@
   "framework-a880249783d1bea64870.js.map": "framework-a880249783d1bea64870.js.map",
   "framework.js": "framework-a880249783d1bea64870.js",
   "styles.css": "styles.5250b878f8ec5a9f94b0.css",
-  "webpack-runtime-0a949af5c976eab6a3b3.js.map": "webpack-runtime-0a949af5c976eab6a3b3.js.map",
-  "webpack-runtime.js": "webpack-runtime-0a949af5c976eab6a3b3.js"
+  "webpack-runtime-1396eda0462752b968ab.js.map": "webpack-runtime-1396eda0462752b968ab.js.map",
+  "webpack-runtime.js": "webpack-runtime-1396eda0462752b968ab.js"
 }
