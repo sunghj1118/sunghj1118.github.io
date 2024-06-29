@@ -1,6 +1,6 @@
 ---
 title: "2192. All Ancestors of a Node in a Directed Acyclic Graph"
-date: ""
+date: "2024-06-29"
 description: "2192. All Ancestors of a Node in a Directed Acyclic Graph는 DAG에서 모든 조상을 찾는 문제입니다."
 tags: ["Algorithm", "Graph"]
 ---
