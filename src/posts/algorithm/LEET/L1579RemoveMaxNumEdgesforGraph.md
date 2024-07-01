@@ -10,7 +10,8 @@ tags: ["Algorithm", "Graph"]
 
 ## 문제
 이 문제는 Union-Find 알고리즘을 사용하여 그래프를 완전히 탐색할 수 있도록 최대한 많은 간선을 제거하는 문제다.
-![1579v2](image.png)
+
+![1579v2](../../../images/LEET/1579/1579v2.png)
 
 ## 문제 소개: Union-Find
 UnionFind (Disjoint Set)를 사용해야 해서 조금 생소한 문제다. Union Find는 그래프에서 연결되어 있는 노드들을 찾는 자료구조의 일종이다. 
@@ -109,7 +110,7 @@ class Solution:
     - 그렇지 않다면, `edges`의 길이에서 `edges_used`를 뺀 값을 반환한다.
 
 ## Complexity Analysis
-![tc](image-1.png)
+![tc](../../../images/LEET/1579/tc.png)
 
 ### 시간 복잡도
 - O(n): Alice와 Bob에 대한 UnionFind 클래스를 초기화하는 데 O(n)이 걸린다.
