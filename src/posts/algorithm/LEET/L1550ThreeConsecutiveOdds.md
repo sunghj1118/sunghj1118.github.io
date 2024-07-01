@@ -40,6 +40,23 @@ class Solution:
         return False
 ```
 
+너무 번잡해서 다시 한번 다듬어봤다.
+```python
+class Solution:
+    def threeConsecutiveOdds(self, arr: List[int]) -> bool:
+        count = 0
+
+        for num in arr:
+            if num % 2 == 1:
+                count += 1
+                if count == 3:
+                    return True
+            else:
+                count = 0
+
+        return False
+```
+
 ## Complexity Analysis
 ![tc](../../../images/LEET/1550/tc.png)
 
