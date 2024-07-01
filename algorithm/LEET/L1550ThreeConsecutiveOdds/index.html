@@ -87,6 +87,21 @@ data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*
         
         return False
 </code></pre>
+<p>너무 번잡해서 다시 한번 다듬어봤다.</p>
+<pre><code class="language-python">class Solution:
+    def threeConsecutiveOdds(self, arr: List[int]) -> bool:
+        count = 0
+
+        for num in arr:
+            if num % 2 == 1:
+                count += 1
+                if count == 3:
+                    return True
+            else:
+                count = 0
+
+        return False
+</code></pre>
 <h2>Complexity Analysis</h2>
 <p><span
       class="gatsby-resp-image-wrapper"
