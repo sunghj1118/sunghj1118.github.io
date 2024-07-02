@@ -2,7 +2,7 @@
 title: "350. Intersection of Two Arrays II"
 date: "2024-07-02"
 description: "350. Intersection of Two Arrays II는 두 배열의 교집합을 구하는 문제다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "Hashmap"]
 ---
 
 # 문제 설명
