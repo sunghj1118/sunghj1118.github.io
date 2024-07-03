@@ -249,7 +249,8 @@ const IndexPage = ({ data }) => {
     Infra: ['Kubernetes', 'Docker', 'Container'],
     Algorithm: ['Theory', 'Log', 'DP', 'Heap', 'Hashmap', 'Sorting', 'Two Pointer', "Bit", "Tree", "Linked List", "Graph", "Sliding Window", "Greedy"],
     CS: ['Architecture'],
-    AI: []
+    AI: [],
+    Books: []
   };
 
   return (
