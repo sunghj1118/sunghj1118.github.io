@@ -1,0 +1,125 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">2181. Merge Nodes in Between Zeros</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">July 04, 2024</p><div><h1>문제 설명</h1>
+<p>Linked List가 주어졌을때, 0과 0 사이에 있는 값들을 더해서 반환하는 문제다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAACFUlEQVR42qVU2Y7iQAzM///Z7DyhhZmwiCtAQg5yJ5CLWpcZI7SrfRhtS1a7L7tsl9s5Ho9w3SW22y1msxmWyyXm87nOruuqTlmtVlgsFvA8D3+OaZxQliWqroaTZwmSyEccJ2rU930cDgcEQYAwDFVP0xRFUSDLMtR1/ZfB+/2OcRwxTiOc4Vagb0L1kCQX5HmO8/ksBs+oqkr2EnRdh2maVPjwdruptG2L6/WKvu8xDIOeO553gLtcKbrdbg+mgKi45swQOXPf9wONhE4ulwtOp5NGUhSlAqJjh4iiKNRwqFN4yBD5iDPXlKZpFBEfEiFRUecedQ6H3rbbnaJg/jabjXqldxbiFSXPTGyPkVAI5GkwjmNFQ51CgxTmksg14SLMleXLxNYsjBq0y6+HnBkKhWffGQ4rxTxZDv53OAzL23uo6gpt12AQdI0QtOuFGtcHNbg3lMVjlsIMstcL+kEKRSB6x4pC0tZVDT854TNYSM5SuMEHglTIHsWIJL+JOC3f35AJGy7znyh/uUj8E4r3H8jk/CgFrIWzapDMj6JIKVFUhdIhr3I0baNdUX1dnG5XtgQmQXkf+ofOPRnMueVaDa7XazEaC7pcDVpHUKh/uyjk1H6/V/pwTaNErC0mpDWdzl/bjuiN7E+EhGv84yEvWWfoD/K1toc0ZL39GsWTh1zwMh9Zzsh6+12sDQ25Gf1XKn4DuYfM1MwCVJgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2181"
+        title=""
+        src="/static/e7b12e4de69180ae0d95c0c405d02231/5a190/2181.png"
+        srcset="/static/e7b12e4de69180ae0d95c0c405d02231/772e8/2181.png 200w,
+/static/e7b12e4de69180ae0d95c0c405d02231/e17e5/2181.png 400w,
+/static/e7b12e4de69180ae0d95c0c405d02231/5a190/2181.png 800w,
+/static/e7b12e4de69180ae0d95c0c405d02231/c1b63/2181.png 1200w,
+/static/e7b12e4de69180ae0d95c0c405d02231/78958/2181.png 1320w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<h2>풀이</h2>
+<pre><code class="language-python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return []
+
+        dummy = ListNode(0)
+        curr = dummy
+        summ = 0
+
+        
+        while head and head.next:
+            summ += head.next.val
+            if head.next.val == 0:
+                curr.next = ListNode(summ)
+                curr = curr.next
+                summ = 0
+            head = head.next
+        
+        return dummy.next
+</code></pre>
+<ul>
+<li>애초에 head가 없거나 head.next가 없다면 빈 리스트를 반환한다.</li>
+<li>dummy를 만들어서 curr을 dummy로 설정하고, summ을 0으로 초기화한다.</li>
+<li>head와 head.next가 존재하는 동안, head.next의 값을 summ에 더한다.</li>
+<li>만약 head.next의 값이 0이라면, curr.next에 summ을 넣고, curr을 curr.next로 설정하고, summ을 0으로 초기화한다.</li>
+<li>head를 head.next로 설정한다.</li>
+<li>dummy.next를 반환한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 68.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACL0lEQVR42o1UTY/TMBDNn+UHcANxRwIOXDhwQOKEhFYgpBUHFgkBB47Lp9htu7tqu21Ku2mTOHacD8d+zDhNtW1ZCVej8XjsN286MwkWeoXzdAJVa8A6NNbCXhPnHHaXlAqLqwh5qvBjeYZHJy/w+PQlnl+8RSBUhskihFQSWmvoQreapCgKNE2zB5jnGqs4hhY5TpIhnp69wbPzQxyMPyCwjUVVVh6gqioP0LGr69qLMcYz7Xw3LkomYBa9fg+DQR9JEiMTKRbzOaIoglKK0pOeKQcTQvjAHbgPaGo0zrZCwYKS2PV+DzAaThEtBcbTOfp9skdDSi330qXOewZmlqzZ5gAbghQoqGsDrQzyrEacVlhlBob+BksA/IiFmfzP8oCOqFpn9xz/qm537n/O7d3zgNfbg327OGzbtTRrnyiBwtzI0G3AuIDWbUsXwK71KAYefAZe/wIVxFAh3ObeFsOt2u/oyxQYJw6yAp58AW69Am4fAu9Py/2UfQsQ4FQAHy8cvobAnwwIhcP3GXDw0+EhMbr/qWV298jhzrtW3zuy+BY6HNObUQLP1gMW1DoLqu40bTBNakTKIkwqzITF5aoi22FG9pW0uKJ7cW6xlMbvw8RgEtdY5q4FZKplWUJRQ1eaxk8KlFpBZSnqQiGX7bkUMZ1LZNT8IlkijZf+bkGjq5VAVeS+vTwgbyRNRcHA1Kwl9R7PNvdgRh8CDiiyzPsz2c48T1DX2PyGC8S1+AtmUDc3bbzUdgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/0300e3c9772ae6bf9122b8c5ff8aadd6/5a190/tc.png"
+        srcset="/static/0300e3c9772ae6bf9122b8c5ff8aadd6/772e8/tc.png 200w,
+/static/0300e3c9772ae6bf9122b8c5ff8aadd6/e17e5/tc.png 400w,
+/static/0300e3c9772ae6bf9122b8c5ff8aadd6/5a190/tc.png 800w,
+/static/0300e3c9772ae6bf9122b8c5ff8aadd6/c1b63/tc.png 1200w,
+/static/0300e3c9772ae6bf9122b8c5ff8aadd6/c2d9c/tc.png 1326w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>head Linked List를 순회하는데 최대 O(N)이 걸린다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>dummy Linked List를 만들어서 반환하는데 O(N)이 필요하다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+The number of nodes in the list is in the range [3, 2 * 10^5].
+0 &#x3C;= Node.val &#x3C;= 1000
+There are no two consecutive nodes with Node.val == 0.
+The beginning and end of the linked list have Node.val == 0.
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/merge-nodes-in-between-zeros/">LeetCode</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L2181MergeNodesBetweenZeros/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-39776d1969fed49b24b9.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="8f4819f58fe1c6eb6c6d";</script><script src="/webpack-runtime-684eb0c629ffd1287a6f.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
