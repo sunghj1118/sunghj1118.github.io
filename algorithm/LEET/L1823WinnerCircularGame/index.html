@@ -1,0 +1,165 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1823. Find the Winner of the Circular Game</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">July 08, 2024</p><div><h1>문제 설명</h1>
+<p>동그랗게 모여있는 사람들이 순서대로 숫자 k만큼 건너뛰며 제거되는데, 마지막에 남는 사람을 찾는 문제이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 63%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABlklEQVR42p2TW4+CQAyF+f8/buODeAEvrOCdUURFEbDrV1NCTHYfdpKmpdPpnHM6eF+9nkTfkYxGI7XBYCDj8Vhms5mEYag53/dlOBxKv9+X+XwurOfzKbbqqpb8fJaiuonndgtxLpXVaiW73U6SJJHtdiv7/V6/r9erXC6X1hdFIZ+L5lVVSd3U4pWF06LjMZMsyyRN3Ss+yvl1I1bXtRoHHo+HxnisLEu53+9tnsae7w8lCAKlM5lMNIYyNp1OlTJ0gyB87U91n29qF4uFxHGirOI41gu80+mkiNI0bWlihjLPczkcDoqe2jx/56APIqxpGjVF6JzTYhpgFHOQgv8sjwHQFDR49EAv0+xTq27OavE2dW+z2ch6vRY8zZk28XK51BiPPuiJVsgCI2R4S5C3QFqE1gwdaU78adRwkGn+SZkB2DA4iOcwue57xEBlwwMdSLkEEOyjuweVKIo0aTRpiDeKXT3RsqsnWvLoecs6ZZsuN4EAsxy33m43pWLPwuxXytbImtp7M3o2fWJyxIbafrvuJT8h3d9CSyGqqQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1823v1"
+        title=""
+        src="/static/0687985518abf81fe288d0682a13529d/5a190/1823-1.png"
+        srcset="/static/0687985518abf81fe288d0682a13529d/772e8/1823-1.png 200w,
+/static/0687985518abf81fe288d0682a13529d/e17e5/1823-1.png 400w,
+/static/0687985518abf81fe288d0682a13529d/5a190/1823-1.png 800w,
+/static/0687985518abf81fe288d0682a13529d/c1b63/1823-1.png 1200w,
+/static/0687985518abf81fe288d0682a13529d/bb072/1823-1.png 1318w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 89.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB5ElEQVR42q2U3Y6bMBCF8/5PV6ndSkFJVCmJSgi/BhsDtk/neDHqxRZxUaSRPcb+Zs4M+FSWJZ7PJ+Z5xv94TsuywHsHPVo45+Mi4c57aPsZxMt8oXUd5r7fB87zAm0MHqWCahVgLYzAVa9xLwSwCNw59HZCdz6ju1wReDKEr4G9mfAo2uioywVDdkZlFhSNjmuEMeivvMGyKqCqf2YoofCqe/TGIq+UHHJRYvvxAd0P+F1RYoiQELwEGqD0GA+Hr4FA0xuRbVF3Gl6kBIEO1yuMNqiUjvKCGAPVymCcdjP8fJw0ZrQjgg9RJp9pslLScYMd6nKaeKlT8/0H5nGMQLfWKXY8+u4QdAOCdTtnAp5FNrObN2Acpdu0Q8CwfgKsn2jGs+ykVnrrKDP7+fgm3+WwNiMcyJAb5SA7uYg895c8BlzcvAXezbCXL/92u2EYBpE5RYmpVmHt7hHQBlRKIcsy3O93VFWFpmki3Mjfw3GUJnGkHQIyo7Zt0cl/yvH1esU5AzF7zhOQc9reRXKizLSREGbIkXBaXdfxHeHJ55ndDAnhxpQhfcrnGq+3FIRr9HcztHK7vN9vFEURD/BuTD7HPM8jhHAGo7Gu6e9JlhoX70Ot9dYIZkJ/z7iPRjBHrqUb6A+2joC+J9FbkAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="ex1"
+        title=""
+        src="/static/985d27d9b8d0759efea1a18b85e66eea/5a190/ex1.png"
+        srcset="/static/985d27d9b8d0759efea1a18b85e66eea/772e8/ex1.png 200w,
+/static/985d27d9b8d0759efea1a18b85e66eea/e17e5/ex1.png 400w,
+/static/985d27d9b8d0759efea1a18b85e66eea/5a190/ex1.png 800w,
+/static/985d27d9b8d0759efea1a18b85e66eea/c1b63/ex1.png 1200w,
+/static/985d27d9b8d0759efea1a18b85e66eea/bb072/ex1.png 1318w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<p>해당 문제에서는 배열을 사용해서 풀었다. 계속해서 놀이의 사람 수가 1보다 큰 경우에는 k만큼 건너뛰며 제거하는 방식으로 풀었다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABOElEQVR42q1S2Y7CMBDL/38lixDQFvXIfXtnAuVh27L7sJGsNJnEsT0Vo1W4THcobTCOI4wx0EbDOItpntpeSgmW1t3QwXvX1jkXQt5AjHrGbR4QY0QIAUcj50RkCdMSMUqJmAJKqSi1IpfSUAjCO4/gYyvyC5UOrCivQ/zNNR8TOajorz1u5xPuXYdF6bbPCCRKWGvhiNT7cAhWzjYDodLDKSTIRWKmSH66Et57InTg+Qj8KEfiCJydfCgMjx7DMJBCCa0VFCklXxBPMlYRD8F1JtTkhCPwdOd2veB0+mrN4ny5ztE0haulva4xmITrjnJq2boKQ3+FVGrTPMGyz+dLk2yt2wW7YML3qHg3bkOo6BVuSkqZZKdDcH2PYEPIZOuFT1h/qT8QPpvyj4T+1cXPdp9z+pXwG/gKrUPbwQPDAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="ex1"
+        title=""
+        src="/static/ef884a0715e8419deb72e37d6fcbb855/5a190/test1.png"
+        srcset="/static/ef884a0715e8419deb72e37d6fcbb855/772e8/test1.png 200w,
+/static/ef884a0715e8419deb72e37d6fcbb855/e17e5/test1.png 400w,
+/static/ef884a0715e8419deb72e37d6fcbb855/5a190/test1.png 800w,
+/static/ef884a0715e8419deb72e37d6fcbb855/c1b63/test1.png 1200w,
+/static/ef884a0715e8419deb72e37d6fcbb855/29007/test1.png 1600w,
+/static/ef884a0715e8419deb72e37d6fcbb855/f36fd/test1.png 2488w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def findTheWinner(self, n: int, k: int) -> int:
+        friends = []
+        for i in range(1, n+1):
+            friends.append(i)
+        
+        curr = 0
+        while len(friends) > 1: 
+            curr = (curr + k-1)%len(friends)
+            friends.pop(curr)
+            print(friends)
+        
+        return friends[0]
+</code></pre>
+<ul>
+<li><code>friends</code> 배열에 1부터 n까지의 숫자를 넣어준다.</li>
+<li><code>curr</code> 변수를 0으로 초기화하고, <code>friends</code> 배열의 길이가 1보다 큰 경우에는 계속해서 반복한다.
+<ul>
+<li><code>curr</code>에 <code>(curr + k-1)%len(friends)</code>로 계산한 값을 넣어준다. 나머지 연산을 하는 이유는 k배열보다 큰 경우에 대비한 것이다.</li>
+<li><code>friends</code> 배열에서 <code>curr</code>번째 인덱스를 제거한다.</li>
+</ul>
+</li>
+<li><code>friends</code> 배열의 0번째 인덱스를 반환한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 68%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB0klEQVR42p1TXYvVQAzt/xbEH+GTyD6L/gAF8XFZ8EWuILi7intvvd/dtjPTzlfbOSbptsp1lWUHQjKZzMnJTJJdl0vkaoeu60T6vp/tYRhwukKIOB5vsd3uoJTG88s3ePb5JZ4uXuD8sEC2LfY4lgWcc2jbdtbWWroc/gLkRFobAbMU+25zgdc3H/Dq5j2+qiWyLnZomxGgJ0bMilnGGEUYdPKxpJTwz0VH2Wq1xNXVJZWwQVXd4me+wuFwEJZN04hmVsYY1HUtSRg0xCDVdJRkSJSQZCB/lq/W2OR7lKXBtx9rfFp8QU6g1roZlJnx5clm4YqUUpJsJsiAzkY0daDDgNJQYExUYg/vg5Q7lfyQJYCn78L2fe906r8v7jfgkNARCVL435s/iCGX1xHSdTE5Hyl335wNfQdP73r2scOuDjPooxlSoVirhCdve3wvemgPVDbdCbA3CUULKDfua/LXDihJK9FjPP3tyDBR/yja5RVdaGkKHIG6YbR9wlFHAaubIPuKtBEdJVbZnmJpAPqpZKLpbAtvtejgLNm0d6MEFt/OZxL7h+aY0XbSXhnjaq1haPyUHufTUAPzZLDNPue8TIn3rNXsb6TxW5lrbnB+w1/N+EFTcrmusgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/a484259d41a3dd0b56231de6c8eff0d4/5a190/tc.png"
+        srcset="/static/a484259d41a3dd0b56231de6c8eff0d4/772e8/tc.png 200w,
+/static/a484259d41a3dd0b56231de6c8eff0d4/e17e5/tc.png 400w,
+/static/a484259d41a3dd0b56231de6c8eff0d4/5a190/tc.png 800w,
+/static/a484259d41a3dd0b56231de6c8eff0d4/c1b63/tc.png 1200w,
+/static/a484259d41a3dd0b56231de6c8eff0d4/874d1/tc.png 1310w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li><code>friends</code> 배열에 1부터 n까지의 숫자를 넣어주는데 O(n)이 걸린다.</li>
+<li><code>while</code>문에서 <code>friends</code> 배열의 길이가 1보다 큰 경우에는 계속해서 반복하므로 최대 O(n)이 걸린다.</li>
+</ul>
+<p>따라서 총 시간 복잡도는 O(n)이다.</p>
+<h3>공간 복잡도</h3>
+<ul>
+<li>friends 배열에 n개의 숫자를 넣어주므로 O(n)이다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+1 &#x3C;= k &#x3C;= n &#x3C;= 500
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/find-the-winner-of-the-circular-game/">1823. Find the Winner of the Circular Game</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1823WinnerCircularGame/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-39776d1969fed49b24b9.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="8f4819f58fe1c6eb6c6d";</script><script src="/webpack-runtime-684eb0c629ffd1287a6f.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
