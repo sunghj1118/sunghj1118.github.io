@@ -1,0 +1,203 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1701. Average Waiting Time</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">July 09, 2024</p><div><h1>문제 설명</h1>
+<p>주문이 들어온 시간과 요리가 끝나는 시간을 이용해서 평균 대기 시간을 구하는 문제이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 106.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAABYlAAAWJQFJUiTwAAACLElEQVR42q2UWYsqMRCF8/9/maAi+OKIu2i7L20vtu1S41fe0zQXLnceJnCopJLUepIQRSv7+urbeDy2drttrVbLOp2ONRoNazab1uv1fI/xer3sfyOU17MV6dZOp5OtVivb7/e2XC5tvV7b8Xi0zWZj1+vVfjpCnp4sTw4Wx7EbwzBGMIjucDhYmqaW57kD41mWWVEUf9aFr9Hf73cLm+3WFsvIo5vP53a5XNzA+Xy2JEn8MDrWSNZJ8nHAWpI7Zfk2WLw9EAlKogNcBlmW++WP8dTPsY8E6MmAaKuUMTSZTGwwGFYRcoAUbrdbNZcUWEv3eDyqhgUuYSSOP1HRCEXKnD0k6ZMeZ4jun01RA+hsFEUVtJakxqB+ZrFYeANloyxLCyin06kNh0Pn22g08jlgPhgMrN/vOx+Zc4YSSQe63a5L0g9QhdrhHS84oAxQAFAfgHcgPZCOWnKHOgZSwghe8YIkBWpFHcVNuglYi0aqM3qkG0S5fXOR6ACRwrV6FH9HRMT1Pem9KfbLIxAdKUOJXzEIv2azmaepF0L49XfLs6LoPzIISWk71KEh1JTiUqfn81l1mTn6OvSl1b+1QDR6l0gi06eg18EcaE9d1seh8zgNcIg60no6rDnUYY4OSgBSJwMZxQE6SoPElr9luIURaMN8t9tVHBMXQZ17+nX0/vW+3aC86jtSSkBRKH3qyR1AufQjVTxEIY96CUiM6VVoX070G+Gk/ith8Bt490rZCwtAzgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1701"
+        title=""
+        src="/static/5acc25b52dde6252d71156d5f0308dee/5a190/1701.png"
+        srcset="/static/5acc25b52dde6252d71156d5f0308dee/772e8/1701.png 200w,
+/static/5acc25b52dde6252d71156d5f0308dee/e17e5/1701.png 400w,
+/static/5acc25b52dde6252d71156d5f0308dee/5a190/1701.png 800w,
+/static/5acc25b52dde6252d71156d5f0308dee/c1b63/1701.png 1200w,
+/static/5acc25b52dde6252d71156d5f0308dee/71b12/1701.png 1308w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAABYUlEQVR42q1Si5KCMAzs//+hOgIjoAcqYqWlD8peUh93N6cnOpeZnaaBpMlmxbjbAfkK47pEyDIEKdHpHlopaK0xjiOmmB0AZQHh+h7bsoTcNwhUxBCsdQhhJARMNX6XUiA4uTm0UNQVR4218N7jXRPGGBhjYzcMHpHPYRheBucJTZ2V5QZVVaNpDtjT6AfqmOOvQCkN5zyPbCFpEYy2PcZiUnbxo3Pucj6HtZ66DOeRuehvkscfG77en0GcTh1mszmSJMXHR4XNpkKaZsjzAnW9jf5ymYD/Y6773twFj83LFF3XYT5fxKSiKInPNfkpVquceN3G+GKxJH5bSrSUaO5Cqf6LQxW1ZyOYN37RXuRzpYTjk7ZsSNhSnmJ1FjMTe5ZNuPnf73+B88VABTPir6BRWeSPOHqGG4dchMehPeI/THS9RpKmqEnYrCXe5DvgLr0fIHwYzmI+yhiYKuRHwv4EnpaThCX7qI0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="test"
+        title=""
+        src="/static/de14f600b5528d3e2881a6f0ae905a1f/5a190/test.png"
+        srcset="/static/de14f600b5528d3e2881a6f0ae905a1f/772e8/test.png 200w,
+/static/de14f600b5528d3e2881a6f0ae905a1f/e17e5/test.png 400w,
+/static/de14f600b5528d3e2881a6f0ae905a1f/5a190/test.png 800w,
+/static/de14f600b5528d3e2881a6f0ae905a1f/c1b63/test.png 1200w,
+/static/de14f600b5528d3e2881a6f0ae905a1f/ea964/test.png 1312w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+위와 같이 평균 대기 시간을 모두 구한 뒤, 평균을 구하면 된다.</p>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def averageWaitingTime(self, customers: List[List[int]]) -> float:
+        wait_t = 0
+        finish_t = 0
+        sum_waiting_time = 0
+        for c in customers:
+            finish_t = max(finish_t, c[0]) + c[1]
+            wait_t = max(finish_t - c[0], 0)
+            sum_waiting_time += wait_t
+
+        return sum_waiting_time/len(customers)
+</code></pre>
+<h2>Complexity Analysis</h2>
+<p>첫 제출 기준으로는 시간복잡도가 다음과 같이 느려서, 조금 더 최적화 해보기로 했다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 68%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACG0lEQVR42o1TS28TMRDe/82BHpCAn4AQJ3pFPYGEQECPPFSqSiRtUJWmYZPNY5O14+fu2h9jOxsthUpYmvV4Zuebb8bj7Gc5wZQVaNsWTdMc9k6/u4wxWCyWmM8KrKsNng6O8fDiOR6cP8O38hJZsV6iJIdWGlJKaK2hlIp6CL67QiIhBImE1ApvZ59xcnuKV7efMBFzZNZYyOCUKjIK4pxDXddRrLXx3DH33uPeRa5sPB5jOBxgUczBWYViPkee53sWSTpWnPOoO+djolBN64iAd1FCsmwyyXFzPUVZckx+rXA5usZodBUBQtlBAsgBYF9FsIcE/T5HQCVrSF6T06LkDaRt4alEQwCG2tGV/D8rArq2ScX3jI7E761dy4K937+75wPgn4a0j1bAUgCVTmfn/+r9/QxDDwJQFyQs8HoIvDwDvkxTEr8H7fQ+e9+3dww7Zjsau/MZ8OQUOHoHvPgKvLlKSfrspGnxr+lJgHTdwnjsKOgsB46/exy99xH00QePxx89TgbAzQZYCQ9GbfiRa2xUignCNI1Rm9Jl4Ua5tODaoVRAwRoseUsBwIL0BaujfS0cloxungKV9aiItqRd18CWUG2TJiELIyGlgFES1ihoyaEEgxZpN0qgJnvYo9Bz0/SvkkkPknSdSg4fxhi9X00zV6NiHHwnoGkGq4qB8R1s3cRBZuSraciVNtEXZrUm33Zb0f/p3f8Gt/867Dn/fF4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/2416cf2bdf5a1580fa1d61746af74f36/5a190/tc.png"
+        srcset="/static/2416cf2bdf5a1580fa1d61746af74f36/772e8/tc.png 200w,
+/static/2416cf2bdf5a1580fa1d61746af74f36/e17e5/tc.png 400w,
+/static/2416cf2bdf5a1580fa1d61746af74f36/5a190/tc.png 800w,
+/static/2416cf2bdf5a1580fa1d61746af74f36/c1b63/tc.png 1200w,
+/static/2416cf2bdf5a1580fa1d61746af74f36/248b0/tc.png 1316w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>일단, 두번째 <code>max</code> 함수를 쓸 이유가 전혀 없고 중복되는 연산이라 없앴더니 조금 빨라졌다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABGUlEQVR42o2RS07EQAxEc/8DcAVuwIINO8QWiQUbECLDKMMkdD79/+ThDgyCDVBqy5bjlKvkZtAK7Qw5JWKMlFKoiCniFsfN4Y7zp0ve3IR3sD/0jNNA8B7rE85FrHX4EOSfTDNPM/3xyLIszPOMl8EgH5MsWNeVXPKWY0xSF1Sv2LUtalSknLdeFVFn5NGMaqLrBrrXgXkaCTFshPFTcVVaEaQO0vMu0Arhy66lO3Roo8lCfEJTmZGXxOkSkI21vdbWFzaFdYFECQVrLFpryXrLJzc1PggFzwrOruHqEWyoVr9T8kPFb2iqf+0Lt/vCxf1HPPSZxWeMqKnhYvk/YR00YsE7Ca+JweDknEYup6VvrN3q0/X/InwH4soh2mUqbZQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc2"
+        title=""
+        src="/static/f0601aafaee4ab1051776ca43e5792b9/5a190/tc2.png"
+        srcset="/static/f0601aafaee4ab1051776ca43e5792b9/772e8/tc2.png 200w,
+/static/f0601aafaee4ab1051776ca43e5792b9/e17e5/tc2.png 400w,
+/static/f0601aafaee4ab1051776ca43e5792b9/5a190/tc2.png 800w,
+/static/f0601aafaee4ab1051776ca43e5792b9/c1b63/tc2.png 1200w,
+/static/f0601aafaee4ab1051776ca43e5792b9/29007/tc2.png 1600w,
+/static/f0601aafaee4ab1051776ca43e5792b9/6b690/tc2.png 2556w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>변수를 조금 다듬고, loop에 한번씩만 쓰이는 wait_t를 없애니 더 빨라졌다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABAklEQVR42pVQS04FIRDk/mdw5wFcuNEr6E4TjSufLzHzEeYLAzSfkmYyUVdqhaJJ01VNIwYzYbUaMUQQEVJKYFAIcKvFff+My9cbjG7BZoCmlxjHHs65wlhI9eyLlmKE0FpDSol1XSu999X4MKcY4BPBB0IogkmNOJ/fMAwKSg5Fq7BtG4wxtV7M84K2UXhvJeZ5qt3YLJQXHjxeXGlDNVHyA13XYVkWxNKImXOG4K0shDKpoVwij5zrZcYO7syCipLcNV/8DnEk2iXj4g64feExfxZxzfG3v0FwofEJD03C9VPC1WPEaUiwtOeZluL/DLXZ6sc6p0HO1DPndtoa/2r4CdoPIg1wkpZVAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc3"
+        title=""
+        src="/static/c83c387e524e7c4975e3ce4e8715b50d/5a190/tc3.png"
+        srcset="/static/c83c387e524e7c4975e3ce4e8715b50d/772e8/tc3.png 200w,
+/static/c83c387e524e7c4975e3ce4e8715b50d/e17e5/tc3.png 400w,
+/static/c83c387e524e7c4975e3ce4e8715b50d/5a190/tc3.png 800w,
+/static/c83c387e524e7c4975e3ce4e8715b50d/c1b63/tc3.png 1200w,
+/static/c83c387e524e7c4975e3ce4e8715b50d/29007/tc3.png 1600w,
+/static/c83c387e524e7c4975e3ce4e8715b50d/78ed4/tc3.png 2566w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>total_wait에 평균 값을 계산해서 바로 반환하는 것보다 새로운 변수에 할당하여 반환하는 것이 더 빠르다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABGklEQVR42o1Ru07EMBDM/1d8BH9Ag+gQoqWgoABxQjoiksvZJI7fr2HXuUN03Eij9W7Gs+tsdzTf0M4ip4wYI0opYAQ6W2XxOD7jencLHS2MAb5GgWkaYK0lRqp5OO+aPqSEbpkXEkxYlIIieu/JOCDRx1oqMjXgJpzHVLAuK/rPPaQUEEdJUbY73KCQvptnhXGUOEwSel0QQmiTNoNTZESKISZqavGxHzCMBzKcIIRohjln1EqG7Mqg5pjdNhFAtbrVWcTkCzxp9Blqpedb13Jm/aPtyil5OwJXD8D9O/3LvNXOOBtego4nsiHjqS+4eSm4e83oF64VmLBFF2m6iw1JqGl93hG9RvAGzvJGLbQ29DQ+m9/t/2f4A/G7IVrTrL+YAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc4"
+        title=""
+        src="/static/8ae4b62a18e4a73fe8f2343bafabb7df/5a190/tc4.png"
+        srcset="/static/8ae4b62a18e4a73fe8f2343bafabb7df/772e8/tc4.png 200w,
+/static/8ae4b62a18e4a73fe8f2343bafabb7df/e17e5/tc4.png 400w,
+/static/8ae4b62a18e4a73fe8f2343bafabb7df/5a190/tc4.png 800w,
+/static/8ae4b62a18e4a73fe8f2343bafabb7df/c1b63/tc4.png 1200w,
+/static/8ae4b62a18e4a73fe8f2343bafabb7df/29007/tc4.png 1600w,
+/static/8ae4b62a18e4a73fe8f2343bafabb7df/98a4d/tc4.png 2568w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<p>사실 기존 코드랑 새로운 코드 모두 O(n)이라, 크게 차이가 없다.</p>
+<h3>공간 복잡도</h3>
+<p>새로운 공간을 할당하지 않아 O(1)이다.</p>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+1 &#x3C;= customers.length &#x3C;= 10^5
+1 &#x3C;= arrival_i, timei &#x3C;= 10^4
+arrival_i &#x3C;= arrival_i+1
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/average-waiting-time/">Leet</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1701AvgWaitTime/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-39776d1969fed49b24b9.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="8f4819f58fe1c6eb6c6d";</script><script src="/webpack-runtime-684eb0c629ffd1287a6f.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
