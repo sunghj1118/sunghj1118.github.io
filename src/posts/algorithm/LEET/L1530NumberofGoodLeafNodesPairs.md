@@ -1,6 +1,6 @@
 ---
 title: "1530. Number of Good Leaf Nodes Pairs"
-date: ""
+date: "2024-07-18"
 description: "1530. Number of Good Leaf Nodes Pairs는 두개의 leaf node 사이의 거리가 k 이하인 경우의 수를 구하는 문제이다."
 tags: ["Algorithm", "Tree"]
 ---

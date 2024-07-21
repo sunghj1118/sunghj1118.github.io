@@ -1,6 +1,6 @@
 ---
 title: "1380. Lucky Numbers in a Matrix"
-date: ""
+date: "2024-07-19"
 description: "1380. Lucky Numbers in a Matrix는 2차원 배열에서 행에서 가장 작은 값이고 열에서 가장 큰 값을 찾는 문제이다."
 tags: ["Algorithm"]
 ---
