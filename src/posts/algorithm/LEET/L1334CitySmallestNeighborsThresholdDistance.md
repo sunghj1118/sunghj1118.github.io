@@ -117,6 +117,6 @@ All pairs (fromi, toi) are distinct.
 
 # References
 - [LeetCode 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/)
-- [Floyd-Warshall Algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
-- [Floyd-Warshall Algorithm](https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/)
-- [Floyd-Warshall Algorithm](https://www.youtube.com/watch?v=4OQeCuLYj-4)
+- [Floyd-Warshall Algorithm - Wikipedia](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
+- [Floyd-Warshall Algorithm - GeeksforGeeks](https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/)
+- [Floyd-Warshall Algorithm - Youtube](https://www.youtube.com/watch?v=4OQeCuLYj-4)
