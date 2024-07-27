@@ -64,6 +64,7 @@ def minimumCost(self, source: str, target: str, original: List[str], changed: Li
 ## 풀이
 - 다익스트라 알고리즘을 사용하지 않고, 플로이드-워셜 알고리즘을 사용했다.
 - 플로이드-워셜 알고리즘은 모든 정점에서 모든 정점으로의 최단 경로를 구하는 알고리즘이다.
+- 더 자세한 비교를 위해 작성한 포스트 [Floyd-Warshall vs Dijkstra](https://sunghj1118.github.io/algorithm/theory/floydvsdijkstra/)를 참고하세요.
 
 ```python
 def minimumCost(self, source: str, target: str, original: List[str], changed: List[str], cost: List[int]) -> int:
