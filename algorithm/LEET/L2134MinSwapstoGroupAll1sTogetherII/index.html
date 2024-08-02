@@ -1,0 +1,204 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">2134. Minimum Swaps to Group All 1&#x27;s Together II</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">August 02, 2024</p><div><h1>문제 설명</h1>
+<p>1로 이루어진 배열에서 1을 모두 모으기 위한 최소 스왑 횟수를 구하는 문제이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 98%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAABzUlEQVR42qWU6W7CQAyE8/6PhwTiEvxAQE4gHAkJh5vP1UCUUkHVSKP1Ol4f4/UGi8XCJpOJ9Xo9G4/HNhqNrN/vu244HPp+NpsZdtgMBgPLssz47ve7r7fr1Q6Hg1XlwYK6SKw45ZYkqW02G4uiyNI0bQ5t7Hw+Pw6C2+32kOWs+wVxHDZOQovj+IHVauWOyWS32/lKEEDQ74CZVVVll8vF6rp+OkybH+v1+mHYPgQUBJskSVwOw7BBZNvt1pbLpe9xStYB2cznc+cP3vb7vRVFYcfj0WW4QdZeOtmx8g8dlATihtTBf7+AMvI8//GjTf5v6Nq5Q8jFKQQDOkspbaL/lCGEwh2O23zhtCxLD8DKHpmgyKfT6bVDSKWbz/uXOdBfmwsLxK+uiAD3PxySDe3XdaF8ZO4fV4Q9emwAGeKMbF81MWgbUhoQnyoVmUw/4pBSgcphVRafOumMXuzDT1kQraYIylJNAtgBAnZn2ptCE8gSvuBOnLLS+S5wpgBdHr0pXGwOa4aR0bEnAE44rGa85ZAMNYJ6olgpqa37iEO9gUQmA8p5l8XbSZlOp16mpkLQxKhZ3elRw6Tz10ZPVfeg9kD8tZ/9Vw8FGX4BcdEQfkDUIFAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2134"
+        title=""
+        src="/static/af209572cb731779a8039a7dfe9dc8bd/5a190/2134.png"
+        srcset="/static/af209572cb731779a8039a7dfe9dc8bd/772e8/2134.png 200w,
+/static/af209572cb731779a8039a7dfe9dc8bd/e17e5/2134.png 400w,
+/static/af209572cb731779a8039a7dfe9dc8bd/5a190/2134.png 800w,
+/static/af209572cb731779a8039a7dfe9dc8bd/c1b63/2134.png 1200w,
+/static/af209572cb731779a8039a7dfe9dc8bd/78958/2134.png 1320w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>1차 시도</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA6ElEQVR42p2RjYrEIAyEff/n7LHX2t619TdGnYuyu1Bot3DCB1HMZJKojQwceSRKsM6BmfHpcGZYm6DnDev6C2MDQoyglFBrhaJAXSznjBglTtzjM4qQpCDnKmIrhmGAc/5QUBlr384aSSpdwUJzwrkgesKy/GDRI9ZtFde2/1HGGOz73is5EX65PINZupBuSArnlDFrLa1rTNPUHZdSoB6Pb7H+1QW9D50Q4iUkgi2xpCJ3iWvps2unz3CeF4zjdBD6JHy3NBVlQ30+zxk2iEiSw+HtRVvOreBZYpvXvwS995dLOONO8A9dFcGiz/NplAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="stdout"
+        title=""
+        src="/static/f9ab2f1c10ccd70ad60678cf6ea3e2a8/5a190/stdout.png"
+        srcset="/static/f9ab2f1c10ccd70ad60678cf6ea3e2a8/772e8/stdout.png 200w,
+/static/f9ab2f1c10ccd70ad60678cf6ea3e2a8/e17e5/stdout.png 400w,
+/static/f9ab2f1c10ccd70ad60678cf6ea3e2a8/5a190/stdout.png 800w,
+/static/f9ab2f1c10ccd70ad60678cf6ea3e2a8/c1b63/stdout.png 1200w,
+/static/f9ab2f1c10ccd70ad60678cf6ea3e2a8/29007/stdout.png 1600w,
+/static/f9ab2f1c10ccd70ad60678cf6ea3e2a8/1ffbd/stdout.png 2108w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>코드</h3>
+<pre><code class="language-python">def minSwaps(self, nums: List[int]) -> int:
+        total = sum(nums)
+        nums.extend(nums)
+        
+        count = float('inf')
+        for i in range(len(nums)-1):
+            num_zeros = total - sum(nums[i:total+i])
+            count = min(count, num_zeros)
+        
+        return count
+</code></pre>
+<ul>
+<li>total은 1의 개수를 저장하고, nums 배열을 2배로 확장한다.</li>
+<li>count는 무한대로 초기화하고, for loop으로 nums 배열을 반복한다.
+<ul>
+<li>num_zeros는 total에서 nums[i:total+i]의 합을 뺀 값으로, 0의 개수를 저장한다.</li>
+<li>count에 num_zeros와 count 중 작은 값을 저장한다.</li>
+</ul>
+</li>
+<li>count를 반환한다.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 22.499999999999996%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA2klEQVR42mVQ2Y6EIBD0/3/QK8brYdUZZFcBOYSabpLZZHcgFaoPii6KuO+IQiARcN/4v2KMcM7BWpt54thHCOmxrF8QTwmlr1x3PqBQxsB6j0CNNwmGED7AglrrX0FPucs6bOsD67pBK4WYqJYSinmeMU0T+r7HwBgGjOP4Ae5jcb50OU+PR+z7iedjw7IsxAXO80TRdR3KskRVVRlt22Y0TZPjuq4zuM+TE57S0HQ86Y80ZP0b5rJQSmcnBVthZQZzReNLKXEcR869T86zWLZNm1eKxNLfP38B5Al/FlTv9t8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="err"
+        title=""
+        src="/static/acc64c276ed9fba95b2eada9476a8b99/5a190/err.png"
+        srcset="/static/acc64c276ed9fba95b2eada9476a8b99/772e8/err.png 200w,
+/static/acc64c276ed9fba95b2eada9476a8b99/e17e5/err.png 400w,
+/static/acc64c276ed9fba95b2eada9476a8b99/5a190/err.png 800w,
+/static/acc64c276ed9fba95b2eada9476a8b99/c1b63/err.png 1200w,
+/static/acc64c276ed9fba95b2eada9476a8b99/29007/err.png 1600w,
+/static/acc64c276ed9fba95b2eada9476a8b99/57f7d/err.png 2088w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>아마 매번 sum을 계산하느라 시간초과가 발생한 것 같다. 이를 해결하기 위해 sliding window를 사용하여 문제를 해결할 수 있을 것 같다.</p>
+<h2>풀이</h2>
+<pre><code class="language-python">def minSwaps(self, nums: List[int]) -> int:
+        total_ones = sum(nums)
+        n = len(nums)
+
+        if total_ones == 0 or total_ones == n:
+            return 0
+        
+        # extend array to rid the circular property
+        nums.extend(nums)
+
+        # create first window
+        ones_in_window = sum(nums[:total_ones])
+        max_ones = ones_in_window
+
+        # slide the window
+        for i in range(1, n):
+            # remove first element of prev window
+            ones_in_window -= nums[i-1]
+
+            # add the next element of the window
+            ones_in_window += nums[i-1+total_ones]
+
+            # update max_ones
+            max_ones = max(max_ones, ones_in_window)
+        
+        return total_ones - max_ones
+</code></pre>
+<ul>
+<li>total_ones은 1의 개수를 저장하고, n은 nums 배열의 길이를 저장한다.</li>
+<li>total_ones가 0이거나 n과 같으면 0을 반환한다.</li>
+<li>nums 배열을 2배로 확장한다.</li>
+<li>nums[:total_ones]의 합을 구하여 ones_in_window에 저장하고, max_ones에 저장한다.</li>
+<li>for loop으로 1부터 n까지 반복한다.
+<ul>
+<li>이전 window의 첫번째 요소를 제거한다.</li>
+<li>다음 window의 요소를 추가한다.</li>
+<li>max_ones를 업데이트한다.</li>
+</ul>
+</li>
+<li>total_ones에서 max_ones를 뺀 값을 반환한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABxUlEQVR42m2TTW/TQBCG+6c50Ru/AMGlfwByAMEFbqgH4FRRQotUkMBVk9SK0sSxvd71fs7LzBoS02al8Xpn18987Osj8OiDxfV2gUo3iCEihJDNew8iwnjEGLG6W6NZNzi9/YJHX5/j8fQEpVnn/SN5pJTQti061cFaC+cdvPNw1mWAQMfmJaAPUN5gYVYo9R18CnugjOVyidnshsE1tlWFzXYDZTporXMQsa7rcnAxqSBR2qf+t5Id8LqY46YosSg3uPpZoJgV2LQVdKfR930uX+ACE7hSCtbbEW8EHMqIXGaEYwvxXxZDP6Xs3Yc4PB4AU4rjbYTEPtpX4yMhpsHy+Xt9PQBMeY45u4izOXA2I9w2hHlN+LEirNTwbjwyWAJn2OEMhwZXOuBz4fHsI3D8njA5B16cE15fAE8/EZ58ILy6IPxilbhAsCFj/wfmErlPv9fEmRHeXCZMpoSXbG+/M+CS8noyRfZNGPjuijAtCd/KhLofGDS+ZWm8UhraGNafhjMKru/Qs3Q8ry2vg5O55csz2W/4bMvadaxJui8bKVl0JtJQfKhpWjQsdhG8Yr+8i7+uGz6ns2yM0fwzcKDgd9f5B0dLUKBsz0fOAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/46309d38e7375830afd9ceef7c8d050d/5a190/tc.png"
+        srcset="/static/46309d38e7375830afd9ceef7c8d050d/772e8/tc.png 200w,
+/static/46309d38e7375830afd9ceef7c8d050d/e17e5/tc.png 400w,
+/static/46309d38e7375830afd9ceef7c8d050d/5a190/tc.png 800w,
+/static/46309d38e7375830afd9ceef7c8d050d/c1b63/tc.png 1200w,
+/static/46309d38e7375830afd9ceef7c8d050d/874d1/tc.png 1310w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>O(n) : nums 배열을 2배로 확장하고, sliding window를 사용하여 O(n)의 시간 복잡도를 가진다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(1) : 추가적인 공간을 사용하지 않아 O(1)의 공간 복잡도를 가진다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+1 &#x3C;= nums.length &#x3C;= 10^5
+nums[i] is either 0 or 1.
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii/">2134. Minimum Swaps to Group All 1's Together II</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L2134MinSwapstoGroupAll1sTogetherII/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-39776d1969fed49b24b9.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="8f4819f58fe1c6eb6c6d";</script><script src="/webpack-runtime-684eb0c629ffd1287a6f.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
