@@ -1,0 +1,156 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1460. Make Two Arrays Equal by Reversing Subarrays</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">August 03, 2024</p><div><h1>문제 설명</h1>
+<p>두개의 배열이 주어졌을 때, 두 배열의 순서를 바꾸어 같은 배열이 되는지 확인하는 문제이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 89.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB3UlEQVR42o2Uaa7CMAyEcxd2SiltWVr2VWxiEXD/q/j1s2QUoYLej5EdJ514bKduNp3K6/WS4/Eol8tFVquV7Pd7OZ1OGns8Hho33O93uV6vb9vv96VarUqSJNKOAnFREcgmE9luNjKfz2W328l2u5XlcimLxUJ6vZ6EYaiIokiBTxw0m00lbDQaUq/XxaUFYT4ey6QgHRcWUvw8z2VaZJ8kqd4ex4mE3a76aZpKt/DjONb1YDDQb/EdkpEGAUQQQoSPfEC2WOLsr9drzY5sIcZChnWj0UjJhsOh4EOEzbJMwR4ZEJvNZurXajUFUn0Qc2g3UI8y2H6r1dI1tfoGh3YktdttqVQqGuSmXx/9JKTtjAhSqEMQBO9O4lt3uRBZ/yJ8Pp/aGIrOGtgF+NSPjuLTYRsjfC7yFTnqYkW3ZtAgYpBwCY3hY/Zt7qwxPpQQWRyEwDoLoWUDmWXMuU6no7AsGRvzuczZ1JMp6Ztl0yzw9w2sfSghc7cpnh2Zfhbdl1ImsVQysm6323ugLWOT8zmPZn92+Xw+6yxa1yC02thPwJ6Z7X0lpOg22Ej+9hLK5JUSMmvMIN01yZYN3fQz8p9pGZSQWTscDpolowGJ/fdMovlcxnn/D2M+5yD8A8HWMEqavuI8AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1460"
+        title=""
+        src="/static/c80e65dbeae5700d90ec046d4fc557dc/5a190/1460.png"
+        srcset="/static/c80e65dbeae5700d90ec046d4fc557dc/772e8/1460.png 200w,
+/static/c80e65dbeae5700d90ec046d4fc557dc/e17e5/1460.png 400w,
+/static/c80e65dbeae5700d90ec046d4fc557dc/5a190/1460.png 800w,
+/static/c80e65dbeae5700d90ec046d4fc557dc/c1b63/1460.png 1200w,
+/static/c80e65dbeae5700d90ec046d4fc557dc/c2d9c/1460.png 1326w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<h2>풀이</h2>
+<pre><code class="language-python">def canBeEqual(self, target: List[int], arr: List[int]) -> bool:
+        t_dic = defaultdict(int)
+        a_dic = defaultdict(int)
+
+        if len(target) != len(arr):
+            return false
+        
+        # count occurences of characters in both lists
+        for i in range(len(target)):
+            t_dic[target[i]] += 1
+            a_dic[arr[i]] += 1
+        
+        # compare occurences and return False if mismatch
+        for i in t_dic:
+            if t_dic[i] != a_dic[i]:
+                return False
+
+        # all match
+        return True
+</code></pre>
+<ul>
+<li>defaultdict를 사용하여 두개의 배열을 비교한다.</li>
+<li>두개의 배열의 길이가 다르면 False를 반환한다.</li>
+<li>두개의 배열을 비교하여 같은지 확인한다.</li>
+<li>같으면 True를 반환한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 61.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAACFUlEQVR42pVTy27TQBT1N6AUCbVR2tgz41f8HD+b2ElLGipRRQkBNiwQC6gESCz5BhYskEpZ8K+HO2NwowoJsTi+8/Cce+beM4YfTFCspghOU/ieB4/gum4fhRDgnPdgjKEsSzy5vEQ7bZB8WuHs52s0N68gZiGMIAjQti3SNEUcxxpRFGmEYfhXUrU2mUy0AKcO4C5TuI9TCN+BYVkWUplitbrAdHqKJI4gaa4SSCmRZRmSJIHjOH0CdUaDWeAnFtjI1OCMw2C0uJifYX21RdOcY7N9ie12R+MGRVGgqipNrEqgiH3fh23beqyECM/ulIsOBucMMi1QFy2yfApZLSDzktaUSqnVKmWWaeqr/4EiFbboiPbKYaiP2mREzDUsHYWwYbMxNYEjpDqnstAN2Se9j55Q1UcR3G06sK1jnBRrDJafEV19wPziKczxcafsX4T3f3LMIcyowcP1FxzsbvBgc4vD7BklGf2PQt6B6jIqn+Ng8xWDFz8w2H0j3BLxd4zlCvx37WxB19elYf3ZntAlQtsLYfolRvESw/OPOFq8x6PmLQ7bdziaX9P4GsPmDcyCru5JAnU4yGBRNN0ElvDuCJXchLoaJdRRMrSMA8hogpRikcWEBEnoIQ5pjSwUxglB+TRHRDGieUBOEGKPUHkuy6T2V1XXqAnKg7PZTL8ktZ/needLZXpCXVfIKIHUryzSPL8ADi12iTYl7jMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/1257a3a8387f10703cea816d58a5a1e6/5a190/tc.png"
+        srcset="/static/1257a3a8387f10703cea816d58a5a1e6/772e8/tc.png 200w,
+/static/1257a3a8387f10703cea816d58a5a1e6/e17e5/tc.png 400w,
+/static/1257a3a8387f10703cea816d58a5a1e6/5a190/tc.png 800w,
+/static/1257a3a8387f10703cea816d58a5a1e6/c1b63/tc.png 1200w,
+/static/1257a3a8387f10703cea816d58a5a1e6/71b12/tc.png 1308w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>O(n); n은 배열의 길이</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(n); n은 배열의 길이</li>
+</ul>
+<h1>개선된 풀이</h1>
+<pre><code class="language-python">from collections import Counter
+
+class Solution:
+    def canBeEqual(self, target: List[int], arr: List[int]) -> bool:
+        # check for varying lengths
+        if len(target) != len(arr):
+            return false
+
+        # compare occurences and return False if mismatch
+        return Counter(target) == Counter(arr)
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 61.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAACD0lEQVR42n1T227TQBDNRxRVpReUxLvr+G6vr0mcxjGJokKhqEG0SEjwglAFfAEP/AAPCBCInz3MbFKaSpSHo5nVzpydOT7uDFwHxbJGdJzC8zy4rmvgOI6BUgpSyr8QQqAoCsznC9TjGsnHBaY/X2H85QVk5aPDJM2sgU41wjBEHMeIosjkDNu2bxEyuIdrfN+H81DDO6/gnhWQwQAdy7JMY9u2GNdjKgxNcRInSJIEaZqaR3harhsMBuAey+qbKB4QDnoGUsg1YTtr8eT0DJN6iqfPVri4uES9PEZOq1XV0JCyDFmWmcikTM4PKpskUTT5RpqOlAI6yTAqpyjyCbJhi7wcIc1S6CynmCPRmrS0jZ7bYDm2zxtCaS4EETO5EBYUa8UEom9e5njdsN28fb5FyCtsT9DrCyiri256gr3lJ3Szx7Sa/c8p/0OoTIOgc0uWULrB7sln7Kx+Yef5bxyNXsLuH95Bat9FKM3a2ekVdldfiew77p3/IFBcfUNPL270o1plVpbrXMltQhu2G8DyS3STOfZGb3Aw+4D9yVvsN1c4bN7hfvMeR/VrWPkj9L0clptC+RwTgoZQrhmmcy2sMTR5Lwgj6DiEDj0khFxHBnHgIAp9+uIpWYaMH8XrnCLDD4KbCRl5niEnnyVEXFYVquEQRVlhTL/XZMKeLI0PK7pjG2nCkHK9ydmXTPgHM2V2C0qrudMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc2"
+        title=""
+        src="/static/e289f83895198eed097f4b6ac8a42fa7/5a190/tc2.png"
+        srcset="/static/e289f83895198eed097f4b6ac8a42fa7/772e8/tc2.png 200w,
+/static/e289f83895198eed097f4b6ac8a42fa7/e17e5/tc2.png 400w,
+/static/e289f83895198eed097f4b6ac8a42fa7/5a190/tc2.png 800w,
+/static/e289f83895198eed097f4b6ac8a42fa7/c1b63/tc2.png 1200w,
+/static/e289f83895198eed097f4b6ac8a42fa7/bb072/tc2.png 1318w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>Counter를 사용해서 풀어보니 더 간단하고, 빠르게 풀 수 있었다.</p>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+target.length == arr.length
+1 &#x3C;= target.length &#x3C;= 1000
+1 &#x3C;= target[i] &#x3C;= 1000
+1 &#x3C;= arr[i] &#x3C;= 1000
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/">1460. Make Two Arrays Equal by Reversing Subarrays</a></li>
+<li><a href="https://www.geeksforgeeks.org/defaultdict-in-python/">Defaultdict</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1460MakeTwoArraysEqualbyReversingSubarrays/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-39776d1969fed49b24b9.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="8f4819f58fe1c6eb6c6d";</script><script src="/webpack-runtime-684eb0c629ffd1287a6f.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
