@@ -2,7 +2,7 @@
 title: "1508. Range Sum of Sorted Subarray Sums"
 date: "2024-08-04"
 description: "1508. Range Sum of Sorted Subarray Sums는 배열이 주어졌을 때, 배열의 부분합을 정렬하여 주어진 범위의 합을 구하는 문제이다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "Sorting", "Heap"]
 ---
 
 # 문제 설명
