@@ -62,10 +62,11 @@ const SmallTagButton = styled(TagButton)`
 
 const SubTagContainer = styled.div`
   display: none;
-  justify-content: center;
-  flex-wrap: nowrap;
+  gap: 5px;
+  top: 50px;
+  min-width: 260px;
+  max-width: 400px;
   position: absolute;
-  top: 50px; /* Increased space between the main tag and sub tags */
   left: 50%;
   transform: translateX(-50%);
   background-color: #e9ecef; // Sub Tag Container color
@@ -92,6 +93,9 @@ const MainTagContainer = styled.div`
 
   &:hover ${SubTagContainer}, ${SubTagContainer}:hover {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 `;
 
@@ -177,9 +181,8 @@ const PaginationButton = styled.button`
 
 const FixedTagWrapper = styled.div`
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 10px;
-  transform: translateY(-50%);
   display: ${props => (props.visible ? 'none' : 'flex')};
   flex-direction: column;
   align-items: flex-start;
@@ -187,13 +190,13 @@ const FixedTagWrapper = styled.div`
   background-color: #f8f9fa;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
 
   button {
     font-size: 12px; /* Smaller size */
     padding: 4px 8px; /* Smaller padding */
-    margin: 2px 0;
+    margin: 3px 0;
     width: 100%; /* Make all buttons the same width */
+    height: 30px; // Consistent height for small buttons
   }
 `;
 
@@ -201,7 +204,7 @@ const FixedTagTitle = styled.h3`
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   color: #212529;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 `;
 
 const IndexPage = ({ data }) => {
