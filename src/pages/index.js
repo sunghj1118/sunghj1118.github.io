@@ -37,19 +37,19 @@ const TagButton = styled.button`
   border-radius: 20px;
   color: ${props => (props.selected ? '#ffffff' : '#212529')}; // Text color
   font-family: 'Poppins', sans-serif;
-  font-size: 14px; /* Adjusted size */
-  margin: 4px;
-  padding: 6px 16px;
+  font-size: 12px; 
+  margin: 2px;
+  padding: 4px 10px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   white-space: nowrap; // Prevent the text from wrapping inside the button
-  height: 40px; // Fixed height to prevent vertical stretching
+  height: 35px; // Fixed height to prevent vertical stretching
 
   &:hover {
     background-color: #595f39; // Main Tag Button hover color
     color: #ffffff;
-    transform: scale(1.05);
+    transform: scale(1.15);
   }
 `;
 
