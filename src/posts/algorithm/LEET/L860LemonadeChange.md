@@ -2,7 +2,7 @@
 title: "860. Lemonade Change"
 date: "2024-08-15"
 description: "860. Lemonade Change는 $5, $10, $20 단위의 지폐로 거스름돈을 주는 문제입니다."
-tags: ["Algorithm", "Greedy"]
+tags: ["Algorithm", "Greedy", "Hashmap"]
 ---
 
 # 문제 설명
