@@ -2,7 +2,7 @@
 title: "145. Binary Tree Postorder Traversal"
 date: "2024-08-25"
 description: "145. Binary Tree Postorder Traversal는 Postorder 순회 방식으로 이진 트리를 순회하는 문제이다."
-tags: ["Algorithm", "BFS/DFS"]
+tags: ["Algorithm", "Tree", "BFS/DFS"]
 ---
 
 # 문제 설명
