@@ -14,6 +14,30 @@ data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
 data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
 </style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1894. Find the Student that Will Replace the Chalk</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">September 02, 2024</p><div><h1>문제 설명</h1>
 <p>학생들이 문제를 푸는데 필요한 분필의 양이 배열에 주어지고, 갖고 있는 분필이 제공되었을 때, 몇 번째 학생이 분필을 다시 구매해야 하는지 찾는 문제다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 83.50000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAAB00lEQVR42q2UCY+CQAyF5///OBOj8T5A8MAbUUEFu3x1a3CzZ7KTNJ2W4c3ra8F5ni+1Wk08z5NOpyPdblcajYa0222NW62WNJtNPYO3M/V6XdbrtbDu97scj0dJsqO4JF7JZhlKtFxKtFjIorTJZCLLMp7NZrLb7fQwPkkSOZ1Oauyv16vYKopC8iIXd80Ocrsk5UsnieNYbbt9vIxdLhdlgN1uN8nzXP1HM3AXBKG0O10ZjUYyGAzU93o9GQ6HWlq/39cc0ozHYy2ZGCmqsnCeS10YhloezNI00/LYw26/378Y+cPhoJ7Y9pZXho8St5qMokg1JDbNMJ4Rn8/nJwixgdmFWZaJA4QOB0Eg0+lUPeb7vnoaZEapvj95zwfP55xdrVaPkmFENzEeAoqGXIIc3ExXkcKYE8M2TdNnx3n+UjJMmavNZqOeF7lsPp9LVRZYfLecjQRzZPuqka/aV4CWd7ChTObrP5ajfrSje2hCp9CHga5+CX8CZHhpChrZHOJNfPPYjxqiC4JbM6oDS14/+vJSA/sVIEDMEZ2muzao5AEHEDl+VTLNYDQwmgOwsWVsDNwAjeFnE6GA/CkoDSZ42Bir6rdK6TQKb7pyiWltf5s3zOwWskXYtQgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1894"
+        title=""
+        src="/static/7d3e597972ec44728a403dfe1b15b2ca/5a190/1894.png"
+        srcset="/static/7d3e597972ec44728a403dfe1b15b2ca/772e8/1894.png 200w,
+/static/7d3e597972ec44728a403dfe1b15b2ca/e17e5/1894.png 400w,
+/static/7d3e597972ec44728a403dfe1b15b2ca/5a190/1894.png 800w,
+/static/7d3e597972ec44728a403dfe1b15b2ca/c1b63/1894.png 1200w,
+/static/7d3e597972ec44728a403dfe1b15b2ca/6569d/1894.png 1328w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h2>풀이 및 해설</h2>
 <p>일단 보자마자 브루트포스로는 아마 시간 초과가 날 것 같았고 적중했다.</p>
 <p><span
@@ -156,4 +180,4 @@ chalk.length == n
           >
             window.___chunkMapping="{\"app\":[\"/app-116f71e1070db11cb3e3.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-5303704378ee89c9cb4a.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="85e00dc6b1246773270a";</script><script src="/webpack-runtime-9fba7c03b087e7d875c3.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="1f5a092e258a752607dd";</script><script src="/webpack-runtime-9fba7c03b087e7d875c3.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-116f71e1070db11cb3e3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
