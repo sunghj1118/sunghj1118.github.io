@@ -1,7 +1,7 @@
 ---
 title: "Cross Compilers"
 date: "2024-09-06"
-description: ""
+description: "Cross Compiler란 무엇이며 일반적인 컴파일러와의 차이점은 무엇인지 알아보자."
 tags: ["CS", "Compiler"]
 ---
 
