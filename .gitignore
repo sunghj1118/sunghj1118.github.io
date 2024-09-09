@@ -14,6 +14,7 @@ node_modules/
 # Build directories
 public/
 .cache/
+questions.md
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -144,5 +145,15 @@ dist
 
 # SvelteKit build / generate output
 .svelte-kit
+
+# Leetcode template
+src/posts/algorithm/LEET/Ltemplate.md
+
+# Archived posts
+src/posts/archive
+src/images/archive
+
+# All .DS_Store files
+**/.DS_Store
 
 # End of https://www.toptal.com/developers/gitignore/api/node
