@@ -25,7 +25,6 @@ export const query = graphql`
     allProjectsJson {
       edges {
         node {
-          id
           title
           description
           url
