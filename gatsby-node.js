@@ -69,3 +69,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
+
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type ProjectsJson implements Node {
+      id: ID!
+      title: String!
+      description: String
+      url: String
+      # Add other fields from your projects.json, making them optional if needed
+    }
+  `
+  createTypes(typeDefs)
+}
