@@ -1,0 +1,165 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.6"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">2220. Minimum Bit Flips to Convert Number</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">September 11, 2024</p><div><h1>문제 설명</h1>
+<p>이진법으로 표현된 두 숫자가 주어졌을 때, 같게 만들기 위해 몇개의 비트를 바꿔야 하는지 구하는 문제다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 86%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAABqklEQVR42q2UiY7CMAxE+/9fCBQQlKOi9KLQAuUweUauvKuV9tAijewk7tgeJ0SbzUZms5mMx2OZTqcyn89lNBqpv1wuJY5jWSwWMplM1H73i5rLRfKqkny/lyyABFVVS57ncrvd5H6/y+PxGCx4Pp9fQgnLQLbb7aQoCjkcDkq2D8RV2GevrutgS01wPB4lyzJZr9d6VpalNE0TvmvkdDq9CQmilSRJlHi73WqrrAEVp2mqZwCfGEgB56zZv16vEsHsP/CgGoKptus6rYb4tm3lEqRiDxLkQB7kiM7n8xCMTzDrtu20RWsLnzaxkFoMRB+G0ve9ZvmvX8QA0AJiSoecrDa1XxPSDveQKVrrphEgkQeyABJbDD5nSsgGA4AQ8bk6+KYbIAG6IbrdTRuEXyshDkSAqTIExAfIYYnw/eU2sOflicgOCW1Qrbfm0xJyWIteDqxVp4RWmT0py/znKaMVL4UnZpcV6/Wx1gxU9lm/4S1DsFqtVCPIIUYCGwTnvn2f1E/butKhQMJ0IX3/GRSDZSgkQJoftQwhlQG7NsCS+OtjVfmqgR/KCwB0I/LyNa5rAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2220"
+        title=""
+        src="/static/7a693b0ce6d50d2250cab74a9b7479cc/5a190/2220.png"
+        srcset="/static/7a693b0ce6d50d2250cab74a9b7479cc/772e8/2220.png 200w,
+/static/7a693b0ce6d50d2250cab74a9b7479cc/e17e5/2220.png 400w,
+/static/7a693b0ce6d50d2250cab74a9b7479cc/5a190/2220.png 800w,
+/static/7a693b0ce6d50d2250cab74a9b7479cc/c1b63/2220.png 1200w,
+/static/7a693b0ce6d50d2250cab74a9b7479cc/78958/2220.png 1320w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 38.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA90lEQVR42oWR25KEIBBD/f8fFXcG8MalaTAbtWZ258HRqhQ82En60NkwopSCbdvw7dOqWNYC5yfEGBGS8MzIUtD+zXaSC2pttyqqNN3g3QjvPZxzcNahZPkI7kKISCnf6tVEloyH+cHoLQbTI4T1aJxzPg33dY8GRS+lbJdoWPhfWBYaGdjnA9Y+EUNgYPoz7HuDaVogHLhSoRLRiFakNWIaPeZ5JtOVIfped3+HzpiBTMZ7Q0rZUMhsb/i0Ftb5g+0HQ9UTujL9SrXWw1B4FjYdWGJ/lJ2dcN2tNTTqaJiZ+I3fS0LVfVAaVnKMKR7slKYqct5V8Qu3nHFGG2KtSwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/586e4809effaac081096bed6d64ef7e5/5a190/tc.png"
+        srcset="/static/586e4809effaac081096bed6d64ef7e5/772e8/tc.png 200w,
+/static/586e4809effaac081096bed6d64ef7e5/e17e5/tc.png 400w,
+/static/586e4809effaac081096bed6d64ef7e5/5a190/tc.png 800w,
+/static/586e4809effaac081096bed6d64ef7e5/c1b63/tc.png 1200w,
+/static/586e4809effaac081096bed6d64ef7e5/29007/tc.png 1600w,
+/static/586e4809effaac081096bed6d64ef7e5/fc477/tc.png 2426w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이</h2>
+<pre><code class="language-python">def minBitFlips(self, start: int, goal: int) -> int:
+    bin_start = str(bin(start)).lstrip('0b')
+    bin_goal = str(bin(goal)).lstrip('0b')
+
+    if len(bin_start) == len(bin_goal):
+        pass
+    elif len(bin_start) > len(bin_goal):
+        bin_goal = '0'*(len(bin_start)-len(bin_goal)) + bin_goal
+    elif len(bin_start) &#x3C; len(bin_goal):
+        bin_start = '0'*(len(bin_goal)-len(bin_start)) + bin_start
+
+    count = 0
+    for i in range(len(bin_start)):
+        curr_start_digit = int(bin_start)%10
+        curr_goal_digit = int(bin_goal)%10
+
+        bin_start = bin_start[:-1]
+        bin_goal = bin_goal[:-1]
+
+        if curr_start_digit != curr_goal_digit:
+            count += 1
+    return count
+</code></pre>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABmElEQVR42oWTS0sDMRDH+8U9evMgggheFASvfgEPQsEXigoqiuKztbbabpPdzWuT/J1kX20FnWWYYTP57Uzy3w7IZKHwxgbgKoV3Dtbaxr33mDVrHYajL6Rjju7gEktXm1i+3sZAfsf1TllkkUwTpGkKKSW5gtY65ovQkCtas6bAWDHcTp9xz18hrW6BwYbDIfoffXDOkCSTBp7nOZRS0UPuaAJXTTHXfZU2wNeXHj56I7z3v3B794jJZBwBARxgoWMhRASFPH6IjsrXTwXvNGOoAiovkAmKxqEoChhjood80XzbFALrFzCM8ZfFGt9uLgEe9dS/gXR7deGiz258GgM9BoxS4G1a7pWmbebfDrUtR7v5BE57wM45sNoFVg6ANYp71xZX77oZfQ4otAOXID0CifDIqO6i77D/4LF7CWwceWwTcPPEY+uszNcPHY5fTAQ6P3PLEUgyUdpAKrpR0qIireWCpCM1XQy5Jl0aDUMxuC10Fc38GdbizrIsSkSQJIIsgjzSlFd6FGCMx/eM8zZnLP4I9Rn+AMw6VOgIyF/4AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="time"
+        title=""
+        src="/static/957bd951da1a1f39b848253a1b22f083/5a190/time.png"
+        srcset="/static/957bd951da1a1f39b848253a1b22f083/772e8/time.png 200w,
+/static/957bd951da1a1f39b848253a1b22f083/e17e5/time.png 400w,
+/static/957bd951da1a1f39b848253a1b22f083/5a190/time.png 800w,
+/static/957bd951da1a1f39b848253a1b22f083/c1b63/time.png 1200w,
+/static/957bd951da1a1f39b848253a1b22f083/203d3/time.png 1322w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<p>O(N) where N is the number of bits in the binary representation of the input numbers.</p>
+<h3>공간 복잡도</h3>
+<p>O(1)</p>
+<h1>Optimization</h1>
+<p>이 코드를 더 빠르고 간격하게 풀기 위해서는 XOR 연산을 사용하면 된다.<br>
+길고 복잡했던 코드를 두 줄로 줄일 수 있다.</p>
+<pre><code class="language-python">def minBitFlips(self, start: int, goal: int) -> int:
+        xor = start ^ goal
+        return bin(xor).count('1')
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABqElEQVR42nVSTUscQRCdX59DxIOHnLwYMEggl/wAFQQJJmhAsonIgroumzGzH9PTM/3d/dLV87EOizW8qerqmdevuipDNOsd5tUL1oLBew/n3OBDCHhtznkUyyX4iuMyv8W7yUcc3H1Gocq0n9GLfl6zDSpeQSkFKSW01slba0eEdIBSGs44/G2WuComuFndQTq9JSQrNyXmz89gRMxKbCKEFBBCJHJCXdeD6h31XZj1QZ7/w3y2wCJf4n76gMfFE1jNUPM6KTXGJEIbibTRKd+rD/R05FlPr7WDbCxqgnJJAZEQdsruEcZXMSqZ7nHQjZ1K4LugEg5MbA+gfMu1Q9jKDt0HYaAKnYJ2NVs7TAsbJwKYrjDsvaFwVFCCsrEB8bA/LwEXj8DJtcH7U4P9c2DvLODLr4D7YkucDRTBQ2gPJmNZClg3HjxOwiT3OJ0GfP0NHH4P+HTjcfTD4vhnwMkt8OGbx9UsDOVn4/lSsTkmQco2bnNx7iw1R0avYLVM8BSbmHNmuJLsdQOapkkENHsUExHnPK2FkChZFfMieVbxOBFtTIf39h/5klUtBJ7TRwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="xortc"
+        title=""
+        src="/static/9a8faaea34a2dede073054832c3d78dc/5a190/xortc.png"
+        srcset="/static/9a8faaea34a2dede073054832c3d78dc/772e8/xortc.png 200w,
+/static/9a8faaea34a2dede073054832c3d78dc/e17e5/xortc.png 400w,
+/static/9a8faaea34a2dede073054832c3d78dc/5a190/xortc.png 800w,
+/static/9a8faaea34a2dede073054832c3d78dc/c1b63/xortc.png 1200w,
+/static/9a8faaea34a2dede073054832c3d78dc/78958/xortc.png 1320w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>시간 복잡도 또한 상당히 줄어들었다.</p>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+0 &#x3C;= start, goal &#x3C;= 10^9
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/minimum-bit-flips-to-make-a-or-b-equal-to-c/">2220. Minimum Bit Flips to Convert Number</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L2220MinimumBitFlipstoConvertNumber/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-5303704378ee89c9cb4a.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="325f1ab87f799fd07c55";</script><script src="/webpack-runtime-e1c3bc32477583f305fd.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
