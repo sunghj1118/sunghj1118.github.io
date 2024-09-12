@@ -94,6 +94,49 @@ class Solution:
 <ul>
 <li>O(N) : word_count에 N개의 Counter 객체를 저장</li>
 </ul>
+<h1>최적화</h1>
+<p>너무 속도가 안 나와서 한번 최적화했더니 많이 올라갔다. 보니까, allowed를 set으로 바꾸면 O(1)로 검색이 가능하고, dictionary로 바꿔주면서 오버헤드가 많이 발생한것 같다.</p>
+<pre><code class="language-python">from typing import Counter, List
+
+
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        count = 0
+        allowed_set = set(allowed)
+        for word in words:
+            consistent = True
+            for char in word:
+                if char not in allowed_set:
+                    consistent = False
+                    break
+            if consistent:
+                count += 1
+        return count
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABsElEQVR42oVSTW/TQBDNr+4BjpWQOFZIVeFAfwGHHjiBqh5aECISVCCooCVNWlKI82Gv98v7MY/ZTewmalHHep5Zj+ftm93pga0JDiNxg9IIxBgRQug8EWHdQoiYFFPUU4Hjm894fPoc21/2caUmOd9Lr1RcihJ1XcMYA2stnHPZe+83SFPcNA2CC5jZCt+qAc7EECY0t4TJimKC4fASQlRYzOeYzliFqqGUysSJRErZqU5+w1Z79tpgNPyNwcUI4z9znP0Y4PzXOQoxg6oltNFZsdY6E7VxZOLuWXXR69rgFpwNXOxhXczfUrtJWfIP2R3CTvOaRVoipfmYs69NhA8Ey3sUqiW7hzBdTPIt4mqTowvC978E4ygXjhcOCx1RSODT+HbjexTeOV/0r4GtA+DRa+DJIfDqK/D0MGL7DWHnBNh7B8jmPy0nhZUhzDWxAkL/ivDyI2G/H7H7HozIMeHZSWAs4xcfCG9/EtctZdD62CRCpQ1fis1Isfc8j1bxzHHc8A3zOjjdrT3nTJ5Zv6mwJZRyOXcJmiEZZVnybNaoKsF5xbHI6/Zb+s/zGLX2D4JHUIx94NfhAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="opt"
+        title=""
+        src="/static/8aac9b7b78625712b7deb4f80aed6b83/5a190/opttc.png"
+        srcset="/static/8aac9b7b78625712b7deb4f80aed6b83/772e8/opttc.png 200w,
+/static/8aac9b7b78625712b7deb4f80aed6b83/e17e5/opttc.png 400w,
+/static/8aac9b7b78625712b7deb4f80aed6b83/5a190/opttc.png 800w,
+/static/8aac9b7b78625712b7deb4f80aed6b83/c1b63/opttc.png 1200w,
+/static/8aac9b7b78625712b7deb4f80aed6b83/203d3/opttc.png 1322w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h2>Constraint Analysis</h2>
 <pre><code>Constraints:
 1 &#x3C;= words.length &#x3C;= 10^4
