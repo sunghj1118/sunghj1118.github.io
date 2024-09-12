@@ -45,6 +45,31 @@ class Solution:
 ### 공간 복잡도
 - O(N) : word_count에 N개의 Counter 객체를 저장
 
+# 최적화
+너무 속도가 안 나와서 한번 최적화했더니 많이 올라갔다. 보니까, allowed를 set으로 바꾸면 O(1)로 검색이 가능하고, dictionary로 바꿔주면서 오버헤드가 많이 발생한것 같다.
+
+```python
+from typing import Counter, List
+
+
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        count = 0
+        allowed_set = set(allowed)
+        for word in words:
+            consistent = True
+            for char in word:
+                if char not in allowed_set:
+                    consistent = False
+                    break
+            if consistent:
+                count += 1
+        return count
+```
+
+![opt](../../../images/LEET/1684/opttc.png)
+
+
 ## Constraint Analysis
 ```
 Constraints:
