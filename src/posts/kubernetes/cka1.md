@@ -44,6 +44,34 @@ tags: ["Infra", "Kubernetes"]
 
 이렇게 했는데, 보니까 `kubectl run httpd --image=httpd:alpine --port=80 --expose`로 한번에 할 수 있었다. 보니까 ClusterIP가 default값이라서 생략해도 되는것 같다.
 
+9. Get the list of nodes in JSON format and store it in a file at /opt/outputs/nodes-z3444kd9.json.
+
+`kubectl get nodes -o json > /opt/outputs/nodes-z3444kd9.json`
+
+10. Create a service messaging-service to expose the messaging application within the cluster on port 6379.
+
+`kubectl expose pod messaging --port=6379 --name=messaging-service`
+
+11. Create a deployment named hr-web-app using the image kodekloud/webapp-color with 2 replicas.
+
+`kubectl create deployment hr-web-app --image=kodekloud/webapp-color --replicas=2`
+
+12. Create a static pod named static-busybox on the controlplane node that uses the busybox image and the command sleep 1000.
+
+`grep -i staticPodPath /var/lib/kubelet/config.yaml`로 static pod의 경로를 찾아서 그 경로에 pod를 만들면 된다.
+`vim /etc/kubernetes/manifests/static-busybox.yaml`로 만들어서 아래 내용을 넣어주면 된다.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-busybox
+spec:
+  containers:
+  - name: static-busybox
+    image: busybox
+    command: ["sleep", "1000"]
+```
 
 
 ## 마무리  
