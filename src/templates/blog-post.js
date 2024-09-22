@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import styled from "styled-components";
+import ViewCount from "../components/ViewCount";
 
 const PostTitle = styled.h1`
   font-size: 2.5rem;
@@ -12,6 +13,12 @@ const PostDate = styled.p`
   font-size: 1rem;
   color: #666;
   margin-bottom: 1rem;
+`;
+
+const StyledViewCount = styled(ViewCount)`
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
 `;
 
 const AllPostsButton = styled(Link)`
@@ -30,9 +37,9 @@ const AllPostsButton = styled(Link)`
   }
 `;
 
-const BlogPostTemplate = ({ data }) => {
+const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
-  const { frontmatter, html } = post;
+  const { frontmatter, html, fields } = post;
 
   return (
     <Layout>
@@ -40,6 +47,7 @@ const BlogPostTemplate = ({ data }) => {
       <PostTitle>{frontmatter.title}</PostTitle>
       <PostDate>{frontmatter.date}</PostDate>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      <StyledViewCount path={fields.slug} />
     </Layout>
   );
 };
@@ -52,6 +60,9 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
       }
       html
+      fields {
+        slug
+      }
     }
   }
 `;

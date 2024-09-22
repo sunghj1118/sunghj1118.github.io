@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import ProjectCard from "../components/projectCard"
 
 const ProjectsPage = ({ data }) => {
@@ -9,7 +9,7 @@ const ProjectsPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Projects" />
+      <Seo title="Projects" />
       <h1>My Projects</h1>
       <div className="projects-container">
         {projects.map(({ node: project }) => (
