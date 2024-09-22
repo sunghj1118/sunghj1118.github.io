@@ -2,7 +2,7 @@
 title: "386. Lexicographical Numbers"
 date: "2024-09-21"
 description: "386. Lexicographical Numbers는 1부터 n까지의 숫자를 사전식 순서로 출력하는 문제다."
-tags: ["Algorithm"]
+tags: ["Algorithm", "Trie"]
 ---
 
 # 문제 설명
