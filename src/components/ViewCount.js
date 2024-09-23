@@ -6,7 +6,17 @@ const ViewCount = ({ path }) => {
   useEffect(() => {
     const fetchCount = async () => {
       try {
-        const response = await fetch(`https://sunghj1118.goatcounter.com/counter/${encodeURIComponent(path)}.json`);
+        console.log(`https://sunghj1118.goatcounter.com/counter/${encodeURIComponent(path)}.json`);
+        const response = await fetch(`https://sunghj1118.goatcounter.com/counter/${encodeURIComponent(path)}.json`, 
+        {
+          method: 'GET',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          referrerPolicy: "no-referrer",
+        });
         const data = await response.json();
         setCount(data.count);
       } catch (error) {
