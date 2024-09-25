@@ -1,0 +1,164 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">2416. Sum of Prefix Scores of Strings</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">September 25, 2024</p><div><h1>문제 설명</h1>
+<p>단어 배열 words가 주어진다. 이때 각 단어의 prefix score를 계산하여 모든 단어의 prefix score의 합을 반환하라.</p>
+<p>그러면 해야 하는 subtask로 나누면 다음과 같다:</p>
+<ol>
+<li>각 단어의 prefix를 모두 찾는다.</li>
+<li>해당 prefix가 등장하는 단어의 수를 센다.</li>
+<li>단어의 prefix 등장 횟수들을 합산하여 prefix score를 계산한다.</li>
+<li>모든 단어에 대한 prefix score를 배열에 추가하여 반환한다.</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 101%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAACAklEQVR42qWU2Y7iQAxF8/+/xhtqQIB4ABG2ACFkY3fXcXQzoTWMWppIVjmuquvtuqJlHNvXYGCz2czG47FNJhMbDoc2Go2s3+/bdDp1vdfr2XK5NL7X62Wfvuh6Plt+OFi8Wttut7P5fB4uxpYkia1WK7vdbvZ8Pu16vdrj8fgrSNdBVBaFpcejHQJolmWWpmmQk52Do9Mpcxuy3+9d2P8E7IAcJhIObzYbOwZwJMvOvsahJNiJGAGwcXayPC9cZ58MHDDP8wB2cANyv989TYT/uq7tcrm0gl06+6xVVXlZHBDDdrt1L026RJBbWVYtGKuiISMAsJVl6TqiMkQcohkIdUySfUg1taIo/ZJAu5cbexXOFEaG7BG5AwKyXm/cWNeXFoR/LgiAyImOAABhpcbUnnq2NQSQ6DAqZXUc4RIR/vaL4BBCUakD60/RmZ8iDr7xkGigjUL+3y+iTovFwtNTgVV8dViU+DUg88vIqdMUHGAcsI8z1m6zPgLinQs0RRPQTEpj664AvlOnfiM+WBH80QyLCqKIJoPpUYOk08BuE9FpToQiqhAJU4NOuqISUQCEcF5ONKbSPWUUEZTLAKIrVfZggGabFQeafentpHQBAVBjVAYRWw8BazNV7/VsZxnAbg0FxiG9LKpbdwg+Ed1r+Od9yx0YXTQRH//1qHZp8w3b+g5e0gPawAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2416"
+        title=""
+        src="/static/e80471a016d14adf5277339bdd55f8bb/5a190/2416.png"
+        srcset="/static/e80471a016d14adf5277339bdd55f8bb/772e8/2416.png 200w,
+/static/e80471a016d14adf5277339bdd55f8bb/e17e5/2416.png 400w,
+/static/e80471a016d14adf5277339bdd55f8bb/5a190/2416.png 800w,
+/static/e80471a016d14adf5277339bdd55f8bb/077b7/2416.png 1166w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<p>이번주 주제가 trie인 만큼 trie를 이용해서 푸는 방법을 생각해보자.</p>
+<p>단어의 글자를 하나의 노드로 취급해서 trie를 만든 뒤, 탐색을 하면 될것 같다.</p>
+<h2>풀이</h2>
+<pre><code class="language-python">class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.count = 0
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+
+    def insert(self, word):
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+            node.count += 1
+    
+    def get_score(self, word):
+        node = self.root
+        score = 0
+        for char in word:
+            if char not in node.children:
+                break
+            node = node.children[char]
+            score += node.count
+        return score
+        
+
+class Solution:
+    def sumPrefixScores(self, words: List[str]) -> List[int]:
+        trie = Trie()
+
+        # 모든 단어 trie에 추가
+        for word in words:
+            trie.insert(word)
+
+        # 모든 단어에 대해서 점수 계산
+        scores = []
+        for word in words:
+            scores.append(trie.get_score(word))
+        
+        return scores
+</code></pre>
+<ul>
+<li>
+<p>TrieNode 클래스를 정의한다.</p>
+</li>
+<li>
+<p>Trie 클래스를 정의한다.</p>
+<ul>
+<li>insert 메소드를 정의한다.</li>
+<li>get_score 메소드를 정의한다.</li>
+<li>sumPrefixScores 메소드를 정의한다.</li>
+</ul>
+</li>
+<li>
+<p>Solution 클래스를 정의한다.</p>
+<ul>
+<li>sumPrefixScores 메소드를 정의한다.</li>
+<li>Trie 클래스를 생성한다.</li>
+<li>모든 단어를 trie에 추가한다.</li>
+<li>모든 단어에 대해서 점수를 계산한다.</li>
+<li>점수를 반환한다.</li>
+</ul>
+</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACJ0lEQVR42o1TyW4TQRD1byAE2DPuZXr2pWc1jm28hGAlQohDDigckDhxyoUfQFz4An72UdWJJ4ly4fBU3a+qXz1N1UyyjUXUZwiCAMYYF0/QWkNKOUII4WqGYcB6tYbtG2Q/z3H25xrtr48QpcFktVujbCqkaYosy5BQPJ1ZdD6fj2IM5uq6Qd91KOoSybcV6tsPKH7sIbMAkzRJUdsaZUlJOidJgjiOR9E8z5859n0fnufB93yIlxRfTCnOIIXEZLvd4ubrDXa7LRaLAYfDHsfjEX3fo21bhyiKXENr7SjMjbmpCqmJVndQJLhcrHF18RnLt3ucvbvEZvce54eDE6zrGk3TIAxDB3bOYow4ip2oMurJd57EcULFEbmIERKMCZ2LKAoRkQC7ezwcpdT4Td1dKsed+MlYILlAPOqmnoj8D5ygMQFd9NMkiwQR3uQ7+DRlpfXzx+6Nfi6oNQk6Z/PRoZY+ZtIguf6N5WoDb/rqvpEgUANBmE8Js/u3wplwggFNR4QZZBDTpAwhJEcBvNBi+uUvwvPv8FVE3F1OmBTSJJjZI7xiR40Cx7PjUTDMW4ikgU4bqKSGSlvoYonX1SW85goiW1BNBxFbmGqFeTpADp/g2QsExGuqF8o8DKUqC9qzAlVVoiwezh39CbZMicvpXjneupoctkhQ5rGrY/BOjoK8vLy0HHmBm6Z1+9f1A9qupwfW7SXn+D/myLmS+I54ruUdZcF/W5SRaU5zvxIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/7740c9097cdc8abbf02e748971873f22/5a190/tc.png"
+        srcset="/static/7740c9097cdc8abbf02e748971873f22/772e8/tc.png 200w,
+/static/7740c9097cdc8abbf02e748971873f22/e17e5/tc.png 400w,
+/static/7740c9097cdc8abbf02e748971873f22/5a190/tc.png 800w,
+/static/7740c9097cdc8abbf02e748971873f22/33d1d/tc.png 1150w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>O(NL) : N은 단어의 개수, L은 단어의 길이</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(NL) : N은 단어의 개수, L은 단어의 길이</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+1 &#x3C;= words.length &#x3C;= 1000
+1 &#x3C;= words[i].length &#x3C;= 1000
+words[i] consists of lowercase English letters.
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/sum-of-prefix-scores-of-strings/">2416. Sum of Prefix Scores of Strings</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L2416SumofPrefixScoresofStrings/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-5303704378ee89c9cb4a.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="f3666f7f9e92e86537f1";</script><script src="/webpack-runtime-12328c08abab054a2f26.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
