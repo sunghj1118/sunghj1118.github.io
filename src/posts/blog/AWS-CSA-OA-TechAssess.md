@@ -112,3 +112,65 @@ B) To manage user identities and access
 **C) To create and manage infrastructure as code**  
 D) To monitor application performance  
 
+16. What is the main benefit of using Amazon RDS (Relational Database Service)?
+
+A) It provides a serverless compute engine for running applications  
+**B) It simplifies the setup, operation, and scaling of a relational database**  
+C) It offers a fully managed NoSQL database solution  
+D) It provides a content delivery network for faster data access  
+
+17. Which AWS service is used to automatically distribute incoming application traffic across multiple targets, such as Amazon EC2 instances?
+
+A) Amazon Route 53  
+B) AWS Elastic Beanstalk  
+C) Amazon CloudFront  
+**D) Elastic Load Balancing (ELB)**
+
+18. What is the primary purpose of Amazon Route 53?
+
+**A) To provide a scalable domain name system (DNS) web service**  
+B) To host static websites  
+C) To manage AWS IoT devices  
+D) To store and retrieve any amount of data  
+
+19. Which AWS service provides a petabyte-scale data warehouse solution?
+
+A) Amazon Aurora  
+**B) Amazon Redshift**  
+C) Amazon DynamoDB  
+D) Amazon S3  
+
+20. Which AWS service is designed to help developers build, test, and deploy applications quickly using pre-configured environments?
+
+A) AWS CodePipeline  
+**B) AWS Elastic Beanstalk**  
+C) AWS CloudFormation  
+D) AWS Lambda  
+
+21. What is the primary function of AWS Lambda?
+
+A) To provide a managed database service  
+**B) To run code without provisioning or managing servers**  
+C) To store and retrieve any amount of data  
+D) To deliver content with low latency  
+
+22. Which AWS service is used for real-time processing of streaming data?
+
+A) Amazon S3  
+**B) Amazon Kinesis**  
+C) Amazon RDS  
+D) AWS Glue  
+
+23. Which AWS service is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications?
+
+A) Amazon SNS  
+**B) Amazon SQS**  
+C) AWS Step Functions  
+D) Amazon MQ  
+
+24. What is the main purpose of Amazon CloudFront?
+
+A) To provide a scalable DNS web service  
+B) To host and run containerized applications  
+**C) To deliver content with low latency and high transfer speeds**  
+D) To automate the deployment of applications  
