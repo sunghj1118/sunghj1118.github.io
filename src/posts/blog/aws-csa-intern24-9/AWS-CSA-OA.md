@@ -10,12 +10,12 @@ tags: ["Blog", "취준"]
 9월 초에 지원했던 Amazon Cloud Support Intern에 대한 답신이 방금 왔다. 지원 당시에 준비를 잘 못하고 지원서도 AWS에 맞게 안 쓴걸 뒤늦게 알게 되어 기대를 안하고 있었지만 메일이 와서 놀랐다. 해당 메일에서는 1주일 내로 30분간 Online Assessment (OA)을 진행해야 한다는 안내를 받았다.
 
 
-![awscloudsupp](../../images/job/intern/amazon/cloudsupport.png)
-![mail](../../images/job/intern/amazon/mail.png)
+![awscloudsupp](../../../images/job/intern/amazon/cloudsupport.png)
+![mail](../../../images/job/intern/amazon/mail.png)
 
 찾아보니까 OA는 2 파트로 이루어져 있다고 한다. 첫 번째는 적성검사 형식으로 'Workplace Simulation'이라는 것이고, 두 번째는 기술적인 문제를 푸는 'Assessment Test'라고 객관식 문제가 나온다고 한다. 물론, 외국 포럼에서 발견한 정보라 AWS Korea도 동일하게 진행되는지는 모르겠다.
 
-![reddit](../../images/job/intern/amazon/reddit.png)
+![reddit](../../../images/job/intern/amazon/reddit.png)
 
 # Leadership Principles
 조사하면서 다시 한번 느끼게 된 바로는, 아마존은 정말 Leadership Principles(LP)에 열광한다. LP에 대해 간단히 설명하자면, 아마존만의 행동강령철학 같은 것이다. 16개나 되는 LP 중 몇개만 소개하자면 Think Big, Learn and Be Curious, Dive Deep 등이 있다.
