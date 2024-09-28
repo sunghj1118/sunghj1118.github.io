@@ -12,13 +12,14 @@ data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
 .irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
 .irwwWE:hover{background-color:#005fa3;}/*!sc*/
 data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
-</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">Security in Docker</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">May 23, 2024</p><div><p>It is important to have some knowledge about security in Docker.</p>
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">Security in Docker</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">May 23, 2024</p><div><h1>Security in Docker</h1>
+<p>It is important to have some knowledge about security in Docker.</p>
 <p>Let us start with a host with Docker installed on it.
 The host has a set of its own processes running, such as a number of operating system processes, the docker-daemon itself, the SSH server, etc.</p>
 <p>Unlike VMs, containers aren't completely isolated from their host. Containers and the host share the same kernel.</p>
 <p>Containers are isolated using namespaces in linux. The host has a namespace and the containers have their own namespace.</p>
-<p>When there is container running a process that sleeps for one hour, when we list the processes on the host we will only see one process.
-<span
+<p>When there is container running a process that sleeps for one hour, when we list the processes on the host we will only see one process.</p>
+<p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
     >
@@ -43,8 +44,8 @@ The host has a set of its own processes running, such as a number of operating s
         decoding="async"
       />
     </span></p>
-<p>However, when we run the command <code>ps aux</code> on the host, we can see all the processes running on the host, including the processes running in the container. This is because the processes can have different process IDs in different namespaces. This is how Docker isolates containers within a system (process isolation).
-<span
+<p>However, when we run the command <code>ps aux</code> on the host, we can see all the processes running on the host, including the processes running in the container. This is because the processes can have different process IDs in different namespaces. This is how Docker isolates containers within a system (process isolation).</p>
+<p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
     >
@@ -125,8 +126,8 @@ The host has a set of its own processes running, such as a number of operating s
 <h2>Risk of Running as Root</h2>
 <p>If we run the containers as root, isn't that a security risk? Yes, it is. If an attacker gains access to the container, they can gain access to the host as well.</p>
 <p>Therefore, docker implements several security mechanisms to prevent this from happening.</p>
-<p>The root user has all the capabilities, some of them shown below.
-<span
+<p>The root user has all the capabilities, some of them shown below.</p>
+<p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
     >
@@ -182,8 +183,8 @@ The host has a set of its own processes running, such as a number of operating s
 <p>Similarly, in kubernetes we can also define the security standards such as the ID of the user that run the containers.</p>
 <p>In kubernetes, containers are encapsulated in pods. We can choose to configure security at the pod or container levels. If we configure it at a pod level, all the containers in the pod will inherit the security settings.</p>
 <p>If we configure it on both the container and the pod level, the container settings will override the pod settings.</p>
-<p>To configure security on the container, add a field called security context in the container.
-<span
+<p>To configure security on the container, add a field called security context in the container.</p>
+<p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
     >
@@ -208,8 +209,8 @@ The host has a set of its own processes running, such as a number of operating s
         decoding="async"
       />
     </span></p>
-<p>On the contrary, to configure security on the pod level, we can move the whole security context under containers level.
-<span
+<p>On the contrary, to configure security on the pod level, we can move the whole security context under containers level.</p>
+<p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
     >
@@ -233,7 +234,7 @@ The host has a set of its own processes running, such as a number of operating s
         loading="lazy"
         decoding="async"
       />
-    </span></p></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/173securitydocker/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+    </span></p></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/2024-1study/173securitydocker/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
