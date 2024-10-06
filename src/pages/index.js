@@ -207,10 +207,30 @@ const FixedTagTitle = styled.h3`
   margin: 0 0 10px 0;
 `;
 
+const getPageNumbers = (currentPage, totalPages) => {
+  const pageNumbers = [];
+  const delta = 2; // Number of pages to show on each side of the current page
+
+  for (let i = 1; i <= totalPages; i++) {
+    if (
+      i === 1 ||
+      i === totalPages ||
+      (i >= currentPage - delta && i <= currentPage + delta)
+    ) {
+      pageNumbers.push(i);
+    } else if (pageNumbers[pageNumbers.length - 1] !== '...') {
+      pageNumbers.push('...');
+    }
+  }
+
+  return pageNumbers;
+};
+
 const IndexPage = ({ data }) => {
   const [selectedTags, setSelectedTags] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [showFixedTags, setShowFixedTags] = useState(false);
+  
 
   const POSTS_PER_PAGE = 15;
 
@@ -238,6 +258,8 @@ const IndexPage = ({ data }) => {
   );
 
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+  const pageNumbers = getPageNumbers(currentPage, totalPages);
+
   const paginatedPosts = filteredPosts.slice(
     (currentPage - 1) * POSTS_PER_PAGE,
     currentPage * POSTS_PER_PAGE
@@ -331,15 +353,30 @@ const IndexPage = ({ data }) => {
         ))}
       </PostContainer>
       <PaginationWrapper>
-        {Array.from({ length: totalPages }, (_, index) => (
+        <PaginationButton
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </PaginationButton>
+        
+        {pageNumbers.map((number, index) => (
           <PaginationButton
-            key={index + 1}
-            active={index + 1 === currentPage}
-            onClick={() => handlePageChange(index + 1)}
+            key={index}
+            active={number === currentPage}
+            onClick={() => number !== '...' && handlePageChange(number)}
+            disabled={number === '...'}
           >
-            {index + 1}
+            {number}
           </PaginationButton>
         ))}
+        
+        <PaginationButton
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </PaginationButton>
       </PaginationWrapper>
       <FixedTagWrapper visible={!showFixedTags}>
         <FixedTagTitle>Tags</FixedTagTitle>
