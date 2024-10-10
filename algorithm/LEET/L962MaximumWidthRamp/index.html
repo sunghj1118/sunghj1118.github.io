@@ -1,0 +1,129 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">962. Maximum Width Ramp</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">October 10, 2024</p><div><h1>문제 설명</h1>
+<p>해당 문제는 배열이 주어졌을 때, 배열의 두 인덱스 i, j가 i &#x3C; j이고, nums[i] &#x3C;= nums[j]일 때, j-i의 최대값을 구하는 문제이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 81.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAABuklEQVR42q2U64rCQAyF+/4vpiDisrr6x1oRa9Varb3aWs36xU2RRUSWHQiTGTMn5ySpzng8kX5/IB+DD+n1eje/L5PJRDqdjp6xbrcreZ4L63q9yqvl1KdU6iKSNE1ku93K8XiU3W4nYRjK4RDL5XKRuq51f2c5ZR5LHHqSZakEQaBgQbCW1SqQzWYjp9NJwaqqkqIo9Hw+N1KWpRrJqqpu45xwF8nn8Evm87n4vt8aTM0Ay7Jc/SzLFAQ/SRJNUhTl7ZzovUOWOD7Ifr9vg+57qo/JbMwwwIm5Mz3/MC3UV8mu62oTlktfplNXZjNXAdM0vSWKb3U8SBRFupOUO1NAo+yepApI19Buu/l/XSoZNkh5Nhacn9nv31tA5CAb6tThcUyapmmDH/dXChxAFouFAlIHzjCm6LC3Yr8tmYej0UhZrtdr7SCFh7l1nOLTcRLY6JCcMpnxm84hDHhsgRg+oAAR/CifHbPmmdnZ4ctgDAD4j6UMPc/TGsKIhiAVCciCMffv1lJrOBwOFRTpNkYGhM9u8u2ed0iHANZ+y1zyzwIYsmHH5FMKwEhADGCwtM8PH7OaAkoNvwGKUNiTpuOYwwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="962"
+        title=""
+        src="/static/ed4e27aa945cf89dd271f6dcf58e628d/5a190/962.png"
+        srcset="/static/ed4e27aa945cf89dd271f6dcf58e628d/772e8/962.png 200w,
+/static/ed4e27aa945cf89dd271f6dcf58e628d/e17e5/962.png 400w,
+/static/ed4e27aa945cf89dd271f6dcf58e628d/5a190/962.png 800w,
+/static/ed4e27aa945cf89dd271f6dcf58e628d/3fca6/962.png 1112w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h1>풀이 1</h1>
+<h2>풀이 및 해설</h2>
+<p>for loop 두개 해서 비교 연산을 진행하고 max_ramp를 업데이트하는 방식으로 풀어봤는데, 시간 초과가 발생했다.</p>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def maxWidthRamp(self, nums: List[int]) -> int:
+        max_ramp = 0
+        for i in range(len(nums)):
+            for j in range(i, len(nums)):
+                if nums[i] &#x3C;= nums[j]:
+                    max_ramp = max(max_ramp, j-i)
+        
+        return max_ramp
+</code></pre>
+<h2>Complexity Analysis</h2>
+<ul>
+<li>시간 복잡도: O(N^2)</li>
+</ul>
+<h1>풀이 2</h1>
+<h2>풀이 및 해설</h2>
+<ul>
+<li>스택을 사용하여 풀이한다.</li>
+<li>스택에는 인덱스를 저장한다.</li>
+<li>스택에는 값이 감소하는 순서로 저장된다.</li>
+<li>오른쪽에서 왼쪽으로 순회하면서 스택의 top이 현재 값보다 작거나 같을 때까지 pop을 하면서 max_width를 업데이트한다.</li>
+<li>max_width를 반환한다.</li>
+</ul>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def maxWidthRamp(self, nums: List[int]) -> int:
+        n = len(nums)
+        stack = []
+
+        # create a stack of indices in decreasing order of values
+        for i in range(n):
+            if not stack or nums[stack[-1]] > nums[i]:
+                stack.append(i)
+        
+        max_width = 0
+
+        # iterate from right to left
+        for i in range(n-1, -1, -1):
+            while stack and nums[stack[-1]] &#x3C;= nums[i]:
+                max_width = max(max_width, i-stack.pop())
+        
+        return max_width
+</code></pre>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACGUlEQVR42nVUS2/TQBD2z0VI/QNw5Eg5IXFD4sKtJySkHuAEFVIAlUPbNA/iPBqFvGzX9nq9r/nYWeMqIc1Kn73z2G9nxjOONiLF1aKPyXYOVdeoPZRSAbw3xoCI0C4pa8znC0wmU2y3CU677/G08xIn31/h3e+PiLQ2yO9zVFUVSKSUgaiF1nqPkMh5Pw0+x5cN8ztcbnv46TEVS0TOOQhRIUkSFEURnKx1YD2TtRG3srUWR5e/N+Lbe70eut0brNcrpMkG43GMOI6R5znKsnyINE3TIDM5X8xZCQ/rLJyPnBEIR8MppvHC16RAPF3h+naA4WAQIhZChDJwZG1Z2miZnO1tSfgdcXqqNpCl8Q4aWWlRGwpGPsTgaPYyoyMZMyE/rDUHxWA9/ed8DI8Q2gMn5x4/ZBywFs3e0dEIbUjD/UN7XmrA7uq9rlIOv2bKfwgcnHkg5CLvLnZYFsDnAaDMft1y6fDmq8L1EtDuSIRc9FIBmST8uCO8viA8Pye8+ET4EhO+jQkfboBJSricOzw5M3h2DrztEDozwoW3S027hBabXGFZAqMEuF353vyjMdoSYi8PNoSreY1ZRhinDXF/qdBfu2AfboBCNR8zCin6lCtRQte+SY2E0b7fZAGtBKyWAaryU6SqZi99s+/IQVc3vRq185ll9yi5iWvVjGKa+b4U4WdQVTL8CHgqWC68nuWitctm7jmwv42LOgvl8qmPAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/cac8d2889aff76174986a58197721906/5a190/tc.png"
+        srcset="/static/cac8d2889aff76174986a58197721906/772e8/tc.png 200w,
+/static/cac8d2889aff76174986a58197721906/e17e5/tc.png 400w,
+/static/cac8d2889aff76174986a58197721906/5a190/tc.png 800w,
+/static/cac8d2889aff76174986a58197721906/ea64c/tc.png 1116w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<p>O(NlogN) : 스택에 최대 N개의 값이 들어가므로 O(N)이고, 스택에 값을 넣을 때마다 최대 N번의 비교가 발생하므로 O(NlogN)이다.</p>
+<h3>공간 복잡도</h3>
+<p>O(N) : 스택에 최대 N개의 값이 들어가므로 O(N)이다.</p>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+2 &#x3C;= nums.length &#x3C;= 5 * 10^4
+0 &#x3C;= nums[i] &#x3C;= 5 * 10^4
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/maximum-width-ramp/">962. Maximum Width Ramp</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L962MaximumWidthRamp/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-4c311ef7f555d7e4f345.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="79d8f9b35120b3218312";</script><script src="/webpack-runtime-59c0312238a5217cb059.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
