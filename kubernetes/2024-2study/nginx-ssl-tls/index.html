@@ -1,0 +1,196 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">Nginx 인그레스 컨트롤러에 SSL/TLS 보안 연결 적용</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">October 12, 2024</p><div><h1>Nginx 인그레스 컨트롤러에 SSL/TLS 보안 연결 적용</h1>
+<p>인그레스의 장점 중 하나는 쿠버네티스의 뒤쪽에 있는 디플로이먼트와 서비스가 아닌, 앞쪽에 있는 인그레스 컨트롤러에서 편리하게 SSL/TLS 보안 연결을 설정할 수 있다는 것이다.</p>
+<p>즉, 인그레스 컨트롤러 지점에서 인증서를 적용해 두면 요청이 전달되는 애플리케이션에 대해 모두 인증서 처리를 할 수 있다.</p>
+<p>따라서, 인그레스 컨트롤러가 일종의 게이트웨이 역할을 하게 된다.</p>
+<h3>인증서를 통한 보안 연결</h3>
+<p>Nginx 인그레스 컨트롤러는 인증서를 통한 보안 연결 기능을 제공한다.</p>
+<p><code>연결에 사용될 인증서와 비밀키를 생성</code></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 6.999999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAABCAYAAADeko4lAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAPklEQVR42jXLQQ6AMAwDQf7/UlJBIBaucoqhRV1pjrt1drlfAqCIED5x/xBQszbZbjoPF0nxocaXmRpVlVYvFtxNASq7gAMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="8.4a"
+        title=""
+        src="/static/d36356d4ff617298db666d4277be5ca7/5a190/8.4a.png"
+        srcset="/static/d36356d4ff617298db666d4277be5ca7/772e8/8.4a.png 200w,
+/static/d36356d4ff617298db666d4277be5ca7/e17e5/8.4a.png 400w,
+/static/d36356d4ff617298db666d4277be5ca7/5a190/8.4a.png 800w,
+/static/d36356d4ff617298db666d4277be5ca7/c1b63/8.4a.png 1200w,
+/static/d36356d4ff617298db666d4277be5ca7/6f464/8.4a.png 1464w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>위 명령어로부터 tls.key와 tls.crt 파일이 생성된다.</p>
+<ul>
+<li>/CN에는 인그레스 컨트롤러에 접근하기 위한 Public DNS 이름을 입력한다.</li>
+</ul>
+<p><code>tls 타입의 시크릿 생성</code></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 17%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAbklEQVR42m2PiQrEMAhE+/9/miWhRpsDcky1TZeFrfBwUJnBjVmQUlIyWmuwmnOufutfnv0/93wrtSLnDBFBqeUa9t6/NEODjL609XdTNYwxwrkPQgjw3qt2INpXyHEFERHsTvQb2gnMjDHGq+EJ/iHrETuKpxMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="8.4b"
+        title=""
+        src="/static/9b23a5f72523ad1182f9aa9e17434755/5a190/8.4b.png"
+        srcset="/static/9b23a5f72523ad1182f9aa9e17434755/772e8/8.4b.png 200w,
+/static/9b23a5f72523ad1182f9aa9e17434755/e17e5/8.4b.png 400w,
+/static/9b23a5f72523ad1182f9aa9e17434755/5a190/8.4b.png 800w,
+/static/9b23a5f72523ad1182f9aa9e17434755/c1b63/8.4b.png 1200w,
+/static/9b23a5f72523ad1182f9aa9e17434755/0d390/8.4b.png 1472w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이어서, yaml 파일에 tls 옵션을 추가한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 73.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAABkElEQVR42qVTWXbCMAzM/U/QkgCvQCi9Aq/3IZQsJHEWZ5t6REwb6EdL/Z4ixbLGWsbOfv+OzdrH7vUN/maL9co3/1ts/R1elivMnj24sznm7gKeuzSyGO252PR53gKzJ1finCiKcDgEOJ1OCMMI/Kecz2dUVYWyLFEaXY3y3b6Vuq7hMJBgRVGg73t0XYdhGPDocogchqFkRFABHvrJIV4wWD3Klw+TPYcZHY9HBEFgQFMkSYI4jpEam5oXKaUke9yA3ooANk2DPM+RZRkyowlIW6lCNCsg2D2ATfEmQ96uCoX/rAkgDWbI3mldy6S01tdDtOmXaRvJcyXC7BnTmgot6BUwiRNDnYOU+2EmnqWprQZt214uabSIpYe9uO+7KSADsjQTpxyuatHc52L/hGdldeWlZYNUVevJ1CXDOIqlDAvGID2WQhbYjCjWb8nc6GbKQ37oYJ8Y3DatHLI0+f1kLpwUwMaAsIckOF8NGz4l7/DjRO99IyA3LYEfocykZLvBvkSml2qkBLUdzF/e8iePLoUgktN5egAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="8.4c"
+        title=""
+        src="/static/72ad970ab07c4c23620d1a9a39b720ed/5a190/8.4c.png"
+        srcset="/static/72ad970ab07c4c23620d1a9a39b720ed/772e8/8.4c.png 200w,
+/static/72ad970ab07c4c23620d1a9a39b720ed/e17e5/8.4c.png 400w,
+/static/72ad970ab07c4c23620d1a9a39b720ed/5a190/8.4c.png 800w,
+/static/72ad970ab07c4c23620d1a9a39b720ed/c1b63/8.4c.png 1200w,
+/static/72ad970ab07c4c23620d1a9a39b720ed/7db30/8.4c.png 1494w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 6.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAABCAYAAADeko4lAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAL0lEQVR42kWI0QoAIAwC+/+/zb0N1NqgdSDqLV8kVTkQxoYzs92EMsn5vfn8d8UBfnhPHeryIxUAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="8.4d"
+        title=""
+        src="/static/16976670996b2fcc13ce2d0ef3df104e/5a190/8.4d.png"
+        srcset="/static/16976670996b2fcc13ce2d0ef3df104e/772e8/8.4d.png 200w,
+/static/16976670996b2fcc13ce2d0ef3df104e/e17e5/8.4d.png 400w,
+/static/16976670996b2fcc13ce2d0ef3df104e/5a190/8.4d.png 800w,
+/static/16976670996b2fcc13ce2d0ef3df104e/c1b63/8.4d.png 1200w,
+/static/16976670996b2fcc13ce2d0ef3df104e/5d6a0/8.4d.png 1580w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<ul>
+<li>tls.hosts에는 보안 연결을 적용할 도메인 이름을 입력한다.</li>
+<li>tls.secretName에는 tls 타입의 시크릿 이름을 입력한다.</li>
+</ul>
+<p>즉, alice106.example.com 도메인 이름으로 접근하는 요청에 대해 tls-secret 시크릿의 인증서로 보안 연결을 수립하겠다는 뜻이다.</p>
+<p><code>인그레스 생성 뒤, Nginx 인그레스 컨트롤러로 요청</code></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35.50000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA8klEQVR42mWR25KEIAxE/f//XFflMiMrd7A3yailNQ9dgQDNSTJ4H7DMCkopWGNFRhuoRUMrjgrv94p935/qO3rvEq815YdSK9g0pUTRI9A6xii5GBO2bUNOGZXu5XxE2pdSyGQXnaZiyI+ZQhHlMi+YpxnjzyjUrGmc8EviPJN7+sBoC+f+hOpSOwlzQQhEEyJRZhFTsBpdaq2hlioReJb9ZUiUA//Ev7OYyNoX3OpEq3OfPUUu92Fw9K9fOggDkRkaxIseaqWx0gC01lIel2atlTyf+81/kX361++GQSik5GMI3NfzwjnR+6NH/ramjuAfRWoggFUBNx0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="8.4e"
+        title=""
+        src="/static/324b5fbbc8b2f35ea84c5872a7beb8b0/5a190/8.4e.png"
+        srcset="/static/324b5fbbc8b2f35ea84c5872a7beb8b0/772e8/8.4e.png 200w,
+/static/324b5fbbc8b2f35ea84c5872a7beb8b0/e17e5/8.4e.png 400w,
+/static/324b5fbbc8b2f35ea84c5872a7beb8b0/5a190/8.4e.png 800w,
+/static/324b5fbbc8b2f35ea84c5872a7beb8b0/c1b63/8.4e.png 1200w,
+/static/324b5fbbc8b2f35ea84c5872a7beb8b0/aa440/8.4e.png 1500w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>https로 접근했을 때에도 정상적으로 응답이 오는 것을 확인할 수 있다. 단, 인증서를 통해 보안 연결을 설정했을 때는 http로 접근해도 자동으로 https로 리다이렉트 된다. 이는 특정 인그레스에 SSL/TLS가 적용했을 때, Nginx 인그레스 컨트롤러가 https로 리다이렉트하는 주석 기능인 ssl-redirect를 자동으로 true로 설정하기 때문이다.</p>
+<p><code>http로 접근해도 https로 리다이렉트</code>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 26.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAoklEQVR42nWQgQ6DIAxE/f//3OaWgbQFRFFvlBm3qWtyaUng9Y5mSAOYGMKCGCJijLWHELbZi0dKCcuyHDTPv+dGRNDeWgQfYK2FeRoQUe26RMHaU592oPk974HeezzaO7g8cp2rouKYHEGXSXHHzMg5nzo8ADWyMRad7ao0PjuubvviasoTxnFcH+Acukqr0X+6Xq41whbj64LWZ/oHxAZ8AWxhh1uuZZbfAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="8.4f"
+        title=""
+        src="/static/7a202feb408e58cf4a09e3e3e67d6e7e/5a190/8.4f.png"
+        srcset="/static/7a202feb408e58cf4a09e3e3e67d6e7e/772e8/8.4f.png 200w,
+/static/7a202feb408e58cf4a09e3e3e67d6e7e/e17e5/8.4f.png 400w,
+/static/7a202feb408e58cf4a09e3e3e67d6e7e/5a190/8.4f.png 800w,
+/static/7a202feb408e58cf4a09e3e3e67d6e7e/c1b63/8.4f.png 1200w,
+/static/7a202feb408e58cf4a09e3e3e67d6e7e/aa440/8.4f.png 1500w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h1>꼬리질문</h1>
+<ul>
+<li>SSL/TLS을 설명해보세요.</li>
+<li>게이트웨이란 무엇이고 무슨 종류가 있나요?</li>
+<li>openssl은 무엇인가요?</li>
+<li>rsa 알고리즘은 무엇인가요?</li>
+<li>DNS는 무엇인가요?</li>
+<li>308 코드는 무엇을 의미하나요?</li>
+<li>http와 https의 차이점은 무엇인가요?</li>
+<li>인증서는 무엇이고 어떻게 발급받나요?</li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/2024-2study/\bnginx-ssl-tls/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-4c311ef7f555d7e4f345.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="79d8f9b35120b3218312";</script><script src="/webpack-runtime-59c0312238a5217cb059.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
