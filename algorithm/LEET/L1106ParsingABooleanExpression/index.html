@@ -1,0 +1,150 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1106. Parsing A Boolean Expression</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">October 20, 2024</p><div><h1>문제 설명</h1>
+<p>이 문제는 주어진 문자열을 파싱하여 boolean 값을 반환하는 문제이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 127.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAABYlAAAWJQFJUiTwAAACg0lEQVR42q2V6W7qQAyF8/7vhRACJOAfFYhFECBhyQYkBPCdz9RRWkrVVnckyzOZyfHxsSfxJtOpNBoNGQwG0m63pdvtSq/XU99sNnXe6XR0r9VqqWVZJoz7/S6fh5enqSRRJEEYSuhsufRltVrpHPP9lQKk7hweu91u8mp4xX4vxzhWwOhwUJAgCGS9XsvxeJTNZiN5nisbDLDr9VpZfc3cmy8WMnx7k8lkIsPhUMbjsYLsdjsFPrgg2+1WA+DZi1xGPI8dkSiKdc1Z2Hv2AgdJFY+VZVmxeqVXfdi+V5ZXRd671GFFNPQizb8ML88LBSElGEId4DTN/gZYFBenR+TS3ilT0gUcYz51bTUajWThtLbKm6bMLbMq5dPprAfCcCtJkjqGoYpNyof3qj+eB9pCpvFsNlObz+e6RiYFhBWpsgELXmQNqO/77nAgBIUFgOxzDmZYURRyuVyqIjqGJz2I0QI0Nj7Ljg5krwxhWg/KnDZDDp6RIYHAUoaPQjwishnHiTKjWA9JdgoMS+awL4r8qcmV4XK5rKLzAmCYRX3oG6penOUcnufW/NYh5/NZPFghKnolSeL0KCtNzBMd/5Wx96FtiELUelEIAAO7OQS1OYFhzByPLB9uivzn4REZffiyvLqj39kTIA1JW9BPaEJD41lbj/3k41ABokO/31eNMDQxQAP/VcpUljbAKAhA9Q9mnW2dPcxZP1WZlKkoaVs/UVUaHl3t42l3GAJ0BueZPwESjQ1exgiA5xrViwLb74pRAZIqd9K+Fj8dr0A92JAC1wZWrE0f080q/asqc1OsygBbALyBmrci1Y3n+tcjVYpBIWDHJiCmo7Fk/jmQeTM64B/g6dMxrQMUSgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1106"
+        title=""
+        src="/static/d483507710fd675c1e338eab98db8a1c/5a190/1106.png"
+        srcset="/static/d483507710fd675c1e338eab98db8a1c/772e8/1106.png 200w,
+/static/d483507710fd675c1e338eab98db8a1c/e17e5/1106.png 400w,
+/static/d483507710fd675c1e338eab98db8a1c/5a190/1106.png 800w,
+/static/d483507710fd675c1e338eab98db8a1c/99661/1106.png 1098w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def parseBoolExpr(self, expression: str) -> bool:
+        def evaluate(expr):
+            if not expr:
+                return None  # Return None for empty expressions
+            
+            if expr == 't':
+                return True
+            if expr == 'f':
+                return False
+            
+            operator = expr[0]
+            subexpr = expr[2:-1]  # remove parentheses
+            
+            if operator == '!':
+                return not evaluate(subexpr)
+            
+            values = []
+            current = []
+            depth = 0
+            
+            for char in subexpr:
+                if char == '(':
+                    depth += 1
+                elif char == ')':
+                    depth -= 1
+                
+                if depth == 0 and char == ',':
+                    result = evaluate(''.join(current))
+                    if result is not None:
+                        values.append(result)
+                    current = []
+                else:
+                    current.append(char)
+            
+            if current:
+                result = evaluate(''.join(current))
+                if result is not None:
+                    values.append(result)
+            
+            if operator == '&#x26;':
+                return all(values)
+            if operator == '|':
+                return any(values)
+        
+        return evaluate(expression)
+</code></pre>
+<ul>
+<li><code>evaluate</code> 함수는 주어진 문자열을 파싱하여 boolean 값을 반환하는 함수이다.</li>
+<li><code>expr</code>이 비어있으면 <code>None</code>을 반환한다.</li>
+<li><code>expr</code>이 <code>t</code>이면 <code>True</code>를 반환한다.</li>
+<li><code>expr</code>이 <code>f</code>이면 <code>False</code>를 반환한다.</li>
+<li><code>expr</code>이 <code>!</code>이면 <code>subexpr</code>을 평가한 결과의 반대값을 반환한다.</li>
+<li><code>expr</code>이 <code>&#x26;</code>이면 <code>subexpr</code>을 평가한 결과의 모든 값이 <code>True</code>인지 확인하여 반환한다.</li>
+<li><code>expr</code>이 <code>|</code>이면 <code>subexpr</code>을 평가한 결과 중 하나라도 <code>True</code>인지 확인하여 반환한다.</li>
+<li><code>values</code>는 <code>subexpr</code>을 평가한 결과를 저장하는 리스트이다.</li>
+<li><code>current</code>는 현재 평가 중인 문자열을 저장하는 리스트이다.</li>
+<li><code>depth</code>는 괄호의 깊이를 저장하는 변수이다.</li>
+<li><code>subexpr</code>을 순회하면서 괄호의 깊이를 확인하고, <code>,</code>를 만나면 <code>current</code>를 평가하여 <code>values</code>에 추가한다.</li>
+<li>마지막으로 <code>operator</code>에 따라 <code>values</code>를 확인하여 결과를 반환한다.</li>
+<li><code>evaluate</code> 함수를 호출하여 결과를 반환한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACD0lEQVR42pVTTW8TMRDdn4v4AfALkBA9wI0jByQkTj1RbnBAPYAQoqKtKCQNIdkk281+29611/ZjxsmGBAlULD2P7fG88YxnolQWOIuvMEln6LpuB631TnrvMQw+WyyWmM3myLIcR5cvcOf9I9z9cIRn41eI+r5HXddo2zYYs9wnNsYcEDrn6VyHu73pMa7n+Jx/C5jJBJFzDkIIpGkaiHtrYbfYJ+U9k7D81wiEo9EI4+sRbm4SrJYL/JhMEMcxpJTBGZNyJEVRoGkasA0TczRCSVhn4bwLiDxN0+kCq0WG9brC1XiOr9+vKU8xlFKBkA05bN4zOROyA96z0yElLMMLW2UgK03GGpUkz8ZtQzQBbHzbETHrYV588OQ8y8PL3vuDD/pzvyPse7tTui0mmUfZMoKL/38hO6KKCLLugJdnwPNPwMcpfYh1zBp0f8U+IedxGBcJcHwBPHgD3D8BXl9qlMptk3HLF3LSe0th5h5PTj0ev/N4+Nbj3onH01OL43OPL0uPVe0htMda/paF8oirzXrvhRYN/fRaAtPckqFFIoCfmcGqcZiXhNwgI30uDBLSN5SWtNbIFRCXFgWdB8JNOzkoqiejqf1aiVaKANlU6KhwTSfDOetbJaA7RdisBxu2t5TraPh+bjtFBVw3AhWtJRVtlucQkoqbLldVjY5aj+XQPUVZBllT97A9F/YvWfQ6VPNNEEIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/607ab26a57edef6d62986401ae886c31/5a190/tc.png"
+        srcset="/static/607ab26a57edef6d62986401ae886c31/772e8/tc.png 200w,
+/static/607ab26a57edef6d62986401ae886c31/e17e5/tc.png 400w,
+/static/607ab26a57edef6d62986401ae886c31/5a190/tc.png 800w,
+/static/607ab26a57edef6d62986401ae886c31/0f246/tc.png 1118w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>시간 복잡도는 <code>O(N)</code>이다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>공간 복잡도는 <code>O(N)</code>이다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+1 &#x3C;= expression.length &#x3C;= 2 * 10^4
+expression[i] is one following characters: '(', ')', '&#x26;', '|', '!', 't', 'f', and ','.
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/parsing-a-boolean-expression/">1106. Parsing A Boolean Expression</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1106ParsingABooleanExpression/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-4c311ef7f555d7e4f345.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="79d8f9b35120b3218312";</script><script src="/webpack-runtime-59c0312238a5217cb059.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
