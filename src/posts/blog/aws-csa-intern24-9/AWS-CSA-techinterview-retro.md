@@ -2,7 +2,7 @@
 title: "Amazon Cloud Support Intern - Phone Interview / Tech Interview 후기"
 date: "2024-10-14"
 description: "Cloud Support Intern 채용연계형 인턴의 Phone Interview 회고록"
-tags: ["Blog", "취준"]
+tags: ["Blog", "취준", "Amazon"]
 ---
 
 

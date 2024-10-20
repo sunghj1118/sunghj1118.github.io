@@ -2,7 +2,7 @@
 title: "Amazon Cloud Support Intern - OA Workplace Simulation 준비과정"
 date: "2024-09-23"
 description: "Cloud Support Intern 채용연계형 인턴에 지원하면서 Workplace Simulation을 준비한 과정"
-tags: ["Blog", "취준"]
+tags: ["Blog", "취준", "Amazon"]
 ---
 
 # LP 준비

@@ -270,9 +270,9 @@ const IndexPage = ({ data }) => {
   };
 
   const tagsWithSubTags = {
-    Blog: ['Gatsby', 'NPM', 'Github'],
+    Blog: ['Gatsby', 'NPM', 'Github', '취준', 'Amazon'],
     Infra: ['Kubernetes', 'Docker', 'Container'],
-    Algorithm: ['Theory', 'Log', 'DP', 'Heap', 'Hashmap', 'Sorting', 'Two Pointer', "Bit", "Tree", "Linked List", "Graph", "Sliding Window", "Greedy", "BFS/DFS"],
+    Algorithm: ['Theory', 'Log', 'DP', 'Heap', 'Hashmap', 'Sorting', 'Two Pointer', 'Bit', 'Tree', 'Linked List', 'Graph', 'Sliding Window', 'Greedy', 'BFS/DFS', 'Stack'],
     CS: [],
     AI: [],
     Books: []

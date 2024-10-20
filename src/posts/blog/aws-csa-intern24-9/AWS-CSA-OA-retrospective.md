@@ -2,7 +2,7 @@
 title: "Amazon Cloud Support Intern - Online Assessment 후기"
 date: "2024-09-27"
 description: "Cloud Support Intern 채용연계형 인턴에 지원하면서 Online Assessment를 진행한 후기"
-tags: ["Blog", "취준"]
+tags: ["Blog", "취준", "Amazon"]
 ---
 
 # Amazon Cloud Support Intern Online Assessment 후기

@@ -2,7 +2,7 @@
 title: "Amazon Cloud Support Intern - OA Technical Assessment 준비과정"
 date: "2024-09-26"
 description: "Cloud Support Intern 채용연계형 인턴에 지원하면서 Technical Assessment을 준비한 과정"
-tags: ["Blog", "취준"]
+tags: ["Blog", "취준", "Amazon"]
 ---
 
 # 연습 질문:

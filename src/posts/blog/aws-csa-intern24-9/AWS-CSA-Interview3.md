@@ -2,7 +2,7 @@
 title: "Amazon Cloud Support Intern - Phone Interview 준비 2"
 date: "2024-10-14"
 description: "Cloud Support Intern 채용연계형 인턴의 Phone Interview 준비하면서 공부했던 이론적인 내용"
-tags: ["Blog", "취준"]
+tags: ["Blog", "취준", "Amazon"]
 ---
 
 # 목차 <!-- omit from toc --> 

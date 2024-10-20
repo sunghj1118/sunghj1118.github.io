@@ -1,5 +1,5 @@
 ---
-title: "Amazon Cloud Support Intern - Loop Interview 준비과정"
+title: "Amazon Cloud Support Intern - Loop Interview 준비 1"
 date: "2024-10-15"
 description: "Cloud Support Intern 채용연계형 인턴의 Phone Interview 준비과정"
 tags: ["Blog", "취준", "Amazon"]
