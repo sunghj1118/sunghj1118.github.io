@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">1593. Split a String Into the Max Number of Unique Substrings</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">October 21, 2024</p><div><h1>문제 설명</h1>
+<p>s라는 문자열이 주어졌을 때, s를 가장 많은 수의 유일한 부분 문자열로 나누어라. 이때, s의 부분 문자열은 s의 연속된 문자들의 부분집합이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 115.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAABYlAAAWJQFJUiTwAAACgklEQVR42oWVV64iQQxFeymInHOGJuccBUJCs/9VeDiW3Cp4vJmPi11ul3MZr91uy+VykdlsJsfjUVarlVyvV9nv97Lb7eR8Pst2u5Xb7aYUnfv9rnqLxULvol8qlSQajYq3Xm/k+fwjj8fjRZ/SarX0Y61WU1QqFT03Gg2pVqsKeJOjw510Oi2xWEw8v9OUxbQvvt9Vryjl83kpl8uSy+UUnMPhsEYQiUSUh7pnjMXjcfEqxZS0a0kpFgsvo756Hw6HMplMpNvtCiWBomxIJBKKZDL5JleDXb8v4+lchqPRK42qNJvNIA14HGCUM4bBYDBQSgCAb/1+X8vgcbnX8/VyKpV6A3UxcM5kMkqJDEqUrr7WEO/j8Vjm87l2Gh5KPZGt12vt+OFwUJxOJ5VPp1NZLpeqB+VMrT3C5xIjwGj0er2ge6RgnUUG7EzTCIbMrPPFYlE8lKgHdbBR4QPgEl7NGLJCoaA8KYZCoaDjNgUeSmYQxXq9HhjGO0bhTU7U8IyT23GgXebHZgqYR4PN2ids7n6MDTWjhtTAZgu4nr/hmzE1yChsNhtNB0NWcC65kQOi+hfUIDXkwdN66kgTkEEBTbAG2VMEBALlezab1VlVgzC0n9SZQXimH0oZ3NdCQzBgjmgiMpyRGVl5WLeFgHGEeIeHIjfKqHym7pZEIyQamkIEvz34b4vhkw+aQiS8EkInAmuIG8lnU7jo8m8GqQUbl+3c6XS0NhiFWp1suEnb3ZHg06hHwXnPdJh6krJtF3fruJvGwPlHhHSHhUokeLNV/on/zWFgkPD5Lxm9FqwtAvfF2Ktxz+5LMv7NIMZsBkkbGXWzPyI7u/Nn28fk9lL+AlPT0bR0mghVAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1593"
+        title=""
+        src="/static/3e3fc07fe94d721d2cec27dd40ae7c21/5a190/1593.png"
+        srcset="/static/3e3fc07fe94d721d2cec27dd40ae7c21/772e8/1593.png 200w,
+/static/3e3fc07fe94d721d2cec27dd40ae7c21/e17e5/1593.png 400w,
+/static/3e3fc07fe94d721d2cec27dd40ae7c21/5a190/1593.png 800w,
+/static/3e3fc07fe94d721d2cec27dd40ae7c21/f680b/1593.png 1108w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def maxUniqueSplit(self, s: str) -> int:
+        def backtrack(start, seen):
+            if start == len(s):
+                return 0
+            
+            max_splits = 0
+            for end in range(start+1, len(s)+1):
+                substring = s[start:end]
+                if substring not in seen:
+                    seen.add(substring)
+                    splits = 1+backtrack(end, seen)
+                    max_splits = max(max_splits, splits)
+                    seen.remove(substring)
+            
+            return max_splits
+        
+        return backtrack(0,set())
+</code></pre>
+<ul>
+<li><code>backtrack</code> 함수는 <code>start</code> 인덱스부터 시작하여 <code>s</code>를 나누는 최대 수를 반환한다.</li>
+<li><code>seen</code>은 이미 나눈 문자열을 저장하는 집합이다.</li>
+<li><code>start</code>가 <code>s</code>의 길이와 같다면, 나눈 문자열의 수를 반환한다.</li>
+<li><code>end</code>는 <code>start</code>부터 <code>s</code>의 길이까지 반복한다.</li>
+<li><code>substring</code>은 <code>s[start:end]</code>로 나눈 문자열이다.</li>
+<li>만약 <code>substring</code>이 <code>seen</code>에 없다면, <code>seen</code>에 추가하고 <code>splits</code>를 1 증가시킨다.</li>
+<li><code>max_splits</code>는 <code>max(max_splits, splits)</code>로 갱신한다.</li>
+<li><code>seen</code>에서 <code>substring</code>을 제거한다.</li>
+<li>최종적으로 <code>max_splits</code>를 반환한다.</li>
+<li><code>backtrack(0,set())</code>으로 시작하여 최대 나눈 문자열의 수를 반환한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 73.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAACjElEQVR42nVUTW/TQBDNP+CEoEJVm9hef9trO1nbazsfNGmKqAL9EGqR4MA/4AIHLohKiAsn7vzVx84kTRu1HJ7GO/v2eWZ2ZnvxtEDQSniBD8/zGK7r7nwLIRiO40CpEpPpDLPxFHmnUNys0P2+QvPnGv5Zid7y9AQjrSAziTzPkcoUSZIgTVNkWYYgCFiIBG3bxnA4RNt1GHdjSD1E9vUV9Pdz6J8X8E9H6CVxgkxmkFIiiiNE0R3iOGZQpCRMPhIeDAYMa2DB3juE9fwA1rMDiEMbvelsirPzMyxPltC6RtNotG1rvjXKskRd1yymjX8+P0JR5HCFA9/3+AdUKuG5cAmmPL3F4hjvLk0N9BjzxQlWby/w/uoaR28WKKoCdbUWbHSHhdkfjSrE0vibDqvVyqxHXAqKnAXLUYOJPoauXkLpBYZ6biKroErFZKUUC8ZBARmWCIMh3LiCCHN4rti5NBYMw8DUiBaCCYzNDW9hUnQYFInDKTNcd4tb0Z7v+xvHfYh7cGAn9c7hx7AVpHT+SzTR+cLC/uSTSVE+iOpRwe2C7A48U2wH/YN9vDj+AivRcO0++x9y1xouCd5OA//dsddwTZpWH8M8xezDNzy5/IsX88+bPcN1LMO313DWVlDz06X45kJEomDJMWzZwUlr2HEJK1JI6zm6jz/w9PQX9l7f4NCk3i+WELI1HHPTacV8h2q8KQmnHJlp8SOJIM64x7wwYesGCacYRbFpnRBJrvggWT9KEac5IoMwMefS7K6GVVWa3lM8KXVdoTLfNDGl6cGuazGZTHhN+8Rrm4ZtQ/yqgjZnaKKofCxIjwI9CGSLouD5pUeALK0J9FBQo5OPLPHJT2dojyw19j8BjNLuhRPZTwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/a1785027c96f663713d9d7d78034e015/5a190/tc.png"
+        srcset="/static/a1785027c96f663713d9d7d78034e015/772e8/tc.png 200w,
+/static/a1785027c96f663713d9d7d78034e015/e17e5/tc.png 400w,
+/static/a1785027c96f663713d9d7d78034e015/5a190/tc.png 800w,
+/static/a1785027c96f663713d9d7d78034e015/73caa/tc.png 1110w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>시간 복잡도는 <code>O(2^N)</code>이다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>공간 복잡도는 <code>O(N)</code>이다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+1 &#x3C;= s.length &#x3C;= 16
+s contains only lower case English letters.
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/">1593. Split a String Into the Max Number of Unique Substrings</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L1593SplitaStringIntotheMaxNumberofUniqueSubstrings/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-f98e2109ec856be6abdf.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="e8ef6943453f1ee75b41";</script><script src="/webpack-runtime-375fd70c53f55bcf3900.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
