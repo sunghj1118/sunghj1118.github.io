@@ -1,0 +1,170 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">2641. Cousins in Binary Tree II</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">October 23, 2024</p><div><h1>문제 설명</h1>
+<p>이진 트리에서 두 노드가 cousins인지 확인하라. cousins란 두 노드가 같은 깊이에 있으면서 부모가 같지 않은 경우를 말한다. 이때, cousins의 합을 구하여 현재 노드의 값을 반환하라.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 118.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAABYlAAAWJQFJUiTwAAADEUlEQVR42oWVuU5jQRBFX4oEiC0ABBJmXwzebRYv2BjZQMAW2IwQwiLgFwj5AkSIiAiQCPgEIkTIR9VwCl3rzZtBE5Sruvr17VtLl4Nms2nts19Wq+3Y8fGxnZ6e2v7+vp2cnFi73ba9vT1f408kEjY7O2vz8/M/SpDNJK1UzFsmk7bt7W3b2tqyUqlk5XLZKpWKFYtF29zctFQq5Qfm5ub+EC6QsA4KubhVSwlLp1MOmM/nrVqtWqPRcOD19XX3Ly4u2vLysq2srLiWHZalpSULyuWK1XZ2vw5VnU2tVrONjQ1nBHihULBsNus+1mguwUYjREBEnAkqlbI1mw3PU31313Umk7G1tTUHSiaTbkeFfEY1UQQc4DYO53K5LiuYECphk1cEJkQhUb6l4/G4BaKOBhAwHcRPIWKxmE1PT/9XvCj1et1oHXKw82XDShWmOGitEZiEbS7mDNpDhoF6iypRPTYk+ORHwrbWEu/DdDrt+SKxAM/MzPzVa/+ScO9JHJA80SrkEAfVWlhYcHbo6EuQH3YUQd92XwrJnJqaspGREa/05+ent87Q0JDfGgbF5vuBgQG7u7uzl5cXGxwc9PP6LgB9dXXVLi8vvbqtVssrfXFx4RcoFL4jRN720dGRUUwu5kXxzkkVoMH4+Lg/m4+PD9/s6enxvmJN5UZHR02F6+/vt9vbW3t+frbe3l6P6v7+3h4eHnzPqwwjbgQY+/DwsNt35+fn3lKTk5NG8a6vr/2QbCIjXOpwdXX1Dfj4+Oj56Ovrs6enJ2cwMTHhIK+vr3Zzc2PDw8MODGvACPv9/d0fwtjYmI+5t7e375cCqtpGk4RKsykNE7VKtG2UDknAhOh0OnZwcODtw6ugOAgvABYAItFxJV94P4CBgBANCgDJDRXXG9fwICK+AYTzmjYOCGVNDD4ECA24fJosXMC3gANMPqU1zR1Q4woGEk2fqA0oAMxMWHKWdbex+VG4sAvPPQ6HGcqvFCD4BegMMbSpISsNC7GTD9FQZh8BEJ+/FNqEBeNHf0SyNap+2ovahPwbzYAO3iNXVSQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2641"
+        title=""
+        src="/static/503cc7c9721c328075705ac1c3b206b1/5a190/2641.png"
+        srcset="/static/503cc7c9721c328075705ac1c3b206b1/772e8/2641.png 200w,
+/static/503cc7c9721c328075705ac1c3b206b1/e17e5/2641.png 400w,
+/static/503cc7c9721c328075705ac1c3b206b1/5a190/2641.png 800w,
+/static/503cc7c9721c328075705ac1c3b206b1/3fca6/2641.png 1112w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<h2>풀이</h2>
+<pre><code class="language-python"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def replaceValueInTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+
+        level_sums = {}
+
+        # first pass: calculate sum for each level
+        def calculate_sums(node, level):
+            if not node:
+                return
+            level_sums[level] = level_sums.get(level,0) + node.val
+            calculate_sums(node.left, level+1)
+            calculate_sums(node.right, level+1)
+
+        calculate_sums(root,0)
+
+        # second pass: update node values
+        def update_values(node, level, parent_sum):
+            if not node:
+                return
+            
+            # calculate sibling sum
+            sibling_sum = 0
+            if node.left:
+                sibling_sum += node.left.val
+            if node.right:
+                sibling_sum += node.right.val
+            
+            # update current node's value
+            cousin_sum = level_sums.get(level,0) - parent_sum
+            original_val = node.val
+            node.val = cousin_sum
+
+            # recursive calls for children
+            update_values(node.left, level+1, sibling_sum)
+            update_values(node.right, level+1, sibling_sum)
+        
+        # handle root separately
+        root_val = root.val
+        update_values(root,0,root_val)
+        root.val = 0 # root always has 0 cousins
+
+        return root
+</code></pre>
+<ul>
+<li>root가 존재하지 않을 경우 None을 반환한다.</li>
+<li>level_sums는 각 레벨의 합을 저장하는 딕셔너리이다.</li>
+<li>calculate_sums 함수는 각 레벨의 합을 계산한다.
+<ul>
+<li>재귀적으로 왼쪽, 오른쪽 자식 노드를 탐색하며 level_sums에 값을 더해준다.</li>
+</ul>
+</li>
+<li>update_values 함수는 노드의 값을 업데이트한다.
+<ul>
+<li>노드가 존재하지 않을 경우 None을 반환한다.</li>
+<li>sibling_sum은 현재 노드의 자식 노드의 값을 더한 값이다.</li>
+<li>cousin_sum은 현재 레벨의 합에서 부모 노드의 값을 뺀 값이다.</li>
+<li>original_val은 현재 노드의 원래 값이다.</li>
+<li>node.val은 cousin_sum으로 업데이트한다.</li>
+<li>재귀적으로 왼쪽, 오른쪽 자식 노드를 탐색하며 sibling_sum을 전달한다.</li>
+</ul>
+</li>
+<li>root_val은 root의 값이다.</li>
+<li>update_values 함수를 호출하여 root의 값을 업데이트한다.</li>
+<li>root의 값은 항상 0이다.</li>
+<li>root를 반환한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.50000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAACFUlEQVR42nVS227TQBDNL/CChEQrx/bu+n5Ze9exnTipQwFRBUihIIXCr/ALSP2MfuTp7CaYcns4Gs/s+MzlzCzXJYpRIZYpwiBEGP6CEAKc8wmMMRRFgXG7xaZfo/yyxvLugOHHAeGrCu6Zg1m/7NEPS+SUWJyQ57m1cRz/RmoIoyhCKamJLEe0KpF+6pHd9BAqgeu4mHHG0XcdxnGEqmuURQ5ZSlSyQk2+gSFOksTCkPqeB8/3wFwf/pkL/9yF8Dlcis9Mxd3uPa7evMV68wLv9h+x/7BHe9GhaRq0bYs0TVGWJbI0s6swExifCz7BTOK61GFACYtmhVYPqJsBqt1ANxpVXaGqjl2aomZkOz4hCAKLx/udCIVNEDSKTw+M4E8J/wQJZyH+zpkIfyr6fwQQRpS4xFzvwKLC+jZO4H8SmvYFdSdsp9Ql4UjEj3GTwxywrMXT6zu4covQe46A3gJGgtBUjwg5wjgDT2pSb45h+xrtMJKKlBSl4HEBHmVULML56iuefLvHs6vvRN7DpwJOe0Pvue3YqmwIoyQHkyMldEiaS0SKvosBvryAX1+e7EvMu89w+gOc5S3m7TW8Zoc5+S6RC+YdCRkxJ3RnWilSVEEZS+oa33xrVZMlkOqNkuhbjYWWUFVJMQldF/Z2zdrsyEZRcxaGTEppz8TYiqw5m8naE9JoFh2Ubk4xeqP/siybdvgA8pNyVglXt+sAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/d342ba0885cdf9c7eedb75bcaf721686/5a190/tc.png"
+        srcset="/static/d342ba0885cdf9c7eedb75bcaf721686/772e8/tc.png 200w,
+/static/d342ba0885cdf9c7eedb75bcaf721686/e17e5/tc.png 400w,
+/static/d342ba0885cdf9c7eedb75bcaf721686/5a190/tc.png 800w,
+/static/d342ba0885cdf9c7eedb75bcaf721686/c1b63/tc.png 1200w,
+/static/d342ba0885cdf9c7eedb75bcaf721686/0c3d0/tc.png 1414w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>O(N): 트리의 모든 노드를 탐색해야 하므로 O(N)이다.
+<ul>
+<li>첫 번째 패스: O(N)</li>
+<li>두 번째 패스: O(N)</li>
+<li>따라서, O(N)이다.</li>
+</ul>
+</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(N): level_sums 딕셔너리를 사용하므로 O(N)이다.</li>
+<li>따라서, O(N)이다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+The number of nodes in the tree is in the range [1, 10^5].
+1 &#x3C;= Node.val &#x3C;= 10^4
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/cousins-in-binary-tree-ii/">2641. Cousins in Binary Tree II</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L2641CousinsinBinaryTreeII/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-f98e2109ec856be6abdf.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="e8ef6943453f1ee75b41";</script><script src="/webpack-runtime-375fd70c53f55bcf3900.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
