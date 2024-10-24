@@ -1,0 +1,122 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">951. Flip Equivalent Binary Trees</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">October 24, 2024</p><div><h1>문제 설명</h1>
+<p>이 문제는 트리가 두개가 주어졌을때, 하나의 트리를 뒤집어서 같은 트리가 되는지 확인하는 문제이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 98%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC1klEQVR42n1Vy05iQRC936ERF77AF4K8BUEEF6KM77jU+Htu3etCZSTgJEbYI5rMjLwE5ALqmXvKNAHB6eRQdaurq091dxXaxkYcq6tRHBzsIx7/gZ2dHWxvb2NzcxOHh4ci4/E4YrEYJiYmMDk5+V9oAZ8NSx4r/IEAwuEwlpeXEYlEsLKyAqvVCovFArPZjJmZGYyNjWF8fPy/0FwOKzxuO5xOJzweD9xuNwJGcMLhcMBms8Fut2Nubg4LCwuYn58Xyc2U7Na1cDiC9fWYkdK6MGOAxcVFCeLz+YSxCu5yuURyU0qSoI1QusZJr9criylppI1BFbgJAyjwm9kwiLJRJ3vN7/cLi2AwiFAoJCxJf3p6WhyYKs9vdna2T1dQNq7RgsEQotEo1tbWRDI9siWcBlsyIXOyps4MVEYKihSz0XhWHo+348wbnZqa6kilD4Ka7/bX1PvhGyM+nT+fisVi/jYY0b1OvVFtaWlJzo9vaHR0VGAymXowMmIaOMc1fQ/79PQUd3d3uLm5wfn5ORKJBFKpFJLJZAfpdBoXFxe4vLySOfpS7u7uGpuNdNhKwEwmA452u42G3kSr1cbHxwe6B78bDR3NZqtn7vj4GMPDw1JNnYDZbBbFYgm///wVJ13XkcvlDdmUxZVKBfn8k+jcNJd7QK1WF9+joyMJ2MMwnb7F66uO5+cC3t7eUC6XUa+/Km7yyw11vWHY66IXS6XvGV5dXRvOLTzkH/HyUhWmTI/j/f1dZKFQRKlUxnOhYDCuIv/4JBmcnJxgaGhAyhyVyguq1Vrf+X0dNcOHG3NTxbAn5bOzM9ze/jJuLW3c8E/Rs9kMeFn39/c9oO36OgEeUzKZwt7efv8ts7BZw93dRDUIQnUT6qoZUDqdDqmMvndI562tLalhlh8bA7vJV7BO2QRUNTHYoA6u0ZEdhsXN4OwarG82S3YbStpUY1VdiPZBfwH/AE5iVcYVbH5iAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="951"
+        title=""
+        src="/static/3005335bb7748d6a34b0a6f75d0421c8/5a190/951.png"
+        srcset="/static/3005335bb7748d6a34b0a6f75d0421c8/772e8/951.png 200w,
+/static/3005335bb7748d6a34b0a6f75d0421c8/e17e5/951.png 400w,
+/static/3005335bb7748d6a34b0a6f75d0421c8/5a190/951.png 800w,
+/static/3005335bb7748d6a34b0a6f75d0421c8/c1b63/951.png 1200w,
+/static/3005335bb7748d6a34b0a6f75d0421c8/f8836/951.png 1214w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<h2>풀이</h2>
+<pre><code class="language-python"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def flipEquiv(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
+        def dfs(node1, node2):
+            if not node1 and not node2:
+                return True
+            if not node1 or not node2 or node1.val != node2.val:
+                return False
+            
+            return (dfs(node1.left, node2.left) and dfs(node1.right, node2.right) or dfs(node1.left, node2.right) and dfs(node1.right, node2.left))
+            
+        return dfs(root1, root2)
+</code></pre>
+<ul>
+<li>DFS를 이용하여 두 트리가 같은지 확인한다.</li>
+<li>두 트리가 같은지 확인하는 방법은 다음과 같다.
+<ol>
+<li>두 트리가 모두 None이면 True를 반환한다.</li>
+<li>두 트리 중 하나만 None이거나 두 트리의 값이 다르면 False를 반환한다.</li>
+<li>두 트리의 왼쪽 자식과 오른쪽 자식을 비교한다.</li>
+<li>두 트리의 왼쪽 자식과 오른쪽 자식을 서로 비교한다.</li>
+<li>두 트리의 왼쪽 자식과 오른쪽 자식을 서로 비교한다.</li>
+<li>두 트리의 왼쪽 자식과 오른쪽 자식을 서로 비교한다.</li>
+</ol>
+</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACV0lEQVR42mVTTW/TQBD1f6igh4q2ibP2+mNtZ/1tJ9RplaSlUeln1ApxQeIEf4ALXDlyAgkJiX/6mNnUKIXD0+yOZ96+GT1b+axGuqyhshiBHyAICUEA3/dNdF0XjuP8hRACRVFgeXaGeXeC8XqKyc83OP39HvrTK1jdrEMzaREnCZJHxHGMKIpM9DzvP9IwDKk+RqwiBFWM8KYmNJBzDcsRDpqmQdfNkGUZFBExmU40xuMx0jQ1UUppiFg5q7Rt22A0sCFeDA2cwxEsLl6tVpgv5lguF7i5vsLd+g7NSYuyLFHXtXmIx+d7r1opBa01QorCJeU8BcFSJPtoOkdbzdBOFugWl+iOj1E2JXLaFZOwSh6b1fXjs2K+c9xeh8UJpWgPYUQFCq4XbopJBTf06Ik49jAkW3cG7VDAD0K8vn8Hz+xn9OTFHu6TRgm3J3PEU8LNKCFEfUnq2Cb/Nm/DMURSDA2pHA0wyM83Dzz2GULp+XhR3MKhcV1XPH7cBuUMyUadnRxh7/gDBsUKzy++wpG0S2H3hNRAif1qDcePTFLwi9KjkaSBCBLYYYnD6hq7p5+xe/4FO+sf2Ln7jp37X3h2+Q17s49GuSWJgG0wUA3sIIOjcrhxCdtPIZMKQhWwowaj+gIH2TmG0wcM6lvsF1cYTh6wX17jYPoWw4YmpP1bbFLjsZwNnJDnUuQErcco8owso5HyOUuQJgplGqFIYxQ6QkU5Rj7mfGJ4rP5XKoqSCDX5rjJnrVM0bWs8mOc5qrqBTjO07cScuW46fUnnGjX9aVzLk/4BDcmV62Awd7IAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/1c5d2b1b50f7d6faa2a8c63724e87964/5a190/tc.png"
+        srcset="/static/1c5d2b1b50f7d6faa2a8c63724e87964/772e8/tc.png 200w,
+/static/1c5d2b1b50f7d6faa2a8c63724e87964/e17e5/tc.png 400w,
+/static/1c5d2b1b50f7d6faa2a8c63724e87964/5a190/tc.png 800w,
+/static/1c5d2b1b50f7d6faa2a8c63724e87964/c1b63/tc.png 1200w,
+/static/1c5d2b1b50f7d6faa2a8c63724e87964/bb051/tc.png 1212w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>놀랍게도 100% 성능이 떴다. Editorial 답이랑 같지 않을까 싶다.</p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>O(N) : 트리의 모든 노드를 방문해야 하므로 O(N)이다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(N) : 재귀 호출을 하므로 O(N)이다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+The number of nodes in each tree is in the range [0, 100].
+Each tree will have unique node values in the range [0, 99].
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/flip-equivalent-binary-trees/">951. Flip Equivalent Binary Trees</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L951FlipEquivalentBinaryTrees/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-f98e2109ec856be6abdf.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="e8ef6943453f1ee75b41";</script><script src="/webpack-runtime-375fd70c53f55bcf3900.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
