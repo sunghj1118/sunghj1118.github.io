@@ -73,6 +73,66 @@ spec:
     command: ["sleep", "1000"]
 ```
 
+13. Create a POD in the finance namespace named temp-bus with the image redis:alpine.   
+`kubectl run temp-bus --image=redis:alpine --namespace=finance`
+
+14. A new application orange is deployed. There is something wrong with it. Identify and fix the issue.   
+
+yaml 파일 다시 수정. CKA 준비 1일차에 더 자세히 적어놓았다.
+
+15. Expose the hr-web-app created in the previous task as a service named hr-web-app-service, accessible on port 30082 on the nodes of the cluster.
+The web application listens on port 8080.   
+
+hr-web-app이라는 이름을 갖고 있는 NodePort 서비스를 만들고, 8080에 노출한다.
+`kubectl expose deployment hr-web-app --name=hr-web-app-service --type=NodePort --port=8080`
+
+`kubectl edit service hr-web-app-service`에 들어가서 nodePort를 수정한다.
+
+```yaml
+  ports:
+  - nodePort: 31718
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  - nodePort: 30082
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+```
+
+16. Use JSON PATH query to retrieve the osImages of all the nodes and store it in a file /opt/outputs/nodes_os_x43kj56.txt.
+The osImage are under the nodeInfo section under status of each node.   
+
+`kubectl get nodes -o jsonpath='{.items[*].status.nodeInfo.osImage}' > /opt/outputs/nodes_os_x43kj56.txt`
+- `kubectl get nodes`로 노드 정보를 가져온다.
+- `-o jsonpath`로 jsonpath를 사용한다.
+- `{.items[*].status.nodeInfo.osImage}`로 osImage를 가져온다.
+  - `items[*]`로 모든 노드를 가져온다.
+  - `status.nodeInfo.osImage`로 osImage를 가져온다.
+
+17. Create a Persistent Volume with the given specification: -  
+Volume name: pv-analytics  
+Storage: 100Mi  
+Access mode: ReadWriteMany  
+Host path: /pv/data-analytics  
+
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-analytics
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/pv/data-analytics"
+```
+
+`kubectl apply -f pv.yaml`로 만들어준다.
+
 
 ## 마무리  
 - 3번은 create service를 하는게 아니라 expose라는걸 써서 헷갈린다.
