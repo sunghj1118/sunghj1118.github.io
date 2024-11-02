@@ -1,4 +1,11 @@
-# 12.3 커스텀 리소스를  정의하기 위한 CRD(Custom Resource Definition)
+---
+title: "CRD(Custom Resource Definition)"
+date: "2024-11-02"
+description: "커스텀 리소스를 정의하기 위한 CRD(Custom Resource Definition)"
+tags: ["Infra", "Kubernetes"]
+---
+
+# 12.3 커스텀 리소스를 정의하기 위한 CRD(Custom Resource Definition)
 
 Custom Resource Definition (CRD): k8s '**커스텀 리소스를 정의**'하는 오브젝트
 
