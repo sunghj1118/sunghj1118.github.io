@@ -275,7 +275,7 @@ const IndexPage = ({ data }) => {
     Algorithm: ['Theory', 'Log', 'DP', 'Heap', 'Hashmap', 'Sorting', 'Two Pointer', 'Bit', 'Tree', 'Linked List', 'Graph', 'Sliding Window', 'Greedy', 'BFS/DFS', 'Stack'],
     CS: [],
     AI: [],
-    Books: []
+    Papers: ['Books', 'Deepfake']
   };
 
   return (
