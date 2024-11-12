@@ -121,9 +121,117 @@ status: {}
 
 `kubectl get pod use-pv`
 
+5. Create a new deployment called nginx-deploy, with image nginx:1.16 and 1 replica. Next upgrade the deployment to version 1.17 using rolling update.
+- Deployment : nginx-deploy. Image: nginx:1.16
+- Image: nginx:1.16
+- Task: Upgrade the version of the deployment to 1:17
+- Task: Record the changes for the image upgrade
 
+1. Create a deployment with image nginx:1.16 and 1 replica  
+`kubectl create deployment nginx-deploy --image=nginx:1.16 --replicas=1`
+
+2. Upgrade the deployment to version 1.17
+`kubectl set image deployment/nginx-deploy nginx=nginx:1.17 --record`
+
+
+6. Create a new user called john. Grant him access to the cluster. John should have permission to create, list, get, update and delete pods in the development namespace . The private key exists in the location: /root/CKA/john.key and csr at /root/CKA/john.csr.
+- Important Note: As of kubernetes 1.19, the CertificateSigningRequest object expects a signerName.
+- Please refer the documentation to see an example. The documentation tab is available at the top right of terminal.
+- CSR: john-developer Status:Approved
+- Role Name: developer, namespace: development, Resource: Pods
+- Access: User 'john' has appropriate permissions
+
+Steps:
+1. Create a Certificate Signing Request (CSR)
+2. Approve the CSR
+3. Create a Role
+4. Create a RoleBinding
+5. Generate a kubeconfig file for John
+
+
+6. Create a CSR for john
+
+step 1: create CSR
+
+```bash
+cat << EOF | kubectl apply -f -
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: john-developer
+spec:
+  request: $(cat /root/CKA/john.csr | base64 | tr -d '\n')
+  signerName: kubernetes.io/kube-apiserver-client
+  usages:
+  - client auth
+EOF
+```
+
+step 2: approve CSR  
+`kubectl certificate approve john-developer`
+
+step 3: create role  
+`kubectl create role developer --verb=create,list,get,update,delete --resource=pods -n development`
+
+step 4: create rolebinding  
+`kubectl create rolebinding john-developer --role=developer --user=john -n development`
+
+step 5: generate kubeconfig file for john  
+`kubectl get csr john-developer -o jsonpath='{.status.certificate}' | base64 -d > john.crt`
+
+TO_VERIFY:
+```bash
+kubectl auth can-i create pods --as=john -n development
+kubectl auth can-i list pods --as=john -n development
+kubectl auth can-i get pods --as=john -n development
+kubectl auth can-i update pods --as=john -n development
+kubectl auth can-i delete pods --as=john -n development
+```
+
+7. Create a nginx pod called nginx-resolver using image nginx, expose it internally with a service called nginx-resolver-service. Test that you are able to look up the service and pod names from within the cluster. Use the image: busybox:1.28 for dns lookup. Record results in /root/CKA/nginx.svc and /root/CKA/nginx.pod  
+- Pod: nginx-resolver created
+- Service DNS Resolution recorded correctly
+- Pod DNS resolution recorded correctly
+
+
+모르겠다. 계속 틀린다. pod랑 service를 bash로 temp busybox 하나 만들어서 보려고 하는데 이게 아닌것 같다.
+
+**끝나고 풀이를 보니까 다음과 같다:**
+
+step 1:  
+- Use the command kubectl run and create a nginx pod and busybox pod. Resolve it, nginx service and its pod name from busybox pod.
+- To create a pod nginx-resolver and expose it internally:  
+
+`kubectl run nginx-resolver --image=nginx`  
+`kubectl expose pod nginx-resolver --name=nginx-resolver-service --port=80 --target-port=80 --type=ClusterIP`  
+
+step 2:  
+To create a pod test-nslookup. Test that you are able to look up the service and pod names from within the cluster:
+
+`kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service`  
+`kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service > /root/CKA/nginx.svc`  
+
+step 3:  
+Get the IP of the nginx-resolver pod and replace the dots(.) with hyphon(-) which will be used below.
+
+`kubectl get pod nginx-resolver -o wide`  
+`kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <P-O-D-I-P.default.pod> > /root/CKA/nginx.pod`  
+
+
+
+8. Create a static pod on node01 called nginx-critical with image nginx and make sure that it is recreated/restarted automatically in case of a failure.  
+
+- Use /etc/kubernetes/manifests as the Static Pod path for example.
+- static pod configured under /etc/kubernetes/manifests ?
+- Pod nginx-critical-node01 is up and running
+
+답:
+- `ssh node01`  
+- `mkdir /etc/kubernetes/manifests`  
+- `cd /etc/kubernetes/manifests`  
+- `vim nginx-critical.yaml`  
+- `kubectl get pods -o wide | grep nginx-critical`  
 
 ## 마무리  
-- 3번은 create service를 하는게 아니라 expose라는걸 써서 헷갈린다.
-- ClusterIP가 default값이라서 생략해도 되는것 같다.
-- 같은 이름의 pod와 service를 만들때는 `kubectl run`으로 pod를 만들고 `--expose`로 service를 만들면 된다.
+
+1번 모의고사보다 어렵다. 이런 식으로 나오면 당황할 것 같다. 더 열심히 공부해야겠다.
