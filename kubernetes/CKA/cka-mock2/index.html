@@ -112,12 +112,125 @@ status: {}
 <p><code>kubectl apply -f /root/CKA/use-pv.yaml</code></p>
 <p><code>kubectl get pvc my-pvc</code></p>
 <p><code>kubectl get pod use-pv</code></p>
-<h2>마무리</h2>
+<ol start="5">
+<li>Create a new deployment called nginx-deploy, with image nginx:1.16 and 1 replica. Next upgrade the deployment to version 1.17 using rolling update.</li>
+</ol>
 <ul>
-<li>3번은 create service를 하는게 아니라 expose라는걸 써서 헷갈린다.</li>
-<li>ClusterIP가 default값이라서 생략해도 되는것 같다.</li>
-<li>같은 이름의 pod와 service를 만들때는 <code>kubectl run</code>으로 pod를 만들고 <code>--expose</code>로 service를 만들면 된다.</li>
-</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/CKA/cka-mock2/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<li>Deployment : nginx-deploy. Image: nginx:1.16</li>
+<li>Image: nginx:1.16</li>
+<li>Task: Upgrade the version of the deployment to 1:17</li>
+<li>Task: Record the changes for the image upgrade</li>
+</ul>
+<ol>
+<li>Create a deployment with image nginx:1.16 and 1 replica</li>
+</ol>
+<p><code>kubectl create deployment nginx-deploy --image=nginx:1.16 --replicas=1</code></p>
+<ol start="2">
+<li>Upgrade the deployment to version 1.17</li>
+</ol>
+<p><code>kubectl set image deployment/nginx-deploy nginx=nginx:1.17 --record</code></p>
+<ol start="6">
+<li>Create a new user called john. Grant him access to the cluster. John should have permission to create, list, get, update and delete pods in the development namespace . The private key exists in the location: /root/CKA/john.key and csr at /root/CKA/john.csr.</li>
+</ol>
+<ul>
+<li>Important Note: As of kubernetes 1.19, the CertificateSigningRequest object expects a signerName.</li>
+<li>Please refer the documentation to see an example. The documentation tab is available at the top right of terminal.</li>
+<li>CSR: john-developer Status:Approved</li>
+<li>Role Name: developer, namespace: development, Resource: Pods</li>
+<li>Access: User 'john' has appropriate permissions</li>
+</ul>
+<p>Steps:</p>
+<ol>
+<li>
+<p>Create a Certificate Signing Request (CSR)</p>
+</li>
+<li>
+<p>Approve the CSR</p>
+</li>
+<li>
+<p>Create a Role</p>
+</li>
+<li>
+<p>Create a RoleBinding</p>
+</li>
+<li>
+<p>Generate a kubeconfig file for John</p>
+</li>
+<li>
+<p>Create a CSR for john</p>
+</li>
+</ol>
+<p>step 1: create CSR</p>
+<pre><code class="language-bash">cat &#x3C;&#x3C; EOF | kubectl apply -f -
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: john-developer
+spec:
+  request: $(cat /root/CKA/john.csr | base64 | tr -d '\n')
+  signerName: kubernetes.io/kube-apiserver-client
+  usages:
+  - client auth
+EOF
+</code></pre>
+<p>step 2: approve CSR<br>
+<code>kubectl certificate approve john-developer</code></p>
+<p>step 3: create role<br>
+<code>kubectl create role developer --verb=create,list,get,update,delete --resource=pods -n development</code></p>
+<p>step 4: create rolebinding<br>
+<code>kubectl create rolebinding john-developer --role=developer --user=john -n development</code></p>
+<p>step 5: generate kubeconfig file for john<br>
+<code>kubectl get csr john-developer -o jsonpath='{.status.certificate}' | base64 -d > john.crt</code></p>
+<p>TO_VERIFY:</p>
+<pre><code class="language-bash">kubectl auth can-i create pods --as=john -n development
+kubectl auth can-i list pods --as=john -n development
+kubectl auth can-i get pods --as=john -n development
+kubectl auth can-i update pods --as=john -n development
+kubectl auth can-i delete pods --as=john -n development
+</code></pre>
+<ol start="7">
+<li>Create a nginx pod called nginx-resolver using image nginx, expose it internally with a service called nginx-resolver-service. Test that you are able to look up the service and pod names from within the cluster. Use the image: busybox:1.28 for dns lookup. Record results in /root/CKA/nginx.svc and /root/CKA/nginx.pod</li>
+</ol>
+<ul>
+<li>Pod: nginx-resolver created</li>
+<li>Service DNS Resolution recorded correctly</li>
+<li>Pod DNS resolution recorded correctly</li>
+</ul>
+<p>모르겠다. 계속 틀린다. pod랑 service를 bash로 temp busybox 하나 만들어서 보려고 하는데 이게 아닌것 같다.</p>
+<p><strong>끝나고 풀이를 보니까 다음과 같다:</strong></p>
+<p>step 1:</p>
+<ul>
+<li>Use the command kubectl run and create a nginx pod and busybox pod. Resolve it, nginx service and its pod name from busybox pod.</li>
+<li>To create a pod nginx-resolver and expose it internally:</li>
+</ul>
+<p><code>kubectl run nginx-resolver --image=nginx</code><br>
+<code>kubectl expose pod nginx-resolver --name=nginx-resolver-service --port=80 --target-port=80 --type=ClusterIP</code></p>
+<p>step 2:<br>
+To create a pod test-nslookup. Test that you are able to look up the service and pod names from within the cluster:</p>
+<p><code>kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service</code><br>
+<code>kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service > /root/CKA/nginx.svc</code></p>
+<p>step 3:<br>
+Get the IP of the nginx-resolver pod and replace the dots(.) with hyphon(-) which will be used below.</p>
+<p><code>kubectl get pod nginx-resolver -o wide</code><br>
+<code>kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup &#x3C;P-O-D-I-P.default.pod> > /root/CKA/nginx.pod</code></p>
+<ol start="8">
+<li>Create a static pod on node01 called nginx-critical with image nginx and make sure that it is recreated/restarted automatically in case of a failure.</li>
+</ol>
+<ul>
+<li>Use /etc/kubernetes/manifests as the Static Pod path for example.</li>
+<li>static pod configured under /etc/kubernetes/manifests ?</li>
+<li>Pod nginx-critical-node01 is up and running</li>
+</ul>
+<p>답:</p>
+<ul>
+<li><code>ssh node01</code></li>
+<li><code>mkdir /etc/kubernetes/manifests</code></li>
+<li><code>cd /etc/kubernetes/manifests</code></li>
+<li><code>vim nginx-critical.yaml</code></li>
+<li><code>kubectl get pods -o wide | grep nginx-critical</code></li>
+</ul>
+<h2>마무리</h2>
+<p>1번 모의고사보다 어렵다. 이런 식으로 나오면 당황할 것 같다. 더 열심히 공부해야겠다.</p></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/CKA/cka-mock2/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
