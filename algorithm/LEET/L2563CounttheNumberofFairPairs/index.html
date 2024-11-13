@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">2563. Count the Number of Fair Pairs</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">November 13, 2024</p><div><h1>문제 설명</h1>
+<p>해당 문제에서는 fair pairs가 몇개인지 찾는 문제이다.</p>
+<p>fair pair의 조건은 다음과 같다:</p>
+<ul>
+<li>0 &#x3C;= i &#x3C; j &#x3C; n, and</li>
+<li>lower &#x3C;= nums[i] + nums[j] &#x3C;= upper</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 84.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAABqUlEQVR42q2UW2/CMAyF+/9/GuOhSAiJmwSIrrQUmt6g5VKPz5UnJtaHiVWy0jjOic+xE286ncpg8CGz2UzG47EwH418mUwmMhwOdZzP5w/fSM33fWmaRvo+ryqc5GkszjnZ7XZyPB4lDEOJ41gNX5Zlcjqd1MqylPv93g/YVIk0RSBp6iQIAkmSRMftdquHJMnhsZYqyPV6VbtcLj8MH1kzelG8l+AzlOVyKYvFQqIoUiCsKArNLs9zBcXIuvvvYvjPslwTIXuPYOdS3Xw4HJTWO5/XZYNGZz0Fzdq2fQnE92zme17vNGxqza4sK6mqk9I4n88agG632+1vGSImOgBIhRnRxLn8oV2hWv0J8JWavKchVV2tVlqh//g89Nrv91pd6ytkMGNODHoyJ45+a3uoeFVV6fWikWkhNuHD2AwY2QNs/rqutVgAMz4XTjPkZmw2G20ZqgwAmzDWAbHs7EDWbCTmG5CWobrPrfKWhoCt12vtRcDszkLRaBk1u7dG8TcdPejxbPHCoKFR4QD+WTeq+FgzNr1VRjt7ppgbgOkHMD7Ti0z7KH8BJnsqtPP9qDIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2563"
+        title=""
+        src="/static/0ee68af4b6564a3ff87845ab4a6c0eed/5a190/2563.png"
+        srcset="/static/0ee68af4b6564a3ff87845ab4a6c0eed/772e8/2563.png 200w,
+/static/0ee68af4b6564a3ff87845ab4a6c0eed/e17e5/2563.png 400w,
+/static/0ee68af4b6564a3ff87845ab4a6c0eed/5a190/2563.png 800w,
+/static/0ee68af4b6564a3ff87845ab4a6c0eed/ad997/2563.png 1012w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def countFairPairs(self, nums: List[int], lower: int, upper: int) -> int:
+        nums.sort()
+        n = len(nums)
+
+        def countLessThan(target): 
+            left, right = 0, n-1
+            count = 0
+            while left&#x3C;right:
+                if nums[left] + nums[right] > target:
+                    right -= 1
+                else:
+                    count += right - left
+                    left += 1
+            return count
+        
+        return countLessThan(upper) - countLessThan(lower-1)
+</code></pre>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 71.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACAElEQVR42p1TTY8TMQydX434I3DhN4DgygWEEOJWVeJQ2kLb2d1uy3xmMpnJ1+Rhe7rSbrmgjeQ4jpPn58TOClNjVe1w6ktMcUKIATFGTNMkmuXxCCGgLCscj/cwyuDN5gNeLF7h5eI13uafkA12xKk4o+0UxnFE3/eih2FAb3o4554ARgra9watUnCjxdfzEu/yz3iff8GiXiNjJnxZdx3pEZFs3kvMkNgwOIOmlITdNePrkfGhzXaD1c8VqqpAVRbIDwfc3N2i1jVUq4S19x5N00jwh+dw1oEz9JNHTESEJGPH7leOm/0Rda2x3uZYLn9gtV3hXp0xEmvrrLDTWgtbvuODl0DaaIQUhB1nIYCms1CNg1IWrQ6wfk7ZWy8pM7v/GQJIM0ULyEtKhda0LQ4RpH8uXNuP9wSQJ2Z5qCiNy3snPG88Adyc6Ed9goszYnqWXAD5wX+XEZVJ2NUP0Z7JUN6Nvvv7PuDbPuHjmlkm0P9AjQn0X9BU252d16zZ1rKeNYvxMwNhOE0Rp8biToGYBqo/L4f/KIfaTAJcUAQOUpGv7oP4C/K3w0QS6Y6dAef+jBiozaKjrhgN7DhQyYxUg71oR7YdDDz57cXvxG9ID2IPxkjBZ3N/UoSauoBqrqHO6KgNrbW0V0tnGDrMXcJF3Ypfi5/3jPS8QU1rfsO/KRVASn3oPT4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/f5b55ee613a175b057a4de113c587714/5a190/tc.png"
+        srcset="/static/f5b55ee613a175b057a4de113c587714/772e8/tc.png 200w,
+/static/f5b55ee613a175b057a4de113c587714/e17e5/tc.png 400w,
+/static/f5b55ee613a175b057a4de113c587714/5a190/tc.png 800w,
+/static/f5b55ee613a175b057a4de113c587714/ad997/tc.png 1012w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>nums를 정렬하는데 O(nlogn)이 소요된다.</li>
+<li>countLessThan 함수는 O(n)이 소요된다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(1)</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+1 &#x3C;= nums.length &#x3C;= 10^5
+nums.length == n
+-10^9 &#x3C;= nums[i] &#x3C;= 10^9
+-10^9 &#x3C;= lower &#x3C;= upper &#x3C;= 10^9
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/count-the-number-of-fair-pairs/">2563. Count the Number of Fair Pairs</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L2563CounttheNumberofFairPairs/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-6aba6c014e727776496e.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="530ff78460def0841386";</script><script src="/webpack-runtime-0c3cd3521f19b16e03a8.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
