@@ -1,0 +1,594 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">파드의 생애 주기(Lifecycle)</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">November 16, 2024</p><div><h1>11.3.2. 파드의 생애 주기(Lifecycle)</h1>
+<p>Deployment를 이용해 새로운 버전의 어플리케이션으로 롤링 업데이트를 진행할 때, 기존 파드가 정상적으로 종료되었느지, 새로운 파드는 준비되었는지 등 확인하는 것이 중요합니다.</p>
+<p>그러지 않을 경우, 사용자의 요청이 제대로 처리되지 않은 상태에서 파드가 종료되는 불상사가 일어날 수 있기 때문입니다.</p>
+<p>이를 위해 k8s는 파드가 시작할 때 애플리케이션이 준비됐는지 확이하거나, 파드가 종료될 때 애플리케이션이 우아하게 종료될 수 있도록 별도의 기능을 지원합니다.</p>
+<p>새로운 버전의 어플리케이션으로 배포 할 경우 알아야 할 파드의 lifecycle에 대한 설명과 어플리케이션의 상태 검사를 위한 livenessProbe, readinessProbe, startupProbe에 대해 알아보겠습니다.</p>
+<h2>11.3.2.1 파드의 상태와 생애 주기</h2>
+<p>생우주기 (lifecycle)이라는 말이 어렵게 느껴질 수 있겠지만, 지금까지 pod를 할때 나타난 STATUS라고 생각하면 편합니다. 흔한 상태는 다음과 같습니다.</p>
+<ul>
+<li>Pending: Pod 생성 요청이 API에서 승인 되었으나, 아직 Pod가 생성되지 않은 상태</li>
+<li>Running: Pod가 정상적으로 실행 중인 상태</li>
+<li>Completed: Pod가 실행을 완료한 상태</li>
+<li>Error: Pod가 실행 중에 오류가 발생한 상태. 정상적으로 실행되지 않은채로 종료된 상태</li>
+<li>Terminating: Pod가 삭제 중인 상태</li>
+</ul>
+<p>애플리케이션을 배포할 때 중요한 상태는 Running과 Terminating 상태입니다. 사용자의 요청은 Running 상태의 Pod에만 전달되고 Terminated 상태의 Pod는 사용자의 요청을 처리할 수 없기 때문입니다.</p>
+<h3>Completed, Error, restartPolicy</h3>
+<ul>
+<li>함수가 종료되면 특정 값을 반환(return)하듯이 리눅스의 프로세스 또한 종료될 때 종료 코드를 반환합니다.</li>
+<li>이처럼, Pod가 종료될 때도 컨테이너의 init 프로세스가 어떠한 값을 반환하는지에 따라 Pod의 상태가 Completed 또는 Error로 설정됩니다.</li>
+</ul>
+<p><strong>TMI</strong><br>
+init 프로세스는 리눅스 시스템이 구동될 때 가장 먼저 실행되는 프로세스로, PID(Process ID)가 1번인 프로세스입니다.</p>
+<h3>Completed 상태 Pod</h3>
+<p>아래는 Completed 상태의 Pod를 생성하는 예시입니다. 해당 YAML 파일에서는 10초 동안 대기한 뒤 종료 코드로 0을 반환하고 죽습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABF0lEQVR42o2R8U6DMBDGeXllgE6XBecLaHwqF8wMAVMoMFwGbT97V2CM+Mea/NJ+d+l3d60Xb1+w3cTMLn5l4u0Oz+sNAj9EuIqwug8tAUOxwI8Q+g+ci8I1HqMn+HcrvL99wEuSBGmaQkqJtm3RHls0xyPquuYYUZZECWkpSUunx7McdNM0ZPjFB1pa6wljtYFbxhinh4DLjWI68fKEENyNKArbgatE+mJuoGhX2u3/YRxU2MuyjEc6n8+c7JVi5peVWuxaXXLzqciwsJ3leY4sy7lLMheiQNd10wVFBQaWJmreORnm+Q/2n3scDt+QVcVVur6/MtCj6S0j1/ZD6N1OpxOq4Wcra0zmvzZmjL42HRm7X4z8B9BFV+jy1zfMAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.1"
+        title=""
+        src="/static/314f0c69079e580e1e6f6033605f7542/5a190/2.1.png"
+        srcset="/static/314f0c69079e580e1e6f6033605f7542/772e8/2.1.png 200w,
+/static/314f0c69079e580e1e6f6033605f7542/e17e5/2.1.png 400w,
+/static/314f0c69079e580e1e6f6033605f7542/5a190/2.1.png 800w,
+/static/314f0c69079e580e1e6f6033605f7542/c1b63/2.1.png 1200w,
+/static/314f0c69079e580e1e6f6033605f7542/f3abf/2.1.png 1474w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 33.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA90lEQVR42mVQ2Y6DMAzk/7+w2oeFFpUV4Ui4IQdT2yJsW5BGji0zh5OyVKjqGlprGGNQliVq6tumhXUO/IUQsO/7BeGr5y9RqoJSikgaVFWNpmlEoO97eCJiMh/h/f879hGHaMLO5nnGNM1UFwzDKAuO3MXKc2utIBwiUei9Z49Jlt0lattqaNMd8Q2K4k/m4zhKAnbc94O4OIlI8EKY5zme9HNxgN1u2yYkjGVZaHmX2TRN2I+o4a2ehMSY3G4/SNMMv2kqtes6iX9/PMBiHJeXmYzPIw6/CP1JSDdkZb7NthGoxtvxe11XeOp5mefOus8b+nBx+AL8YyAtXOWkfgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.2"
+        title=""
+        src="/static/805082826d11355b7081fc724c457453/5a190/2.2.png"
+        srcset="/static/805082826d11355b7081fc724c457453/772e8/2.2.png 200w,
+/static/805082826d11355b7081fc724c457453/e17e5/2.2.png 400w,
+/static/805082826d11355b7081fc724c457453/5a190/2.2.png 800w,
+/static/805082826d11355b7081fc724c457453/c1b63/2.2.png 1200w,
+/static/805082826d11355b7081fc724c457453/a4f81/2.2.png 1508w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>Running 상태의 Pod는 정상적으로 실행 중인 상태이며, 0을 종료 코드로 반환한 뒤에서 Completed 상태의 Pod는 정상적으로 종료됩니다. 이후, Pod는 Completed 상태가 된 뒤에도 계속해서 다시 실행됨과 동시에 RESTARTS 횟수 또한 증가합니다. 이는 파드의 재시작 정책(restartPolicy)이 Always로 설정되어 있기 때문입니다. 종료되었을 때 자동으로 재시작되는 정책입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 8.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAaUlEQVR42lXMwQ6EIAwEUP//K42uHoC2oGu2sMCoPZh4eMm0mczgnQcTQ0TgnMN9CwuYGcETju8BIsG27YgxmhAIKSX03k1rzdx5GMcJy7JaaZ4/VizlfynIORv96eunqpafwdpQa7XBE2OCmj289gmiAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.3"
+        title=""
+        src="/static/5972bba74e31b20fe5b8d212f24abb31/5a190/2.3.png"
+        srcset="/static/5972bba74e31b20fe5b8d212f24abb31/772e8/2.3.png 200w,
+/static/5972bba74e31b20fe5b8d212f24abb31/e17e5/2.3.png 400w,
+/static/5972bba74e31b20fe5b8d212f24abb31/5a190/2.3.png 800w,
+/static/5972bba74e31b20fe5b8d212f24abb31/c1b63/2.3.png 1200w,
+/static/5972bba74e31b20fe5b8d212f24abb31/6f278/2.3.png 1488w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>restartPolicy는 이외에도 Never, OnFailure 등이 있습니다. Never는 종료되어도 재시작되지 않는 정책이며, OnFailure는 종료 코드가 0이 아닌 경우에만 재시작되는 정책입니다.</p>
+<p>다음은 restartPolicy가 Never로 설정된 Pod를 생성하는 예시입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 69.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACKUlEQVR42n1T23LaUAz037fhks5kEkoInX5G229pAgR8A2xsfL9vtTJmyEN6ZjSWRj4rabXH+P3rDx4fZnievWD+9IyX70ssxOazBRbzJZ4e5/h2/4Dx3RTj0RST8T3uvkww+jrBZDT4U/3+WP6E4R09vL2u4HkesjxHmmRIkhRlUaIqS8RxgnMYIU0z5JLX+BwhzzIURYE4ShCdY82V8r+RJAksy0ImPzRNIyAV6qpCU9do2xY8Xdfhw+k+8eUYrOx7vgJGUSQWS8VIOomlg1JB67pRUBqL0oYizA8xzeAIr3/fYJoWgiCAa+9R5AW6tlPLs56GRkB5mbksza9xnjHup2NslEWFw/6IMAhRyaiZAGhnTasVSQEvDRdKxnkfd1qgvOa1w1q4Ipn9t1I/V9BCjf4APnB2y+kw6pXDWDizLFvNcVxYMrq5M+HYjnR+0C2y+nC5JYeXcZVT8W85NriM0ylQWZAfSuTkM05VClxSH5OnVselX19UQD4ps6GIEQjYSnRomTb27h7bzRab9Tu27zstFJxCeEdf9UfOqE/lUAE65Zu8X5fCSuyS3BUXMdP//HT/55Aa3G1NkUaq+juHZ5DXMAz1RbA73z9dXwJjTsVcP3ajX5UZOQwFYLPa4HA44ihmWy5cZ6+gpWzZthwZ31RuszTVZ0ZdMs8xldPkRocEXK/WcIU/GrftyrYT4Yy6dGxXtm6rdNquBZ8qO+XSuN1Bl8PW/wEWLSd2/WivEQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.4"
+        title=""
+        src="/static/f6dc885ccfd2ef75b02d61a76d4eadf6/5a190/2.4.png"
+        srcset="/static/f6dc885ccfd2ef75b02d61a76d4eadf6/772e8/2.4.png 200w,
+/static/f6dc885ccfd2ef75b02d61a76d4eadf6/e17e5/2.4.png 400w,
+/static/f6dc885ccfd2ef75b02d61a76d4eadf6/5a190/2.4.png 800w,
+/static/f6dc885ccfd2ef75b02d61a76d4eadf6/c1b63/2.4.png 1200w,
+/static/f6dc885ccfd2ef75b02d61a76d4eadf6/913a1/2.4.png 1476w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>Pod가 종료된 뒤에도 다시 재시작하지 않게 되며, Completed 상태에 머무르게 됩니다.
+그렇다면, Pod의 컨테이너가 0이 아닌 exit 1을 반환하게 되는지 살펴보겠습니다.</p>
+<p>다음을 보면, Pod 종료 코드로 1이 반환됐기 때문에 상태가 Error로 변경됩니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABgElEQVR42q1T2VLCQBDc//8AS0sFylIuP0P9CnngIWCuDQnZHJCj3d5wJOFFKKmamplN0ts9PYjZdI7Z5B3T8UznOd5eJ6aejpvz0eAFz49DDJ6GJjcxaHpzNtL1CPd3D/j8+IL4XiywXC5hOzZkIOH7PnwpdR0g0OF6HhzXhaczw9W12+mb5zyL4xjCtm1st1v8109sNhukaYokSaCUMrcwyrK8DdCxHS1TIgxDEDzPctR1fXqhqioTnb4+93y3/VxwZpZlGdlkydjtdiiKogVQdwH6fXXuhUoUJE3QEUUR8jxHlmXY7/e3SebcVtYKYRQalgQiQ4IWxfVzFATgx5RGoCRJTyZRNiXVPYndHp1erNc/ZveOkll73EVtVBwrYxYvaIPVFzNsmUJGZJMemDE4R2b96fWSue2UTFBmsmLNPSQw89H5vxglbMc5LbPSYEolRjqZ+/oymkazCE7gqiexuthD6Zu5BYf/b6jBji5LPUcCFZolZ3U0r7/oZQvwFw3oM8hki0ZMAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.5"
+        title=""
+        src="/static/fcb42812ef7219a77bcfd8a87eb8d8fb/5a190/2.5.png"
+        srcset="/static/fcb42812ef7219a77bcfd8a87eb8d8fb/772e8/2.5.png 200w,
+/static/fcb42812ef7219a77bcfd8a87eb8d8fb/e17e5/2.5.png 400w,
+/static/fcb42812ef7219a77bcfd8a87eb8d8fb/5a190/2.5.png 800w,
+/static/fcb42812ef7219a77bcfd8a87eb8d8fb/c1b63/2.5.png 1200w,
+/static/fcb42812ef7219a77bcfd8a87eb8d8fb/a83dd/2.5.png 1482w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA/0lEQVR42pVS2Y7DIAzk//8yb20VchgIECBexllXeUirXUsW4fB4PBPD/4zjOCQ1cs5sreUQguzN31DOJabIKSVeloWnaRIw3QcfpJHBofdeOmzbxqUUyX3fpSDGeO57ttYk9U2tVfYAwjfOTMqJV1qZHLFzrgNlKS61SAN0L+UER5EWYgVzEBmGge1oBdxc9UDgkFaSxGNlgMB4AMudRIyb3KHpPM9M5PpdvdeQiOQRWF0b6mi11Ddb1VfvPprS2iE6pm4EVrD55rpqa+7BGq995HEc+fl48Ov5kvFPo371hI6dKbRWk0TDO0AUYmzvfP8DgoBDU99Ng3kw6hPjH4vUw8Zop+89AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.6"
+        title=""
+        src="/static/3e9e100996914728f583866426f18813/5a190/2.6.png"
+        srcset="/static/3e9e100996914728f583866426f18813/772e8/2.6.png 200w,
+/static/3e9e100996914728f583866426f18813/e17e5/2.6.png 400w,
+/static/3e9e100996914728f583866426f18813/5a190/2.6.png 800w,
+/static/3e9e100996914728f583866426f18813/c1b63/2.6.png 1200w,
+/static/3e9e100996914728f583866426f18813/07d7d/2.6.png 1478w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>파드가 재시작되는 과정에서 Pod가 너무 많이 실패하여 재시작이 무한정 반복되는 경우가 발생할 수 있습니다. 실패할때마다 일정간격을 두고 재시도하는 간격이 지수 형태로 늘어나게 되는데, 이때 발생하는 상태는 CrashLoopBackOff입니다. 이는 Pod가 계속해서 재시작되는 상태를 의미합니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 41.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABHElEQVR42nWRbY+DIBCE/f9/8rTaq4oovguo0501uQ9XS7IhC9nhmSEJPmCeZizLgnmesW0bfAjYjwOL9H3fo2s7+M3jPE/s+w7O/F+8YyXOOTweOcpXiTwvYIxRce+9nD9gaoN1WbViiAjymHP9h9ghAIc8lvRyWYhQWVZ4Fk80psE4jpdglksVqCuDYRgvQaHrvwiSPuEwxay1qOsaJKZtDpK6tZ1YX6UWpYsxYpqm74LMJ/3JlC5NM1RVpTQkZJ+ltN2IyCyCUQUZw12GFE2Yl7Wt5tLKTmLScbBprPTTn9V9jzo0DIPut5/SdZ+EtEQaZsh8Xef0U2iJ9fp96X5HmazrprnxVVLSWoxBCdgzTw5HqcvWqS7uBLne5RNrfoikTWUAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.7"
+        title=""
+        src="/static/ba4123190760e40488c93c06dfa2e157/5a190/2.7.png"
+        srcset="/static/ba4123190760e40488c93c06dfa2e157/772e8/2.7.png 200w,
+/static/ba4123190760e40488c93c06dfa2e157/e17e5/2.7.png 400w,
+/static/ba4123190760e40488c93c06dfa2e157/5a190/2.7.png 800w,
+/static/ba4123190760e40488c93c06dfa2e157/c1b63/2.7.png 1200w,
+/static/ba4123190760e40488c93c06dfa2e157/3ceac/2.7.png 1456w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>11.3.2.2 Running 상태가 되기 위한 조건</h2>
+<p>파드가 Running 상태일 때를 바람직한 상태로 파드의 컨테이너들이 정상적으로 생성됐다는 것을 의미하기 때문입니다.<br>
+그러나, 무조건 Running 상태라 하여 모든 컨테이너가 정상적으로 실행 중이라고 할 수 없습니다.</p>
+<p>파드를 생성하기 위해 위 기능들을 반드시 사용해야 하는 것은 아니지만, 다음 기능들을 사용하면 파드의 상태를 더욱 정확하게 파악할 수 있습니다.</p>
+<ul>
+<li>Init Container</li>
+<li>postStart</li>
+<li>livenessProbe, readinessProbe</li>
+</ul>
+<h3>Running 상태가 되기 위한 조건 - Init Container</h3>
+<p>Init Container는 파드의 컨테이너 내부에서 애플리케이션이 실행되기 전에 초기화를 수행하는 컨테이너입니다. 파드의 애플리케이션 컨테이너와 동일하게 사용할 수 있지만 이보다 먼저 실행됩니다. 따라서, 애플리케이션 컨테이너가 실행되기 전에 특정 작업을 미리 수행하도록 할 수 있습니다.</p>
+<p>다음과 같이 별도의 항복에 정의해 사용할 수 있습니다. 아래 YAML 파일은 initContainers 항목에 정의한 컨테이너가 먼저 실행한 뒤, containers 항목에 정의한 컨테이너가 실행됩니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 43.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABV0lEQVR42o1S2W7CQAzc36/aNByqBAT1I8oXwQMk5E42YTfX1LMc4oWqlhyv9xjP2FG7nx3WqwCb1Rab9fa6XjMPEEi+8Jf4ePPgvfvwvZm4j5k/d+uZt3Dny/kX5p8LbINvqCiKcNgfkKYZ2raFMQbt5QLdNCirClmWI0kSJGmKvChQlhW01u6c9xuJ9Jp7uoHK8hzH4wnWWozjiH4Y0HWd874fYCUaa8Sty3nnlU3TBFVVtbDIYI1FIxV0rYVFIVVbDPLYAcrZFbDHMFxB+fgOQuceXZHq6RiC0guRVNW1k8kisUhlDOUsis6I40SY9w+wOyBtvIEqfggWhtEDlH0iO0ocbi0g004YTk/sngHvTBUkZw/PwoBs2HA2m0OK49g5i3ROunGyX/XPAfLiXqYchqE8LB8AqYBTZl5wyjLhvHDxIn/AX6b4yWXSmTDiQF5OEBP+Y7+ANaWYEceYwQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.8"
+        title=""
+        src="/static/c4763704009fef3f23ccaa7fd31d8c3b/5a190/2.8.png"
+        srcset="/static/c4763704009fef3f23ccaa7fd31d8c3b/772e8/2.8.png 200w,
+/static/c4763704009fef3f23ccaa7fd31d8c3b/e17e5/2.8.png 400w,
+/static/c4763704009fef3f23ccaa7fd31d8c3b/5a190/2.8.png 800w,
+/static/c4763704009fef3f23ccaa7fd31d8c3b/c1b63/2.8.png 1200w,
+/static/c4763704009fef3f23ccaa7fd31d8c3b/07d7d/2.8.png 1478w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이때, initContainer가 하나라도 실패하면 다음과 같이 애플리케이션 컨테이너는 실행되지 않습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 27.500000000000004%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABBklEQVR42l2R627DIAyF8/5PV+1nJzXJuqZpSEjIDUiAU9tdpq1IFsjGH+eY7H6voZRC13UYhgFt26JpGjweDer6Vev7Adu+Y98DQoxIKUm8L85lZjSYpgnjOMqutZYzP8AQ6x1Wa+GcfwFDQCQoxwFhdExRHssUKZqXRWDruspF5xz8tlFuppzFwvV5xmBGgVvv5d6hlCOGKA9mqlG/TQy01FDTGNhmkZcwpJbhbadxu1UwxlCt/2c9xSTKBVhVFfIix/X6jcslJ6saM6nRusfp9IHz+RNfVFOqRaAGts4j+atOFMYfy/wRPDfeGcYqPVniERRlKUo5x5ZZ6U5z5XN8+5QD/ARUGc+31a3viwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.9"
+        title=""
+        src="/static/d7de8941b4126c035db789a77bb1e960/5a190/2.9.png"
+        srcset="/static/d7de8941b4126c035db789a77bb1e960/772e8/2.9.png 200w,
+/static/d7de8941b4126c035db789a77bb1e960/e17e5/2.9.png 400w,
+/static/d7de8941b4126c035db789a77bb1e960/5a190/2.9.png 800w,
+/static/d7de8941b4126c035db789a77bb1e960/c1b63/2.9.png 1200w,
+/static/d7de8941b4126c035db789a77bb1e960/1134b/2.9.png 1470w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>아래 YAML 파일은 다른 서비스 또는 deployment가 생성될 때까지 initContainer에서 대기하는 예시입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABXklEQVR42p1S7U7CQBDs+z+CwZZiFAQ1QtT4l/ggEqS0Enq1pb1+XK/j7hUKRP3jJdvbzu3s7s2eNZ+/YXQzxu1wgvHoDo8PM8ymT7RPMRnf43owhN3rw3Wu4Fy6cBwXNu12z0HfGcCxXfTtAXoXNl6eX2HtdjusPR/hVqAsSjRNA601qrKCzHKDKaWg6hoF+VLmtBcGq/dYlkrkeW4wK01TeJ5HZGkCDFnVxufkP9Zv0EmcJaVEJCJTNcuy1tIMZVniP8tSlUISJ+BOdaP/rHyONWf/BzMJ+eOtPCzeFxBCdEF8ZdaxrnXH1+RzA6dyMMZxLBVjFh/66wAfyxUEDYYHUpOGTCzy0pCxJ3dF1DHhYTBVVbUJGQyCgLpcw/cDJEl7fdbwUJlJphAnJCIXa3RzxCiO/e7KIhTYfG4QxzERlEnGgxJk222IkM5j0pmfWBS1GA+TMW4gir46Wb4B4G2tsjX571wAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.10"
+        title=""
+        src="/static/91d3057e774bcc424f71c939e29b05bb/5a190/2.10.png"
+        srcset="/static/91d3057e774bcc424f71c939e29b05bb/772e8/2.10.png 200w,
+/static/91d3057e774bcc424f71c939e29b05bb/e17e5/2.10.png 400w,
+/static/91d3057e774bcc424f71c939e29b05bb/5a190/2.10.png 800w,
+/static/91d3057e774bcc424f71c939e29b05bb/c1b63/2.10.png 1200w,
+/static/91d3057e774bcc424f71c939e29b05bb/0d390/2.10.png 1472w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>Running 상태가 되기 위한 조건 - postStart</h3>
+<p>파드의 컨테이너가 실행되거나 삭제될 때 특정 작업을 수행하도록 lifecycle 훅 (hook)을 사용할 수 있습니다.</p>
+<p>훅에는 종류가 두 가지이며 preStop와 postStart입니다.</p>
+<ul>
+<li>preStop: 컨테이너가 종료되기 전에 실행되는 훅</li>
+<li>postStart: 컨테이너가 실행된 후에 실행되는 훅</li>
+</ul>
+<p><strong>postStart</strong>
+postStart는 두 가지 방식으로 사용할 수 있습니다.</p>
+<ul>
+<li>HTTP: 컨테이너가 시작한 직후, 특정 주소로 HTTP 요청을 전송</li>
+<li>Exec: 컨테이너가 시작한 직후, 특정 명령어를 실행</li>
+</ul>
+<p>아래 YAML 파일에서는 postStart 훅을 사용해 명령어를 설정했기 때문에 컨테이너가 실행된 직후에 명령어가 실행됩니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA+klEQVR42qWRXW+CMBSG+/8vzRTQG2XqjD9h869wN5HEAgmUykfbdz0NIiNZMreTnH6d5mmfHPbxfsJmHSJcvyLcbLHfHbAN9zZ3CPwVvEUA31vCXyzhze3a7gO7p/SHXOFlNsfh7QiW5zku8QVFUaDrOmijoZSC1o/5t2mMAauqCvzK0TTNAPlPMCEE6JdS3kBrKeWjav4AbNsWWZY5KCk77f77Xa888O0ZGajRGYUamTG6lCQJ4jjG1aqXZemgFHf4FKinQKXd4w5IQ5qm+Dyfv+v2gKeVaaDGRFHkZoLclcf5FJCCGsI5R13XruOkSw+IUrjaVPMn4BeJArARht69uAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.11"
+        title=""
+        src="/static/6c69db4794cdb095719c281f51ad63c8/5a190/2.11.png"
+        srcset="/static/6c69db4794cdb095719c281f51ad63c8/772e8/2.11.png 200w,
+/static/6c69db4794cdb095719c281f51ad63c8/e17e5/2.11.png 400w,
+/static/6c69db4794cdb095719c281f51ad63c8/5a190/2.11.png 800w,
+/static/6c69db4794cdb095719c281f51ad63c8/c1b63/2.11.png 1200w,
+/static/6c69db4794cdb095719c281f51ad63c8/e4ba2/2.11.png 1468w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>11.3.2.3 애플리케이션의 상태 검사 - livenessProbe, readinessProbe, startupProbe</h2>
+<p>Init 컨테이너나 postStart가 정상적으로 실행했다 해서 애플리케이션이 정상적으로 실행 중이라고 할 수 없습니다. 다른 이유로 사용자의 요청을 처리할 수 없는 상태가 될 수 있기 때문입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA0ElEQVR42m1QCQ7DIAzb/9+60kK5Ly9Ojx0aUgRxgh3ngfPMOdFawxgDow/NGcx5x5Tg3H5g86Mub/a02jR//BJep5SCJCQXpkIneU4ZMSapZ9Ra+Vv7bkItSvAmESOGCGed3r13Jcs5I4QgkwoeI8xiYMwqRAO11DchLVKhiBoJtnVTAX7eNquTzHH0cGpORewSL0JG7I/lfu9mDgnFjxqn9N6rEEmsCHHKkouKcg1fhDyXNTbSLie01mLfveQWy3MRiwarOCBORyTnKo5dAi8IN9aUqwQkKAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.12"
+        title=""
+        src="/static/06df85a20a3ebb6df589816887b3e9ba/5a190/2.12.png"
+        srcset="/static/06df85a20a3ebb6df589816887b3e9ba/772e8/2.12.png 200w,
+/static/06df85a20a3ebb6df589816887b3e9ba/e17e5/2.12.png 400w,
+/static/06df85a20a3ebb6df589816887b3e9ba/5a190/2.12.png 800w,
+/static/06df85a20a3ebb6df589816887b3e9ba/c1b63/2.12.png 1200w,
+/static/06df85a20a3ebb6df589816887b3e9ba/f3abf/2.12.png 1474w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>k8s는 애플리케이션이 사용자의 요청을 처리할 수 있는 상태인지 확인하기 위해 livenessProbe, readinessProbe, startupProbe를 제공합니다.</p>
+<ul>
+<li>livenessProbe: 애플리케이션이 정상적으로 살아있는지(liveness) 확인</li>
+<li>readinessProbe: 애플리케이션이 사용자의 요청을 처리할 준비가 되었는지(readiness) 확인</li>
+<li>startupProbe: 애플리케이션이 시작되었는지(startup) 확인</li>
+</ul>
+<p>livenessProbe는 애플리케이션이 정상 상태인지 검사하는 기능이며, readinessProbe는 애플리케이션이 시작된 뒤 초기화 작업이 마무리되어 준비가 됐는지(readiness) 검사하는 것이 목적입니다.</p>
+<p>livenessProbe 검사에 실패했다는 것은 애플리케이션 내부에서 뭔가 문제가 생겼다는 것이기 때문에 정상 상태로 되돌리기 위해 컨테이너를 재시작하지만 readinessProbe는 그렇지 않습니다.</p>
+<p>반면, startupProbe는 위 두 개의 probe와 약간 다른 특성을 갖고 있습니다. startupProbe를 사용할 경우 startupProbe가 성공해야만 livenessProbe와 readinessProbe가 실행됩니다.</p>
+<h3>livenessProbe로 애플리케이션의 상태 검사</h3>
+<p>livenessProbe 기능을 테스트해보기 위해 간단한 예시 파드를 생성해보겠습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABV0lEQVR42p1S7W6CQBDk/R+gaayC1ljBPkHbX/Y9bCIBG+XDggh3wDHdXSHapOmPXjIwt8fNzc5hrdfvcJcreO4Ky4ULz3sW7i49LOZPGI8mmDzYsMcO7MkUDmHmPGJqz6Tm0Hs2neP+boTXlzdYSZIgDEKk6RFFUaCua2hdo6wqKKVRliWK8xmVUqiodiaumBOYc43B3/Bei4tRFMlHbdsKjDHocB0/eNf9yS12wC75nee5uFRa4b/D0lojy3KcTic0TSMOmx7Dybe87TkPrnPttm4Z0+FwiBAEAbbbLbnM6IBM8uDWGU0fg2mNHMp7OId2ECQhXhdBfrBAGIaUZQx2nJNjjiFNU7ks4UmKOI4l7+Pxi4Tb31vmE/jGNpsPEebb2u12F3x+kmuf1jYy3+/38H1fumFhzv0ahbkKMjhDRe4kM2praPPyG+k+38tc1gnMB8Gh5W/rP6q2x0u8WwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.13"
+        title=""
+        src="/static/1106f890d147b6915807a7aaa2957176/5a190/2.13.png"
+        srcset="/static/1106f890d147b6915807a7aaa2957176/772e8/2.13.png 200w,
+/static/1106f890d147b6915807a7aaa2957176/e17e5/2.13.png 400w,
+/static/1106f890d147b6915807a7aaa2957176/5a190/2.13.png 800w,
+/static/1106f890d147b6915807a7aaa2957176/c1b63/2.13.png 1200w,
+/static/1106f890d147b6915807a7aaa2957176/07d7d/2.13.png 1478w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>컨테이너의 내부 항목에 livenessProbe를 정의했으며, httpGet에 경로와 포트를 지정했습니다.</p>
+<ul>
+<li>httpGet: HTTP 요청을 전송해 상태를 검사</li>
+<li>exec: 컨테이너 내부에서 명령어를 실행해 상태를 검사</li>
+<li>tcpSocket: TCP 연결이 수립될 수 있는지 체크함으로써 상태를 검사</li>
+</ul>
+<p>이 파드를 생성하면 주기적으로 파드의 IP로 HTTP 요청을 전송함으로써 상태 검사를 수행할 것입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 21.999999999999996%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAApElEQVR42m2P2w7DIAxD+f8/XbtyD4wS8EJarS9Diiwr5CQ2MUQch4WVCj4giN+3N7z3SDGh1IoxBjAmBovKW37O+Sg/3lAmgQQFOOdQSkHOGZ0ZUyDXx0v5Hux99YZo114/u8JYZsz22mGtBQkkpQyigipXKVh8+zTpO9Wc6AbzDzxu8Fq+FpoVcVWMUSAVVaq1U+MqqDVdcMoVRHRF5v+RF/QLUEw4bAwM2k0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.14"
+        title=""
+        src="/static/da3bc3c5540f9ccce988777f1fdc3a3a/5a190/2.14.png"
+        srcset="/static/da3bc3c5540f9ccce988777f1fdc3a3a/772e8/2.14.png 200w,
+/static/da3bc3c5540f9ccce988777f1fdc3a3a/e17e5/2.14.png 400w,
+/static/da3bc3c5540f9ccce988777f1fdc3a3a/5a190/2.14.png 800w,
+/static/da3bc3c5540f9ccce988777f1fdc3a3a/c1b63/2.14.png 1200w,
+/static/da3bc3c5540f9ccce988777f1fdc3a3a/8b640/2.14.png 1454w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>Nginx 서버는 기본적으로 80번 포트를 사용하므로 상태 검사가 문제없이 통과했을텐데, 이번에는 이부러 index.html 파일을 삭제하여 livenessProbe가 실패하도록 해보겠습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 18.999999999999996%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAr0lEQVR42kWP2w6EIAxE/f/vXFe5iAiKym22rTFLMpmHwulhMNrArx7L4qS99whbwHEkbNTWWBiKmjW0fqKUxr4faK1JSi7o1LU2DNN3kiFDvN/gCHxdt8DynWGtw0qLYtyRUkLOmeYXaqkEqA+wFLROcAbOs4Jzq4QvhhCkx8+IRJYMKvT4tebTW5ewUe9dwNwC5C8bbSVsxmELaxac5ymWfBgcQ3wA5TX7Gz4LKn7bPjWlGc+cYwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.15"
+        title=""
+        src="/static/d9740d476e2c61c5857c3d631602470d/5a190/2.15.png"
+        srcset="/static/d9740d476e2c61c5857c3d631602470d/772e8/2.15.png 200w,
+/static/d9740d476e2c61c5857c3d631602470d/e17e5/2.15.png 400w,
+/static/d9740d476e2c61c5857c3d631602470d/5a190/2.15.png 800w,
+/static/d9740d476e2c61c5857c3d631602470d/c1b63/2.15.png 1200w,
+/static/d9740d476e2c61c5857c3d631602470d/0d390/2.15.png 1472w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA90lEQVR42n2R6XKDMAyEef/nDBBwanxgDnOo/tSSpvkRz2i06FhpRZVzFmsHGcdRUkoyTZPiEILavu9yvfM8P3peRYP9sgJxjFG2bZN5np8Fx3HokNdHrXNOc++vgt37oCTW2t/tok7FGEAzeQYSg3AYBpnLoEvV/w0LEfLwNEMIMdh7r2RrXtUzAFvXVW1ZFslb/iNk7bpuxBijHlJw3/dieiNpTPrtnf+JFewGJ/f2Lm3bStd1GmNTtq8At1utyaZp5WEeapyBTShCqkoum4OXeZFQ8vSihmExjsK/qa4bJW5Xiq+bIIVmZFHDaXLenvjVrhiSvwG94B964df9VgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.16"
+        title=""
+        src="/static/bd33bf179eb4a1c1c70af2fcbb8399f2/5a190/2.16.png"
+        srcset="/static/bd33bf179eb4a1c1c70af2fcbb8399f2/772e8/2.16.png 200w,
+/static/bd33bf179eb4a1c1c70af2fcbb8399f2/e17e5/2.16.png 400w,
+/static/bd33bf179eb4a1c1c70af2fcbb8399f2/5a190/2.16.png 800w,
+/static/bd33bf179eb4a1c1c70af2fcbb8399f2/c1b63/2.16.png 1200w,
+/static/bd33bf179eb4a1c1c70af2fcbb8399f2/10ab7/2.16.png 1552w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>readinessProbe로 애플리케이션의 상태 검사</h3>
+<p>readinessProbe는 아직 준비되지 않은 파드의 애플리케이션이 사용자의 요청을 받아들이지 않도록 하는 기능입니다.</p>
+<p>readinessProbe 상태 검사에 실패했더라도 시간이 지나면 다시 성공할 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABJ0lEQVR42o1RW27CMBD0/W/QQgKUQpq2v23/WvUyIYkTmgcE8px6VgmKACFWGo+8tmd3x+rz4wvLpxXWKwfO2sWb+44XxzV4lf3q2YFtzQ0WsCY27OkM04mFmdkzT17Ml3h8mOLn+xdqu/2D53nIshTHY4m6rlFVlaAsS8HhcDBnx0vuMeT4RqVpiiAIJDmIkRld12EcZ9uroSikQ408z7Hb7QTMicDZ5e4ORcWRojg2I2dIkgT7/d6gkMdt214wY2DmxhDBoihEjB7w4vD4Vtw6V03bYLPZiI9aa9DTMAxlbIITFKYYC5+s6AVPnY875BKbkcMgNIKRfIgv4pER1qaYLwV9Yd9Mk4s1/LyrHXLhR7A7djB41TSNiI+Z3VKI95q+u3MP/wFHqK10owJUKwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.17"
+        title=""
+        src="/static/8eed91308fa410fccc0504797aa56a4e/5a190/2.17.png"
+        srcset="/static/8eed91308fa410fccc0504797aa56a4e/772e8/2.17.png 200w,
+/static/8eed91308fa410fccc0504797aa56a4e/e17e5/2.17.png 400w,
+/static/8eed91308fa410fccc0504797aa56a4e/5a190/2.17.png 800w,
+/static/8eed91308fa410fccc0504797aa56a4e/c1b63/2.17.png 1200w,
+/static/8eed91308fa410fccc0504797aa56a4e/f3abf/2.17.png 1474w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA/0lEQVR42pVSXZODIAzk///J68upo0evKFD53CNRW6R96GWGkVmXZLOJwB5GG9x+bwghoI2cczl4i7chmJwy1vsKY8wLKaWEGCJ/z3guxXe8eiNijJBS4iqvWGbNj+ug/251rLwuRjiJaHERfEDfDRjHEdZYrlgT6E6cFNOLcsYbPrc8zzMno69SClrrU4ubh/kzD+mhLO0655jQVvxviMMPpTZ13vv3U8aHUz4mNvQDuu8Oy6LPHu5exXhW/vCwwcWxg9P0w8nIS1JJq8Tqy9TvZZrePTFaE8btunHzE+eE1GpfFF6+LiXxBGstJ2AlRYEr93o98p6QcLLr8J3OHwbkFSkNjXRdAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.18"
+        title=""
+        src="/static/31754fbd2696b645e9fe1184bcfeabae/5a190/2.18.png"
+        srcset="/static/31754fbd2696b645e9fe1184bcfeabae/772e8/2.18.png 200w,
+/static/31754fbd2696b645e9fe1184bcfeabae/e17e5/2.18.png 400w,
+/static/31754fbd2696b645e9fe1184bcfeabae/5a190/2.18.png 800w,
+/static/31754fbd2696b645e9fe1184bcfeabae/c1b63/2.18.png 1200w,
+/static/31754fbd2696b645e9fe1184bcfeabae/daed9/2.18.png 1426w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>readinessProbe의 세부 옵션은 livenessProbe와 동일하며, httpGet을 통해 &#x3C;파드IP>:80에서 상태 검사를 수행하도록 설정했습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABPUlEQVR42o1Si27DIAzM/39kp7XNY3lCSEggENfnjShdV2lIFmDj8/lMti4rdW1HLdvQD6SVlrtSikY9khoU+xXFGCmtfd/J+03syc/nzJiJyrKi/J7T/XansigFvP6qyTlHkZPDFgQElgBDCBRDPHzJn6GC9/6wbduO4Pnxf1eGlsDGLpamaSKttezW4j5LS7B5niW2sETe+feAeNh3PQ3DIBpCgnV1ZEZDTd2wpiPpcWSghdkHjq2yp0IvLQMgzwu6ft7YrsICD6uqosvlg7WKP0BOkrBDWwxEND6B4pxBs5lbW+wiLBwzgJa4IwFtG2PE7GyFIeIYCuyJYWSGjoOYalO30q7mr1Jzq2niBbMHGIpJQS6SJvwCiJbBEHoBzHE7cCZ9fmt0Xu/8AvitCX8Zv/2ZmIDP//BsZ4YPx38N9eISJfEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.19"
+        title=""
+        src="/static/03cc257f85281feb722d29a19642418d/5a190/2.19.png"
+        srcset="/static/03cc257f85281feb722d29a19642418d/772e8/2.19.png 200w,
+/static/03cc257f85281feb722d29a19642418d/e17e5/2.19.png 400w,
+/static/03cc257f85281feb722d29a19642418d/5a190/2.19.png 800w,
+/static/03cc257f85281feb722d29a19642418d/c1b63/2.19.png 1200w,
+/static/03cc257f85281feb722d29a19642418d/a83dd/2.19.png 1482w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>엔드포인트 리소스의 목록을 확인해 보면 서비스로 접근하는 요청이 파드의 IP로 라우팅되고 있음을 알 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 20.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAArklEQVR42l2Q3Q6DIAyFff+H9MILBhORPwUEOSskbItNGhro6fnK5L2Hcw7+OGCMgdYaMUbc940WOedvPaLWipuync+YGGNYlgVq35FSgtw2zPMMLjiMtWDs1U3+h+VScF0ZpZBR/d23nBoh57wLdxIeRLquEjsZrFL22lFPoxyii6hDTJ1+UI73KYQApVQXSrn1dY2xNFDDWkdmAkK8KQUk9Zxn6AMKUT6/oq38AbA9NpP3O9tPAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2.20"
+        title=""
+        src="/static/9a90b76f325d28e452b4e69b1be4f7fd/5a190/2.20.png"
+        srcset="/static/9a90b76f325d28e452b4e69b1be4f7fd/772e8/2.20.png 200w,
+/static/9a90b76f325d28e452b4e69b1be4f7fd/e17e5/2.20.png 400w,
+/static/9a90b76f325d28e452b4e69b1be4f7fd/5a190/2.20.png 800w,
+/static/9a90b76f325d28e452b4e69b1be4f7fd/c1b63/2.20.png 1200w,
+/static/9a90b76f325d28e452b4e69b1be4f7fd/e4ee8/2.20.png 1496w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>livenessProbe와 readinessProbe의 세부옵션</h3>
+<p>필요하다면 livenessProbe와 readinessProbe의 세부 옵션을 설정할 수 있습니다.</p>
+<ul>
+<li>periodSeconds: 상태 검사를 수행하는 주기 설정. 기본값은 10초</li>
+<li>initDelaySeconds: 컨테이너가 시작된 후 상태 검사를 수행하기 전 대기하는 시간 설정. 기본값은 0초</li>
+<li>timeoutSeconds: 상태 검사 요청에 대한 응답을 기다리는 시간 설정. 기본값은 1초</li>
+<li>successThreshold: 성공으로 간주하는 상태 검사의 연속 횟수 설정. 기본값은 1</li>
+<li>failureThreshold: 실패로 간주하는 상태 검사의 연속 횟수 설정. 기본값은 3</li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/2024-2study/11.3.2. 파드의 생애 주기(Lifecycle)/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-593ef84ffd916dd56b25.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="885ecb13b1d4f4b10784";</script><script src="/webpack-runtime-a14314fed5ac8e7c9263.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
