@@ -338,7 +338,7 @@ const IndexPage = ({ data }) => {
             <p>{node.frontmatter.date}</p>
             <p>{node.excerpt}</p>
             <div>
-              {node.frontmatter.tags.map(tag => (
+            {node.frontmatter.tags && node.frontmatter.tags.map(tag => (
                 <SmallTagButton
                   key={tag}
                   onClick={() => toggleTag(tag)}
