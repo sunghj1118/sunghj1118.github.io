@@ -9,18 +9,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    concurrency:  # Ensures only one deployment runs at a time
+    concurrency:  
       group: deploy-gatsby-site
       cancel-in-progress: true
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Update to Node.js 18
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
