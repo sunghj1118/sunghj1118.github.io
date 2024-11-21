@@ -9,11 +9,18 @@ tags: ["Infra", "Kubernetes"]
 
 1. Take a backup of the etcd cluster and save it to /opt/etcd-backup.db.
 
+
 `export ETCDCTL_API=3`
-`etcdctl snapshot save /opt/etcd-backup.db`
+`cat /etc/kubernetes/manifests/etcd.yaml | grep file`  
+```bash
+ETCDCTL_API=3 etcdctl --endpoints 127.0.0.1:2379 snapshot save /opt/etcd-backup.db \
+> --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+> --cert=/etc/kubernetes/pki/etcd/server.crt \
+> --key=/etc/kubernetes/pki/etcd/server.key
+```  
 
 
-2. Create a Pod called redis-storage with image: redis:alpine with a Volume of type emptyDir that lasts for the life of the Pod.  
+1. Create a Pod called redis-storage with image: redis:alpine with a Volume of type emptyDir that lasts for the life of the Pod.  
 Specs on the below.  
 - Pod named 'redis-storage' created  
 - Pod 'redis-storage' uses Volume type of emptyDir  
@@ -61,11 +68,11 @@ spec:
 
 4. A pod definition file is created at /root/CKA/use-pv.yaml. Make use of this manifest file and mount the persistent volume called pv-1. Ensure the pod is running and the PV is bound.   
 
-mountPath: /data   
-persistentVolumeClaim Name: my-pvc   
-persistentVolume Claim configured correctly   
-pod using the correct mountPath   
-pod using the persistent volume claim?   
+- mountPath: /data   
+- persistentVolumeClaim Name: my-pvc   
+- persistentVolume Claim configured correctly   
+- pod using the correct mountPath   
+- pod using the persistent volume claim?   
 
 
 step1: create PVC to bind with PV

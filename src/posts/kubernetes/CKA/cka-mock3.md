@@ -10,10 +10,19 @@ tags: ["Infra", "Kubernetes"]
 1. Create a new service account with the name pvviewer. Grant this Service account access to list all PersistentVolumes in the cluster by creating an appropriate cluster role called pvviewer-role and ClusterRoleBinding called pvviewer-role-binding.
 Next, create a pod called pvviewer with the image: redis and serviceAccount: pvviewer in the default namespace.
 
+`k create pvviewer`  
+`k create clusterrole pvviewer-role --dry-run=client -o yaml`   
+`k create clusterrole pvviewer-role --verb=list --resource=persistentvolume --dry-run=client -o yaml > pvviewer-role.yaml`    
+`kubectl create clusterrolebinding pvviewer-role-binding   --clusterrole=pvviewer-role   --serviceaccount=default:pvviewer`   
+`k run pvviewer --image=redis --dry-run=client -o yaml > pvviewer.yaml`   
+
+
 
 2. List the InternalIP of all nodes of the cluster. Save the result to a file /root/CKA/node_ips.
 
 Answer should be in the format: InternalIP of controlplane<space>InternalIP of node01 (in a single line)
+
+`k get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' > /root/CKA/node_ips`   
 
 
 3. Create a pod called multi-pod with two containers.
@@ -53,6 +62,27 @@ spec:
 - runAsUser: 1000  
 - fsGroup: 2000  
 
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: non-root-pod
+  name: non-root-pod
+spec:
+  securityContext:
+    runAsUser: 1000
+    fsGroup: 2000
+  containers:
+  - image: redis:alpine
+    name: non-root-pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+```
+
 5. We have deployed a new pod called np-test-1 and a service called np-test-service. Incoming connections to this service are not working. Troubleshoot and fix it.
 Create NetworkPolicy, by the name ingress-to-nptest that allows incoming connections to the service over port 80.
 
@@ -81,6 +111,11 @@ spec:
 
 - key: env_type, value: production, operator: Equal and effect: NoSchedule
 
+`k taint node node01 env_type=production:NoSchedule`  
+`k run dev-redis --image=redis:alpine --dry-run=client -o yaml > dev-redis.yaml`  
+`k run prod-redis --image=redis:alpine --dry-run=client -o yaml > prod-redis.yaml`     
+
+
 7. Create a pod called hr-pod in hr namespace belonging to the production environment and frontend tier .
 image: redis:alpine
 
@@ -94,7 +129,8 @@ Use appropriate labels and create all the required objects if it does not exist 
 
 Verify host and port for kube-apiserver are correct.
 
-Open the super.kubeconfig in vi editor.
+Open the super.kubeconfig in vim editor.
+- `vim /root/CKA/super.kubeconfig`  
 
 Change the 9999 port to 6443 and run the below command to verify:
 
