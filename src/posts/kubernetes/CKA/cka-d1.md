@@ -77,7 +77,3 @@ A.
    1. `k run nginx-critical --image=nginx --restart=Always --dry-run=client -o yaml`
 3. Create a static pod on node01.
    1. `cat > /etc/kubernetes/manifests/nginx-critical.yaml`
-
-
-
-![d4-1](../../../images/infra/kube/CKA/d4-1.png)
