@@ -17,8 +17,13 @@ data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*
 <li>Take a backup of the etcd cluster and save it to /opt/etcd-backup.db.</li>
 </ol>
 <p><code>export ETCDCTL_API=3</code>
-<code>etcdctl snapshot save /opt/etcd-backup.db</code></p>
-<ol start="2">
+<code>cat /etc/kubernetes/manifests/etcd.yaml | grep file</code></p>
+<pre><code class="language-bash">ETCDCTL_API=3 etcdctl --endpoints 127.0.0.1:2379 snapshot save /opt/etcd-backup.db \
+> --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+> --cert=/etc/kubernetes/pki/etcd/server.crt \
+> --key=/etc/kubernetes/pki/etcd/server.key
+</code></pre>
+<ol>
 <li>Create a Pod called redis-storage with image: redis:alpine with a Volume of type emptyDir that lasts for the life of the Pod.</li>
 </ol>
 <p>Specs on the below.</p>
@@ -65,11 +70,13 @@ spec:
 <ol start="4">
 <li>A pod definition file is created at /root/CKA/use-pv.yaml. Make use of this manifest file and mount the persistent volume called pv-1. Ensure the pod is running and the PV is bound.</li>
 </ol>
-<p>mountPath: /data<br>
-persistentVolumeClaim Name: my-pvc<br>
-persistentVolume Claim configured correctly<br>
-pod using the correct mountPath<br>
-pod using the persistent volume claim?</p>
+<ul>
+<li>mountPath: /data</li>
+<li>persistentVolumeClaim Name: my-pvc</li>
+<li>persistentVolume Claim configured correctly</li>
+<li>pod using the correct mountPath</li>
+<li>pod using the persistent volume claim?</li>
+</ul>
 <p>step1: create PVC to bind with PV</p>
 <p><code>vim pvc.yaml</code></p>
 <pre><code class="language-yaml">apiVersion: v1

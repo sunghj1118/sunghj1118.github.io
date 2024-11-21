@@ -17,10 +17,16 @@ data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*
 <li>Create a new service account with the name pvviewer. Grant this Service account access to list all PersistentVolumes in the cluster by creating an appropriate cluster role called pvviewer-role and ClusterRoleBinding called pvviewer-role-binding.</li>
 </ol>
 <p>Next, create a pod called pvviewer with the image: redis and serviceAccount: pvviewer in the default namespace.</p>
+<p><code>k create pvviewer</code><br>
+<code>k create clusterrole pvviewer-role --dry-run=client -o yaml</code><br>
+<code>k create clusterrole pvviewer-role --verb=list --resource=persistentvolume --dry-run=client -o yaml > pvviewer-role.yaml</code><br>
+<code>kubectl create clusterrolebinding pvviewer-role-binding   --clusterrole=pvviewer-role   --serviceaccount=default:pvviewer</code><br>
+<code>k run pvviewer --image=redis --dry-run=client -o yaml > pvviewer.yaml</code></p>
 <ol start="2">
 <li>List the InternalIP of all nodes of the cluster. Save the result to a file /root/CKA/node_ips.</li>
 </ol>
 <p>Answer should be in the format: InternalIP of controlplane<space>InternalIP of node01 (in a single line)</p>
+<p><code>k get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' > /root/CKA/node_ips</code></p>
 <ol start="3">
 <li>Create a pod called multi-pod with two containers.</li>
 </ol>
@@ -57,6 +63,25 @@ spec:
 <li>runAsUser: 1000</li>
 <li>fsGroup: 2000</li>
 </ul>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: non-root-pod
+  name: non-root-pod
+spec:
+  securityContext:
+    runAsUser: 1000
+    fsGroup: 2000
+  containers:
+  - image: redis:alpine
+    name: non-root-pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+</code></pre>
 <ol start="5">
 <li>We have deployed a new pod called np-test-1 and a service called np-test-service. Incoming connections to this service are not working. Troubleshoot and fix it.</li>
 </ol>
@@ -85,6 +110,9 @@ spec:
 <ul>
 <li>key: env_type, value: production, operator: Equal and effect: NoSchedule</li>
 </ul>
+<p><code>k taint node node01 env_type=production:NoSchedule</code><br>
+<code>k run dev-redis --image=redis:alpine --dry-run=client -o yaml > dev-redis.yaml</code><br>
+<code>k run prod-redis --image=redis:alpine --dry-run=client -o yaml > prod-redis.yaml</code></p>
 <ol start="7">
 <li>Create a pod called hr-pod in hr namespace belonging to the production environment and frontend tier .</li>
 </ol>
@@ -98,7 +126,10 @@ spec:
 <li>A kubeconfig file called super.kubeconfig has been created under /root/CKA. There is something wrong with the configuration. Troubleshoot and fix it.</li>
 </ol>
 <p>Verify host and port for kube-apiserver are correct.</p>
-<p>Open the super.kubeconfig in vi editor.</p>
+<p>Open the super.kubeconfig in vim editor.</p>
+<ul>
+<li><code>vim /root/CKA/super.kubeconfig</code></li>
+</ul>
 <p>Change the 9999 port to 6443 and run the below command to verify:</p>
 <p><code>kubectl cluster-info --kubeconfig=/root/CKA/super.kubeconfig</code></p>
 <ol start="9">
