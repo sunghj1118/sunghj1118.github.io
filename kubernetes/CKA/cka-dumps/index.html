@@ -40,11 +40,11 @@ Task -<br>
 Set the node named ek8s-node-0 as unavailable and reschedule all the pods running on it.</p>
 <p><code>kubectl config use-context ek8s</code></p>
 <p><code>kubectl get nodes</code></p>
-<p><code>kubectl drain ek8s-node-1 --ignore-daemonsets</code></p>
+<p><code>kubectl drain ek8s-node-0 --ignore-daemonsets</code></p>
 <ul>
 <li>이때 사용되는 <code>drain</code> 명령어는 해당 노드를 비활성화하고, 해당 노드에 있는 모든 파드를 다른 노드로 이동시킨다. <code>--ignore-daemonsets</code> 옵션을 사용하면 데몬셋을 무시하고 파드를 이동시킨다.</li>
 </ul>
-<p><code>kubectl drain ek8s-node-1 --ignore-daemonsets --delete-emptydir-data</code></p>
+<p><code>kubectl drain ek8s-node-0 --ignore-daemonsets --delete-emptydir-data</code></p>
 <ul>
 <li><code>--delete-emptydir-data</code> 옵션을 사용하면 노드를 비활성화하기 전에 해당 노드의 emptyDir 볼륨을 삭제한다.</li>
 </ul>
@@ -83,7 +83,275 @@ Be sure to drain the master node before upgrading it and uncordon it after the u
 <p><code>kubectl get nodes</code></p>
 <ul>
 <li>마스터 노드가 다시 정상적으로 작동하는지 확인한다.</li>
-</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/CKA/cka-dumps/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul>
+<ol start="4">
+<li>Task -</li>
+</ol>
+<p>First, create a snapshot of the existing etcd instance running at <a href="https://127.0.0.1:2379">https://127.0.0.1:2379</a>, saving the snapshot to /var/lib/backup/etcd-snapshot.db.</p>
+<p>The following TLS certificates/key are supplied for connecting to the server with etcdctl :
+• CA certificate: /opt/KUIN00601/ca.crt
+• Client certificate:
+/opt/KUIN00601/etcd-client.crt
+• Client key:
+/opt/KUIN00601/etcd-client.key</p>
+<p>Creating a snapshot of the given instance is expected to complete in seconds.
+If the operation seems to hang, something's likely wrong with your command. Use CTRL + c to cancel the operation and try again.</p>
+<p>Next, restore an existing, previous snapshot located at /var/lib/backup/etcd-snapshot-previous.db.</p>
+<pre><code class="language-bash">ETCDCTL_API=3 etcdctl snapshot save /var/lib/backup/etcd-snapshot.db \
+--endpoints=https://127.0.0.1:2379 \
+--cacert=/opt/KUIN00601/ca.crt \
+--cert=/opt/KUIN00601/etcd-client.crt \
+--key=/opt/KUIN00601/etcd-client.key
+</code></pre>
+<p><code>ETCDCTL_API=3 etcdctl snapshot restore /var/lib/backup/etcd-snapshot-previous.db --data-dir /var/lib/etcd-restored</code></p>
+<ol start="5">
+<li>Task -</li>
+</ol>
+<p>Create a new NetworkPolicy named allow-port-from-namespace in the existing namespace fubar.
+Ensure that the new NetworkPolicy allows Pods in namespace internal to connect to port 9000 of Pods in namespace fubar.
+Further ensure that the new NetworkPolicy:
+✑ does not allow access to Pods, which don't listen on port 9000
+✑ does not allow access from Pods, which are not in namespace internal</p>
+<pre><code class="language-yaml">apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-port-from-namespace
+  namespace: fubar
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: internal
+    ports:
+    - protocol: TCP
+      port: 9000
+</code></pre>
+<ol start="6">
+<li>Task -</li>
+</ol>
+<p>Reconfigure the existing deployment front-end and add a port specification named http exposing port 80/tcp of the existing container nginx.
+Create a new service named front-end-svc exposing the container port http.
+Configure the new service to also expose the individual Pods via a NodePort on the nodes on which they are scheduled.</p>
+<ul>
+<li>add a port specification named http exposing port 80/tcp of the existing container nginx.</li>
+</ul>
+<pre><code class="language-yaml">spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+      name: http
+</code></pre>
+<ul>
+<li>create a new service named front-end-svc exposing the container port http.</li>
+</ul>
+<pre><code class="language-bash">kubectl expose deployment front-end --name=front-end-svc --port=80 --target-port=http --type=NodePort
+</code></pre>
+<ol start="7">
+<li>Task -</li>
+</ol>
+<p>Scale the deployment presentation to 3 pods.</p>
+<p><code>kubectl scale deployment presentation --replicas=3</code></p>
+<ol start="8">
+<li>Task -</li>
+</ol>
+<p>Schedule a pod as follows:
+✑ Name: nginx-kusc00401
+✑ Image: nginx
+✑ Node selector: disk=ssd</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-kusc00401
+spec:
+  nodeSelector:
+    disk: ssd
+  containers:
+  - name: nginx
+    image: nginx
+</code></pre>
+<ol start="9">
+<li>Task -</li>
+</ol>
+<p>Check to see how many nodes are ready (not including nodes tainted NoSchedule) and write the number to /opt/KUSC00402/kusc00402.txt.</p>
+<p><code>kubectl get nodes -o jsonpath='{.items[?(@.spec.taints[?(@.effect=="NoSchedule") == null])].status.conditions[?(@.type=="Ready")].status}' | grep True | wc -l > /opt/KUSC00402/kusc00402.txt</code></p>
+<p>or easy way:</p>
+<p><code>k get nodes</code><br>
+<code>echo '2' > /opt/KUSC00402/kusc00402.txt</code></p>
+<ol start="10">
+<li>Task -</li>
+</ol>
+<p>Schedule a Pod as follows:
+✑ Name: kucc8
+✑ App Containers: 2
+✑ Container Name/Images:</p>
+<ul>
+<li>nginx</li>
+<li>consul</li>
+</ul>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: kucc8
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  - name: consul
+    image: consul
+</code></pre>
+<p><code>kubectl apply -f kucc8-pod.yaml</code></p>
+<ol start="11">
+<li>Task -</li>
+</ol>
+<p>Create a persistent volume with name app-data, of capacity 2Gi and access mode ReadOnlyMany. The type of volume is hostPath and its location is /srv/app- data.</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app-data
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadOnlyMany
+  hostPath:
+    path: /srv/app-data
+</code></pre>
+<ol start="12">
+<li>Task -</li>
+</ol>
+<p>Monitor the logs of pod foo and:
+✑ Extract log lines corresponding to error file-not-found
+✑ Write them to /opt/KUTR00101/foo</p>
+<p><code>kubectl logs foo | grep "file-not-found" > /opt/KUTR00101/foo</code></p>
+<ol start="13">
+<li>Context -</li>
+</ol>
+<p>An existing Pod needs to be integrated into the Kubernetes built-in logging architecture (e.g. kubectl logs). Adding a streaming sidecar container is a good and common way to accomplish this requirement.</p>
+<p>Task -
+Add a sidecar container named sidecar, using the busybox image, to the existing Pod big-corp-app. The new sidecar container has to run the following command:</p>
+<p><code>/bin/sh -c "tail -n+1 -f /var/log/big-corp-app. log"</code></p>
+<p>Use a Volume, mounted at /var/log, to make the log file big-corp-app.log available to the sidecar container.</p>
+<p><code>kubectl get pod big-corp-app -o yaml > big-corp-app.yaml</code></p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: big-corp-app
+spec:
+  containers:
+  - name: main-container
+    image: busybox
+    volumeMounts:
+    - name: varlog
+      mountPath: /var/log
+  - name: sidecar
+    image: busybox
+    command: ["/bin/sh", "-c", "tail -n+1 -f /var/log/big-corp-app.log"]
+    volumeMounts:
+    - name: varlog
+      mountPath: /var/log
+  volumes:
+  - name: varlog
+    emptyDir: {}
+</code></pre>
+<ol start="14">
+<li>Task -</li>
+</ol>
+<p>From the pod label name=overloaded-cpu, find pods running high CPU workloads and write the name of the pod consuming most CPU to the file /opt/
+KUTR00401/KUTR00401.txt (which already exists).</p>
+<p><code>kubectl top pods -l name=overloaded-cpu --sort-by=cpu --no-headers | head -n 1 | awk '{print $1}' > /opt/KUTR00401/KUTR00401.txt</code></p>
+<ol start="15">
+<li>Task -</li>
+</ol>
+<p>A Kubernetes worker node, named wk8s-node-0 is in state NotReady.
+Investigate why this is the case, and perform any appropriate steps to bring the node to a Ready state, ensuring that any changes are made permanent.</p>
+<p><code>sudo systemctl restart kubelet</code><br>
+<code>sudo systemctl restart kube-proxy</code></p>
+<ol start="16">
+<li>Task -</li>
+</ol>
+<p>Create a new PersistentVolumeClaim:
+✑ Name: pv-volume
+✑ Class: csi-hostpath-sc
+✑ Capacity: 10Mi
+Create a new Pod which mounts the PersistentVolumeClaim as a volume:
+✑ Name: web-server
+✑ Image: nginx
+✑ Mount path: /usr/share/nginx/html
+Configure the new Pod to have ReadWriteOnce access on the volume.
+Finally, using kubectl edit or kubectl patch expand the PersistentVolumeClaim to a capacity of 70Mi and record that change.</p>
+<ul>
+<li>Create a new PersistentVolumeClaim:</li>
+</ul>
+<pre><code class="language-yaml">apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pv-volume
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi
+  storageClassName: csi-hostpath-sc
+</code></pre>
+<ul>
+<li>Create a new Pod which mounts the PersistentVolumeClaim as a volume:</li>
+</ul>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: web-server
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: web-volume
+  volumes:
+    - name: web-volume
+      persistentVolumeClaim:
+        claimName: pv-volume
+</code></pre>
+<ul>
+<li>Expand the PersistentVolumeClaim to a capacity of 70Mi:</li>
+</ul>
+<p><code>kubectl edit pvc pv-volume</code></p>
+<ol start="17">
+<li>Task -</li>
+</ol>
+<p>Create a new nginx Ingress resource as follows:
+✑ Name: pong
+✑ Namespace: ing-internal
+✑ Exposing service hello on path /hello using service port 5678</p>
+<ul>
+<li>Create a new nginx Ingress resource:</li>
+</ul>
+<pre><code class="language-yaml">apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pong
+  namespace: ing-internal
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /hello
+        pathType: Prefix
+        backend:
+          service:
+            name: hello
+            port:
+              number: 5678
+</code></pre></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/CKA/cka-dumps/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
