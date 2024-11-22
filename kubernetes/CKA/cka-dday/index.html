@@ -20,7 +20,139 @@ data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*
 <p>여기서 주의해야 할 점은 linux 기반 firefox 브라우저가 제공되어서 복붙이 cmd로는 되지 않으며 <code>ctrl+shift+v</code>로 복붙을 해야 하고, 복사 단축키는 결국에 못 찾았다. 또한, vim 편집기 단축어도 달랐으며, cmd+F로 검색을 할 수 없는게 시간을 많이 잡아먹었다.</p>
 <p>17문제 중에 족보랑 유사하게 나왔음에도 불구하고 시간이 부족했으며 마지막 15, 16, 17 문제는 건들지도 못했다.</p>
 <p>17 문제 중에 최소 66%를 받아야 통과이기 때문에 최소한 내가 푼 14문제 중 12문제를 맞춰야 한다는 뜻인데 어렵지 않을까 싶다.</p>
-<p>너무 아쉽지만 재응시가 한번 더 있기 때문에 다음에는 더 잘 준비해서 응시해야겠다.</p></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/CKA/cka-dday/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>너무 아쉽지만 재응시가 한번 더 있기 때문에 다음에는 더 잘 준비해서 응시해야겠다.</p>
+<h1>출제 문제</h1>
+<ol>
+<li>Task -</li>
+</ol>
+<p>Create a new NetworkPolicy named allow-port-from-namespace in the existing namespace fubar.
+Ensure that the new NetworkPolicy allows Pods in namespace internal to connect to port 9000 of Pods in namespace fubar.
+Further ensure that the new NetworkPolicy:
+✑ does not allow access to Pods, which don't listen on port 9000
+✑ does not allow access from Pods, which are not in namespace internal</p>
+<ol start="2">
+<li>Task -</li>
+</ol>
+<p>First, create a snapshot of the existing etcd instance running at <a href="https://127.0.0.1:2379">https://127.0.0.1:2379</a>, saving the snapshot to /var/lib/backup/etcd-snapshot.db.</p>
+<p>The following TLS certificates/key are supplied for connecting to the server with etcdctl :
+• CA certificate: /opt/KUIN00601/ca.crt
+• Client certificate:
+/opt/KUIN00601/etcd-client.crt
+• Client key:
+/opt/KUIN00601/etcd-client.key</p>
+<p>Creating a snapshot of the given instance is expected to complete in seconds.
+If the operation seems to hang, something's likely wrong with your command. Use CTRL + c to cancel the operation and try again.</p>
+<p>Next, restore an existing, previous snapshot located at /var/lib/backup/etcd-snapshot-previous.db.</p>
+<ol start="3">
+<li>
+<p>Task -<br>
+Set the node named ek8s-node-0 as unavailable and reschedule all the pods running on it.</p>
+</li>
+<li>
+<p>Task -</p>
+</li>
+</ol>
+<p>Reconfigure the existing deployment front-end and add a port specification named http exposing port 80/tcp of the existing container nginx.
+Create a new service named front-end-svc exposing the container port http.
+Configure the new service to also expose the individual Pods via a NodePort on the nodes on which they are scheduled.</p>
+<ol start="5">
+<li>Task -</li>
+</ol>
+<p>Reconfigure the existing deployment front-end and add a port specification named http exposing port 80/tcp of the existing container nginx.
+Create a new service named front-end-svc exposing the container port http.
+Configure the new service to also expose the individual Pods via a NodePort on the nodes on which they are scheduled.</p>
+<ol start="6">
+<li>Task -</li>
+</ol>
+<p>Scale the deployment presentation to 3 pods.</p>
+<ol start="7">
+<li>Task -</li>
+</ol>
+<p>Schedule a pod as follows:
+✑ Name: nginx-kusc00401
+✑ Image: nginx
+✑ Node selector: disk=ssd</p>
+<ol start="8">
+<li>Task -</li>
+</ol>
+<p>Check to see how many nodes are ready (not including nodes tainted NoSchedule) and write the number to /opt/KUSC00402/kusc00402.txt.</p>
+<ol start="9">
+<li>Task -</li>
+</ol>
+<p>Schedule a Pod as follows:
+✑ Name: kucc8
+✑ App Containers: 2
+✑ Container Name/Images:</p>
+<ul>
+<li>nginx</li>
+<li>consul</li>
+</ul>
+<ol start="10">
+<li>Task -</li>
+</ol>
+<p>Create a new nginx Ingress resource as follows:
+✑ Name: pong
+✑ Namespace: ing-internal
+✑ Exposing service hello on path /hello using service port 5678</p>
+<ol start="11">
+<li>Task -</li>
+</ol>
+<p>Monitor the logs of pod foo and:
+✑ Extract log lines corresponding to error file-not-found
+✑ Write them to /opt/KUTR00101/foo</p>
+<ol start="12">
+<li>Context -</li>
+</ol>
+<p>An existing Pod needs to be integrated into the Kubernetes built-in logging architecture (e.g. kubectl logs). Adding a streaming sidecar container is a good and common way to accomplish this requirement.</p>
+<p>Task -
+Add a sidecar container named sidecar, using the busybox image, to the existing Pod big-corp-app. The new sidecar container has to run the following command:</p>
+<p><code>/bin/sh -c "tail -n+1 -f /var/log/big-corp-app. log"</code></p>
+<p>Use a Volume, mounted at /var/log, to make the log file big-corp-app.log available to the sidecar container.</p>
+<p><code>kubectl get pod big-corp-app -o yaml > big-corp-app.yaml</code></p>
+<ol start="13">
+<li>Task -</li>
+</ol>
+<p>From the pod label name=overloaded-cpu, find pods running high CPU workloads and write the name of the pod consuming most CPU to the file /opt/
+KUTR00401/KUTR00401.txt (which already exists).</p>
+<ol start="14">
+<li>Create a new PersistentVolumeClaim:</li>
+</ol>
+<p>✑ Name: pv-volume
+✑ Class: csi-hostpath-sc
+✑ Capacity: 10Mi
+Create a new Pod which mounts the PersistentVolumeClaim as a volume:
+✑ Name: web-server
+✑ Image: nginx
+✑ Mount path: /usr/share/nginx/html
+Configure the new Pod to have ReadWriteOnce access on the volume.
+Finally, using kubectl edit or kubectl patch expand the PersistentVolumeClaim to a capacity of 70Mi and record that change.</p>
+<ol start="15">
+<li>Context -</li>
+</ol>
+<pre><code>You have been asked to create a new ClusterRole for a deployment pipeline and bind it to a specific ServiceAccount scoped to a specific namespace.
+
+Task -   
+Create a new ClusterRole named deployment-clusterrole, which only allows to create the following resource types:
+✑ Deployment
+✑ Stateful Set
+✑ DaemonSet
+
+Create a new ServiceAccount named cicd-token in the existing namespace app-team1.
+
+Bind the new ClusterRole deployment-clusterrole to the new ServiceAccount cicd-token, limited to the namespace app-team1.
+</code></pre>
+<ol start="16">
+<li>Task -</li>
+</ol>
+<p>A Kubernetes worker node, named wk8s-node-0 is in state NotReady.
+Investigate why this is the case, and perform any appropriate steps to bring the node to a Ready state, ensuring that any changes are made permanent.</p>
+<ol start="17">
+<li>Task -</li>
+</ol>
+<p>Given an existing Kubernetes cluster running version 1.22.1, upgrade all of the Kubernetes control plane and node components on the master node only to version 1.22.2.<br>
+Be sure to drain the master node before upgrading it and uncordon it after the upgrade.</p>
+<h1>복기</h1>
+<p>sidecar, ingress, systemctl이 특히나 어려웠다. 아마 이 문제들을 틀리지 않았을까 싶다.</p></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/kubernetes/CKA/cka-dday/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
