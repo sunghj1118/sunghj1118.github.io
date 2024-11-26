@@ -1,0 +1,106 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">2924. Find Champion II</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">November 26, 2024</p><div><h1>문제 설명</h1>
+<p>이 문제는 DAG 구조의 그래프에서 a->b로 가는 edge가 주어지면, a가 b보다 강하다는 뜻이 된다. 그렇다면 이때 가장 강한 노드를 찾는 문제이다. 단, 여러개의 노드가 가장 강할 경우 -1을 반환한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 85.50000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAACAElEQVR42o2UW5OiQAyF+f+/zSrXhx28KwiK0ggqoHjL+qU3M/MyNVp1qjvd5OTk0gZhOJT+n4GMx2Pp9Xry8fFX+v2+YjgcyuFwEH7P51Pe+QVtXUl9dFK9HLfbrRyPR0nTtWRZJmVZKq7X69ukwbl2cioTdUzTVPI8lyiKJUkS2e/3stvt5HQ6yeVykaZppG3bT5zPZ4XZBAyiOJGiKOXyusARoBLnpmlVHeCM9L+DMwN+SogynFEAiAiBj9zox0S3+667/g/Sqc3e/O73uwRxHMtgMJAwDF+NmWhzqCXp291oNJLJZCLT6VQWi4XM53Pdc75cLnUfRZESB0i3NKkfaqwB1gTb/wZtynq91gagAGDTYeecrqilMQRjJfBqtVJF2KAo9ipKCfmgrmt1hIDOApRSEwO1Yn08HrrebrfPO/acK6FXsVMS0sdGMc2qquoVvVBwb3Np37Ly7Waz0cYqIalxSUFtnvzINEpIBjZrNoc2FZYddtd1npDaUDfqQjTnCg0AGWptsLFRBwl7ziiTqYdYCT2J0xoR5d03++PTIxqKIAOW+vcmGLi3spgAe3746Ush/9lspikzpICh9unwlnMdcDKJYz8u2LYy5OxpjCokd8jy3KlTlvm5sxGCHAfOqa9lYspMnf0jBcjHyYpLPf2wfo2KnaPC5u2nGv4D5jsUXiTvSYcAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2924"
+        title=""
+        src="/static/dc3730aee40fb9ec299bf47f0d011e06/5a190/2924.png"
+        srcset="/static/dc3730aee40fb9ec299bf47f0d011e06/772e8/2924.png 200w,
+/static/dc3730aee40fb9ec299bf47f0d011e06/e17e5/2924.png 400w,
+/static/dc3730aee40fb9ec299bf47f0d011e06/5a190/2924.png 800w,
+/static/dc3730aee40fb9ec299bf47f0d011e06/1ac29/2924.png 1022w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<p>이 문제를 풀기 위해서는 가장 강한 노드가 지는 경우가 없을것이라 생각하고 이를 0으로 만들어야 한다고 생각했다. 따라서, 모든 edge에 대해서 도착 지점이 발생할때마다 +1를 딕셔너리에 추가하는 형식으로 했다. 다만, 이는 그래프가 복잡해지고 가장 강한 노드조차 한번 정도는 지는 경우에 대해서는 처리하지 못할것이다.</p>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def findChampion(self, n: int, edges: List[List[int]]) -> int:
+        node_dict = dict.fromkeys(range(n), 0)
+        for edge in edges:
+            u,v = edge[0],edge[1]
+            node_dict[v] += 1
+        
+        # if there is a single node with value 0, return it's key, else return -1
+        zero_keys = [key for key,value in node_dict.items() if value ==0]
+        return zero_keys[0] if len(zero_keys) == 1 else -1
+</code></pre>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 69%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACVklEQVR42o2Tz2tTQRDH8wcL3nrSg3hTPIgI4kkQvdSLCpYWKy1VrKD4I7SltTbW2qRJmpe8fb9234/9OLM1aSgVXJi3M/tmv/Od2ZlWPxuxO/rJaRbR1A1VXVHX9UyapmF+qX16OuL3cQ8TGRYP37Dw+T7XvzzkSWeZVpKlHPe7TExMnudkWRZ2FWstzrkLgJ4kSYljg80tH4ZbAehpZ4W3g6+0vDg460jFSS9774Mou6qqKIpidn4Z44urVZYlB50D9n/sSypDhsMB3e4x4/E4sJ1MJqRpGsBVV+YKrrYGcqWjbEoa31CLtCqJevSrRzSMGfQj2tv7fGtvBWC9rGCaujLTAMpYdd2TJCHNJbPmrCwaKACmiaQ8cRhTEqf6MJKeMLBSCpWyKvmfFQCntfFacPnkpdiiqD6V8BjeB/H/kBlgUP5GOElg7eA8Yu5qBvE0nSnwBVZz92cMq6rmxMCLbc9i2/P+UF5e0t4+qfl06MIVPVP2qk/ZNv7M9nPsW9PIq3vwahdur8PV53BnA+5teB5vWpb0fA3aPehEMCnO2V1aQ+S5V7/Dyx3P3XewsATXVuDRR8/NFcsVCXBr3bMsQW+8hp2B1hpGGTzYhGdtiIs5QC9tEOUwTNXJczSuGIpzlDV0xyV9OR8kNd1JRV/qfBTJHp/57A1KOqMmsJ49itbQFtJjmSFLY6zspU2DbXND5eSfnBd5IrqMpOxW+k91VyTB19k8dEtrOvBFYaWRC2nkjNgYcm1caWojI1lIYxuTBNvKdBhpaG1yJ1MWdBkA58qA8wcswzJQFY6JnQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/0e4a20bd1f054a5c6f02d7f4e5627561/5a190/tc.png"
+        srcset="/static/0e4a20bd1f054a5c6f02d7f4e5627561/772e8/tc.png 200w,
+/static/0e4a20bd1f054a5c6f02d7f4e5627561/e17e5/tc.png 400w,
+/static/0e4a20bd1f054a5c6f02d7f4e5627561/5a190/tc.png 800w,
+/static/0e4a20bd1f054a5c6f02d7f4e5627561/709cb/tc.png 1034w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>O(n+m) : n은 노드의 개수, m은 edge의 개수이다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(n) : n은 노드의 개수이다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+1 &#x3C;= n &#x3C;= 100
+m == edges.length
+0 &#x3C;= m &#x3C;= n * (n - 1) / 2
+edges[i].length == 2
+0 &#x3C;= edge[i][j] &#x3C;= n - 1
+edges[i][0] != edges[i][1]
+The input is generated such that if team a is stronger than team b, team b is not stronger than team a.
+The input is generated such that if team a is stronger than team b and team b is stronger than team c, then team a is stronger than team c.
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/find-champion-ii/">2924. Find Champion II</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L2924FindChampionII/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-593ef84ffd916dd56b25.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="885ecb13b1d4f4b10784";</script><script src="/webpack-runtime-a14314fed5ac8e7c9263.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
