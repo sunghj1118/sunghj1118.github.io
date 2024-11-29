@@ -1,0 +1,167 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="theme-color" content="#663399"/><style data-href="/styles.5250b878f8ec5a9f94b0.css" data-identity="gatsby-global-css">body{background-color:#f5f5f5;color:#333;font-family:Roboto,sans-serif;margin:0;padding:0}a{color:#007acc;text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif}button{font-family:Poppins,sans-serif}.markdown-body{background:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);font-family:Roboto,sans-serif;line-height:1.6;margin:2rem 0;padding:2rem}.markdown-body blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;margin:0;padding:0 1em}.markdown-body pre{background-color:#f6f8fa;border-radius:8px;overflow:auto;padding:16px}.markdown-body code{background:rgba(27,31,35,.05);border-radius:3px;padding:.2em .4em}.markdown-body pre code{white-space:pre-wrap;word-break:break-word}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:700;margin-bottom:1rem;margin-top:1.5rem}.markdown-body p{margin-bottom:1rem}.markdown-body a{word-wrap:break-word;overflow-wrap:break-word;word-break:break-word}</style><style data-styled="" data-styled-version="5.3.11">.fSgxj{max-width:700px;margin:0 auto;padding:0 20px;}/*!sc*/
+data-styled.g1[id="Container-sc-16528bm-0"]{content:"fSgxj,"}/*!sc*/
+.dolPew{background:#f0f0f0;padding:0.5rem;text-align:center;font-size:0.8rem;border-top:1px solid #ccc;font-family:'Lato',sans-serif;}/*!sc*/
+data-styled.g2[id="Footer__FooterContainer-sc-z09s33-0"]{content:"dolPew,"}/*!sc*/
+.ijVxnH{color:#007BFF;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.ijVxnH:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g3[id="Footer__FooterLink-sc-z09s33-1"]{content:"ijVxnH,"}/*!sc*/
+.eravZ{font-size:2.5rem;margin:0.5rem 0 0.5rem 0;}/*!sc*/
+data-styled.g5[id="blog-post__PostTitle-sc-1iu9sol-0"]{content:"eravZ,"}/*!sc*/
+.kXOzhE{font-size:1rem;color:#666;margin-bottom:1rem;}/*!sc*/
+data-styled.g6[id="blog-post__PostDate-sc-1iu9sol-1"]{content:"kXOzhE,"}/*!sc*/
+.irwwWE{display:inline-block;margin-bottom:0.5rem;padding:0.3rem 0.6rem;background-color:#6a9b86;color:white;-webkit-text-decoration:none;text-decoration:none;border-radius:3px;font-size:0.875rem;font-weight:normal;}/*!sc*/
+.irwwWE:hover{background-color:#005fa3;}/*!sc*/
+data-styled.g7[id="blog-post__AllPostsButton-sc-1iu9sol-2"]{content:"irwwWE,"}/*!sc*/
+</style><link rel="icon" href="/favicon-32x32.png?v=b2dec66daa6289e2a332fc74ed123411" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b2dec66daa6289e2a332fc74ed123411"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b2dec66daa6289e2a332fc74ed123411"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Poppins:400,700&amp;display=swap" rel="stylesheet"/><script data-goatcounter="https://sunghj1118.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Container-sc-16528bm-0 fSgxj"><div class="markdown-body"><a class="blog-post__AllPostsButton-sc-1iu9sol-2 irwwWE" href="/">&lt; All posts</a><h1 class="blog-post__PostTitle-sc-1iu9sol-0 eravZ">2577. Minimum Time to Visit a Cell In a Grid</h1><p class="blog-post__PostDate-sc-1iu9sol-1 kXOzhE">November 29, 2024</p><div><h1>문제 설명</h1>
+<p>이 문제는 2차원 그리드에서 주어진 좌표를 방문하는데 걸리는 최소 시간이 주어진다. 이때, 이동은 대각선, 수평, 수직으로 이동할 수 있다. 한 칸을 이동하는데 1초가 걸린다고 가정할 때, 주어진 좌표를 방문하는데 걸리는 최소 시간을 구하는 문제이다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 127%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAYAAAAxFw7TAAAACXBIWXMAABYlAAAWJQFJUiTwAAACR0lEQVR42qWVB6vjMBCE/f//WQiEkN4bpHen1z1/GyboTO69u3uGQfZqNVs0kqN2u23tTscajYZlMhkrlUrWbDatWCxavV7370Kh4GM+n7dWq2XZbNam06nxPJ9PC5/ott/bebez2Xxhq9XKHSeTiW02G5vP57ZL5rQQPB6P9/unJzonhId4Z6v12hevk/FFtLftdus4nU6237++D4eDA9v5fH7jdru9CHv9vhWTchpJeZRaqVST8pv+Xi6XrVarJbaKtyCXy7mN+U7SJnxoAWO/P/BAkSJT4nYbWxzHniXlM2LHpmyxxUlF+mbu5bOz+/1u0XK59L6Nx2MfQa/Xs9ls5qXTT94Xi8XbJsgf8O0l44gB59Fo5BO8hyTySZMQDMjPM4RkMBh4T+hXt9tN+tF/g7nlcuWbAiiRzQP0jBH78Xh8EUoCIUJpfCWRj7KhoaTL1n/1fAocBtPoPRwOh75TpK5ypKt/fSLkAZAA5NpZhPtfhCIhQyQEfkRIdpDqyNHPHxGKKNQfIv9uk/5IiH4gRVPSGptChtfr1XG5XDwA43cS8rNcrVa9TMi1mHcAMVBAAiBggBLSaohYjGw4MZTLkQrbwCZhh5QAqkKXShjECTkVus/ITnddCGzMsTCdOWs5jticEGaihAvkyIg9BL4EwC8cpYqIzNCgbl4d+tAxvJ11OeiiwOevMhTSGapkgSCQSmbeQwySiLIJpaIx3UONv5VMhpSsjEg/3MlwIdAvQb+F8Of17iGTEvCnDJVduiUqWTYIfwGF/4g0qec6pwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2577"
+        title=""
+        src="/static/261cba3e686c7f60ccec9de5a33cca70/5a190/2577.png"
+        srcset="/static/261cba3e686c7f60ccec9de5a33cca70/772e8/2577.png 200w,
+/static/261cba3e686c7f60ccec9de5a33cca70/e17e5/2577.png 400w,
+/static/261cba3e686c7f60ccec9de5a33cca70/5a190/2577.png 800w,
+/static/261cba3e686c7f60ccec9de5a33cca70/18539/2577.png 1074w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2>풀이 및 해설</h2>
+<h2>풀이</h2>
+<pre><code class="language-python">class Solution:
+    def minimumTime(self, grid: List[List[int]]) -> int:
+        # if both initial require more than 1 sec, impossible
+        if grid[0][1] > 1 and grid[1][0] > 1:
+            return -1
+        
+        rows, cols = len(grid), len(grid[0])
+        # possible movements: down, up, right, left
+        directions = [(1,0), (-1,0), (0,1), (0,-1)]
+        visited = set()
+
+        # priority queue stores
+        # ordered by min time to reach each cell
+        pq = [(grid[0][0],0,0)]
+
+        while pq:
+            time, row, col = heapq.heappop(pq)
+
+            # check if reached target
+            if (row, col) == (rows-1, cols-1):
+                return time
+            
+            # skip if cell already visited
+            if (row, col) in visited:
+                continue
+            visited.add((row,col))
+
+            # try all four directions
+            for dx,dy in directions:
+                next_row, next_col = row+dx, col+dy
+
+                if not self._is_valid(visited, next_row, next_col, rows, cols):
+                    continue
+                
+                # calculate the wait time needed to move to next cell
+                wait_time = (
+                    1 if (grid[next_row][next_col] - time) % 2 == 0 else 0
+                )
+                next_time = max(grid[next_row][next_col] + wait_time, time+1)
+                heapq.heappush(pq, (next_time, next_row, next_col))
+            
+        return -1
+    
+    def _is_valid(self, visited, row, col, rows, cols):
+        return 0&#x3C;=row&#x3C;rows and 0&#x3C;=col&#x3C;cols and (row, col) not in visited
+</code></pre>
+<p>def minimumTime:</p>
+<ul>
+<li>오른쪽 칸과 아래 칸의 값이 1보다 크면 불가능한 경우이므로 -1을 반환한다.</li>
+<li>rows, cols는 grid의 행과 열의 길이를 저장한다.</li>
+<li>directions는 이동할 수 있는 방향을 저장한다.</li>
+<li>visited는 방문한 좌표를 저장한다.</li>
+<li>pq는 우선순위 큐로, 각 셀에 도달하는 데 걸리는 최소 시간을 저장한다.</li>
+<li>while pq: 루프를 돌면서
+<ul>
+<li>time, row, col = heapq.heappop(pq)로 pq에서 값을 꺼낸다.</li>
+<li>지금 도착한 셀이 목적지인지 확인한다.</li>
+<li>방문한 셀인지 확인한다.</li>
+<li>네 방향으로 이동해본다.
+<ul>
+<li>이동할 수 없는 경우를 _is_valid로 확인하고 안된다면 continue한다.</li>
+<li>다음 셀로 이동하는데 걸리는 시간을 계산한다.</li>
+<li>다음 셀로 이동하는데 걸리는 시간을 pq에 추가한다.</li>
+<li>pq는 최소 힙이므로, 최소 시간이 먼저 나오게 된다.</li>
+<li>만약 목적지에 도달하면 time을 반환한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>만약 목적지에 도달하지 못하면 -1을 반환한다.</li>
+</ul>
+<p>def _is_valid:</p>
+<ul>
+<li>방문한 셀인지, 그리드를 벗어나는지 확인한다.</li>
+</ul>
+<h2>Complexity Analysis</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACDElEQVR42o2TyW4TQRCG/cLceAIOXFgkFCHOSHkAuCBxMAiIciBRELGjyGBHsUM83mbzbD1bf1S1CThYLG3VVLmWv/7qqel4yZLz2ZAgjajKirIsb0nbtvx+wjBkPJkQL0Jejt9z5+gxd0/2eH7xio4xhiiMyPOcoih2pGmaHUD1VVWNbSyLIqAfjpxc50s6dV2z8n3m8zlZlklihfpUK8MkSZxfmWoDjf3pWGvpaKd+v8doNCSKQjxvymAwYCIjKWsFVCAF11F1ImWoWmOmNLT6syoCWArg9FvA0ouZL1Imold+IOCRY6aixdpd2alWUcb6f/uOHcOm0UAjXaVAbZGbIo1pQdOqj38eB3hTrKcVVf9oaHeS4Sr6D0AtTUxLmMMygxdn4OebhKTcaG8N4xAuVr/A/wLYEuctx1fQHcKjd9DzLJcB7H9SVpbuVzi8hC+LhrSoHXt7C9VuAcrbMZXl4Ru49xoevIVnh7B3AE8/wBPR97tii2//uOFgVHEkzQfLzQRBvpG12bpDI19Ib1rTm8HnacvHccWp2Kczy5HanrAW+2RScj63DuxsWskULRO5isGs5DreXH5HH7UusUnlbcvilql8gtnGrnKx0592WSRiGyeVkZyqcHZZaE3hNsIB6tLq7qVZThjF+EFIlhfE6xRf/EmasU5Sl5PJsmtMc1LZ0aIwzq85CvgdNX3nYXORy98AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tc"
+        title=""
+        src="/static/f40d95b11b1faca3d851f354f7cfd58a/5a190/tc.png"
+        srcset="/static/f40d95b11b1faca3d851f354f7cfd58a/772e8/tc.png 200w,
+/static/f40d95b11b1faca3d851f354f7cfd58a/e17e5/tc.png 400w,
+/static/f40d95b11b1faca3d851f354f7cfd58a/5a190/tc.png 800w,
+/static/f40d95b11b1faca3d851f354f7cfd58a/d53ff/tc.png 1068w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h3>시간 복잡도</h3>
+<ul>
+<li>O(MNlog(MN)) : pq에 추가 및 삭제하는데 log(MN)이 걸리고, 셀을 모두 방문하는데 MN이 걸린다.</li>
+</ul>
+<h3>공간 복잡도</h3>
+<ul>
+<li>O(MN) : visited에 모든 셀을 저장한다.</li>
+</ul>
+<h2>Constraint Analysis</h2>
+<pre><code>Constraints:
+m == grid.length
+n == grid[i].length
+2 &#x3C;= m, n &#x3C;= 1000
+4 &#x3C;= m * n &#x3C;= 10^5
+0 &#x3C;= grid[i][j] &#x3C;= 10^5
+grid[0][0] == 0
+</code></pre>
+<h1>References</h1>
+<ul>
+<li><a href="https://leetcode.com/problems/minimum-time-to-visit-all-points/">2577. Minimum Time to Visit a Cell In a Grid</a></li>
+</ul></div></div></div><footer class="Footer__FooterContainer-sc-z09s33-0 dolPew"><p>© <!-- -->2024<!-- --> HyunJoon Sung. All Rights Reserved.</p><p><a href="https://github.com/sunghj1118" class="Footer__FooterLink-sc-z09s33-1 ijVxnH">GitHub</a></p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithm/LEET/L2577MinimumTimetoVisitaCellInaGrid/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2a748b101fc84366569c.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-60d2a0d2c248384ad0d2.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-593ef84ffd916dd56b25.js\"],\"component---src-pages-page-2-js\":[\"/component---src-pages-page-2-js-50e83426ef775361f1a0.js\"],\"component---src-pages-projects-js\":[\"/component---src-pages-projects-js-09d84881e2521f783e15.js\"],\"component---src-pages-using-ssr-js\":[\"/component---src-pages-using-ssr-js-f4952d7ab534af96aca0.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-55e14b7949e0e0236a5b.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-a5dcc9dbff974058c7d9.js\"],\"component---src-templates-tag-js\":[\"/component---src-templates-tag-js-84a93951c485ea92cc02.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="885ecb13b1d4f4b10784";</script><script src="/webpack-runtime-a14314fed5ac8e7c9263.js" async></script><script src="/framework-a880249783d1bea64870.js" async></script><script src="/app-2a748b101fc84366569c.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
