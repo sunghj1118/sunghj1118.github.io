@@ -1,7 +1,7 @@
 ---
 title: "1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence"
 date: "2024-12-02"
-description: "1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence"
+description: "1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence는 searchWord가 주어졌을 때 words의 prefix로 존재하는지 확인하는 문제이다."
 tags: ["Algorithm", "Two Pointer"]
 ---
 
