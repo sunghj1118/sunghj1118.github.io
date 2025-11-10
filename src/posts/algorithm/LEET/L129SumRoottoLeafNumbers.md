@@ -2,7 +2,7 @@
 title: "129. Sum Root to Leaf Numbers"
 date: "2025-11-10"
 description: "129. Sum Root to Leaf Numbers는 이진 트리가 주어지면 루트부터 모든 리프 노드까지의 경로가 나타내는 숫자의 합을 구하는 문제다."
-tags: ["Algorithm", "Tree", "DFS"]
+tags: ["Algorithm", "Tree", "BFS/DFS"]
 ---
 
 # 문제 설명
