@@ -4,16 +4,24 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  background: #f0f0f0;
+  /* CHANGED: Use theme variables */
+  background: ${({ theme }) => theme.postBg}; 
+  color: ${({ theme }) => theme.text};
+  border-top: 1px solid ${({ theme }) => theme.borderColor};
+
+  /* Unchanged styles */
   padding: 0.5rem;
   text-align: center;
   font-size: 0.8rem;
-  border-top: 1px solid #ccc; 
   font-family: 'Lato', sans-serif;
+  transition: all 0.30s linear; /* Added transition */
 `;
 
 const FooterLink = styled.a`
-  color: #007BFF;
+  /* CHANGED: Use theme variable */
+  color: ${({ theme }) => theme.links};
+
+  /* Unchanged styles */
   text-decoration: none;
   &:hover {
     text-decoration: underline;
