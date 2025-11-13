@@ -1,16 +1,13 @@
 body {
   font-family: 'Roboto', sans-serif;
-  /* CHANGED: Use the variable defined in GlobalStyle */
   background-color: var(--theme-body); 
   margin: 0;
   padding: 0;
-  /* CHANGED: Use variable */
   color: var(--theme-text); 
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth dark mode transition */
 }
 
 a {
-  /* CHANGED: Use variable */
   color: var(--theme-links); 
   text-decoration: none;
 }
@@ -31,12 +28,12 @@ button {
 
 .markdown-body {
   font-family: 'Roboto', sans-serif;
+  background: var(--theme-postBg); 
   line-height: 1.6;
   padding: 2rem;
-  background: var(--theme-postBg); 
-  border-radius: 8px;
   margin: 2rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
   color: var(--theme-text); 
 }
 
@@ -59,6 +56,7 @@ button {
   background: var(--theme-tagBg); 
   padding: 0.2em 0.4em;
   border-radius: 3px;
+  color: var(--theme-text); 
 }
 
 .markdown-body pre code {
@@ -81,6 +79,7 @@ button {
 
 .markdown-body p {
   margin-bottom: 1rem;
+  color: var(--theme-text); 
 }
 
 .markdown-body a {
