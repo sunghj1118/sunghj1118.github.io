@@ -82,7 +82,7 @@ const Layout = ({ children }) => {
           {/* Header area could go here */}
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <ThemeButton onClick={toggleTheme}>
-               {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+               {theme === 'light' ? '🌙 ' : '☀️ '}
             </ThemeButton>
           </div>
 
