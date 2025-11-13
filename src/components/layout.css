@@ -1,15 +1,17 @@
-/* src/components/layout.css */
-
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f5f5f5;
+  /* CHANGED: Use the variable defined in GlobalStyle */
+  background-color: var(--theme-body); 
   margin: 0;
   padding: 0;
-  color: #333;
+  /* CHANGED: Use variable */
+  color: var(--theme-text); 
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth dark mode transition */
 }
 
 a {
-  color: #007acc;
+  /* CHANGED: Use variable */
+  color: var(--theme-links); 
   text-decoration: none;
 }
 
@@ -19,6 +21,8 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
+  /* Added: Ensure headings use the theme color */
+  color: var(--theme-headings); 
 }
 
 button {
@@ -29,28 +33,30 @@ button {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   padding: 2rem;
-  background: #ffffff;
+  background: var(--theme-postBg); 
   border-radius: 8px;
   margin: 2rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--theme-text); 
 }
 
 .markdown-body blockquote {
-  color: #6a737d;
-  border-left: 0.25em solid #dfe2e5;
+  color: var(--theme-text);
+  opacity: 0.8;
+  border-left: 0.25em solid var(--theme-borderColor); 
   padding: 0 1em;
   margin: 0;
 }
 
 .markdown-body pre {
-  background-color: #f6f8fa;
+  background-color: var(--theme-tagBg); 
   padding: 16px;
   overflow: auto;
   border-radius: 8px;
 }
 
 .markdown-body code {
-  background: rgba(27, 31, 35, 0.05);
+  background: var(--theme-tagBg); 
   padding: 0.2em 0.4em;
   border-radius: 3px;
 }
@@ -58,6 +64,7 @@ button {
 .markdown-body pre code {
   white-space: pre-wrap;
   word-break: break-word;
+  color: var(--theme-text); 
 }
 
 .markdown-body h1,
@@ -69,6 +76,7 @@ button {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  color: var(--theme-headings);
 }
 
 .markdown-body p {
@@ -76,7 +84,7 @@ button {
 }
 
 .markdown-body a {
-  word-wrap: break-word; /* Break long words and URLs */
-  overflow-wrap: break-word; /* Older name for word-wrap */
-  word-break: break-word; /* Ensure word breaks */
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  word-break: break-word; 
 }

@@ -1,41 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import { Helmet } from "react-helmet";
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: #f8f9fa; // Very light grey background
-    color: #212529; // Dark grey text
-    font-family: 'Roboto', sans-serif; // Default font
-    margin: 0;
-    padding: 0;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif; // Headings font
-    color: #212529; // Dark grey color for headings
-  }
-
-  button {
-    font-family: 'Poppins', sans-serif; // Button font
-  }
-
-  a {
-    color: #495057; // Link color
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
 const TagButton = styled.button`
-  background-color: ${props => (props.selected ? '#595f39' : '#e9ecef')}; // Main Tag Button colors
+  background-color: ${props => (props.selected ? props.theme.tagSelectedBg : props.theme.tagBg)};
+  color: ${props => (props.selected ? props.theme.tagSelectedText : props.theme.tagText)};
   border: none;
   border-radius: 20px;
-  color: ${props => (props.selected ? '#ffffff' : '#212529')}; // Text color
   font-family: 'Poppins', sans-serif;
   font-size: 12px; 
   margin: 2px;
@@ -47,17 +20,23 @@ const TagButton = styled.button`
   height: 35px; // Fixed height to prevent vertical stretching
 
   &:hover {
-    background-color: #595f39; // Main Tag Button hover color
-    color: #ffffff;
+    background-color: ${({ theme }) => theme.tagSelectedBg};
+    color: ${({ theme }) => theme.tagSelectedText};
     transform: scale(1.15);
   }
 `;
 
 const SmallTagButton = styled(TagButton)`
-  background-color: ${props => (props.selected ? '#495057' : '#dee2e6')}; // Sub Tag Button colors
-  font-size: 12px; /* Smaller size */
+  background-color: ${props => (props.selected ? props.theme.links : props.theme.tagBg)};
+  color: ${props => (props.selected ? props.theme.body : props.theme.text)};
+  font-size: 12px;
   padding: 2px 12px; /* Smaller padding */
   height: 30px; // Consistent height for small buttons
+
+  &:hover {
+    background-color: ${({ theme }) => theme.links};
+    color: ${({ theme }) => theme.body};
+  }
 `;
 
 const SubTagContainer = styled.div`
@@ -69,7 +48,7 @@ const SubTagContainer = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #e9ecef; // Sub Tag Container color
+  background-color: ${({ theme }) => theme.tagBg};
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -83,7 +62,7 @@ const SubTagContainer = styled.div`
     transform: translateX(-50%);
     border-width: 0 10px 10px 10px;
     border-style: solid;
-    border-color: transparent transparent #e9ecef transparent; // Triangle color
+    border-color: transparent transparent ${({ theme }) => theme.tagBg} transparent;
   }
 `;
 
@@ -118,7 +97,7 @@ const SelectedTagsTitle = styled.h3`
   font-size: 16px;
   text-align: left;
   font-family: 'Montserrat', sans-serif; // Headings font
-  color: #212529; // Dark grey color for headings
+  color: ${({ theme }) => theme.headings};
   margin-top: 20px;
   margin-bottom: 10px;
   width: 100%;
@@ -127,7 +106,7 @@ const SelectedTagsTitle = styled.h3`
 const PostContainer = styled.div`
   margin: 20px 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa; // Background color for the posts container
+  background-color: ${({ theme }) => theme.postBg};
   padding: 20px; // Optional padding for better spacing
   border-radius: 10px; // Optional border radius for a softer look
 
@@ -135,7 +114,7 @@ const PostContainer = styled.div`
     font-size: 14px;
     margin: 0;
     a {
-      color: #495057; // Link color
+      color: ${({ theme }) => theme.links};
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -145,12 +124,12 @@ const PostContainer = styled.div`
 
   p {
     font-size: 12px;
-    color: #212529; // Text color
+    color: ${({ theme }) => theme.text};
   }
 
   hr {
     border: 0;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid ${({ theme }) => theme.borderColor};
     margin: 10px 0;
   }
 `;
@@ -162,10 +141,10 @@ const PaginationWrapper = styled.div`
 `;
 
 const PaginationButton = styled.button`
-  background-color: ${props => (props.active ? '#495057' : '#e9ecef')};
+  background-color: ${props => (props.active ? props.theme.links : props.theme.tagBg)};
+  color: ${props => (props.active ? props.theme.body : props.theme.text)};
   border: none;
   border-radius: 5px;
-  color: ${props => (props.active ? '#ffffff' : '#212529')};
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   margin: 4px;
@@ -174,8 +153,8 @@ const PaginationButton = styled.button`
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: #495057;
-    color: #ffffff;
+    background-color: ${({ theme }) => theme.links};
+    color: ${({ theme }) => theme.body};
   }
 `;
 
@@ -187,7 +166,7 @@ const FixedTagWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
-  background-color: #f8f9fa;
+  background-color: ${({ theme }) => theme.postBg};
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
@@ -203,7 +182,7 @@ const FixedTagWrapper = styled.div`
 const FixedTagTitle = styled.h3`
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
-  color: #212529;
+  color: ${({ theme }) => theme.headings};
   margin: 0 0 10px 0;
 `;
 
@@ -285,7 +264,6 @@ const IndexPage = ({ data }) => {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
       </Helmet>
-      <GlobalStyle />
       <h2 style={{ textAlign: "center" }}>Tags</h2>
       <TagWrapper>
         {Object.keys(tagsWithSubTags).map(tag => (
