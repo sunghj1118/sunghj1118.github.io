@@ -6,11 +6,12 @@ import * as THREE from 'three';
 // This is the R3F component that renders the 3D model
 export function HourglassModel({ timeRemaining, totalTime, isRunning }) {
   // Use useGLTF for dedicated, robust GLTF loading
-  const { scene, nodes, animations } = useGLTF('/models/hourglass2.glb'); 
+  const { scene, nodes, animations } = useGLTF('/models/hourglass.glb'); 
   
   const modelRef = useRef();
   const mixer = useRef(null);
-  
+  const actionRef = useRef(null); // Reference to hold the animation action
+
   // Identify the sand meshes by the names found in the GLTF JSON
   // Mesh '0' (top sand) and Mesh '1' (bottom sand)
   const topSandMesh = nodes['0']; 
@@ -19,17 +20,21 @@ export function HourglassModel({ timeRemaining, totalTime, isRunning }) {
   // Calculate the ratio: 1.0 (Full) down to 0.0 (Empty)
   const sandFillRatio = timeRemaining / totalTime; 
 
-  // Setup Animation Mixer for the dripping particles and ensure materials are correct
+  // Setup Animation Mixer (Runs only once on mount)
   useEffect(() => {
-    // 1. Initialize Mixer for Animations (Dripping particles, usually)
+    // 1. Initialize Mixer and Action
     if (animations.length) {
         mixer.current = new THREE.AnimationMixer(scene);
         
         // Assume 'Take 001' (index 0) controls the dripping animation
         const clip = animations[0];
         const action = mixer.current.clipAction(clip);
-        action.loop = THREE.LoopRepeat; // Ensure it loops if the timer is running longer than the clip
-        action.play();
+        action.loop = THREE.LoopRepeat; // Ensure it loops forever
+        actionRef.current = action;
+        
+        // Start the action but keep it paused initially
+        action.play(); 
+        action.paused = true; // Initially pause until the user hits START
     }
     
     // 2. Traverse scene to fix materials and casting shadows
@@ -51,26 +56,30 @@ export function HourglassModel({ timeRemaining, totalTime, isRunning }) {
 
   }, [animations, scene]); // Dependencies ensure this runs only once when the model is ready
 
+  // NEW FIX: Control Animation Play/Pause state based on isRunning
+  // This is a dedicated effect to respond precisely to the START/STOP button.
+  useEffect(() => {
+    if (actionRef.current) {
+        actionRef.current.paused = !isRunning;
+    }
+  }, [isRunning]); // Run whenever the timer state changes
+
   // Update Animation and Sand Level every frame
   useFrame((state, delta) => {
-    // 1. Update Mixer for Dripping Particles
-    if (mixer.current && isRunning) {
+    // 1. Update Mixer for Dripping Particles (only advances if action is not paused)
+    if (mixer.current) {
         mixer.current.update(delta);
     }
     
     // 2. Control Sand Fill via Morph Targets
-    if (topSandMesh && bottomSandMesh && isRunning) {
+    if (topSandMesh && bottomSandMesh) {
         // Morph Target Index 0 controls the blend shape (fill/drain)
         
-        // Top sand: Drains (Weight 0 is full, Weight 1 is empty)
-        // If sandFillRatio is 1.0 (Full time), topWeight = 0.0
-        // If sandFillRatio is 0.0 (No time left), topWeight = 1.0
-        const topWeight = 1.0 - sandFillRatio; 
+        // Top sand: Should be FULL (1.0) at start (ratio 1.0), and EMPTY (0.0) at end (ratio 0.0)
+        const topWeight = sandFillRatio; 
         
-        // Bottom sand: Fills (Weight 1 is empty, Weight 0 is full)
-        // If sandFillRatio is 1.0 (Full time), bottomWeight = 1.0 (empty target)
-        // If sandFillRatio is 0.0 (No time left), bottomWeight = 0.0 (full target)
-        const bottomWeight = sandFillRatio;
+        // Bottom sand: Should be EMPTY (0.0) at start (ratio 1.0), and FULL (1.0) at end (ratio 0.0)
+        const bottomWeight = 1.0 - sandFillRatio;
         
         // Apply the weights (clamped between 0 and 1)
         topSandMesh.morphTargetInfluences[0] = Math.max(0, Math.min(1, topWeight)); 
