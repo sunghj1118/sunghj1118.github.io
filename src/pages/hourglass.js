@@ -1,42 +1,42 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import Layout from '../components/layout'; // Ensure this path is correct
+import React, { useState, useEffect, useCallback, Suspense } from 'react';
+import Layout from '../components/layout'; 
+import { Canvas } from '@react-three/fiber'; 
+import { OrbitControls, Environment, Text } from '@react-three/drei';
+import { HourglassModel } from '../components/HourglassModel'; // Import the R3F component
 
-// Define the initial time in seconds (5 minutes)
-const INITIAL_TIME_SECONDS = 5 * 60; 
+const INITIAL_TIME_SECONDS = 5 * 60; // 5 minutes
 
 function HourglassPage() {
   const [timeRemaining, setTimeRemaining] = useState(INITIAL_TIME_SECONDS);
   const [isRunning, setIsRunning] = useState(false);
 
-  // Function to format seconds into MM:SS
   const formatTime = useCallback((totalSeconds) => {
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   }, []);
 
-  // Timer logic using useEffect
+  // Timer useEffect hook
   useEffect(() => {
     let intervalId;
-
     if (isRunning && timeRemaining > 0) {
       intervalId = setInterval(() => {
         setTimeRemaining((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeRemaining === 0) {
-      // Logic when the timer runs out
       clearInterval(intervalId);
       console.log("Time's up! The sand has run out.");
       setIsRunning(false);
     }
-
-    // Cleanup function to clear the interval when the component unmounts
-    // or when dependencies change
+    // Cleanup function is essential to prevent memory leaks
     return () => clearInterval(intervalId);
-  }, [isRunning, timeRemaining]); // Dependencies
+  }, [isRunning, timeRemaining]);
 
   const handleStartStop = () => {
-    setIsRunning(!isRunning);
+    // Only allow starting if time is > 0
+    if (timeRemaining > 0) {
+        setIsRunning(!isRunning);
+    }
   };
 
   const handleReset = () => {
@@ -46,59 +46,109 @@ function HourglassPage() {
 
   return (
     <Layout>
-      <div style={{ textAlign: 'center', padding: '50px' }}>
-        <h2>The Hourglass Room</h2>
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        minHeight: '100vh', 
+        background: '#1a1a1a', 
+        color: 'white',
+        padding: '20px'
+      }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '20px' }}>The Hourglass Room</h2>
         
-        {/* Placeholder for 3D/Animated Hourglass Model */}
+        {/* 1. The 3D Canvas Container */}
         <div style={{ 
-          fontSize: '3rem', 
-          margin: '20px 0', 
-          padding: '20px', 
-          border: '2px solid gold', 
-          display: 'inline-block',
-          minWidth: '200px',
-          backgroundColor: '#333',
-          color: 'white'
+          width: 'min(90vw, 600px)', 
+          height: 'min(70vh, 400px)', 
+          background: '#222', 
+          borderRadius: '10px', 
+          margin: '20px 0',
+          boxShadow: '0 10px 20px rgba(0,0,0,0.5)'
         }}>
+          {/* 2. The Canvas Component (R3F Context Provider) */}
+          <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+            {/* Lighting and Scene Setup */}
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} intensity={1.5} castShadow />
+            <pointLight position={[-10, -10, -10]} intensity={0.5} />
+            <directionalLight position={[0, 5, 0]} intensity={0.5} castShadow />
+            
+            {/* Background color and Environment for reflections */}
+            <color attach="background" args={['#111111']} /> 
+            <Environment preset="lobby" background={false} /> 
+
+            {/* 3. Suspense wrapper handles loading state */}
+            <Suspense fallback={
+                // FIX: Reverted to a simple mesh primitive. Using complex components 
+                // like <Text> in the fallback can cause initialization issues with Three.js properties.
+                <mesh position={[0, 0, 0]} castShadow={false} receiveShadow={false}> 
+                    <boxGeometry args={[1, 1, 1]} />
+                    <meshBasicMaterial color="gray" wireframe={true} />
+                </mesh>
+            }>
+                {/* 4. The 3D Component goes inside Canvas/Suspense */}
+                <HourglassModel 
+                    timeRemaining={timeRemaining} 
+                    totalTime={INITIAL_TIME_SECONDS} 
+                    isRunning={isRunning}
+                />
+            </Suspense>
+
+            {/* OrbitControls allows the user to rotate the model with the mouse */}
+            <OrbitControls enablePan={false} enableZoom={true} /> 
+          </Canvas>
+        </div>
+
+        {/* Timer text and controls (standard React/HTML outside the Canvas) */}
+        <div style={{ fontSize: '3rem', margin: '10px 0', fontWeight: 'bold', fontFamily: 'monospace' }}>
           {formatTime(timeRemaining)}
         </div>
         
-        <p>
+        <p style={{ marginTop: '5px', color: '#ccc' }}>
           {timeRemaining > 0 
             ? isRunning ? "Sand is dripping..." : "Ready to start the 5-minute timer."
-            : "The time has run out. Reset the glass."}
+            : "The time has run out. Flip the glass (Reset)!"}
         </p>
         
-        <button 
-          onClick={handleStartStop} 
-          disabled={timeRemaining === 0}
-          style={{ 
-            margin: '10px', 
-            padding: '10px 20px', 
-            cursor: 'pointer',
-            backgroundColor: isRunning ? '#d9534f' : '#5cb85c',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px'
-          }}
-        >
-          {isRunning ? 'STOP' : 'START'}
-        </button>
-        
-        <button 
-          onClick={handleReset}
-          style={{ 
-            margin: '10px', 
-            padding: '10px 20px', 
-            cursor: 'pointer',
-            backgroundColor: '#0275d8',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px'
-          }}
-        >
-          RESET
-        </button>
+        {/* Control Buttons */}
+        <div style={{ display: 'flex', gap: '15px', marginTop: '20px' }}>
+          <button 
+            onClick={handleStartStop} 
+            disabled={timeRemaining === 0}
+            style={{ 
+              padding: '12px 25px', 
+              cursor: 'pointer',
+              backgroundColor: isRunning ? '#d9534f' : '#5cb85c',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '1.1rem',
+              boxShadow: '0 4px #999',
+              transition: 'all 0.1s ease-out'
+            }}
+          >
+            {isRunning ? 'STOP' : 'START'}
+          </button>
+          
+          <button 
+            onClick={handleReset}
+            style={{ 
+              padding: '12px 25px', 
+              cursor: 'pointer',
+              backgroundColor: '#0275d8',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '1.1rem',
+              boxShadow: '0 4px #0056b3',
+              transition: 'all 0.1s ease-out'
+            }}
+          >
+            RESET
+          </button>
+        </div>
       </div>
     </Layout>
   );
