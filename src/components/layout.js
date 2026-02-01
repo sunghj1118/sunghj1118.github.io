@@ -76,7 +76,8 @@ const MapOverlay = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const rooms = [
-    { name: "The Archive", description: "Read my latest posts", path: "/", icon: "📜" },
+    { name: "Home", description: "Return to the main page", path: "/", icon: "🏠" },
+    { name: "The Archive", description: "Read my latest posts", path: "/blog", icon: "📜" },
     { name: "The Status Screen", description: "View my current stats", path: "/status", icon: "⚔️" },
     { name: "The Hourglass", description: "Time is ticking...", path: "/hourglass", icon: "⏳" },
     { name: "The Lab", description: "Projects and experiments", path: "/projects", icon: "🧪" },

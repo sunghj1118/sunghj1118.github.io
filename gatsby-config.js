@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `My Developer Blog`,
-    description: `A blog built with Gatsby`,
+    title: `HyunJoon Sung - Developer Blog`,
+    description: `Thoughts on algorithms, infrastructure, AI, and software development`,
     author: `@sunghj1118`,
   },
   plugins: [
