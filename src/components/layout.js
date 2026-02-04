@@ -151,9 +151,9 @@ const mapStyles = {
   }
 };
 
-const Layout = ({ children }) => {
+const Layout = ({ children, fullWidth = false }) => {
   const [isMapOpen, setIsMapOpen] = useState(false);
-  
+
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = window.localStorage.getItem('theme');
@@ -188,26 +188,26 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         <GlobalStyle />
-        
+
         <ThemeButton onClick={toggleTheme}>
           {theme === 'light' ? '🌙' : '☀️'}
         </ThemeButton>
 
-        {/* We keep Container for the Archive (blog) pages. 
-          Inside individual pages (like Hourglass), you can define 
-          full-width styles if you want them to break out of this center.
-        */}
-        <Container>
-          <div className="markdown-body">
-            {children}
-          </div>
-        </Container>
-        
+        {fullWidth ? (
+          children
+        ) : (
+          <Container>
+            <div className="markdown-body">
+              {children}
+            </div>
+          </Container>
+        )}
+
         <Footer />
 
-        <MapOverlay 
-          isOpen={isMapOpen} 
-          onClose={() => setIsMapOpen(false)} 
+        <MapOverlay
+          isOpen={isMapOpen}
+          onClose={() => setIsMapOpen(false)}
         />
 
         {/* Small Game Hint */}
