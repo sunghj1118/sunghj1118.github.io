@@ -149,19 +149,57 @@ const PostsScroll = styled.div`
   }
 `;
 
-// A genuine wrapping grid — an item either fully fits on the current row or
-// wraps whole onto the next one. No manual width math, no partial items.
-const PostsGrid = styled.div`
+// Rows of (up to) 3 cards. Fixed 3-column grid rather than a wrapping flex
+// row, so that hovering a card can widen its own column and shrink its row
+// siblings' columns — the hovered card expands sideways into the row
+// instead of growing taller, and never overflows since fr-tracks always
+// share exactly the row's width.
+const PostsRows = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: flex-start;
+  flex-direction: column;
   gap: 16px;
 `;
 
+const PostRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  /* The hover-expand behavior only applies once there's an actual row of
+     columns to expand into. Scoping it entirely to this media query (rather
+     than overriding it again in a mobile query) avoids a specificity fight
+     between the two — the :nth-of-type rules below would otherwise be
+     specific enough to leak through a same-level mobile override. */
+  @media (min-width: 701px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    transition: grid-template-columns 0.4s cubic-bezier(0.25, 1, 0.5, 1), gap 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Collapsed columns go to a true 0fr (not just "small") and the gap
+       collapses too, so the hovered card's edges land exactly on the row's
+       own edges — the same full width in all three column positions. */
+    &:has(> a:nth-of-type(1):hover) {
+      grid-template-columns: minmax(0, 1fr) 0fr 0fr;
+      gap: 0;
+    }
+    &:has(> a:nth-of-type(2):hover) {
+      grid-template-columns: 0fr minmax(0, 1fr) 0fr;
+      gap: 0;
+    }
+    &:has(> a:nth-of-type(3):hover) {
+      grid-template-columns: 0fr 0fr minmax(0, 1fr);
+      gap: 0;
+    }
+
+    /* the row's other cards tuck away rather than reflowing/overlapping */
+    &:has(> a:hover) > a:not(:hover) {
+      opacity: 0;
+    }
+  }
+`;
+
 const PostCard = styled(Link)`
-  width: 168px;
-  min-height: 132px;
+  height: 136px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   background: ${colors.cardSurface};
@@ -169,25 +207,56 @@ const PostCard = styled(Link)`
   text-decoration: none;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(60, 45, 30, 0.10);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease, opacity 0.3s ease;
   cursor: pointer;
 
   &:hover {
     text-decoration: none;
-    transform: translateY(-6px);
     box-shadow: 0 18px 34px rgba(60, 45, 30, 0.20);
+  }
+
+  @media (max-width: 700px) {
+    height: auto;
+    min-height: 132px;
   }
 `;
 
 const PostCardAccent = styled.div`
   height: 7px;
+  flex-shrink: 0;
   background: ${props => props.color};
 `;
 
 const PostCardBody = styled.div`
-  padding: 14px 14px 16px;
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
   display: flex;
   flex-direction: column;
+
+  ${PostCard}:hover & {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column !important;
+  }
+`;
+
+const PostCardHeader = styled.div`
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+
+  ${PostCard}:hover & {
+    flex: 0 0 128px;
+  }
+
+  @media (max-width: 700px) {
+    flex: none !important;
+  }
 `;
 
 const PostCardTitle = styled.h3`
@@ -197,6 +266,10 @@ const PostCardTitle = styled.h3`
   color: ${colors.ink};
   margin: 0;
   line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 const PostCardExcerpt = styled.p`
@@ -205,20 +278,30 @@ const PostCardExcerpt = styled.p`
   color: ${colors.inkMuted};
   line-height: 1.5;
   margin: 0;
+  min-width: 0;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
+  transition: opacity 0.25s ease 0.05s;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 
   ${PostCard}:hover & {
-    max-height: 90px;
+    max-height: 200px;
     opacity: 1;
-    margin-top: 8px;
+    flex: 1;
+  }
+
+  @media (max-width: 700px) {
+    ${PostCard}:hover & {
+      margin-top: 8px;
+    }
   }
 `;
 
 const PostCardMeta = styled.div`
-  margin-top: 10px;
+  margin-top: 8px;
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
   font-weight: 600;
@@ -313,19 +396,13 @@ const getAccentColor = (index) => {
   return accentColors[index % accentColors.length];
 };
 
-// Truncate title intelligently
-const truncateTitle = (title, maxLength = 40) => {
-  if (title.length <= maxLength) return title;
-
-  // Try to truncate at a word boundary
-  const truncated = title.substring(0, maxLength);
-  const lastSpace = truncated.lastIndexOf(' ');
-
-  if (lastSpace > maxLength * 0.6) {
-    return truncated.substring(0, lastSpace) + '...';
+// Split into fixed-size rows of 3 for the row-based hover-expand grid
+const chunkIntoRows = (items, size = 3) => {
+  const rows = [];
+  for (let i = 0; i < items.length; i += size) {
+    rows.push(items.slice(i, i + size));
   }
-
-  return truncated + '...';
+  return rows;
 };
 
 const HomePage = ({ data }) => {
@@ -346,6 +423,7 @@ const HomePage = ({ data }) => {
   }, []);
 
   const posts = data.allMarkdownRemark.edges;
+  const postRows = chunkIntoRows(posts, 3);
 
   return (
     <Layout fullWidth={true}>
@@ -363,30 +441,36 @@ const HomePage = ({ data }) => {
             <PanelInterior>
               <PanelLabel>Latest Posts</PanelLabel>
               <PostsScroll>
-                <PostsGrid>
-                  {posts.map(({ node }, index) => {
-                    const accentColor = getAccentColor(index);
+                <PostsRows>
+                  {postRows.map((row, rowIndex) => (
+                    <PostRow key={rowIndex}>
+                      {row.map(({ node }, columnIndex) => {
+                        const accentColor = getAccentColor(rowIndex * 3 + columnIndex);
 
-                    return (
-                      <PostCard key={node.id} to={node.fields.slug}>
-                        <PostCardAccent color={accentColor} />
-                        <PostCardBody>
-                          <PostCardTitle>{truncateTitle(node.frontmatter.title)}</PostCardTitle>
-                          <PostCardExcerpt>
-                            {node.excerpt || 'Click to read more...'}
-                          </PostCardExcerpt>
-                          <PostCardMeta color={accentColor}>
-                            {new Date(node.frontmatter.date).toLocaleDateString('en-US', {
-                              month: 'short',
-                              day: 'numeric',
-                              year: 'numeric'
-                            })}
-                          </PostCardMeta>
-                        </PostCardBody>
-                      </PostCard>
-                    );
-                  })}
-                </PostsGrid>
+                        return (
+                          <PostCard key={node.id} to={node.fields.slug}>
+                            <PostCardAccent color={accentColor} />
+                            <PostCardBody>
+                              <PostCardHeader>
+                                <PostCardTitle>{node.frontmatter.title}</PostCardTitle>
+                                <PostCardMeta color={accentColor}>
+                                  {new Date(node.frontmatter.date).toLocaleDateString('en-US', {
+                                    month: 'short',
+                                    day: 'numeric',
+                                    year: 'numeric'
+                                  })}
+                                </PostCardMeta>
+                              </PostCardHeader>
+                              <PostCardExcerpt>
+                                {node.excerpt || 'Click to read more...'}
+                              </PostCardExcerpt>
+                            </PostCardBody>
+                          </PostCard>
+                        );
+                      })}
+                    </PostRow>
+                  ))}
+                </PostsRows>
               </PostsScroll>
               <ViewAllButton to="/blog">View All Posts →</ViewAllButton>
             </PanelInterior>
